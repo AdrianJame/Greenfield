@@ -1,8 +1,11 @@
 import './index.scss';
+import Cabeadm from '../../components/cabecalhoadm'
 
 export default function Homeadm() {
   return (
     <div className="Homeadm">
+
+      <Cabeadm/>
 
       <div className='conteudo'>
 
