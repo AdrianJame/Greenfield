@@ -1,0 +1,118 @@
+.principal {
+    
+    background: linear-gradient(180deg, #092E00 53.94%, #000 100%);
+    
+    
+    min-height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-login {
+
+        background-color: #000;
+        
+        height: 628px;
+        width: 570px;
+        
+
+        .faixa-1 {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            padding: 30px;
+            padding-left: 50px;
+
+
+            p {
+                color: #fff;
+                font-size: 35px;
+            }
+
+            img {
+                height: 150px;
+                width: 150px;
+            }
+
+        }
+
+        .faixa-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 20px;
+            gap: 20px;
+
+            .linha {
+
+                align-items: center;
+                
+                
+                .risco {
+                 height: 1px;
+                 width: 350px;
+                 background-color: #d9d9d9;
+                }
+                
+                
+                input {
+                    border: none;
+                    
+                    background-color: transparent;
+                    color: #fff;
+
+                    padding: 0px 10px;
+
+                    width: 100%;
+                    max-width: 335px !important;
+
+                    margin-bottom: 10px;
+                }
+
+                input:focus {
+                    box-shadow: 0;
+                    outline: 0;
+
+                }
+
+            }
+
+        
+
+        }
+
+        .faixa-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+            button {
+                border-radius: 15px;
+                background: linear-gradient(137deg, #009020 0%, #000 100%);
+                color: #fff;
+
+                font-size: 20px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                margin-top: 80px;
+                width: 247px;
+                height: 52px;
+
+                border: none;
+                cursor: pointer;
+
+            }
+
+        }
+
+    }
+
+
+}
