@@ -3,7 +3,7 @@ import './index.scss';
 function App() {
   return (
     <div className="App">
-      oiii
+      oiii e o kct
     </div>
   );
 }

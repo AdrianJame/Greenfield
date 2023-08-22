@@ -1,0 +1,95 @@
+.cabeadm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #1F2023;
+
+    height: 15vh;
+
+    padding-right: 10px;
+
+    border-bottom: 3px solid #fff;
+
+    .cabeadm-p1{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        .logo{
+            height: 100px;
+            width: auto;
+
+            margin-right: 20px;
+        }
+
+        h1{
+            font-size: 30px;
+
+            color: #fff;
+        }
+    }
+
+
+    .cabeadm-p2{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 35px;
+
+        margin-right: 20px;
+
+        .linkhomeajuda{
+            display: flex;
+            flex-direction: row;
+
+            gap: 10px;
+
+            a{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+
+                color: #fff;
+
+                text-decoration: none;
+
+                gap: 5px;
+
+                img{
+                    height: 15px;
+                }
+            }
+        }
+
+        .foto-alterar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            height: 100%;
+            
+            gap: 10px;
+
+            img{
+                height: 65px;
+                width: 65px;
+
+                border-radius: 100%;
+            }
+
+            button{
+                background-color: transparent;
+
+                border: none;
+
+                color: #fff;
+            }
+        }
+
+    }
+
+
+}
