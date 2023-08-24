@@ -1,19 +1,74 @@
-.homeadm{
+.Homeadm{
+    
+
+
+
+    .centro{
     width: 100%;
-    max-width: 700px;
+    max-width: 1320px;
+    height: 545px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
-
-
-
+    background-color: #3a3a3b;
 
     .conteudo{
-        width: 700px;
-        height: 700px;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 450px;
+        padding: 25px;
+        gap: 30px;
 
 
-        
+        .faixa1{
+            display: flex;
+            width: 650px;
+            height: 200px;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+
+        }
+
+        .card{
+            width: 270px;
+            height: 150px;
+            background-color: #5c5c5c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: aliceblue;
+
+            img{
+                position: relative;
+                bottom: 30px;
+                width: 100%;
+                max-width: 70px;
+            }
+
+            h1{
+                font-size:10px ;
+            }
+            
+        }
+
+        .faixa2{
+            display: flex;
+            width: 650px;
+            height: 200px;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+        }
     }
+    
+
+    }
+
+
 }
