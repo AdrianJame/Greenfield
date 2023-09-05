@@ -9,8 +9,8 @@ export default function Cabesemdgd(){
             <img src='/assets/images/logocolorida.svg'/>
 
             <div className='meio-cabecalho'>
-                <b>Home</b>
-                <b>Sobre</b>
+                <p>Home</p>
+                <p>Sobre</p>
 
                 <section>
                     <img src='/assets/images/lupa.svg'/>
