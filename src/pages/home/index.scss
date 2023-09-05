@@ -1,5 +1,49 @@
 .Home{
 
+    .faixa1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100vw;
+        height: 500px;
+        gap: 70px;
+        
+    }
+
+    .faixa1-textos{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        width: 600px;
+        text-align: start;
+
+
+        .titulo{
+            width: 425px;
+            span{
+                color: #156700;
+            }
+        }
+        
+        
+
+        p{
+            font-size: 14px;
+            width: 425px;
+        }
+
+
+    }
     
+    .limpezadejardim{
+        img{
+            width: 400px ;
+        }
+    }
+
 
 }

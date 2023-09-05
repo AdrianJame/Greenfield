@@ -10,9 +10,9 @@ export default function Home() {
       
       <div className='faixa1'>
 
-        <div className='primeiro-titulo'>
+        <div className='faixa1-textos'>
 
-          <h1>
+          <h1 className='titulo'>
             Encontre na <span>Greenfield</span> 
             <br/> Ofertas de ferramentas
             <br/>Para agricultura
@@ -23,12 +23,51 @@ export default function Home() {
           </p>
 
         </div>
-          <img src='./assets/images/limpezadejardim.svg'>
-          
-          </img>
-        <div>
 
+       
+
+        <div className='limpezadejardim' >
+          <img src='./assets/images/limpezadejardim.svg'/>
         </div>
+
+      </div>
+
+      <div className='faixa2'>
+          <div>
+            <div>
+
+              <h1>Comece agora a sua <span>Jardinagem</span></h1>
+              <h2>Com os melhores produtos</h2>
+
+            </div>
+
+
+            <div>
+
+              <div className='card'>
+                <img src='./assets/images/sementes.svg'/>
+                <h2>Sementes</h2>
+                <p>TODO JARDIM COMEÇA COM UMA SIMPLES SEMENTE.</p>
+
+              </div>
+
+              <div className='card'>
+                <img src='./assets/images/ferramentas.svg'/>
+                <h2>Ferramentas</h2>
+                <p>TER AS FERRAMENTAS CERTAS É FUNDAMENTAL PARA FACILITAR O TRABALHO E GARANTIR UM RESULTADO SATISFATÓRIO.</p>
+                
+              </div>
+
+              <div className='card'>
+                <img src='./assets/images/fertilizantes.svg'/>
+                <h2>Fertilizantes</h2>
+                <p>O FERTILIZANTE É O SEGREDO PARA UM JARDIM SAUDÁVEL E BONITO.</p>
+              </div>
+
+            </div>
+          </div>
+
+
 
       </div>
     </div>
