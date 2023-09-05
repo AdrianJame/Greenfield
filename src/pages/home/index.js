@@ -1,11 +1,11 @@
 import './index.scss';
 
-import Cabesemdgd from '../../components/cabecalhosemdgd';
+import Cabecomdgd from '../../components/cabecomdgd';
 
 function App() {
   return (
     <div className="App">
-      <Cabesemdgd/>
+      <Cabecomdgd/>
       oiii e o kct
     </div>
   );
