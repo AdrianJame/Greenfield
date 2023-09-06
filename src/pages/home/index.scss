@@ -46,4 +46,88 @@
     }
 
 
+    .faixa2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 500px;
+        background-color: #f6f6f6;
+        gap: 20px;
+
+        .faixa2-textos{
+            width: 500px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .cards{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 70vw;
+            height: 200px;
+       
+
+
+            .card{
+                width: 220px;
+                height: 180px;
+                background-color: #dddd;
+                display: flex;
+                flex-direction: column;
+                border-radius: 15px;
+                text-align: center;
+                align-items: center;
+
+                img{
+                    position: relative;
+                    bottom: 35px;
+                    width: 100%;
+                    max-width: 90px;
+                    
+                }
+
+                h2{
+
+                    font-family: 'Oswald', sans-serif; 
+                    color: #156700;
+                }
+
+                p{
+                    font-family: 'Oswald', sans-serif; 
+                    font-size: 10px;
+                }
+            }
+        }
+        
+    }
+
+    .faixa3{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 500px;
+        
+        
+        .faixa3-textos{
+            color: aliceblue;
+            
+            width: 50VW;
+            border-top: 70px solid #000000;
+            
+            border-right: 35px solid transparent;
+            height: 500px;
+            
+                        
+
+            
+        }
+
+    }
+
+
 }
