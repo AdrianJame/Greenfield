@@ -77,8 +77,8 @@ export default function Home() {
               <h1>Dicas para Jardinagem</h1>
             </div>
 
-            <div className='numeros-faixa3'>
-              <div>
+            <div className='numeros-texto-faixa3'>
+              <div className='numeros'>
                   <p>1.</p>
 
                   <p>2.</p>
@@ -86,7 +86,7 @@ export default function Home() {
                   <p>3.</p>
               </div>
 
-              <div>
+              <div className='text'>
 
                 <p>Quem está começando a se aventurar no mundo da jardinagem, deve começar munido de pá, espátula fina e rastelo. Mas é interessanteter outras peças para ajudar na manutenção das plantinhas.</p>
 
@@ -100,10 +100,41 @@ export default function Home() {
 
           </div>
 
-          <div>
-            <img src='./assets/images/image 4'></img>
+          <div className='faixa3-img'>
+            <img src='./assets/images/image 4.svg'></img>
           </div>
       </div>
+
+      <div className='faixa-verde'>
+
+      </div>
+
+
+      <div className='faixa4'>
+
+        <div className='faixa4-img'>
+
+          <img src='./assets/images/image 5.svg'></img>
+        </div>
+
+        <div className='faixa4-textos'>
+          
+          <h1> Cortadores de Grama</h1>
+
+          <p>Com nossos cortadores de grama, você pode ter um gramado perfeito em pouco tempo!</p>
+
+          <a>Compre Já</a>
+
+        </div>
+
+
+      </div>
+
+      <div className='faixa5'>
+
+      </div>
+
+
     </div>
   );
 }

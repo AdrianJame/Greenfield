@@ -1,5 +1,7 @@
 .Home{
 
+    overflow: hidden;
+
     .faixa1{
         display: flex;
         justify-content: center;
@@ -114,20 +116,157 @@
         
         
         .faixa3-textos{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px;
+            justify-content: end;
             color: aliceblue;
-            
-            width: 50VW;
+            width: 57.7VW;
             border-top: 500px solid #000000;
-            
-            border-right: 115px solid transparent;
+            border-right: 130px solid transparent;
             height: 0px;
-            
-                        
+            z-index: -1;
 
+            .faixa3-titulo{
+                
+                width: 500px;
+                
+                font-size: 20px;
+            }
+
+            .numeros-texto-faixa3{
+                width: 500px;
+                height: 400px;
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+
+
+                .numeros{
+
+                    width: 50px;
+                    height: 400px;
+                    
+
+                    p{
+                        margin-bottom: 50px ;
+                        font-size: 50px;
+                    }
+
+                }
+
+                .text{
+                    width: 500px;
+                    height: 400px;
+                    
+
+                    p{
+                        margin-bottom: 50px;
+                        width: 470px;
+                    }
+                }
+            }
+        
             
         }
 
+        .faixa3-img{
+            width: 50VW;
+            
+
+            img{
+                position: relative;
+                z-index: -2;
+                right: 17VW;
+                width: 140%;
+                max-width: 1200px;
+            }
+        }
+
     }
+
+    .faixa-verde{
+        background-color: #156700;
+        width: 100vw;
+        height: 2px;
+    }
+
+
+    .faixa4{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 500px;
+
+
+        .faixa4-img{
+            
+            display:flex ;
+            
+
+            img{
+                
+                width: 150%;
+                max-width: 900px;
+                height: 100%;
+
+            }
+        }
+
+        .faixa4-textos{
+            display: flex;
+            flex-direction: column;
+            color: aliceblue;
+            width: 85vw;
+            border-bottom: 500px solid #000000;
+            border-left: 145px solid transparent;
+            height: 0px;
+            z-index: 3;
+            align-items: center;
+            text-align: center;
+            justify-content: start;
+            
+
+
+
+
+
+            h1{
+                width: 500px;
+                margin-top: 100px;
+                font-size: 20px;
+            }
+
+            p{
+                width: 400px;
+                margin-top: 70px;
+                font-size: 20px;
+            }
+
+            a{
+                margin-top: 80px;
+                background-color: #5B5B5B;
+                width: 200px;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+            }
+        }
+
+
+
+
+
+    }
+
+    .faixa5{
+        width: 100vw;
+        height: 500px;
+    }
+
 
 
 }
