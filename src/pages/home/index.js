@@ -101,7 +101,7 @@ export default function Home() {
           </div>
 
           <div>
-            <img></img>
+            <img src='./assets/images/image 4'></img>
           </div>
       </div>
     </div>
