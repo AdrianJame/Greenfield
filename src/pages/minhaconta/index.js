@@ -1,5 +1,6 @@
 import './index.scss';
 import Cabesemdgd from '../../components/cabecalhosemdgd';
+import RodapeGreenfield from '../../components/rodape';
 
 export default function Minhaconta(){
     return(
@@ -59,7 +60,7 @@ export default function Minhaconta(){
                         </div>
 
                     </div>
-
+            <RodapeGreenfield/>
         </div>
     )
 }
