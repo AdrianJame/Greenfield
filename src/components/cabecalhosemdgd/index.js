@@ -6,7 +6,7 @@ export default function Cabesemdgd(){
 
     return(
         <header className='Cabecalho'>
-            <img src='/assets/images/logocolorida.svg'/>
+            <img src='/assets/images/image 62.svg'/>
 
             <div className='meio-cabecalho'>
                 <p>Home</p>
