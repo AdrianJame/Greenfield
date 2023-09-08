@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Cabecomdgd(){
 
     return(
-        <header className='Cabecalho'>
+        <header className='Cabecalho1'>
             <img src='/assets/images/logocolorida.svg'/>
 
             <div className='meio-cabecalho'>
