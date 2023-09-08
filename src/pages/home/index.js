@@ -1,7 +1,8 @@
 import './index.scss';
 
 import Cabecomdgd from '../../components/cabecomdgd';
-
+import RodapeGreenfield from '../../components/rodape';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -132,9 +133,29 @@ export default function Home() {
 
       <div className='faixa5'>
 
+        <div className='imagem-esquerda'>
+          <img src='/assets/images/planta.svg'/>
+        </div>
+
+        <div className='conteudo-direita'>
+          
+          <h1>Acessórios de jardinagem</h1>
+          <h2>que <span> transformarão o seu jardim </span>
+        </h2>
+         
+
+          <p>Ter um jardim em casa pode garantir muito mais que beleza e elegância para a decoração, pois, além disso, as plantas trazem inúmeros benefícios ao ambiente e para todos os moradores do local. O jardim é um lugar para ser e estar, para contemplar, refletir e relembrar. Proporciona tranqüilidade e paz para evocar uma emoção poética. O jardim, na realidade, vai muito além: ele reafirma e restabelece a relação do homem com a natureza.</p>
+
+          <Link>Confira</Link>
+        
+        </div>
+
+        
+
       </div>
 
-
+      <RodapeGreenfield/>
+      
     </div>
   );
 }

@@ -123,7 +123,7 @@
             justify-content: end;
             color: aliceblue;
             width: 57.7VW;
-            border-top: 500px solid #000000;
+            border-top: 500px solid #232323;
             border-right: 130px solid transparent;
             height: 0px;
             z-index: -1;
@@ -219,7 +219,7 @@
             flex-direction: column;
             color: aliceblue;
             width: 85vw;
-            border-bottom: 500px solid #000000;
+            border-bottom: 500px solid #232323;
             border-left: 145px solid transparent;
             height: 0px;
             z-index: 3;
@@ -227,10 +227,6 @@
             text-align: center;
             justify-content: start;
             
-
-
-
-
 
             h1{
                 width: 500px;
@@ -252,21 +248,81 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 20px;
+                border-radius: 10px;
+                padding: 10px 5px;
             }
         }
-
-
-
-
-
     }
 
     .faixa5{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 150px;  
+
+        
         width: 100vw;
-        height: 500px;
+        height: 600px;
+    
+
+        .imagem-esquerda {
+
+            > img {
+                height: 500px;
+                width: auto;
+            }
+
+        }
+
+        .conteudo-direita {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+
+            h1 {
+                font: 30px '';
+                font-family: 'Oswald', sans-serif;
+            }
+
+            h2 {
+                font: 30px '';
+                font-family: 'Oswald', sans-serif;
+            }
+
+            span {
+                font: 30px '';
+                font-family: 'Oswald', sans-serif;
+                color: #20A000;
+            }
+
+
+            > p {
+                margin-top: 20px;
+
+                width: 550px;
+                
+                font-family: 'Oswald', sans-serif;
+            }
+
+             a {
+                background-color: #009020;
+                
+                color: #fff;
+                text-decoration: none;
+                font-family: 'Oswald', sans-serif;
+                
+                border-radius: 10px;
+                margin-top: 50px;
+                width: 130px;
+                padding: 10px 20px;
+            }
+
+        }
+    
     }
-
-
 
 }
