@@ -11,19 +11,17 @@
     height: 16vh;
     margin-bottom: 40px;
 
-    
-    
     > img{
        
         height: 95%;
         width: auto;
-    
+
     }
 
     .descricao {
         
         p {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: 'Oswald', sans-serif;
             
             color: #fff;
 
@@ -32,10 +30,8 @@
         }
     }
 
-
     .redes-sociais {
 
-        
         .logo-link {
             display: flex;
             align-items: center;
@@ -46,7 +42,8 @@
 
             a {
                 color: #fff;
-                
+                font-family: 'Oswald', sans-serif;
+
                 text-decoration: none;
 
                 padding: 4px 10px;
@@ -56,7 +53,5 @@
         }
 
     }
-
-
 
 }
