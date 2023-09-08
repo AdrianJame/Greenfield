@@ -2,10 +2,10 @@ import './index.scss'
 import { Link } from 'react-router-dom'
 
 
-export default function Cabesemdgd(){
+export default function Cabecalhocomlogin(){
 
     return(
-        <header className='Cabecalho'>
+        <header className='cabecalho-login'>
             <img src='/assets/images/image 62.svg'/>
 
             <div className='meio-cabecalho'>
@@ -18,10 +18,7 @@ export default function Cabesemdgd(){
                 </section>
             </div>
 
-                <Link> 
-                    <b>Carrinho</b>
-                    <img src='/assets/images/carrinho.svg'/>
-                </Link>
+                <Link>login</Link>
         </header>
     )
 }
