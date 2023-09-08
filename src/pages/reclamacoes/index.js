@@ -1,6 +1,6 @@
 import './index.scss';
-import Cabesemdgd from '../components/cabecalhosemdgd';
-import RodapeGreenfield from '../components/rodape';
+import Cabesemdgd from '../../components/cabecalhosemdgd';
+import RodapeGreenfield from '../../components/rodape';
 
 export default function Reclamacoes(){
     return(
