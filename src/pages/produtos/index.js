@@ -19,7 +19,7 @@ export default function Produtos(){
     };
 
     return(
-        <div className='pagina-produtos'>
+        <div className='pagina-produto'>
             <Cabesemdgd/>
 
             <section className='produtos-s1'>
