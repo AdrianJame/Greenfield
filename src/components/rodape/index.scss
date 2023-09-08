@@ -1,0 +1,61 @@
+.rodape-principal {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: #009020;
+    
+    width: 100%;
+    height: 16vh;
+
+    
+    
+    > img{
+       
+        height: 95%;
+        width: auto;
+    
+    }
+
+    .descricao {
+        
+        p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+            color: #fff;
+
+            width: 650px;
+            font-size: 30px;
+        }
+    }
+
+
+    .redes-sociais {
+
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+
+            > img {
+                height: 20px;
+            }
+
+            a {
+                color: #fff;
+                
+                text-decoration: none;
+
+                padding: 4px 10px;
+
+            }
+
+        }
+
+    }
+
+
+
+}
