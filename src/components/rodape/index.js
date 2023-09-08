@@ -10,7 +10,7 @@ export default function RodapeGreenfield () {
             <img src='/assets/images/rodape-greenfield.svg'/>
 
             <div className='descricao'>
-                <p>Entre a em contato conosco através das nossas redes sociais e e-mail.</p>
+                <p>Entre em contato conosco através das nossas redes sociais e e-mail.</p>
             </div>
 
             <div className='redes-sociais'>
