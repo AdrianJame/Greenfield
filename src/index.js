@@ -11,7 +11,7 @@ import Carrinho from './pages/carrinho';
 import Home from './pages/home';
 import Homeadm from './pages/home-adm';
 import Produtos from './pages/produtos';
-
+import Produtosadm from './pages/produtosadm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +26,7 @@ root.render(
         <Route path='/meuspedidos' element={<Meuspedidos/>}/>
         <Route path='/reclamacoes' element={<Reclamacoes/>} />
         <Route path='/carrinho' element={<Carrinho/>} />
+        <Route path='/produtosadm' element={<Produtosadm/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
