@@ -2,4 +2,178 @@
     display: flex;
     flex-direction: row;
     
+    .produtosadm-body{
+        display: flex;
+        flex-direction: column;
+
+        width: 80vw;
+
+        padding: 60px;
+
+        color: #fff;
+
+
+        background-color: #363636;
+
+        h1{
+            font-size: 36px;
+            font-weight: 400;
+
+            margin-bottom: 30px;
+        }
+
+        .card{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 20px;
+
+            width: 100%;
+
+            background-color: #fff;
+
+            border-radius: 10px;
+
+            margin-bottom: 50px;
+
+            color: #363636;
+
+            .card-s1{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+
+                .card-input{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    position: relative;
+
+                    border: 1px solid #363636;
+
+                    border-radius: 10px;
+
+                    padding: 20px;
+
+                    margin-right: 35px;
+
+                    input{
+                        border: none;
+                        outline: 0;
+
+                        height: 25px;
+
+                        width: 200px;
+
+                        font-size: 16px;
+                    }
+
+                    img{
+                        height: 25px;
+                        width: auto;
+                    }
+                }
+
+                .card-filtro{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    gap: 5px;
+
+                    img{
+                        height: 30px;
+                        width: auto;
+                    }
+
+                    p{
+                        font-size: 25px;
+                        font-weight: 500;
+                    }
+                } 
+            }
+
+            .card-s2{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                height: 100%;
+
+                gap: 35px;
+
+                .card-s2-categoria{
+                    display: flex;
+                    flex-direction: row;
+
+                    gap: 5px;
+
+                    img{
+                        height: 30px;
+                        width: auto;
+                    }
+
+                    p{
+                        font-size: 25px;
+                        font-weight: 500;
+                    }
+                }
+
+                .card-s2-maisproduto{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+
+                    color: #fff;
+
+                    gap: 15px;
+
+                    background-color: #01A325;
+
+                    height: 100%;
+
+                    border-radius: 10px;
+
+                    width: 200px;
+
+                    img{
+                        height: 35px;
+                        width: auto;
+                    }
+
+                    p{
+                        font-size: 25px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .tipos-listar{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 125px;
+
+            padding: 15px 0px;
+
+            border-bottom: 1px solid #fff;
+
+            img{
+                height: 25px;
+                width: auto;
+            }
+
+            p{
+                font-size: 20px;
+            }
+        }
+    }
 }

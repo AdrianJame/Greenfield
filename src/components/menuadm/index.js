@@ -12,7 +12,7 @@ export default function Menuadm(){
 
             <section className='menu-meio'>
                 <Link>Consultar Análise</Link>
-                <Link>Consultar EMAIL</Link>
+                <Link>Consultar Email</Link>
                 <Link>Tela Inicial</Link>
                 <Link>Status de Vendas</Link>
             </section>
