@@ -11,7 +11,12 @@ import Carrinho from './pages/carrinho';
 import Home from './pages/home';
 import Homeadm from './pages/home-adm';
 import Produtos from './pages/produtos';
+<<<<<<< HEAD
 import Produtosadm from './pages/produtosadm';
+=======
+import Statuspedido from './pages/statuspedido';
+
+>>>>>>> de0abfa2cd18bc1fc0c7be3d6cc3084b10e22841
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +31,11 @@ root.render(
         <Route path='/meuspedidos' element={<Meuspedidos/>}/>
         <Route path='/reclamacoes' element={<Reclamacoes/>} />
         <Route path='/carrinho' element={<Carrinho/>} />
+<<<<<<< HEAD
         <Route path='/produtosadm' element={<Produtosadm/>} />
+=======
+        <Route path='/statuspedidos' element={<Statuspedido/>}/>
+>>>>>>> de0abfa2cd18bc1fc0c7be3d6cc3084b10e22841
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
