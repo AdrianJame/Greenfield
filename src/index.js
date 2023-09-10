@@ -13,6 +13,7 @@ import Homeadm from './pages/home-adm';
 import Produtos from './pages/produtos';
 import Produtosadm from './pages/produtosadm';
 import Statuspedido from './pages/statuspedido';
+import Statusdevenda from './pages/statusvenda';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,6 +31,7 @@ root.render(
         <Route path='/carrinho' element={<Carrinho/>} />
         <Route path='/produtosadm' element={<Produtosadm/>} />
         <Route path='/statuspedidos' element={<Statuspedido/>}/>
+        <Route path='/statusvenda' element={<Statusdevenda/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

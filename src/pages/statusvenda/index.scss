@@ -1,0 +1,42 @@
+.statusvenda{
+    display: flex;
+    flex-direction: row;
+
+    .statusvenda-body{
+        display: flex;
+        flex-direction: column;
+
+        width: 80vw;
+
+        padding: 60px;
+
+        color: #fff;
+
+
+        background-color: #363636;
+
+       
+        h1{
+            font-size: 36px;
+            font-weight: 400;
+
+            margin-bottom: 75px;
+        }
+
+        .tipos-lista{
+            display: flex;
+            flex-direction: row;
+
+            gap: 100px;
+
+            padding: 15px 50px;
+
+            border-bottom: 1px solid #fff;
+
+            p{
+
+            }
+        }
+    }
+}
+
