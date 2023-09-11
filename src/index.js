@@ -14,6 +14,7 @@ import Produtos from './pages/produtos';
 import Produtosadm from './pages/produtosadm';
 import Statuspedido from './pages/statuspedido';
 import Statusdevenda from './pages/statusvenda';
+import Pagamento from './pages/pagamento';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -32,6 +33,7 @@ root.render(
         <Route path='/produtosadm' element={<Produtosadm/>} />
         <Route path='/statuspedidos' element={<Statuspedido/>}/>
         <Route path='/statusvenda' element={<Statusdevenda/>}/>
+        <Route path='/pagamento' element={<Pagamento/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
