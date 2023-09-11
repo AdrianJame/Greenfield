@@ -1,5 +1,6 @@
 import './index.scss';
 import Cabeadm from '../../components/cabecalhoadm'
+import Rodapeadmgreenfield from '../../components/rodapeadm';
 
 export default function Homeadm() {
   return (
@@ -41,9 +42,15 @@ export default function Homeadm() {
               </div>
 
           </div>
+       
+        
+
         </div>
+        
       </div>
+      <Rodapeadmgreenfield/>
     </div>
+    
   );
 }
 

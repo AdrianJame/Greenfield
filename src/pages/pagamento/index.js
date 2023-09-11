@@ -1,18 +1,16 @@
 import './index.scss';
-import Cabesemdgd from '../../components/cabecalhosemdgd';
+import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
 
 export default function Pagamento(){
     return(
         <div className='pagamento'>
-            <Cabesemdgd/>
-
+            <Cabecalhocomlogin/>
 
             <div className='faixa1'>
                 
                     <h1>Pagamento</h1>
                 
-
                 <div className='caminho-pag'>
                     <div className='bolinha'>
                         <img src='./assets/images/image 180.svg'></img>
