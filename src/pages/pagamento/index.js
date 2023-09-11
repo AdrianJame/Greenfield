@@ -56,14 +56,14 @@ export default function Pagamento(){
                             Números do Cartão
                         </p>
 
-                        <input  placeholder="**** **** ****"></input>
+                        <input className='in' placeholder="**** **** ****"></input>
 
                         <p>
 
                             Nome do Titular
                         </p>
 
-                        <input placeholder="Nome completo"></input>
+                        <input className='in' placeholder="Nome completo"></input>
 
                         <p>
                             Validade do cartão
