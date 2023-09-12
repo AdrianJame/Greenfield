@@ -1,6 +1,7 @@
 import './index.scss'
 import Cabecalhocomlogin from '../../components/cabcomlogin'
 import RodapeGreenfield from '../../components/rodape'
+import { Link } from 'react-router-dom'
 
 export default function Logradouro () {
     return (
@@ -50,14 +51,27 @@ export default function Logradouro () {
             <div className='logradouro-e-total-pedido'>
 
                 <div className='logradouro'>
+                    
+                    <div className='line-1'>
+                        <input placeholder='Logradouro*' type='text'/>
+                    </div>
+                    
+                    <div className='line-2'>
+                        <input className='line-menor' placeholder='Número*' type='text' />
+                        <input className='line-maior' placeholder='Complemento*' type='text'/>
+                    </div>
+                    
+                    <div className='line-3'>
+                        <input placeholder='Referência' type='text' />
+                    </div>
+                    
+                    <div className='line-4'>
+                        <input placeholder='Bairro*' type='text' />
+                        <input placeholder='Cidade*' type='text' />
+                        <input placeholder='UF*' type='text' />
+                    </div>
 
-                    <input placeholder='Logradouro*' type='text'/>
-                    <input placeholder='Número*' type='text' />
-                    <input placeholder='Complemento*' type='text' />
-                    <input placeholder='Referência' type='text' />
-                    <input placeholder='Bairro*' type='text' />
-                    <input placeholder='Cidade*' type='text' />
-                    <input placeholder='UF*' type='text' />
+                    <Link>SALVAR ALTERAÇÕES</Link>
 
                 </div>
 

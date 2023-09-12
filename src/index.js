@@ -16,7 +16,7 @@ import Statuspedido from './pages/statuspedido';
 import Statusdevenda from './pages/statusvenda';
 import Pagamento from './pages/pagamento';
 import Logradouro from './pages/endereço';
-
+import Pag from './pages/opções-pagamento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,6 +36,7 @@ root.render(
         <Route path='/statusvenda' element={<Statusdevenda/>}/>
         <Route path='/pagamento' element={<Pagamento/>}/>
         <Route path='/endereço' element={<Logradouro/>}/>
+        <Route path='/formadepagamento' element={<Pag/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
