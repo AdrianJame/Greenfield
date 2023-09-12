@@ -42,7 +42,7 @@ export default function Produtos(){
 
                         <Slide index={1}>
                             <div>
-                                <img src='/assets/images/logocolorida.svg'/>
+                                <img src='/assets/images/cortador.svg'/>
                                 <p>v</p>
                                 <h6>12121 <span>333</span></h6>
                             </div>
