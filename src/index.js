@@ -17,6 +17,8 @@ import Statusdevenda from './pages/statusvenda';
 import Pagamento from './pages/pagamento';
 import Logradouro from './pages/endereço';
 import Pag from './pages/opções-pagamento';
+import Cadastro from './pages/cadastro';
+import Login from './pages/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,6 +39,8 @@ root.render(
         <Route path='/pagamento' element={<Pagamento/>}/>
         <Route path='/endereço' element={<Logradouro/>}/>
         <Route path='/formadepagamento' element={<Pag/>}/>
+        <Route path='/cadastro' element={<Cadastro/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
