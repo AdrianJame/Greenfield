@@ -15,7 +15,7 @@
     background-color: #fff;
 
 
-img{
+    img{
         height: 80%;
         width: auto;
     }
@@ -42,7 +42,8 @@ img{
 
             background-color: #f6f6f6;
 
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             height: 50px;
 
             gap: 10px;
@@ -104,5 +105,84 @@ img{
         transform:translate(0px, -7px);
 
         border: none;
+    }
+
+
+    @media(max-width: 760px){
+        .meio-cabecalho{
+            gap: 10px;
+            margin: 0px 10px;
+
+            p{
+                font-size: 16px;
+            }
+
+            section{
+
+            }
+        }
+    }
+
+    @media(max-width: 550px){
+        .meio-cabecalho{
+            gap: 10px;
+            margin: 0px 10px;
+
+            p{
+                font-size: 16px;
+            }
+
+            section{
+
+                max-width: 180px;
+            }
+        }
+    }
+
+    @media(max-width: 484px){
+
+        padding: 0px 10px;
+
+        .meio-cabecalho{
+            width: 100%;
+            max-width: 140px;
+
+            padding-left: 0px;
+
+            input{
+                display: none;
+            }
+
+            section{
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+            }
+        }
+
+        a{
+            width: 80px;
+        }
+    }
+}
+
+@media(max-width: 330px){
+    img{
+        height: 50px !important;
+        width: auto;
+    }
+
+    .meio-cabecalho{
+        img{
+            height: 20px !important;
+        }
+
+        section{
+            padding: 0px !important;
+        }
+    }
+    
+    a{
+        width: 60px !important;
     }
 }

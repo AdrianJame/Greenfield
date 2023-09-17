@@ -8,9 +8,9 @@ export default function Cabeadm(){
         <header className='cabeadm'>
 
             <section className='cabeadm-p1'>
-                <img className='logo' src='/assets/images/logogreenfield.svg'/>
+                <img className='logo' src='/assets/images/logobranca.svg'/>
 
-                <h1>BEM VINDO </h1>
+                <h1>BEM VINDO PEDRO HENRIQUE</h1>
             </section>
 
             <section className='cabeadm-p2'>
