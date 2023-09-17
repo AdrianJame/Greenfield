@@ -1,7 +1,8 @@
 .Homeadm{
+    
     background-color: #3a3a3b;
-
-
+    width: 100%;
+    height: 120vh;
 
     .centro{
     width: 100%;
@@ -19,7 +20,6 @@
         height: 450px;
         gap: 30px;
 
-
         .faixa1{
             display: flex;
             width: 600px;
@@ -27,8 +27,6 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-
-
         }
 
         .card{
@@ -52,7 +50,6 @@
             h1{
                 font-size:10px ;
             }
-            
         }
 
         .faixa2{
@@ -66,8 +63,5 @@
         }
     }
     
-
     }
-
-
 }
