@@ -8,7 +8,9 @@
 
     height: 15vh;
 
-    padding-right: 10px;
+    padding-right: 20px;
+
+    padding-left: 20px;
 
     border-bottom: 3px solid #fff;
 
@@ -16,10 +18,14 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        width: 100%;
+        max-width: 700px;
         
         .logo{
-            height: 100px;
-            width: auto;
+            max-width: 100px;
+            width: 100%;
+            height: auto;
 
             margin-right: 20px;
         }
@@ -92,4 +98,63 @@
     }
 
 
+    @media(max-width: 1000px){
+        .cabeadm-p1{  
+            .logo{
+                margin-right: 0px;
+
+                width: 90px;
+            }
+    
+            h1{
+                font-size: 16px;
+    
+                color: #fff;
+            }
+        }
+    }
+
+    @media(max-width: 650px){
+        .cabeadm-p1{  
+            margin-right: 20px;
+            .logo{
+                margin-right: 0px;
+            }
+    
+            h1{
+                font-size: 16px;
+    
+                color: #fff;
+            }
+        }
+    }
+
+    @media(max-width: 526px){
+        .cabeadm-p1{  
+            margin-right: 20px;
+            .logo{
+                margin-right: 0px;
+            }
+    
+            h1{
+                display: none;
+            }
+        }
+    }
+
+    @media(max-width: 526px){
+        padding: 5px;
+        .cabeadm-p1{  
+            margin-right: 10px;
+            .logo{
+                margin-right: 0px;
+            }
+        }
+
+        .cabeadm-p2{  
+            margin-right: 5px;
+
+            gap: 10px;
+        }
+    }
 }
