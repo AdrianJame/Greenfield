@@ -12,7 +12,6 @@
 
         color: #fff;
 
-
         background-color: #363636;
 
         h1{
@@ -173,6 +172,51 @@
 
             p{
                 font-size: 20px;
+
+                width: 86px;
+            }
+        }
+
+        .listarprodutos{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            padding: 60px 0px;
+
+            gap: 125px;
+
+            border-bottom: 2px solid #fff ;
+
+            color: #fff;
+
+            p{
+                text-align: center;
+                font-size: 16px;
+
+                width: 86px;
+            }
+
+            img{
+                width: 25px;
+                height: 25px;
+            }
+
+            .editarexcluir{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                font-size: 16px;
+
+                width: 70px;
+
+                cursor: pointer;
+
+                img{
+                    height: 20px;
+                    width: auto;
+                }
             }
         }
     }

@@ -1,6 +1,10 @@
 import './index.scss'
 import Menuadm from '../../components/menuadm'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function Produtosadm(){
 
@@ -11,9 +15,30 @@ const[listar, setListar] = useState([]);
         setListar(r.data);
     }
 
-    useEffect(() => {
-        Listarprodutos()
-      }, [])
+useEffect(() => {
+    Listarprodutos()
+}, [])
+
+async function Deletar(id){
+    confirmAlert({
+      title: 'PRODUTO',
+      message: 'Tem certeza que deseja remover?',
+      buttons: [
+        {
+          label: 'Sim',
+          onClick: async () => {
+            let r = await axios.delete('http://localhost:5000/deletarproduto/' + id);
+            alert('Produto removido');
+            Listarprodutos();
+          }
+        },
+        {
+          label: 'Não'
+        }
+      ]
+    });
+    
+  } 
 
     return(
         <div className='produtosadm'>
@@ -57,23 +82,22 @@ const[listar, setListar] = useState([]);
                     <p>Categoria</p>
                     <p>estoque</p>
                     <p>preço</p>
-                    <p>catálogo</p>
                 </div>
+
+                {listar.map(item => 
+                    <div className='listarprodutos'>
+                        <img src=''/>
+                        
+                        <p>{item.nm_produto}</p>
+                        <p>{item.nm_categoria}</p>
+                        <p>{item.vl_preco}</p>
+                        <p>{item.vl_preco}</p>
+
+                        <p  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></p>
+                        <p onClick={() => Deletar(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
+                    </div> 
+                )}
             </section>
-
-            {listar.map(item => 
-                <div className=''>
-                    <img src=''/>
-                    <img src=''/>
-                    <p>{item.nm_produto}</p>
-                    <p>{item.nm_categoria}</p>
-                    <p>{item.vl_preco}</p>
-                    <p>{item.vl_preco}</p>
-
-                    <p>Editar <img src='/assets/images/'/></p>
-                    <p>Editar <img src='/assets/images/'/></p>
-                </div> 
-            )}
         </div>
     )
 }
