@@ -28,13 +28,10 @@ async function Salvar(){
         Limpar()
 
     }
-
+    
     catch(err){
         setErro(err.response.data.erro)
       }
-    
-
-
 }
 
 function Limpar(){

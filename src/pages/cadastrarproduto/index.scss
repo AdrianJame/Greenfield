@@ -1,0 +1,259 @@
+.page-cadastro-adm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+    height: 180vh;
+
+    background-color: #363636;
+
+    .session-01 {
+        display: flex;
+        flex-direction: column;
+
+
+        background-color: #1F2023;
+
+        width: 50vw;
+        height: 70vh;
+
+
+        border-radius: 5px;
+        
+
+        .cabecalho-cadastro-produtos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 15px;
+
+            h1 {
+                color: #fff;
+                font-family: 'Oswald', sans-serif;
+            }
+        }
+
+        .session-01-conteudo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            gap: 200px;
+
+
+            .conteudo-esquerda {
+                display: flex;
+                flex-direction: column;
+
+                
+                
+    
+                .imagem-com-fundo-escuro {
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    background-color: #131313;
+                    
+                    width: 15vw;
+                    height: 32vh;
+    
+                    border-radius: 5px;
+                }
+                
+                .imagens-adicionais {
+    
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    margin-top: 20px;
+                    
+
+                    .imagem-com-fundo-escuro-pequeno {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        background-color: #131313;
+                        
+                        width: 5vw;
+                        height: 10vh;
+    
+                        border-radius: 5px;
+    
+                        margin: 10px;
+                    }
+    
+                }
+                
+            }
+
+            .conteudo-direita {
+                display: flex;
+                flex-direction: column;
+
+                margin-bottom: 200px;
+
+                .linha {
+
+                    align-items: center;
+                    
+                    
+                    .risco {
+                     height: 1px;
+                     width: 350px;
+                     background-color: #d9d9d9;
+                    }
+                    
+                    
+                    input {
+                        border: none;
+                        
+                        background-color: transparent;
+                        color: #fff;
+    
+                        padding: 0px 10px;
+    
+                        width: 100%;
+                        max-width: 335px !important;
+    
+                        margin-bottom: 10px;
+                        
+                    }
+    
+                    input:focus {
+                        box-shadow: 0;
+                        outline: 0;
+    
+                    }
+    
+                }
+
+            }
+        }
+
+    }
+
+    .line {
+        height: 1px;
+        width: 938px;
+        background-color: #d9d9d9;
+        margin-top: 50px;
+    }
+
+    .session-02 {
+        display: flex;
+        flex-direction: column;
+        
+        margin-top: 50px;
+
+        h1 {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+        }
+
+        .session-02-conteudo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+    
+            .desc-produto {
+
+                input {
+                    background-color: #1F2023;
+
+                    width: 50vw;
+                    height: 30vh;
+
+                    border-radius: 5px;
+                    border: none;
+                    
+                    color: #fff;
+    
+                    padding: 0px 10px;
+    
+                }
+
+            }
+
+        }
+    }
+
+    .session-03 {
+        display: flex;
+        flex-direction: column;
+        
+        margin-top: 50px;
+
+        h1 {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+        }
+
+        .session-03-conteudo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+    
+            .desc-produto {
+
+                input {
+                    background-color: #1F2023;
+
+                    width: 50vw;
+                    height: 30vh;
+
+                    border-radius: 5px;
+                    border: none;
+                    
+                    color: #fff;
+    
+                    padding: 0px 10px;
+    
+                }
+
+            }
+
+        }
+    }
+
+    .botao-salvar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+        button {
+            margin-top: 40px;
+            
+            border-radius: 10px;
+            background: linear-gradient(90deg, #009020 0%, #000 100%);
+            color: #fff;
+            
+            padding: 10px 50px;
+
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            
+            border: none;
+            cursor: pointer;
+
+        }
+    }
+}
