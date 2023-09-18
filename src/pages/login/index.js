@@ -2,27 +2,27 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
+import LoadingBar from "react-top-loading-bar";
 
 export default function Login() {
-  const [nome, setNome] = useState('');
+
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
 
   const navigate = useNavigate();
-
+  const loadingBarRef = useRef(null);
 
   async function entrar() {
     setCarregando(true);
     setErro('');
 
     try {
-      const response = await axios.get('http://localhost:5000/login/cliente');
+      const response = await axios.get('http://localhost:5000/logincliente');
       const credencial = response.data;
 
-
-      if (email === credencial.email && nome === credencial.nome && senha === credencial.senha) {
+      if ( email === credencial.email && senha === credencial.senha) {
         // Redirect to the admin home page on successful login
         navigate('/homeadm');
 
@@ -38,6 +38,7 @@ export default function Login() {
   }
     return(
         <div className='pagina-login'>
+          <LoadingBar color='#f11946' ref={loadingBarRef} />
             <div className='meio'>
 
                 <div className='esquerda'>
@@ -64,7 +65,7 @@ export default function Login() {
                     </div>
 
                     <div className='botao'>
-                            <button onClick={entrar}>Entrar</button>
+                            <button onClick={entrar} disabled={carregando}>Entrar</button>
                             <p>{erro}</p>
                     </div>
 
