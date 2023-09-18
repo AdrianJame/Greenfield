@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 export default function Menuadm(){
 
-    
+    const[listarnome, setListarnome] = useState([]);
+    const[listaremail, setListaremail] = useState([]);
+
+    async function Nome(){
+        let r = await axios.get('http://localhost:5000/loginadm');
+        setListarnome(r.data.nome);
+    }
+
+    async function Nome(){
+        let r = await axios.get('http://localhost:5000/loginadm');
+        setListaremail(r.data.email);
+    }
+
+    useEffect(() => {
+        Nome()
+    }, [])
 
     return(
         <div className='menuadm'>

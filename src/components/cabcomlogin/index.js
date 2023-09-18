@@ -18,7 +18,7 @@ export default function Cabecalhocomlogin(){
                 </section>
             </div>
 
-                <Link>Login</Link>
+                <Link to={'/login'}>Login</Link>
         </header>
     )
 }

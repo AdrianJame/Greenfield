@@ -20,6 +20,8 @@ useEffect(() => {
     Listarprodutos()
 }, [])
 
+
+
 async function Deletar(id){
     confirmAlert({
       title: 'PRODUTO',

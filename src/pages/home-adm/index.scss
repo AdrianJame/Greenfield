@@ -32,13 +32,18 @@
         .card{
             width: 270px;
             height: 150px;
+
             background-color: #5c5c5c;
+
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+
             color: aliceblue;
+
+            text-decoration: none;
 
             img{
                 position: relative;

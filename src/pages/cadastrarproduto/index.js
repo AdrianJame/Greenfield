@@ -7,6 +7,10 @@ import axios from 'axios';
 
 export default function CadatroProdutoADM () {
     const[categorias, setCategorias] = useState([])
+    const[info, setInfo] = useState([])
+
+
+    const[idinfo, setIdinfo] = useState('')
 
     const[nome, setNome] = useState('');
     const[fabricante, setFabricante] = useState('');
@@ -18,6 +22,10 @@ export default function CadatroProdutoADM () {
     const [erro, setErro] = useState('')
     const[descricao, setDescricao] = useState('')
 
+    const[dimensoes, setDimensoes] = useState('')
+    const[material, setMaterial] = useState('')
+    const[extra, setExtra] = useState('')
+
     async function alterarproduto (item){
         setNome(item.nm_produto)
         setFabricante(item.ds_fabricante)
@@ -26,17 +34,47 @@ export default function CadatroProdutoADM () {
         setGarantia(item.nr_garantia)
         setDescricao(item.ds_produto)
     }
-    
 
 
     async function Buscarcategorias(){
         let r = await axios.get('http://localhost:5000/categoria')
         setCategorias(r.data)
+
+        setIdinfo(r.data.id_informacoes_produto)
+    }
+
+    async function Buscarinfo(){
+        let r = await axios.get('http://localhost:5000/info')
+        setInfo(r.data)
+        setIdinfo(r.data.id_informacoes_produto)
     }
 
     useEffect(() => {
         Buscarcategorias()
+        Buscarinfo()
       }, [])
+
+      async function Salvarinfo(){
+        try{
+            let infor = {
+                material: material,
+                dimensoes: dimensoes,
+                inforextra: extra
+            }
+
+            if(id == 0){
+                let x = await axios.post('http://localhost:5000/info', infor)
+                setErro('INFO adicionado')
+
+                setIdinfo(x.data.id_informacoes_produto)
+            }
+
+        }
+
+        catch(err){
+            setErro(err.response.data.erro)
+          }
+      }
 
     async function Salvar(){
         try{
@@ -47,13 +85,13 @@ export default function CadatroProdutoADM () {
                 preco: preco,
                 estoque: estoque,
                 garantia: garantia,
-                descricao: descricao
+                descricao: descricao,
+                infoproduto: idinfo,
             }
 
             if(id == 0){
                 let r = await axios.post('http://localhost:5000/produtos', produto)
                 setErro('Produto adicionado')
-
             }
 
             else if(id != 0){
@@ -178,20 +216,21 @@ export default function CadatroProdutoADM () {
                     <h1>INFORMAÇÕES DO PRODUTO</h1>
 
                     <div className='session-03-conteudo'>
-                        
-                        <div className='desc-produto'>
-                            <input type="text" placeholder="Material:"></input>
-                            <input type="text" placeholder="Dimensões:"></input> 
-                            <input type="text" placeholder="Informações Extras:"></input> 
-                        </div>
-
+                            <div className='desc-produto'>
+                                <input value={material} onChange={e => setMaterial(e.target.value)} type="text" placeholder="Material:"></input>
+                                <input value={dimensoes} onChange={e => setDimensoes(e.target.value)} type="text" placeholder="Dimensões:"></input> 
+                                <input value={extra} onChange={e => setExtra(e.target.value)} type="text" placeholder="Informações Extras:"></input> 
+                            </div>
                     </div>
 
                 </div>
 
            
                 <div className='botao-salvar'>
-                    <button onClick={Salvar}>Salvar</button>
+                     <button onClick={Salvar} >Salvar</button>
+                </div>
+                <div className='botao-salvar'>
+                     <button onClick={Salvarinfo} >Salvarinfo</button>
                 </div>
 
                 <p className='erro'>{erro}</p>
