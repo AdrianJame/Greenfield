@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import { Link } from 'react-router-dom';
 
 export default function Produtosadm(){
 
@@ -66,11 +67,11 @@ async function Deletar(id){
                             <p>Categorias</p>
                         </section>
 
-                        <section className='card-s2-maisproduto'>
+                        <Link to={'/cadastroproduto'} className='card-s2-maisproduto'>
                             <img src='/assets/images/maisproduto.svg'/>
                            
                             <p>Produto</p>
-                        </section>
+                        </Link>
                     </div>
                 </div>
 

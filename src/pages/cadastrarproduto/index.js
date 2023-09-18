@@ -1,7 +1,76 @@
+import { useEffect, useState } from 'react'
 import './index.scss'
+import axios from 'axios';
+
+
 
 
 export default function CadatroProdutoADM () {
+    const[categorias, setCategorias] = useState([])
+
+    const[nome, setNome] = useState('');
+    const[fabricante, setFabricante] = useState('');
+    const[categoriaselecionada, setCategoriaselecionada] = useState('')
+    const[preco, setPreco] = useState(0);
+    const[estoque, setEstoque] = useState(0);
+    const[garantia, setGarantia] = useState(0);
+    const [id, setId] = useState(0);
+    const [erro, setErro] = useState('')
+    const[descricao, setDescricao] = useState('')
+    
+
+    async function Buscarcategorias(){
+        let r = await axios.get('http://localhost:5000/categoria')
+        setCategorias(r.data)
+    }
+
+    useEffect(() => {
+        Buscarcategorias()
+      }, [])
+
+    async function Salvar(){
+        try{
+            let produto = {
+                nome: nome,
+                fabri: fabricante,
+                categoria: categoriaselecionada,
+                preco: preco,
+                estoque: estoque,
+                garantia: garantia,
+                descricao: descricao
+            }
+
+            if(id == 0){
+                let r = await axios.post('http://localhost:5000/produtos', produto)
+                setErro('Produto adicionado')
+
+            }
+
+            else if(id != 0){
+                let r = await axios.put('http://localhost:5000/produtos/' + id, produto);
+                setErro('Produto alterado')
+            }
+
+            limpar()
+        }
+
+        catch(err){
+            setErro(err.response.data.erro)
+          }
+    }
+    
+    async function limpar(){
+        setNome('')
+        setFabricante('')
+        setCategoriaselecionada('')
+        setPreco(0)
+        setEstoque(0)
+        setGarantia(0)
+        setDescricao('')
+        setId(0)
+    }
+
+
     return (
         <div className='page-cadastro-adm'>
             
@@ -35,32 +104,37 @@ export default function CadatroProdutoADM () {
                     <div className='conteudo-direita'>
                         
                         <div className="linha">
-                            <input type="text" placeholder="Nome do Produto"></input> 
+                            <input value={nome} onChange={e => setNome(e.target.value)} type="text" placeholder="Nome do Produto"></input> 
                             <div className="risco"></div>                      
                         </div>
 
                         <div className="linha">
-                            <input type="text" placeholder="Fabricante"></input> 
+                            <input value={fabricante} onChange={e => setFabricante(e.target.value)} type="text" placeholder="Fabricante"></input> 
                             <div className="risco"></div>                      
                         </div>
 
                         <div className="linha">
-                            <input type="text" placeholder="Categoria"></input> 
+                            <p>categoria</p>
+                                <select value={categoriaselecionada} onChange={e => setCategoriaselecionada(e.target.value)}>
+                                    <option>selecione</option>
+                                    {categorias.map(item =>
+                                        <option value={item.id_categoria}>{item.nm_categoria}</option>    
+                                        )}
+                                </select>                  
+                        </div>
+
+                        <div className="linha">
+                            <input value={preco} onChange={e => setPreco(e.target.value)} type="text" placeholder="Preço"></input> 
                             <div className="risco"></div>                      
                         </div>
 
                         <div className="linha">
-                            <input type="text" placeholder="Preço"></input> 
+                            <input value={estoque} onChange={e => setEstoque(e.target.value)} type="text" placeholder="Estoque"></input> 
                             <div className="risco"></div>                      
                         </div>
 
                         <div className="linha">
-                            <input type="text" placeholder="Estoque"></input> 
-                            <div className="risco"></div>                      
-                        </div>
-
-                        <div className="linha">
-                            <input type="text" placeholder="Garantia"></input> 
+                            <input value={garantia} onChange={e => setGarantia(e.target.value)} type="text" placeholder="Garantia"></input> 
                             <div className="risco"></div>                      
                         </div>
 
@@ -79,7 +153,7 @@ export default function CadatroProdutoADM () {
                 <div className='session-02-conteudo'>
                     
                     <div className='desc-produto'>
-                        <input></input>
+                        <input value={descricao} onChange={e => setDescricao(e.target.value)}></input>
                     </div>
                 
                 </div>
@@ -107,8 +181,10 @@ export default function CadatroProdutoADM () {
 
            
                 <div className='botao-salvar'>
-                    <button>Salvar</button>
+                    <button onClick={Salvar}>Salvar</button>
                 </div>
+
+                <p className='erro'>{erro}</p>
 
         </div>
     )
