@@ -17,7 +17,17 @@ export default function CadatroProdutoADM () {
     const [id, setId] = useState(0);
     const [erro, setErro] = useState('')
     const[descricao, setDescricao] = useState('')
+
+    async function alterarproduto (item){
+        setNome(item.nm_produto)
+        setFabricante(item.ds_fabricante)
+        setPreco(item.vl_preco)
+        setEstoque(item.qtd_estoque)
+        setGarantia(item.nr_garantia)
+        setDescricao(item.ds_produto)
+    }
     
+
 
     async function Buscarcategorias(){
         let r = await axios.get('http://localhost:5000/categoria')
