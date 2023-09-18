@@ -1,6 +1,41 @@
-import './index.scss'
+import React, { useState, useRef } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./index.scss";
 
-export default function Login(){
+export default function Login() {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [erro, setErro] = useState('');
+  const [carregando, setCarregando] = useState(false);
+
+  const navigate = useNavigate();
+
+
+  async function entrar() {
+    setCarregando(true);
+    setErro('');
+
+    try {
+      const response = await axios.get('http://localhost:5000/login/cliente');
+      const credencial = response.data;
+
+
+      if (email === credencial.email && nome === credencial.nome && senha === credencial.senha) {
+        // Redirect to the admin home page on successful login
+        navigate('/homeadm');
+
+      } else {
+        setErro('⚠ Login ou senha incorretos');
+      }
+    } catch (error) {
+      console.error('⚠ Erro ao verificar as credenciais:', error);
+      setErro('⚠ Erro ao verificar as credenciais. Tente novamente mais tarde.');
+    } finally {
+      setCarregando(false);
+    }
+  }
     return(
         <div className='pagina-login'>
             <div className='meio'>
@@ -18,18 +53,19 @@ export default function Login(){
 
                         <div className='input'>
                             <img />
-                            <input placeholder='E-mail ou Nome de Usuário' />
+                            <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
                         </div>
 
                         <div className='input'>
                             <img />
-                            <input placeholder='Senha' />
+                            <input placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                         </div>
 
                     </div>
 
                     <div className='botao'>
-                            <button>Entrar</button>
+                            <button onClick={entrar}>Entrar</button>
+                            <p>{erro}</p>
                     </div>
 
                     <div className='linha'></div>

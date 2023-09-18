@@ -19,7 +19,7 @@ export default function LoginADM() {
     setErro('');
 
     try {
-      const response = await axios.get('http://localhost:5000/login');
+      const response = await axios.get('http://localhost:5000/loginadm');
       const credencial = response.data;
 
       if (nome === credencial.nome && email === credencial.email && senha === credencial.senha) {

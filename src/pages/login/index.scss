@@ -53,6 +53,8 @@
         align-items: center;
         justify-content: center;
         margin-top: 40px;
+        flex-direction: column;
+        color: aliceblue;
 
         button{
             background: linear-gradient(180deg, #185708 53.94%, #000 100%);
