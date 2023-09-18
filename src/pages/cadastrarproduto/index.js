@@ -88,8 +88,7 @@ export default function CadatroProdutoADM () {
 
             <div className='line'></div>
 
-            <div className='session-3'>
-            
+           
                 <div className='session-03'>
 
                     <h1>INFORMAÇÕES DO PRODUTO</h1>
@@ -97,18 +96,19 @@ export default function CadatroProdutoADM () {
                     <div className='session-03-conteudo'>
                         
                         <div className='desc-produto'>
-                            <input></input>
+                            <input type="text" placeholder="Material:"></input>
+                            <input type="text" placeholder="Dimensões:"></input> 
+                            <input type="text" placeholder="Informações Extras:"></input> 
                         </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
-            <div className='botao-salvar'>
-                <button>Salvar</button>
-            </div>
+           
+                <div className='botao-salvar'>
+                    <button>Salvar</button>
+                </div>
 
         </div>
     )
