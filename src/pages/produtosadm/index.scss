@@ -128,6 +128,7 @@
                     flex-direction: row;
                     align-items: center;
                     justify-content: center;
+                    text-decoration: none;
 
                     color: #fff;
 
@@ -212,6 +213,8 @@
                 width: 70px;
 
                 cursor: pointer;
+                text-decoration: none;
+                color: white;
 
                 img{
                     height: 20px;
@@ -219,5 +222,15 @@
                 }
             }
         }
+    }
+
+    .erro{
+        color: white;
+        font-size: 15px;
+        align-self: center;
+    }
+
+    .categoriap{
+        color: white;
     }
 }
