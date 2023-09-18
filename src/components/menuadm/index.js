@@ -3,6 +3,8 @@ import './index.scss'
 
 export default function Menuadm(){
 
+    
+
     return(
         <div className='menuadm'>
             <section className='menu-cabe'>
