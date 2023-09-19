@@ -86,7 +86,6 @@ export default function CadatroProdutoADM () {
                 estoque: estoque,
                 garantia: garantia,
                 descricao: descricao,
-                infoproduto: idinfo,
             }
 
             if(id == 0){
