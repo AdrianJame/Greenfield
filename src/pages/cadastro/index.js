@@ -8,7 +8,7 @@ const[nome, setNome] = useState('');
 const[telefone, setTelefone] = useState('');
 const[cpf, setCpf] = useState('');
 const[senha, setSenha] = useState('');
-const[erro, setErro] = useState('')
+const[erro, setErro] = useState('');
 const[id, setId] = useState(0)
 
 
