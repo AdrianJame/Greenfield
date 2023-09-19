@@ -109,79 +109,68 @@
     }
 
     .faixa3{
+
+        background-color: #232323;
+        width: 100%;
+        height: 50vh;
+        color: #f6f6f6;
         display: flex;
         flex-direction: row;
-        width: 100vw;
-        height: 500px;
-        
-        
-        .faixa3-textos{
+        justify-content: space-between;
+
+        .faixa3-numeros-textos{
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 40px;
-            justify-content: end;
-            color: aliceblue;
-            width: 57.7VW;
-            border-top: 500px solid #232323;
-            border-right: 130px solid transparent;
-            height: 0px;
-            z-index: -1;
+            flex-direction: row;
+            width: 40%;
+            height: auto;
+            padding: 20px;
 
-            .faixa3-titulo{
-                
-                width: 500px;
-                
-                font-size: 20px;
-            }
 
-            .numeros-texto-faixa3{
-                width: 500px;
-                height: 400px;
+            
+
+            .faixa3-numeros{
                 display: flex;
-                flex-direction: row;
-                gap: 15px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 500px;
+                width: 100px;
 
-
-                .numeros{
-
-                    width: 50px;
-                    height: 400px;
-                    
-
-                    p{
-                        margin-bottom: 50px ;
-                        font-size: 50px;
-                    }
-
-                }
-
-                .text{
-                    width: 500px;
-                    height: 400px;
-                    
-
-                    p{
-                        margin-bottom: 50px;
-                        width: 470px;
-                    }
+                p{
+                    font-size: 100px;
                 }
             }
-        
+
+            .faixa3-textos{
+
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                width: 20%;
+
+                h1{
+                    width: 750px;
+                    font-size: 50px;
+                }
+    
+                p{
+                    width: 500px;
+                    font-size: 15px;
+                }
+
+            }
+
             
         }
 
         .faixa3-img{
-            width: 50VW;
-            
+            width: 50%;
+            height: auto;
 
-            img{
-                position: relative;
-                z-index: -2;
-                right: 17VW;
-                width: 140%;
-                max-width: 1200px;
-            }
+            img { width: 120%;max-width: 960px; height: auto;
+                 -webkit-clip-path: polygon(0 0, 0 0px,0px 0px, 0px 0px);
+                 clip-path: polygon(270px 0px, 0px 540px, 100% 540px, 1000px 0px); }
+            
         }
 
     }
@@ -196,36 +185,24 @@
     .faixa4{
         display: flex;
         flex-direction: row;
-        width: 100vw;
-        height: 500px;
+        width: 100%;
+        height: 50vh;
+        background-color: #232323;
+        justify-content: space-between;
 
 
         .faixa4-img{
-            
-            display:flex ;
-            
+            width: 50%;
+            height: auto;
 
-            img{
+            img { width: 120%;max-width: 960px; height: 700px;
                 
-                width: 150%;
-                max-width: 900px;
-                height: 100%;
-
-            }
+                 clip-path: polygon(0px 0px, 0px 540px, 0px 100%, 1200px 0px); }
+            
         }
 
         .faixa4-textos{
-            display: flex;
-            flex-direction: column;
-            color: aliceblue;
-            width: 85vw;
-            border-bottom: 500px solid #232323;
-            border-left: 145px solid transparent;
-            height: 0px;
-            z-index: 3;
-            align-items: center;
-            text-align: center;
-            justify-content: start;
+           
             
 
             h1{
