@@ -26,7 +26,7 @@ async function Salvar(){
         let r = await axios.post('http://localhost:5000/cliente/login', user)
         setErro('Cadastro feito com sucesso')
 
-        Limpar()
+        Limpar();
 
     }
     
