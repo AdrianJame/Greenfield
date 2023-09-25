@@ -18,20 +18,27 @@ export default function Login() {
     setCarregando(true);
     setErro('');
 
+    let user = {
+      email: email,
+      senha: senha
+  }
+
     try {
-      const response = await axios.get('http://localhost:5000/logincliente');
+      const response = await axios.post('http://localhost:5000/usuario/login', user);
       const credencial = response.data;
 
-      if ( email === credencial.email && senha === credencial.senha) {
+      if ( email != ''  && senha != '' ) {
         // Redirect to the admin home page on successful login
-        navigate('/homeadm');
+        navigate('/');
 
-      } else {
-        setErro('⚠ Login ou senha incorretos');
+      }
+       else if(email === undefined || senha === undefined){
+        setErro('⚠ Campo obrigatorio');
       }
     } catch (error) {
       console.error('⚠ Erro ao verificar as credenciais:', error);
-      setErro('⚠ Erro ao verificar as credenciais. Tente novamente mais tarde.');
+        setErro('⚠ Login ou senha incorretos');
+      
     } finally {
       setCarregando(false);
     }

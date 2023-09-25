@@ -18,11 +18,16 @@ export default function LoginADM() {
     setCarregando(true);
     setErro('');
 
+    let user = {
+      email: email,
+      senha: senha
+  }
+
     try {
-      const response = await axios.get('http://localhost:5000/loginadm');
+      const response = await axios.post('http://localhost:5000/adm/login', user);
       const credencial = response.data;
 
-      if (nome === credencial.nome && email === credencial.email && senha === credencial.senha) {
+      if (email != '' || senha != '') {
         // Redirect to the admin home page on successful login
         navigate('/homeadm');
 

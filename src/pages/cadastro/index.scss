@@ -66,11 +66,20 @@
         margin-top: 40px;
 
         button{
-            background: linear-gradient(91deg, #009020 4.71%, #000 94.34%);
+            background: linear-gradient(91deg, #009020 4.71%, #000 94.90%);
+
             border-radius: 50px;
             border: none;
             color: white;
             padding: 10px 20px;
+
+            cursor: pointer;
+        
+            transition: 1s;
+        }
+        
+        button:hover{
+            transform: translate(0px, -5px);
         }
     }
 

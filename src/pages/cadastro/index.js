@@ -23,10 +23,10 @@ async function Salvar(){
             senha: senha
         }
 
-        let r = await axios.post('http://localhost:5000/cliente/login', user)
+        let r = await axios.post('http://localhost:5000/cliente/cadastro', user)
         setErro('Cadastro feito com sucesso')
 
-        Limpar();
+        Limpar()
 
     }
     
@@ -91,7 +91,7 @@ function Limpar(){
                         </div>
 
                         <div className='botao'>
-                            <button onClick={Salvar}>Cadastrar-se</button>
+                        <button onClick={Salvar}>Cadastrar-se</button>
                         </div>
 
                         <p className='erro'>{erro}</p>

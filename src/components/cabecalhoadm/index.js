@@ -6,15 +6,6 @@ import { useEffect, useState } from 'react';
 export default function Cabeadm(){
     const[listar, setListar] = useState();
 
-    async function Nome(){
-        let r = await axios.get('http://localhost:5000/loginadm');
-        setListar(r.data.nome);
-    }
-
-    useEffect(() => {
-        Nome()
-    }, [])
-
 
     return(
         <header className='cabeadm'>
