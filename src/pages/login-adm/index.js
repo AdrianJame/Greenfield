@@ -4,6 +4,7 @@ import LoadingBar from "react-top-loading-bar";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
 
+
 export default function LoginADM() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -44,6 +45,7 @@ export default function LoginADM() {
 
   return (
     <div className="principal">
+      
       <LoadingBar color='#f11946' ref={loadingBarRef} />
 
       <div className="card-login">

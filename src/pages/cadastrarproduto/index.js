@@ -191,7 +191,7 @@ export default function CadatroProdutoADM () {
 
             </div>
 
-            <div className='line'></div>
+            <div className='line'>.</div>
 
             <div className='session-02'>
 
@@ -207,7 +207,7 @@ export default function CadatroProdutoADM () {
 
             </div>
 
-            <div className='line'></div>
+            <div className='line'>.</div>
 
            
                 <div className='session-03'>
@@ -228,10 +228,6 @@ export default function CadatroProdutoADM () {
                 <div className='botao-salvar'>
                      <button onClick={Salvar} >Salvar</button>
                 </div>
-                <div className='botao-salvar'>
-                     <button onClick={Salvarinfo} >Salvarinfo</button>
-                </div>
-
                 <p className='erro'>{erro}</p>
 
         </div>
