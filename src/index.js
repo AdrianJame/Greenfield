@@ -20,7 +20,6 @@ import Pag from './pages/opções-pagamento';
 import Cadastro from './pages/cadastro';
 import Login from './pages/login';
 import CadatroProdutoADM from './pages/cadastrarproduto';
-import Menuadm from './components/menuadm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -44,7 +43,6 @@ root.render(
         <Route path='/cadastro' element={<Cadastro/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/cadastroproduto' element={<CadatroProdutoADM/>}/>
-        <Route path='/menu' element={<Menuadm/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
