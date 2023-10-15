@@ -1,10 +1,10 @@
 .minhaconta{
     overflow: hidden;
+    background-color: #f6f6f6;
     
 
     .faixa1{
-        background-color: #f6f6f6;
-        height: 90vh;
+        
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,5 +50,58 @@
         gap: 30px;
         
     }
+
+    @media(max-width:991px) {
+        .card{
+            max-width: 160px;
+            width: 100%;
+
+            height: 160px;
+
+            .imagemcard{
+                width: 60px;
+            }
+        }
+
+        .agrup p{
+            font-size: 20px;
+            max-width: 125px;
+        }
+    }
+
+    @media(max-width:563px) {
+
+        
+        .linha{
+           flex-direction: column;
+           gap: 0px;
+        }
+    
+        .card{
+            display: flex;
+            
+        }
+
+        .faixa1 > h1{
+            margin-top: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+
+            
+        }
+
+        .faixa1{
+            align-items: center;
+            justify-content: start;
+            gap: 0px;
+        }
+
+        
+        
+    }
+
+
 }
+
+
 
