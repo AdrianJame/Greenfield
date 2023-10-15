@@ -4,9 +4,12 @@ import RodapeGreenfield from '../../components/rodape'
 
 export default function Pag () {
     return (
+        
         <div className='page-forma-de-pagamento'>
+            
             <Cabecalhocomlogin/>
-            <h1>Pagamento</h1>
+            
+                <h1>Pagamento</h1>
 
                 <div className='status-pedido'>
 
@@ -25,25 +28,50 @@ export default function Pag () {
                     </div>
                 </div>
 
-                <div className='faixa-01'>
-                    
-                    <div className='conteudo-esquerda'>
-                        
-                        <div className='escolha-de-frete'>
-                            <img src='./assets/images/ping-verde.svg'/>
-                            <h1>FRETE</h1>
+                <div className='section-pagamento'>
+                
+                    <div className='sub-section-pagamento'>
+
+                        <div className='frete-e-pagamento'>
+                            
+                            <div className='cont-esq'>
+                                
+                                <div className='circle-verde'>
+                                    <img src='./assets/images/ping-verde.svg'/>
+                                </div>
+                                
+                                <div className='desc-frete'>
+                                    <p>Frete:</p>
+                                    <p>Entrega em até</p>
+                                </div>
+
+                            </div>
+
+                            <h1>FORMA DE PAGAMENTO</h1>
+
+                            <div className='cont-dir'>
+                                <a>Editar</a>
+                            </div>
+
                         </div>
 
-                        <h1>ESCOLHA A FORMA DE PAGAMENTO</h1>
-
-                        <div className='pagamento-card'>
-                            <img src=''/>
-                            <h1>PAGUE COM CARTÃO</h1>
+                        <div className='pagamento'>
+                            
                         </div>
 
                     </div>
+
+                    <div className='options-pagamento'>
+                        <img src='./assets/images/ping-verde.svg'/>
+                    </div>
+
                 </div>
 
+            <div className='rodape'>
+                <RodapeGreenfield/>
+            </div>
+            
+            
         </div>
     )
 }

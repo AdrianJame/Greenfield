@@ -45,7 +45,7 @@ export default function Logradouro () {
                 <div className='options-frete'>
                     
                 </div>
-
+                
             </div>
 
             <div className='logradouro-e-total-pedido'>
