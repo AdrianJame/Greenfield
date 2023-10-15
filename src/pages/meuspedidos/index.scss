@@ -124,5 +124,36 @@
 
     
 
+    @media(max-width: 1429px) {
+        .pagamento{
+            max-width: 750px;
+            width: 100%;
+        }
+
+        .pagar{
+            max-width: 320px;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1173px) {
+        .pagamento{
+            max-width: 550px;
+        }
+    }
+
+    @media (max-width: 981px) {
+        .pagar{
+            max-width: 220px;
+            width: 100%;
+        }
+
+        .pagamento{
+            max-width: 350px;
+        }
+        
+    }
+
+    
 
 }
