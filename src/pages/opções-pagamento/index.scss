@@ -2,7 +2,7 @@
     background-color: #f6f6f6;
 
     width: 100%;
-    height: 150vh;
+    height: 190vh;
 
     overflow: hidden;
 
@@ -59,55 +59,49 @@
         align-items: center;
         flex-direction: column;
         
+        width: 100vw;
+        height: 20vh;
+        margin-top: 200px;
 
-        .sub-section-pagamento {
-
-            display: flex;
-            justify-content: center;
-            align-items: start;
-            flex-direction: row;
-            gap: 50px;
+        
     
-            width: 100vw;
-            height: 20vh;
-            margin-top: 200px;
-    
-            .frete-e-pagamento {
+        .frete-e-pagamento {
                 
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+                
+            background-color: #fff;
+            width: 50vw;
+            height: 16vh;
+            padding: 50px;
+            margin-top: 50px;
+    
+            .cont-esq {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
                 align-items: center;
-                
-                background-color: #fff;
-                width: 50vw;
-                height: 16vh;
-                padding: 40px;
     
-                .cont-esq {
+                .circle-verde {
+                
                     display: flex;
-                    flex-direction: row;
                     align-items: center;
-    
-                    .circle-verde {
-                
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                    justify-content: center;
             
             
-                        background-color: #fff;
-                        border-radius: 100%;
+                    background-color: #fff;
+                    border-radius: 100%;
                         
-                        width: 70px;
-                        height: 70px;
+                    width: 70px;
+                    height: 70px;
             
                         
-                        border: 4px solid #29CD00;
+                    border: 4px solid #29CD00;
             
-                        img {
-                            width: 30px;
-                            height: 30px;
+                    img {
+                        width: 30px;
+                        height: 30px;
                         }
                     }
     
@@ -117,11 +111,7 @@
                     
                 }
     
-                h1 {
-                    margin-top: 300px;
-                    font-size: 20px;
-                    font-family: 'Oswald', sans-serif;
-                }
+                
     
                 .cont-dir {
     
@@ -136,37 +126,77 @@
                     }
                 }
             }
-    
-            .pagamento {
-    
-                background-color: #ffffff;
-        
-                width: 17vw;
-                height: 50vh;
-                border-radius: 10px;
-                
+
+            h1 {
+                font: 17px '';
+                font-family: 'Oswald', sans-serif;
             }
-    
-        }
 
-        .options-pagamento {
+            h1 {
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-family: 'Oswald', sans-serif;
+            }
+
+        .escolha-pagamento {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            
+                
             background-color: #fff;
-            width: 20vw;
+            width: 50vw;
             height: 16vh;
-            margin-top: 130px;
-            
+            padding: 50px;
+
+            .select-pagamento {
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+
+                .conteudo-pagamento-esq {
+                        
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        margin: 20px;
+                    }
+    
+                }
+                   
+            }
+
         }
-
-
+        
     }
 
-    .rodape{
-        margin-top: 130px;
-    }
+    .conclusão {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
+        margin-top: 200px;
+
+        .pagamento {
+
+            background-color: #ffffff;
+
+            width: 17vw;
+            height: 50vh;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            border-radius: 20px;
+
+        }
+    }
 }
