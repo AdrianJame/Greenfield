@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
+import storage from 'local-storage'
 import LoadingBar from "react-top-loading-bar";
 
 export default function Login() {
@@ -10,6 +11,11 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
+
+  useEffect(() => {
+    if(storage('usuario-logado'))
+      navigate('/')
+  }, [])
 
   const navigate = useNavigate();
   const loadingBarRef = useRef(null);
@@ -25,11 +31,12 @@ export default function Login() {
 
     try {
       const response = await axios.post('http://localhost:5000/usuario/login', user);
-      const credencial = response.data;
 
       if ( email != ''  && senha != '' ) {
         // Redirect to the admin home page on successful login
         navigate('/');
+        storage('usuario-logado', response)
+
 
       }
        else if(email === undefined || senha === undefined){

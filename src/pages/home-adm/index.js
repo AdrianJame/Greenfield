@@ -2,8 +2,33 @@ import './index.scss';
 import Cabeadm from '../../components/cabecalhoadm'
 import Rodapeadmgreenfield from '../../components/rodapeadm';
 import { Link } from 'react-router-dom';
+import storage from 'local-storage';
+import { useNavigate } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
 
 export default function Homeadm() {
+
+  const navigate = useNavigate();
+
+  function sairClick() {
+      confirmAlert({
+          title: 'ADM',
+          message: 'Tem certeza que deseja trocar de usuario?',
+          buttons: [
+            {
+              label: 'Sim',
+              onClick: async () => {
+                  navigate('/login-adm')
+                  storage.remove('adm-logado');
+              }
+            },
+            {
+              label: 'Não'
+            }
+          ]
+        });
+}
+
   return (
     <div className="Homeadm">
 
@@ -36,7 +61,7 @@ export default function Homeadm() {
                   <p>Confira os pedidos e altere-os</p>
               </Link>
 
-              <Link className='card'>
+              <Link className='card' onClick={sairClick}>
                   <img src='./assets/images/image 267.svg'></img>
                   <h2>SAIR</h2>
                   <p>Sair ou alterar de conta</p>

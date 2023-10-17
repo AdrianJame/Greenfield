@@ -18,7 +18,7 @@
 
     .card{
         background-color: white;
-        width: 304px;
+        width: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -40,7 +40,7 @@
     }
 
     .agrup p{
-        font-size: 30px;
+        font-size: 25px;
     }
     
     
@@ -75,10 +75,14 @@
         .linha{
            flex-direction: column;
            gap: 0px;
+
+           max-width: 563px;
+           width: 100%;
         }
     
         .card{
             display: flex;
+            min-width: 300px ; 
             
         }
 

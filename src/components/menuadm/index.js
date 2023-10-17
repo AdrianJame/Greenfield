@@ -1,26 +1,43 @@
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import './index.scss'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import storage from 'local-storage';
+import { confirmAlert } from 'react-confirm-alert';
+import { useNavigate } from 'react-router-dom';
 
 export default function Menuadm(){
 
-    const[listarnome, setListarnome] = useState([]);
-    const[listaremail, setListaremail] = useState([]);
+    const[nome, setNome] = useState('');
+    const[email, setEmail] = useState('');
 
-    async function Nome(){
-        let r = await axios.get('http://localhost:5000/loginadm');
-        setListarnome(r.data.nome);
-    }
-
-    async function Nome(){
-        let r = await axios.get('http://localhost:5000/loginadm');
-        setListaremail(r.data.email);
-    }
-
+    const navigate = useNavigate();
+    
     useEffect(() => {
-        Nome()
+            const usuariologado = storage('adm-logado');
+            setNome(usuariologado.data.nome)
+            setEmail(usuariologado.data.email)
     }, [])
+
+
+async function Trocar(){
+    confirmAlert({
+        title: 'ADM',
+        message: 'Tem certeza que deseja trocar de usuario?',
+        buttons: [
+          {
+            label: 'Sim',
+            onClick: async () => {
+                navigate('/login-adm')
+                storage.remove('adm-logado');
+            }
+          },
+          {
+            label: 'Não'
+          }
+        ]
+      });
+}
 
     return(
         <div className='menuadm'>
@@ -32,7 +49,7 @@ export default function Menuadm(){
             <section className='menu-meio'>
                 <Link>Consultar Análise</Link>
                 <Link>Consultar Email</Link>
-                <Link>Tela Inicial</Link>
+                <Link to={'/homeadm'    }>Home</Link>
                 <Link>Status de Vendas</Link>
             </section>
 
@@ -42,12 +59,12 @@ export default function Menuadm(){
                     <div className='img'>A</div>
 
                     <section>
-                        <h6>Adrian James dos Santos Cardoso</h6>
-                        <p>adrianjames@gmail.com</p>
+                        <h6>{nome}</h6>
+                        <p>{email}</p>
                     </section>
                 </div>
 
-                <Link>Alterar Usuário</Link>
+                <Link onClick={Trocar}>Alterar Usuário</Link>
             </section>
         </div>
     )

@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import LoadingBar from "react-top-loading-bar";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
+import storage from "local-storage";
 
 
 export default function LoginADM() {
@@ -15,22 +16,28 @@ export default function LoginADM() {
   const navigate = useNavigate();
   const loadingBarRef = useRef(null);
 
+  useEffect(() => {
+    if(storage('adm-logado'))
+      navigate('/homeadm')
+  }, [])
+
   async function entrar() {
     setCarregando(true);
     setErro('');
 
     let user = {
+      nome: nome,
       email: email,
       senha: senha
   }
 
     try {
       const response = await axios.post('http://localhost:5000/adm/login', user);
-      const credencial = response.data;
 
-      if (email != '' || senha != '') {
+      if (nome != '' || email != '' || senha != '') {
         // Redirect to the admin home page on successful login
         navigate('/homeadm');
+        storage('adm-logado', response)
 
       } else {
         setErro('⚠ Login ou senha incorretos');

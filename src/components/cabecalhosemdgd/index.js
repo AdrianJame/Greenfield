@@ -1,5 +1,6 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
+import storage from 'local-storage'
 
 
 export default function Cabesemdgd(){
@@ -18,7 +19,7 @@ export default function Cabesemdgd(){
                 </section>
             </div>
 
-                <Link> 
+                <Link to={storage('usuario-logado') ? '/carrinho' : '/login'}> 
                     <b>Carrinho</b>
                     <img src='/assets/images/carrinho.svg'/>
                 </Link>

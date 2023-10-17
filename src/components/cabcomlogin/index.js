@@ -1,5 +1,6 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
+import storage from 'local-storage'
 
 
 export default function Cabecalhocomlogin(){
@@ -18,7 +19,7 @@ export default function Cabecalhocomlogin(){
                 </section>
             </div>
 
-                <Link to={'/login'}>Login</Link>
+            <Link className={storage('usuario-logado') ? 'minhaconta' : ''} to={!storage('usuario-logado') ? '/login' : '/minhaconta'}>{storage('usuario-logado') ? 'Minha conta' : 'Logar'}</Link>
         </header>
     )
 }
