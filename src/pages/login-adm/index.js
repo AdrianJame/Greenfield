@@ -50,6 +50,11 @@ export default function LoginADM() {
     }
   }
 
+  function teclaEnter(e) {
+    if (e.key === 'Enter') {
+        entrar();
+    }}
+
   return (
     <div className="principal">
       
@@ -76,7 +81,7 @@ export default function LoginADM() {
 
           <div className="linha">
             <img src="./assets/images/image 221 (1).png" alt="Senha Icon" />
-            <input type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
+            <input type="password" onKeyUp={teclaEnter} placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
             <div className="risco"></div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import storage from 'local-storage';
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
+import { useEffect, useState } from 'react';
 
 export default function Homeadm() {
 
@@ -13,7 +14,7 @@ export default function Homeadm() {
   function sairClick() {
       confirmAlert({
           title: 'ADM',
-          message: 'Tem certeza que deseja trocar de usuario?',
+          message: 'Tem certeza que deseja sair da conta?',
           buttons: [
             {
               label: 'Sim',
@@ -28,6 +29,11 @@ export default function Homeadm() {
           ]
         });
 }
+
+useEffect(() => {
+  const usuariologado = !storage('adm-logado');
+  navigate('/login-adm')
+}, [])
 
   return (
     <div className="Homeadm">

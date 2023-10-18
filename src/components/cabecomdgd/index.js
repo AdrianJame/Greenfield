@@ -26,7 +26,7 @@ export default function Cabecomdgd(){
                 </section>
             </div>
 
-            <Link className={storage('usuario-logado') ? 'minhaconta' : ''} to={!storage('usuario-logado') ? '/login' : '/minhaconta'}>{storage('usuario-logado') ? 'Minha conta' : 'Logar'}</Link>
+            <Link className={storage('usuario-logado') ? 'minhaconta' : ''}  to={!storage('usuario-logado') ? '/login' : '/minhaconta'}>{storage('usuario-logado') ? 'Minha conta' : 'Logar'}</Link>
         </header>
     )
 }

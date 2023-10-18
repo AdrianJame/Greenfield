@@ -45,6 +45,11 @@ function Limpar(){
 
 }
 
+function teclaEnter(e) {
+    if (e.key === 'Enter') {
+        Salvar();
+    }}
+
 
     return(
         <div className='pagina-cadastro'>
@@ -87,7 +92,7 @@ function Limpar(){
 
                         <div className='input'>
                             <img />
-                            <input placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)}/>
+                            <input placeholder='Senha' onKeyUp={teclaEnter} value={senha} onChange={e => setSenha(e.target.value)}/>
                         </div>
 
                         <div className='botao'>

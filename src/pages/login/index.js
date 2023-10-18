@@ -33,11 +33,8 @@ export default function Login() {
       const response = await axios.post('http://localhost:5000/usuario/login', user);
 
       if ( email != ''  && senha != '' ) {
-        // Redirect to the admin home page on successful login
         navigate('/');
         storage('usuario-logado', response)
-
-
       }
        else if(email === undefined || senha === undefined){
         setErro('⚠ Campo obrigatorio');
@@ -50,6 +47,12 @@ export default function Login() {
       setCarregando(false);
     }
   }
+
+   function teclaEnter(e) {
+    if (e.key === 'Enter') {
+        entrar();
+    }}
+
     return(
         <div className='pagina-login'>
           <LoadingBar color='#f11946' ref={loadingBarRef} />
@@ -73,13 +76,13 @@ export default function Login() {
 
                         <div className='input'>
                             <img />
-                            <input placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                            <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                         </div>
 
                     </div>
 
                     <div className='botao'>
-                            <button onClick={entrar} disabled={carregando}>Entrar</button>
+                            <button  onClick={entrar} disabled={carregando}>Entrar</button>
                             <p>{erro}</p>
                     </div>
 
