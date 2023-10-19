@@ -74,10 +74,10 @@ export default function Pag () {
 
             </div>
 
-            <div className='conclusão'>
-                
+            <div className='section-pagamento'>
+
                 <div className='pagamento'>
-                    
+
                 </div>
 
             </div>

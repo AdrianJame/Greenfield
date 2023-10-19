@@ -2,7 +2,7 @@
     background-color: #f6f6f6;
 
     width: 100%;
-    height: 190vh;
+    height: 160vh;
 
     overflow: hidden;
 
@@ -177,13 +177,18 @@
         
     }
 
-    .conclusão {
+    .section-pagamento {
+        
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        width: 100vw;
+        height: 50vh;
+        border-radius: 10px;
+        margin-top: 10px;
 
-        margin-top: 200px;
 
         .pagamento {
 
@@ -196,7 +201,7 @@
             margin-bottom: 20px;
 
             border-radius: 20px;
-
+            
         }
     }
 }
