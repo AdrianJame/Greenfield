@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './index.scss'
 import axios from 'axios';
-
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +12,8 @@ export default function CadatroProdutoADM () {
 
 
     const[idinfo, setIdinfo] = useState('')
+
+    const navigate = useNavigate();
 
     const[nome, setNome] = useState('');
     const[fabricante, setFabricante] = useState('');
@@ -52,7 +55,12 @@ export default function CadatroProdutoADM () {
     useEffect(() => {
         Buscarcategorias()
         Buscarinfo()
+
+        if(!storage('adm-logado')){
+            navigate('/erro')
+          }
       }, [])
+
 
       async function Salvarinfo(){
         try{

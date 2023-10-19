@@ -31,8 +31,9 @@ export default function Homeadm() {
 }
 
 useEffect(() => {
-  const usuariologado = !storage('adm-logado');
-  navigate('/erro')
+  if(!storage('adm-logado')){
+    navigate('/erro')
+  }
 }, [])
 
   return (

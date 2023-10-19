@@ -5,9 +5,13 @@ import axios from 'axios';
 
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom';
 
 export default function Produtosadm(){
+
+const navigate = useNavigate();
 
 const[listar, setListar] = useState([]);
 
@@ -18,8 +22,10 @@ const[listar, setListar] = useState([]);
 
 useEffect(() => {
     Listarprodutos()
+    if(!storage('adm-logado')){
+        navigate('/erro')
+      }
 }, [])
-
 
 
 async function Deletar(id){

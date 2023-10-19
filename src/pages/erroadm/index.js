@@ -9,8 +9,9 @@ export default function Erro(){
                 <h1>Você não tem permissão de entrar nessa pagina</h1>
                 <section>
                     <Link to={'/'}>Voltar para home</Link>
-                    <Link to={'/login-adm'}>Login adm</Link>
                 </section>
+
+                <img src='/assets/images/erroplant.png'/>
             </div>
         </div>
     )
