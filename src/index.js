@@ -46,6 +46,7 @@ root.render(
         <Route path='/login' element={<Login/>}/>
         <Route path='/cadastroproduto' element={<CadatroProdutoADM/>}/>
         <Route path='/Erro' element={<Erro/>}/>
+        <Route path='/test' element={<Teste/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

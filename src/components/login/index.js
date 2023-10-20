@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import storage from 'local-storage'
 import LoadingBar from "react-top-loading-bar";
-import Modal from 'react-modal'
+import { CSSTransition } from 'react-transition-group';
 
 export default function Login() {
 
@@ -12,6 +12,8 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
+
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if(storage('usuario-logado'))
@@ -54,64 +56,175 @@ export default function Login() {
         entrar();
     }}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const[nome, setNome] = useState('');
+const[telefone, setTelefone] = useState('');
+const[cpf, setCpf] = useState('');
+const[id, setId] = useState(0)
+
+const[direita, setDireita] = useState(0)
+
+
+async function Salvar(){
+
+    try{
+        let user = {
+            email: email,
+            nome: nome,
+            telefone: telefone,
+            cpf: cpf,
+            senha: senha
+        }
+
+        let r = await axios.post('http://localhost:5000/cliente/cadastro', user)
+        setErro('Cadastro feito com sucesso')
+
+        Limpar()
+
+    }
+    
+    catch(err){
+        setErro(err.response.data.erro)
+      }
+}
+
+function Limpar(){
+    setEmail('')
+    setNome('')
+    setTelefone('')
+    setCpf('')
+    setSenha('')
+    setId(0)
+
+}
+
+
+
+function Esquerda(){
+  const editar = document.getElementById('esquerda')
+        editar.classList.add('rolar')
+
+        setDireita(editar)
+}
+
     return(
-        <div className='pagina-login'>
-          
-         
-          <LoadingBar color='#f11946' ref={loadingBarRef} />
-            <div className='meio'>
+      <div className="pagina-login-cadastro">
+      
+        <div className="fundo" >
 
-                <div className='esquerda'>
+            <div className="login">
 
-                    <div className='titulo'>
+              <div className='esquerda' id="esquerda">
 
-                        <h1> Entrar </h1>
-                        <img src='/assets/images/logobranca.svg'  />
+                <div className='titulo'>
 
+                    <h1> Entrar </h1>
+                    <img src='/assets/images/logobranca.svg'  />
+
+                </div>
+
+                <div className='inputs'>
+
+                    <div className='input'>
+                        <img />
+                        <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
                     </div>
 
-                    <div className='inputs'>
-
-                        <div className='input'>
-                            <img />
-                            <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
-                        </div>
-
-                        <div className='input'>
-                            <img />
-                            <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
-                        </div>
-
-                    </div>
-
-                    <div className='botao'>
-                            <button  onClick={entrar} disabled={carregando}>Entrar</button>
-                            <p>{erro}</p>
-                    </div>
-
-                    <div className='linha'></div>
-
-                    <div className='continuar'>
-                        <h4>Continuar com</h4>
-
-                        <div className='redes'>
-                            <img src='./assets/images/image 222.svg' />
-                            <img src='./assets/images/image 35.svg' />
-                            <img src='./assets/images/image 223.svg'/>
-                        </div>
+                    <div className='input'>
+                        <img />
+                        <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                     </div>
 
                 </div>
 
-                <div className='direita'>-
-                    <div className="cadastrar">
-                      <p>Cadastro</p>
+                <div className='botao'>
+                        <button  onClick={entrar} disabled={carregando}>Entrar</button>
+                        <p>{erro}</p>
+                </div>
+
+                <div className='linha'></div>
+
+                <div className='continuar'>
+                    <h4>Continuar com</h4>
+
+                    <div className='redes'>
+                        <img src='./assets/images/image 222.svg' />
+                        <img src='./assets/images/image 35.svg' />
+                        <img src='./assets/images/image 223.svg'/>
                     </div>
                 </div>
+
+              </div>
 
             </div>
-    
+
+
+            <button className="button-logar" onClick={Esquerda}>Cadastrar</button>
+
         </div>
+
+      </div>
     )
 
 }
+
+
+{/* <div className='esquerda'>
+
+    <div className='titulo'>
+
+        <h1> Entrar </h1>
+        <img src='/assets/images/logobranca.svg'  />
+
+    </div>
+
+    <div className='inputs'>
+
+        <div className='input'>
+            <img />
+            <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
+        </div>
+
+        <div className='input'>
+            <img />
+            <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+        </div>
+
+    </div>
+
+    <div className='botao'>
+            <button  onClick={entrar} disabled={carregando}>Entrar</button>
+            <p>{erro}</p>
+    </div>
+
+    <div className='linha'></div>
+
+    <div className='continuar'>
+        <h4>Continuar com</h4>
+
+        <div className='redes'>
+            <img src='./assets/images/image 222.svg' />
+            <img src='./assets/images/image 35.svg' />
+            <img src='./assets/images/image 223.svg'/>
+        </div>
+    </div>
+
+</div> */}
+
+
+
+
+
