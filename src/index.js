@@ -21,6 +21,7 @@ import Cadastro from './pages/cadastro';
 import Login from './components/login';
 import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
+import Teste from './components/teste'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
