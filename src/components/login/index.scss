@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
 
+    
+ 
     .meio{
         display: flex;
         flex-direction: row;
@@ -105,10 +107,36 @@
     .direita{
         width: 493px;
         height: 525px;
+        background-image: url('../../../public/assets/images/image 224.svg');
+        
         
         img{
             height: 525px;
         }
        
     }
+
+    .cadastrar{
+        width: 139.205px;
+        height: 64.129px;
+        flex-shrink: 0;
+        background-color: #009020;
+        color: white;
+        border-bottom-right-radius: 60px;
+        
+        
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        P{
+            margin-right: 20px;
+        }
+    }
+
+    
+
+
 }

@@ -18,7 +18,7 @@ import Pagamento from './pages/pagamento';
 import Logradouro from './pages/endereço';
 import Pag from './pages/opções-pagamento';
 import Cadastro from './pages/cadastro';
-import Login from './pages/login';
+import Login from './components/login';
 import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
 

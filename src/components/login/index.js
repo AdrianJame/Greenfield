@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import storage from 'local-storage'
 import LoadingBar from "react-top-loading-bar";
+import Modal from 'react-modal'
 
 export default function Login() {
 
@@ -55,6 +56,8 @@ export default function Login() {
 
     return(
         <div className='pagina-login'>
+          
+         
           <LoadingBar color='#f11946' ref={loadingBarRef} />
             <div className='meio'>
 
@@ -100,11 +103,14 @@ export default function Login() {
 
                 </div>
 
-                <div className='direita'>
-                    <img src='./assets/images/image 225.svg'/>
+                <div className='direita'>-
+                    <div className="cadastrar">
+                      <p>Cadastro</p>
+                    </div>
                 </div>
 
             </div>
+    
         </div>
     )
 

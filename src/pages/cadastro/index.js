@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './index.scss'
 import axios from 'axios';
+import Modal from 'react-modal'
+import { motion } from 'framer-motion';
 
 export default function Cadastro(){
 const[email, setEmail] = useState('');
@@ -57,7 +59,9 @@ function teclaEnter(e) {
             <div className='meio'>
 
                 <div className='esquerda'>
-                    <img src='./assets/images/image 224.svg' />
+                <div className="logar">
+                      <p>Entrar</p>
+                    </div>
                 </div>
 
                 <div className='direita'>
