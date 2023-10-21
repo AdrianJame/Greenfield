@@ -14,7 +14,6 @@ export default function Login() {
   const [erro2, setErro2] = useState('');
   const [carregando, setCarregando] = useState(false);
 
-  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if(storage('usuario-logado'))
@@ -138,6 +137,7 @@ function Direita(){
 
     return(
       <div className="pagina-login-cadastro">
+        <LoadingBar color='#f11946' ref={loadingBarRef} />
       
         <div className="fundo" >
 
