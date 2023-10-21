@@ -11,6 +11,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [erro, setErro] = useState('');
+  const [erro2, setErro2] = useState('');
   const [carregando, setCarregando] = useState(false);
 
   const [show, setShow] = useState(false);
@@ -75,7 +76,6 @@ const[telefone, setTelefone] = useState('');
 const[cpf, setCpf] = useState('');
 const[id, setId] = useState(0)
 
-const[direita, setDireita] = useState(0)
 
 
 async function Salvar(){
@@ -90,14 +90,14 @@ async function Salvar(){
         }
 
         let r = await axios.post('http://localhost:5000/cliente/cadastro', user)
-        setErro('Cadastro feito com sucesso')
+        setErro2('Cadastro feito com sucesso')
 
         Limpar()
 
     }
     
     catch(err){
-        setErro(err.response.data.erro)
+        setErro2(err.response.data.erro)
       }
 }
 
@@ -112,67 +112,139 @@ function Limpar(){
 }
 
 
+function tecla(e) {
+  if (e.key === 'Enter') {
+      Salvar();
+  }}
+
+
 
 function Esquerda(){
-  const editar = document.getElementById('esquerda')
-        editar.classList.add('rolar')
+  const editar = document.getElementById('fundo-preto')
+        editar.classList.add('rolar-direita')
 
-        setDireita(editar)
+        const aparecer = document.getElementById('logar')
+        aparecer.classList.add('rolar')
 }
+
+function Direita(){
+  const editar = document.getElementById('fundo-preto')
+        editar.classList.remove('rolar-direita')
+
+  const aparecer = document.getElementById('logar')
+  aparecer.classList.remove('rolar')
+}
+
 
     return(
       <div className="pagina-login-cadastro">
       
         <div className="fundo" >
 
-            <div className="login">
+          <button className="logar" id="logar" onClick={Direita}>Logir</button>
 
-              <div className='esquerda' id="esquerda">
+            <div className="login-cadastro" >
 
-                <div className='titulo'>
 
-                    <h1> Entrar </h1>
-                    <img src='/assets/images/logobranca.svg'  />
+              <div className='fundo-preto' id="fundo-preto">
+                <section className="esquerda">
+                  <div className='titulo'>
 
-                </div>
+                      <h1> Entrar </h1>
+                      <img src='/assets/images/logobranca.svg'  />
 
-                <div className='inputs'>
+                  </div>
 
-                    <div className='input'>
-                        <img />
-                        <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
-                    </div>
+                  <div className='inputs'>
 
-                    <div className='input'>
-                        <img />
-                        <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
-                    </div>
+                      <div className='input'>
+                          <img />
+                          <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
+                      </div>
 
-                </div>
+                      <div className='input'>
+                          <img />
+                          <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                      </div>
 
-                <div className='botao'>
-                        <button  onClick={entrar} disabled={carregando}>Entrar</button>
-                        <p>{erro}</p>
-                </div>
+                  </div>
 
-                <div className='linha'></div>
+                  <div className='botao'>
+                          <button  onClick={entrar} disabled={carregando}>Entrar</button>
+                          <p>{erro}</p>
+                  </div>
 
-                <div className='continuar'>
-                    <h4>Continuar com</h4>
+                  <div className='linha'></div>
 
-                    <div className='redes'>
-                        <img src='./assets/images/image 222.svg' />
-                        <img src='./assets/images/image 35.svg' />
-                        <img src='./assets/images/image 223.svg'/>
-                    </div>
-                </div>
+                  <div className='continuar'>
+                      <h4>Continuar com</h4>
 
+                      <div className='redes'>
+                          <img src='./assets/images/image 222.svg' />
+                          <img src='./assets/images/image 35.svg' />
+                          <img src='./assets/images/image 223.svg'/>
+                      </div>
+                  </div>
+                                
+                </section>
+
+                
+
+                <section className="direita">
+
+                      <div className='titulo'>
+
+                          <h1>Cadastrar</h1>
+                          <img src='/assets/images/logobranca.svg' />
+                          
+                      </div>
+
+                      <div className='inputs'>
+
+                          <div className='input'>
+                              <img />
+                              <input placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
+                          </div>
+
+                          <div className='input'>
+                              <img />
+                              <input placeholder='Nome de Usuário' value={nome} onChange={e => setNome(e.target.value)} />
+                          </div>
+
+                          <div className='input'>
+                              <img />
+                              <input placeholder='Telefone' value={telefone} onChange={e=> setTelefone(e.target.value)} />
+                          </div>
+
+                          <div className='input'>
+                              <img />
+                              <input placeholder='CPF' value={cpf} onChange={e => setCpf(e.target.value)} />
+                          </div>
+
+                          <div className='input'>
+                              <img />
+                              <input placeholder='Senha' onKeyUp={tecla} value={senha} onChange={e => setSenha(e.target.value)}/>
+                          </div>
+
+                          <div className='botao'>
+                          <button onClick={Salvar}>Cadastrar-se</button>
+                          </div>
+
+                          <p className='erro'>{erro2}</p>
+
+
+
+
+                      </div>
+
+                </section>
               </div>
 
             </div>
 
 
-            <button className="button-logar" onClick={Esquerda}>Cadastrar</button>
+
+            <button className="button-cadastrar" onClick={Esquerda}>Cadastrar</button>
 
         </div>
 
@@ -181,48 +253,6 @@ function Esquerda(){
 
 }
 
-
-{/* <div className='esquerda'>
-
-    <div className='titulo'>
-
-        <h1> Entrar </h1>
-        <img src='/assets/images/logobranca.svg'  />
-
-    </div>
-
-    <div className='inputs'>
-
-        <div className='input'>
-            <img />
-            <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)}/>
-        </div>
-
-        <div className='input'>
-            <img />
-            <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
-        </div>
-
-    </div>
-
-    <div className='botao'>
-            <button  onClick={entrar} disabled={carregando}>Entrar</button>
-            <p>{erro}</p>
-    </div>
-
-    <div className='linha'></div>
-
-    <div className='continuar'>
-        <h4>Continuar com</h4>
-
-        <div className='redes'>
-            <img src='./assets/images/image 222.svg' />
-            <img src='./assets/images/image 35.svg' />
-            <img src='./assets/images/image 223.svg'/>
-        </div>
-    </div>
-
-</div> */}
 
 
 
