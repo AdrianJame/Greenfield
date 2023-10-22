@@ -79,6 +79,8 @@ export default function CadatroProdutoADM () {
             }
 
             limpar()
+
+            navigate('/produtosadm')
         }
 
         catch(err){
