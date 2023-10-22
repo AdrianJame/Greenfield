@@ -8,10 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 export default function CadatroProdutoADM () {
     const[categorias, setCategorias] = useState([])
-    const[info, setInfo] = useState([])
-
-
-    const[idinfo, setIdinfo] = useState('')
 
     const navigate = useNavigate();
 
@@ -29,60 +25,33 @@ export default function CadatroProdutoADM () {
     const[material, setMaterial] = useState('')
     const[extra, setExtra] = useState('')
 
-    async function alterarproduto (item){
+     async function alterarproduto (item){
         setNome(item.nm_produto)
         setFabricante(item.ds_fabricante)
         setPreco(item.vl_preco)
         setEstoque(item.qtd_estoque)
         setGarantia(item.nr_garantia)
         setDescricao(item.ds_produto)
+        setDimensoes(item.ds_dimensoes)
+        setMaterial(item.ds_material)
+        setExtra(item.ds_extra)
     }
 
 
     async function Buscarcategorias(){
         let r = await axios.get('http://localhost:5000/categoria')
         setCategorias(r.data)
-
-        setIdinfo(r.data.id_informacoes_produto)
     }
 
-    async function Buscarinfo(){
-        let r = await axios.get('http://localhost:5000/info')
-        setInfo(r.data)
-        setIdinfo(r.data.id_informacoes_produto)
-    }
 
     useEffect(() => {
         Buscarcategorias()
-        Buscarinfo()
 
         if(!storage('adm-logado')){
             navigate('/erro')
           }
       }, [])
 
-
-      async function Salvarinfo(){
-        try{
-            let infor = {
-                material: material,
-                dimensoes: dimensoes,
-                inforextra: extra
-            }
-
-            if(id == 0){
-                let x = await axios.post('http://localhost:5000/info', infor)
-                setErro('INFO adicionado')
-
-                setIdinfo(x.data.id_informacoes_produto)
-            }
-
-        }
-
-        catch(err){
-            setErro(err.response.data.erro)
-          }
-      }
 
     async function Salvar(){
         try{
@@ -94,6 +63,9 @@ export default function CadatroProdutoADM () {
                 estoque: estoque,
                 garantia: garantia,
                 descricao: descricao,
+                dimensoes: dimensoes,
+                material: material,
+                extra: extra
             }
 
             if(id == 0){
@@ -118,10 +90,13 @@ export default function CadatroProdutoADM () {
         setNome('')
         setFabricante('')
         setCategoriaselecionada('')
-        setPreco(0)
-        setEstoque(0)
-        setGarantia(0)
+        setPreco('')
+        setEstoque('')
+        setGarantia('')
         setDescricao('')
+        setDimensoes('')
+        setMaterial('')
+        setExtra('')
         setId(0)
     }
 

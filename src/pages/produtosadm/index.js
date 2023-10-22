@@ -49,6 +49,7 @@ async function Deletar(id){
     
   } 
 
+
     return(
         <div className='produtosadm'>
             <Menuadm/>
@@ -102,7 +103,7 @@ async function Deletar(id){
                         <p>{item.vl_preco}</p>
                         <p>{item.vl_preco}</p>
 
-                        <Link  to={'/cadastroproduto'} className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></Link>
+                        <Link to={'/cadastroproduto'} className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></Link>
                         <p onClick={() => Deletar(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
                     </div> 
                 )}

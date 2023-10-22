@@ -141,7 +141,7 @@ function Direita(){
       
         <div className="fundo" >
 
-          <button className="logar" id="logar" onClick={Direita}>Logir</button>
+          <button className="logar" id="logar" onClick={Direita}>Entrar</button>
 
             <div className="login-cadastro" >
 
