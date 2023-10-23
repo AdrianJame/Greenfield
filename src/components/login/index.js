@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import storage from 'local-storage'
 import LoadingBar from "react-top-loading-bar";
-import { CSSTransition } from 'react-transition-group';
 
 export default function Login() {
 

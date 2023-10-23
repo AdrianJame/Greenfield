@@ -78,16 +78,19 @@
             }
 
             .secao-slides{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                
                 width: 100%;
 
                 outline: 0;
 
-                div{
+                .cards-carrossel{
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-
                     outline: 0;
 
                     gap: 30px;
@@ -97,6 +100,7 @@
                         width: auto;
                     }
                 }
+
             }
         }
     }

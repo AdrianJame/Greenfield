@@ -1,10 +1,20 @@
-import './index.scss';
+import { useEffect, useState } from 'react'
+import './index.scss'
+import axios from 'axios';
 
 import Cabecomdgd from '../../components/cabecomdgd';
 import RodapeGreenfield from '../../components/rodape';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const[categorias, setCategorias] = useState([])
+
+
+  async function Buscarcategorias(){
+    let r = await axios.get('http://localhost:5000/categoria')
+    setCategorias(r.data)
+}
+
   return (
     <div className="Home">
       <Cabecomdgd/>

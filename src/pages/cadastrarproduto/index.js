@@ -14,9 +14,9 @@ export default function CadatroProdutoADM () {
     const[nome, setNome] = useState('');
     const[fabricante, setFabricante] = useState('');
     const[categoriaselecionada, setCategoriaselecionada] = useState('')
-    const[preco, setPreco] = useState(0);
-    const[estoque, setEstoque] = useState(0);
-    const[garantia, setGarantia] = useState(0);
+    const[preco, setPreco] = useState('');
+    const[estoque, setEstoque] = useState('');
+    const[garantia, setGarantia] = useState('');
     const [id, setId] = useState(0);
     const [erro, setErro] = useState('')
     const[descricao, setDescricao] = useState('')
@@ -102,6 +102,11 @@ export default function CadatroProdutoADM () {
         setId(0)
     }
 
+
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            Salvar();
+        }}
 
     return (
         <div className='page-cadastro-adm'>
@@ -202,7 +207,7 @@ export default function CadatroProdutoADM () {
                     <div className='session-03-conteudo'>
                             <div className='desc-produto'>
                                 <input value={material} onChange={e => setMaterial(e.target.value)} type="text" placeholder="Material:"></input>
-                                <input value={dimensoes} onChange={e => setDimensoes(e.target.value)} type="text" placeholder="Dimensões:"></input> 
+                                <input onKeyUp={teclaEnter} value={dimensoes} onChange={e => setDimensoes(e.target.value)} type="text" placeholder="Dimensões:"></input> 
                                 <input value={extra} onChange={e => setExtra(e.target.value)} type="text" placeholder="Informações Extras:"></input> 
                             </div>
                     </div>

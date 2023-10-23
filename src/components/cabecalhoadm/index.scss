@@ -79,9 +79,19 @@
             
             gap: 10px;
 
-            img{
+            .img{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
                 height: 65px;
                 width: 65px;
+
+                color: #fff;
+
+                font-size: 20px;
+                font-weight: 500;
 
                 border-radius: 100%;
             }

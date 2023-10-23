@@ -11,12 +11,21 @@ export default function Menuadm(){
     const[nome, setNome] = useState('');
     const[email, setEmail] = useState('');
 
+    const [color, setColor] = useState('#000000');
+
+    function generateRandomColor() {
+        const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        setColor(randomColor);
+      }
+
     const navigate = useNavigate();
     
     useEffect(() => {
             const usuariologado = storage('adm-logado');
             setNome(usuariologado.data.nome)
             setEmail(usuariologado.data.email)
+
+            generateRandomColor()
     }, [])
 
 
@@ -56,7 +65,7 @@ async function Trocar(){
             <section className='menu-rodape'>
                 <div className='menu-rodape-s1'>
 
-                    <div className='img'>A</div>
+                    <div className='img' style={{ backgroundColor: color }}>{nome.charAt(0)}</div>
 
                     <section>
                         <h6>{nome}</h6>
