@@ -205,3 +205,75 @@
         }
     }
 }
+
+@media (max-width:970px){
+    
+}
+
+@media (max-width:520px){
+    .page-forma-de-pagamento {
+        
+        .status-pedido {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+    
+    
+            .circle-verde {
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+    
+                background-color: #fff;
+                border-radius: 100%;
+                
+                width: 65px;
+                height: 50px;
+    
+                
+                border: 3px solid #29CD00;
+    
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+    
+            .linha-verde {
+                width: 235px;
+                height: 3px;
+                background-color: #29CD00;
+            }
+    
+        }
+
+        .section-pagamento {
+
+            .frete-e-pagamento {
+                
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                    
+                background-color: #fff;
+                width: 80vw;
+            }
+
+            .escolha-pagamento {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                    
+                background-color: #fff;
+                width: 80vw;
+                height: 16vh;
+                padding: 50px;
+            }
+        }
+    }
+}
