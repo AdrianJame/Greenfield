@@ -16,3 +16,24 @@ code {
   box-sizing: border-box;
   margin: 0px;
 }
+
+@import url('https://fonts.googleapis.com/css2?&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+body{
+  width: 100%;
+  background-color: var(---background);
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+

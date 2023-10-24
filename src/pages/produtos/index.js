@@ -1,11 +1,12 @@
 import './index.scss';
 
+import Projects from '../../components/Projects/Projects'
+
 import Cabesemdgd from '../../components/cabecalhosemdgd';
 
 export default function Produtos(){
 
-
-
+    
     return(
         <div className='pagina-produto'>
             <Cabesemdgd/>
@@ -13,20 +14,7 @@ export default function Produtos(){
             <section className='produtos-s1'>
                 <h1>Os produtos mais vendidos para decorar o seu jardim.</h1>
 
-                
-                <div className='carrosel'>
-                    <button className='button-carrosel-left'>
-                        <img src='/assets/images/setapraesquerda.svg'/>
-                    </button>
-
-                    <section className='secao-slides'>
-
-                    </section>
-
-                    <button className='button-carrosel-right'>
-                        <img src="/assets/images/setapradireita.svg"/>
-                    </button>
-                </div>
+                <Projects/>
             </section>
 
             <section className='produtos-s2-tipos'>
