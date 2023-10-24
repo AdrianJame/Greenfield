@@ -156,6 +156,8 @@
         .logradouro {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
             
             background-color: #fff;
             width: 50vw;
@@ -239,7 +241,7 @@
                 align-items: center;
 
                 text-decoration: none;
-                font-family: 'Oswald', sans-serif;
+                font: 15px 'Oswald', sans-serif; 
 
                 width: 40vw;
                 height: 40px;

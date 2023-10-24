@@ -577,3 +577,29 @@
 
     }
 }
+
+@media (max-width: 931px) {
+    .page-carrinho {
+        .info {
+            display: flex;
+            flex-direction: row;
+
+
+            input {
+            
+                padding: 5px 10px;
+
+            }
+
+            button {
+                padding: 7px 10px;
+
+                background-color: #009020;
+                color: #fff;
+
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
