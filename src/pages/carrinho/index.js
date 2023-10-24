@@ -42,6 +42,7 @@ export default function Carrinho () {
 
                     <div className='info'>
                         <input placeholder='CUPOM DE DESCONTO' type='text'/>
+                        <button>Inserir</button>
                     </div>    
                     
                     <div className='info'>
