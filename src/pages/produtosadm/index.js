@@ -54,7 +54,7 @@ async function Deletar(id){
         <div className='produtosadm'>
             <Menuadm/>
             <section className='produtosadm-body'>
-                <h1>Produtos</h1>
+                <h2>Produtos</h2>
 
                 <div className='card'>
                     <div className='card-s1'>

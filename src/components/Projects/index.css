@@ -10,6 +10,19 @@
 }
 
 
+
+.houfKD {
+  height: 10rem;
+  background-color: transparent !important;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  height: 380px !important;
+}
+
+
 body{
   width: 100%;
   background-color: var(---background);
@@ -25,8 +38,17 @@ body{
 .slick-list, .slick-slider, .slick-track{
   padding: 1.5rem 0;
 
-  height: 500px;
+  height: 750px;
+
 }
+
+@media(max-width: 991px){
+
+  .slick-track, .slick-slider, .next, .back{
+    display: none !important;
+  }
+}
+
 
 
 /* principal */
@@ -67,14 +89,13 @@ body{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
   border-radius: 50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
+
 
 @keyframes header {
   0%{

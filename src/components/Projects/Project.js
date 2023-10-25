@@ -4,16 +4,16 @@ import './index.css'
 
 const Project = (props) => {
     
-    const { img, disc } = props.item;
+    const { img, disc, valor } = props.item;
 
   return (
     <Container className='project'>
         <img src={img} alt="project" />
 
-        <div>
+        <div className='divdodisc'>
         <div className="disc">
             <h1>{disc}</h1>
-
+            <h1>{valor}</h1>
         </div>    
         </div>
         
@@ -39,24 +39,32 @@ const Container = styled.div`
         object-fit: cover;
         transition: transform 400ms ease-in-out;
 
-        margin-bottom: 100px;
+        margin-bottom: 50px;
+    }
+
+    .divdodisc{
+        display: flex;
+        justify-content: center;
     }
     .disc{
         z-index: 1;
         right: 0;
         left: 0;
 
+        width: 300px;
+
         text-align: left;
         padding: 0.5rem;
-        background: linear-gradient(rgba(0,0,0, 0.100), rgba(0,0,0, 0.80));
         transition: all 400ms ease-in-out;
         h1{
             font-size: 1rem;
         }
     
-        p{
+        h1{
             width: 90%;
             font-size: 0.8rem;
+
+            width: 300px;
             a{
                 margin-left: 0.4rem;
                 color: red;

@@ -1,14 +1,17 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Slider from 'react-slick';
 import Project from './Project';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from 'styled-components';
 
 
-let data = [
+
+
+  let data = [
     {
-        img : "https://res.cloudinary.com/ghazni/image/upload/v1661324124/Yt-portfolio/ui5_mnvdaw.png",
-        disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
+        img : "/assets/images/vasinho.svg",
+        disc : "Vaso de planta prato polietileno",
+        valor: "R$ 88,60"
     },
     {
         img : "https://res.cloudinary.com/ghazni/image/upload/v1661324074/Yt-portfolio/ui4_jku3ol.png",
@@ -27,6 +30,7 @@ let data = [
         disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
     }
 ]
+
 
 var settings = {
     className: "center",
@@ -74,6 +78,7 @@ const SliderComp = () => {
     sliderProject = data.map((item, i) => (
         <Project item = {item} key={i}/>
     ))
+
   return (
     <Container>
       <Slider ref={arrowRef} {...settings}>
@@ -99,8 +104,8 @@ const Container = styled.div`
 
 const Buttons = styled.div`
   button{
-    width: 2rem;
-    height: 2rem;
+    width: 60px;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.100);
     cursor: pointer;
     color: #01be96;
@@ -109,8 +114,15 @@ const Buttons = styled.div`
     top: 45%;
     right: -1rem;
   }
+  svg{
+    width: 30px;
+    height:30px;
+  }
 
   .back{
-    left: -1rem;
+    left: -100px;
+  }
+  .next{
+    right: -100px;
   }
 `
