@@ -11,7 +11,7 @@ export default function Home() {
 
 
   async function Buscarcategorias(){
-    let r = await axios.get('http://localhost:5000/categoria')
+    let r = await axios.get('http://129.148.42.252:5026/categoria')
     setCategorias(r.data)
 }
 

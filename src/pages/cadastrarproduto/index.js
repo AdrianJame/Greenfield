@@ -39,7 +39,7 @@ export default function CadatroProdutoADM () {
 
 
     async function Buscarcategorias(){
-        let r = await axios.get('http://localhost:5000/categoria')
+        let r = await axios.get('http://129.148.42.252:5026/categoria')
         setCategorias(r.data)
     }
 
@@ -69,12 +69,12 @@ export default function CadatroProdutoADM () {
             }
 
             if(id == 0){
-                let r = await axios.post('http://localhost:5000/produtos', produto)
+                let r = await axios.post('http://129.148.42.252:5026/produtos', produto)
                 setErro('Produto adicionado')
             }
 
             else if(id != 0){
-                let r = await axios.put('http://localhost:5000/produtos/' + id, produto);
+                let r = await axios.put('http://129.148.42.252:5026/produtos/' + id, produto);
                 setErro('Produto alterado')
             }
 

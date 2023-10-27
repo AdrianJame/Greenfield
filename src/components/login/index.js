@@ -5,6 +5,8 @@ import "./index.scss";
 import storage from 'local-storage'
 import LoadingBar from "react-top-loading-bar";
 
+import { API_URL } from '../../constants.js';
+
 export default function Login() {
 
   const [email, setEmail] = useState('');
@@ -32,7 +34,7 @@ export default function Login() {
   }
 
     try {
-      const response = await axios.post('http://localhost:5000/usuario/login', user);
+      const response = await axios.post(API_URL + '/usuario/login', user);
 
       if ( email != ''  && senha != '' ) {
         navigate('/');
@@ -87,7 +89,7 @@ async function Salvar(){
             senha: senha
         }
 
-        let r = await axios.post('http://localhost:5000/cliente/cadastro', user)
+        let r = await axios.post('http://129.148.42.252:5026/cliente/cadastro', user)
         setErro2('Cadastro feito com sucesso')
 
         Limpar()

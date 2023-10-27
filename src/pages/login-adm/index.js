@@ -32,7 +32,7 @@ export default function LoginADM() {
   }
 
     try {
-      const response = await axios.post('http://localhost:5000/adm/login', user);
+      const response = await axios.post('http://129.148.42.252:5026/adm/login', user);
 
       if (nome != '' || email != '' || senha != '') {
         // Redirect to the admin home page on successful login
