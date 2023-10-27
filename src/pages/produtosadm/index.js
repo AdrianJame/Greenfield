@@ -16,7 +16,7 @@ const navigate = useNavigate();
 const[listar, setListar] = useState([]);
 
     async function Listarprodutos(){
-        let r = await axios.get('http://129.148.42.252:5026/produtos');
+        let r = await axios.get(API_URL + '/produtos');
         setListar(r.data);
     }
 
@@ -36,7 +36,7 @@ async function Deletar(id){
         {
           label: 'Sim',
           onClick: async () => {
-            let r = await axios.delete('http://129.148.42.252:5026/deletarproduto/' + id);
+            let r = await axios.delete(API_URL + '/deletarproduto/' + id);
             alert('Produto removido');
             Listarprodutos();
           }

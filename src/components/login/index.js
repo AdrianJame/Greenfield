@@ -89,7 +89,7 @@ async function Salvar(){
             senha: senha
         }
 
-        let r = await axios.post('http://129.148.42.252:5026/cliente/cadastro', user)
+        let r = await axios.post(API_URL + '/cliente/cadastro', user)
         setErro2('Cadastro feito com sucesso')
 
         Limpar()
