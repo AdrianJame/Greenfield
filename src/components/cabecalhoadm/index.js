@@ -43,7 +43,7 @@ export default function Cabeadm(){
 
             <section className='cabeadm-p1'>
                 <img className='logo' src='/assets/images/logobranca.svg'/>
-                    <h1>Bem Vindo {admlogado}</h1>
+                    <h1>Bem-Vindo {admlogado}</h1>
             </section>
 
             <section className='cabeadm-p2'>
