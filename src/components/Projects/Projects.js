@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import SliderComp from './Slider';
 import { Zoom } from 'react-awesome-reveal';
 import './index.css'
-const Projects = () => {
+const Projects = (props) => {
   return (
     <Container id='project'>
         <Zoom>
         </Zoom>
         <Slide>
-            <SliderComp/>
+            <SliderComp produtos={props.produtos}/>
         </Slide>
     </Container>
   )

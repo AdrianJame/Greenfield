@@ -72,10 +72,10 @@ var settings = {
       }
     ]
   };
-const SliderComp = () => {
+const SliderComp = (props) => {
   const arrowRef = useRef(null);
     let sliderProject = "";
-    sliderProject = data.map((item, i) => (
+    sliderProject = props.produtos.map((item, i) => (
         <Project item = {item} key={i}/>
     ))
 
