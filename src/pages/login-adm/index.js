@@ -40,7 +40,7 @@ export default function LoginADM() {
       if (nome != '' || email != '' || senha != '') {
         // Redirect to the admin home page on successful login
         navigate('/homeadm');
-        storage('adm-logado', response)
+        storage('adm-logado', response.data)
 
       } else {
         setErro('⚠ Login ou senha incorretos');

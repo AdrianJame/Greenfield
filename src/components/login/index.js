@@ -40,7 +40,7 @@ export default function Login() {
 
       if ( email != ''  && senha != '' ) {
         navigate('/');
-        storage('usuario-logado', response)
+        storage('usuario-logado', response.data)
       }
        else if(email === undefined || senha === undefined){
         setErro('⚠ Campo obrigatorio');

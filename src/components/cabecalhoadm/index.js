@@ -25,8 +25,8 @@ export default function Cabeadm(){
     
     useEffect(() => {
             const usuariologado = storage('adm-logado');
-            setNome(usuariologado.data.nome)
-            setEmail(usuariologado.data.email)
+            setNome(usuariologado.nome)
+            setEmail(usuariologado.email)
 
             generateRandomColor()
     }, [])
@@ -34,7 +34,7 @@ export default function Cabeadm(){
     useEffect(() => {
         if (storage('adm-logado')){
             const adm = storage('adm-logado');
-            setLogado(adm.data.nome)
+            setLogado(adm.nome)
         }
         generateRandomColor()
     }, [])

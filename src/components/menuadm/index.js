@@ -23,8 +23,8 @@ export default function Menuadm(){
     
     useEffect(() => {
             const usuariologado = storage('adm-logado');
-            setNome(usuariologado.data.nome)
-            setEmail(usuariologado.data.email)
+            setNome(usuariologado.nome)
+            setEmail(usuariologado.email)
 
             generateRandomColor()
     }, [])
