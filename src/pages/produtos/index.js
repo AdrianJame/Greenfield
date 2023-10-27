@@ -3,6 +3,7 @@ import './index.scss';
 import Projects from '../../components/Projects/Projects'
 
 import Cabesemdgd from '../../components/cabecalhosemdgd';
+import { API_URL } from '../../constants.js';
 
 export default function Produtos(){
 

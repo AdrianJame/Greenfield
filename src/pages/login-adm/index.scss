@@ -52,6 +52,7 @@
             .linha {
 
                 align-items: center;
+                position: relative;
                 
                 
                 .risco {
@@ -79,6 +80,13 @@
                     box-shadow: 0;
                     outline: 0;
 
+                }
+
+                .olho{
+                    position: absolute;
+                    right: 0px;
+
+                    height: 30px;
                 }
 
             }

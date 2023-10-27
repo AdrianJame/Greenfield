@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import storage from 'local-storage';
 import { confirmAlert } from 'react-confirm-alert';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../constants.js';
 
 export default function Menuadm(){
 

@@ -4,6 +4,7 @@ import LoadingBar from "react-top-loading-bar";
 import { useNavigate } from "react-router-dom";
 import "./index.scss";
 import storage from "local-storage";
+import { API_URL } from '../../constants.js';
 
 
 export default function LoginADM() {
@@ -13,6 +14,8 @@ export default function LoginADM() {
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
 
+
+  const [mostrarsenha, setMostrarsenha] = useState(false);
   const navigate = useNavigate();
   const loadingBarRef = useRef(null);
 
@@ -81,7 +84,8 @@ export default function LoginADM() {
 
           <div className="linha">
             <img src="./assets/images/image 221 (1).png" alt="Senha Icon" />
-            <input type="password" onKeyUp={teclaEnter} placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} />
+            <input onKeyUp={teclaEnter} placeholder="Senha" type={mostrarsenha ? 'text' : 'password'} value={senha} onChange={e => setSenha(e.target.value)} />
+            <img className="olho" onClick={() => setMostrarsenha(!mostrarsenha)} src={mostrarsenha ? '/assets/images/olho.png' : '/assets/images/olho fechado.png'}/>
             <div className="risco"></div>
           </div>
         </div>

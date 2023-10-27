@@ -5,6 +5,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import storage from 'local-storage'
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { API_URL } from '../../constants.js';
 
 export default function Minhaconta(){
 

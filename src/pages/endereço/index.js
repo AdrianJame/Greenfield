@@ -2,6 +2,7 @@ import './index.scss'
 import Cabecalhocomlogin from '../../components/cabcomlogin'
 import RodapeGreenfield from '../../components/rodape'
 import { Link } from 'react-router-dom'
+import { API_URL } from '../../constants.js';
 
 export default function Logradouro () {
     return (

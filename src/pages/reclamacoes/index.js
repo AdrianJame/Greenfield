@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabesemdgd from '../../components/cabecalhosemdgd';
 import RodapeGreenfield from '../../components/rodape';
+import { API_URL } from '../../constants.js';
 
 export default function Reclamacoes(){
     return(

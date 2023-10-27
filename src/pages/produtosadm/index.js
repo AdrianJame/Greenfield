@@ -2,6 +2,7 @@ import './index.scss'
 import Menuadm from '../../components/menuadm'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../constants.js';
 
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';

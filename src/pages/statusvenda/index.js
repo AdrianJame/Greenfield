@@ -1,5 +1,6 @@
 import './index.scss'
 import Menuadm from '../../components/menuadm'
+import { API_URL } from '../../constants.js';
 
 export default function Statusdevenda(){
 

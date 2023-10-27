@@ -6,6 +6,7 @@ import storage from 'local-storage';
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import { useEffect, useState } from 'react';
+import { API_URL } from '../../constants.js';
 
 export default function Homeadm() {
 

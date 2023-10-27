@@ -3,7 +3,7 @@ import './index.scss'
 import axios from 'axios';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
-
+import { API_URL } from '../../constants.js';
 
 
 export default function CadatroProdutoADM () {

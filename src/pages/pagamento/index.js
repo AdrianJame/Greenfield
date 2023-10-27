@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
+import { API_URL } from '../../constants.js';
 
 export default function Pagamento(){
     return(

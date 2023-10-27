@@ -1,7 +1,7 @@
 import './index.scss'
 import { Link } from 'react-router-dom'
 import storage from 'local-storage'
-
+import { API_URL } from '../../constants.js';
 
 export default function Cabecalhocomlogin(){
 

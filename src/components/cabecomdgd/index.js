@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react';
-
+import { API_URL } from '../../constants.js';
 
 export default function Cabecomdgd(){
 

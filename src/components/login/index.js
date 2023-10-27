@@ -15,6 +15,8 @@ export default function Login() {
   const [erro2, setErro2] = useState('');
   const [carregando, setCarregando] = useState(false);
 
+  const [mostrarsenha, setMostrarsenha] = useState(false);
+
 
   useEffect(() => {
     if(storage('usuario-logado'))
@@ -165,7 +167,8 @@ function Direita(){
 
                       <div className='input'>
                           <img />
-                          <input onKeyUp={teclaEnter} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                          <input onKeyUp={teclaEnter} type={mostrarsenha ? 'text' : 'password'} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                          <img className="olho" onClick={() => setMostrarsenha(!mostrarsenha)} src={mostrarsenha ? '/assets/images/olho.png' : '/assets/images/olho fechado.png'}/>
                       </div>
 
                   </div>
