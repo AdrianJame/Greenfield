@@ -12,6 +12,9 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Produtosadm(){
 
+    const[favorito, setFavorito] = useState(0)
+    const[id, setId] = useState(0);
+
 const navigate = useNavigate();
 
 const[listar, setListar] = useState([]);
@@ -29,6 +32,16 @@ useEffect(() => {
 }, [])
 
 
+async function alterFavorito(item){
+    setFavorito(!favorito)
+    setId(item.id_produto)
+
+    let fav ={
+        favorito: favorito
+    }
+
+    let url = await axios.put(API_URL + '/favorito/' + id, fav)
+}
 
 
 
@@ -100,6 +113,7 @@ async function Deletar(id){
 
                 {listar.map(item => 
                     <div className='listarprodutos'>
+                        <img onClick={() => alterFavorito(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
                         <img src=''/>
                         
                         <p>{item.nm_produto}</p>
