@@ -38,7 +38,6 @@ export default function LoginADM() {
       const response = await axios.post(API_URL + '/adm/login', user);
 
       if (nome != '' || email != '' || senha != '') {
-        // Redirect to the admin home page on successful login
         navigate('/homeadm');
         storage('adm-logado', response.data)
 
