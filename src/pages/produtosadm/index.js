@@ -118,7 +118,7 @@ async function Deletar(id){
 
                 {listar.map(item => 
                     <div className='listarprodutos'>
-                        <img onClick={() => Alterarfav(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
+                        <img onClick={() => Alterarfav(item)} src={item.favorito = true ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
                         <img src=''/>
                         
                         <p>{item.nm_produto}</p>
