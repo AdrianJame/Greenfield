@@ -5,7 +5,6 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
 
-
 export default function CadatroProdutoADM () {
     const[categorias, setCategorias] = useState([])
 
@@ -25,17 +24,7 @@ export default function CadatroProdutoADM () {
     const[material, setMaterial] = useState('')
     const[extra, setExtra] = useState('')
 
-     async function alterarproduto (item){
-        setNome(item.nm_produto)
-        setFabricante(item.ds_fabricante)
-        setPreco(item.vl_preco)
-        setEstoque(item.qtd_estoque)
-        setGarantia(item.nr_garantia)
-        setDescricao(item.ds_produto)
-        setDimensoes(item.ds_dimensoes)
-        setMaterial(item.ds_material)
-        setExtra(item.ds_extra)
-    }
+
 
 
     async function Buscarcategorias(){
@@ -51,6 +40,7 @@ export default function CadatroProdutoADM () {
             navigate('/erro')
           }
       }, [])
+
 
 
     async function Salvar(){

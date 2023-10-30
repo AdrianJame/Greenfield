@@ -4,13 +4,27 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react';
 import { API_URL } from '../../constants.js';
+import axios from 'axios';
+import { useState } from 'react';
 
 export default function Cabecomdgd(){
 
     const navigate = useNavigate();
 
-      
+    const [produtos, setProdutos] = useState([]);
+    const [pesquisa, setPesquisa] = useState('');
 
+    async function Buscar(){
+        let r = await axios.get(API_URL + '/produto/nome?nome=' + pesquisa)
+        setProdutos(r.data)
+        navigate('/')
+    }
+
+
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            Buscar();
+    }} 
     
     return(
         <header className='Cabecalho1'>
@@ -22,7 +36,7 @@ export default function Cabecomdgd(){
 
                 <section>
                     <img src='/assets/images/lupa.svg'/>
-                    <input placeholder='busque aqui' type='text' />
+                    <p>Buscar</p>
                 </section>
             </div>
 

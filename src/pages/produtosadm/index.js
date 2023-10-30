@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom'
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 
-export default function Produtosadm(){
 
-    const[favorito, setFavorito] = useState(0)
+export default function Produtosadm(){
+    const[favorito, setFavorito] = useState(false)
     const[id, setId] = useState(0);
 
 const navigate = useNavigate();
@@ -31,22 +31,6 @@ useEffect(() => {
       }
 }, [])
 
-
-function Alterarfav(item){
-    setFavorito(!favorito)
-    setId(item.id_produto)
-
-    alterFavorito()
-}
-
-
-async function alterFavorito(){
-    let fav ={
-        favorito: favorito
-    }
-
-    let url = await axios.put(API_URL + '/favorito/' + id, fav)
-}
 
 
 
@@ -70,6 +54,16 @@ async function Deletar(id){
     });
     
   } 
+
+
+  async function Fav(item){
+
+    let fav = {
+        favorito: favorito
+    }
+     
+    let x = await axios.put(API_URL + '/favorito/' + id, fav)
+  }
 
 
     return(
@@ -118,7 +112,7 @@ async function Deletar(id){
 
                 {listar.map(item => 
                     <div className='listarprodutos'>
-                        <img onClick={() => Alterarfav(item)} src={item.favorito = true ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
+                        <img onClick={() => Fav(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
                         <img src=''/>
                         
                         <p>{item.nm_produto}</p>
@@ -126,7 +120,7 @@ async function Deletar(id){
                         <p>{item.vl_preco}</p>
                         <p>{item.vl_preco}</p>
 
-                        <Link to={'/cadastroproduto'} className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></Link>
+                        <Link to={'/cadastrarproduto'}  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></Link>
                         <p onClick={() => Deletar(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
                     </div> 
                 )}
