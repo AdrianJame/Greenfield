@@ -32,10 +32,15 @@ useEffect(() => {
 }, [])
 
 
-async function alterFavorito(item){
-    setFavorito(!favorito)
+function Alterarfav(item){
+    setFavorito(!item.favorito)
     setId(item.id_produto)
 
+    alterFavorito()
+}
+
+
+async function alterFavorito(){
     let fav ={
         favorito: favorito
     }
@@ -113,7 +118,7 @@ async function Deletar(id){
 
                 {listar.map(item => 
                     <div className='listarprodutos'>
-                        <img onClick={() => alterFavorito(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
+                        <img onClick={() => Alterarfav(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
                         <img src=''/>
                         
                         <p>{item.nm_produto}</p>
