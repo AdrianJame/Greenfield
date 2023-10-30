@@ -1,12 +1,22 @@
 import './index.scss';
 
 import Projects from '../../components/Projects/Projects'
-
+import axios from 'axios';
 import Cabesemdgd from '../../components/cabecalhosemdgd';
 import { API_URL } from '../../constants.js';
+import { useEffect, useState } from 'react';
 
-export default function Produtos(){
-    const produtos = []
+export default function ProdutosDecoracao(){
+    const [produto, setProduto] = useState()
+
+    async function Listarprodutos(){
+        let r = await axios.get(API_URL + '/produtos');
+        setProduto(r.data);
+    }
+
+useEffect(() => {
+        Listarprodutos()
+}, [])
     
     return(
         <div className='pagina-produto'>
@@ -15,7 +25,7 @@ export default function Produtos(){
             <section className='produtos-s1'>
                 <h1>Os produtos mais vendidos para decorar o seu jardim.</h1>
 
-                <Projects produtos={produtos}/>
+                <Projects produtos={produto}/>
             </section>
 
             <section className='produtos-s2-tipos'>

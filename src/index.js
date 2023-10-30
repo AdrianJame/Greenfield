@@ -10,7 +10,6 @@ import Reclamacoes from './pages/reclamacoes';
 import Carrinho from './pages/carrinho';
 import Home from './pages/home';
 import Homeadm from './pages/home-adm';
-import Produtos from './pages/produtos';
 import Produtosadm from './pages/produtosadm';
 import Statuspedido from './pages/statuspedido';
 import Statusdevenda from './pages/statusvenda';
@@ -20,6 +19,7 @@ import Pag from './pages/opções-pagamento';
 import Login from './components/login';
 import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
+import ProdutosDecoracao from './pages/decoracao';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,7 +30,7 @@ root.render(
         <Route path='/homeadm' element={<Homeadm/>}/>
         <Route path='/' element={<Home/>}/>
         <Route path='/login-adm' element={<LoginADM/>}/>
-        <Route path='/produtos' element={<Produtos/>}/>
+        <Route path='/decoraçao' element={<ProdutosDecoracao/>}/>
         <Route path='/minhaconta' element={<Minhaconta/>}/>
         <Route path='/meuspedidos' element={<Meuspedidos/>}/>
         <Route path='/reclamacoes' element={<Reclamacoes/>} />
