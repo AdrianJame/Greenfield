@@ -33,7 +33,7 @@ useEffect(() => {
 
 
 function Alterarfav(item){
-    setFavorito(!item.favorito)
+    setFavorito(!favorito)
     setId(item.id_produto)
 
     alterFavorito()
