@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Cabesemdgd from '../../components/cabecalhosemdgd';
 import { API_URL } from '../../constants';
-
+import RodapeGreenfield from '../../components/rodape';
 
 export default function Pesquisar(){
 
@@ -13,6 +13,11 @@ export default function Pesquisar(){
     async function Buscarpornome(){  
             let r = await axios.get(API_URL + '/produto/nome?nome=' + nome)
             setListar(r.data)
+
+            if(r.data == []){
+                const editar = document.getElementById('erro')
+                editar.classList.add('sumir')
+            }
     }
 
     async function Listarprodutos(){
@@ -62,7 +67,11 @@ export default function Pesquisar(){
                         <button><img src='/assets/images/carrinho-branco.png'/> Comprar</button>
                     </div>
                 )}
+
+                <p className='erro' id='erro'>Nenhum produto encontrado</p>
             </div>
+
+                <RodapeGreenfield/>
         </div> 
     )
 }

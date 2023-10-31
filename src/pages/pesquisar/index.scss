@@ -1,5 +1,8 @@
 .Pagina-Pesquisa{
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 
     .buscar{
         display: flex;
@@ -99,6 +102,8 @@
         width: 97vw;
         padding: 10px;
 
+        margin-bottom: 40px;
+
         border-bottom: 2px solid #000;
 
         button{
@@ -145,6 +150,16 @@
 
 
         width: 100%;
+
+        .erro.sumir{
+            display: block;
+        }
+
+        .erro{
+            display: none;
+            font-size: 20px;
+            font-weight: 600;
+        }
 
         h1{
             font-size: 25px;
