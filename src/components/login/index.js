@@ -92,8 +92,8 @@ async function Salvar(){
         }
 
         let r = await axios.post(API_URL + '/cliente/cadastro', user)
-        setErro2('Cadastro feito com sucesso')
-
+        
+setErro2('Cadastro feito com sucesso')
         Limpar()
 
     }
