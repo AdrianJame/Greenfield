@@ -14,10 +14,10 @@ export default function Cabesemdgd(){
                 <p>Home</p>
                 <p>Sobre</p>
 
-                <section>
+                <Link className='section' to={'/pesq'}>
                     <img src='/assets/images/lupa.svg'/>
-                    <input placeholder='busque aqui' type='text' />
-                </section>
+
+                </Link>
             </div>
 
                 <Link to={storage('usuario-logado') ? '/carrinho' : '/login'}> 

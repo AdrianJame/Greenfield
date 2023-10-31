@@ -17,6 +17,7 @@ export default function ProdutosDecoracao(){
 useEffect(() => {
         Listarprodutos()
 }, [])
+//http://localhost:5026/produto/id?id=2
     
     return(
         <div className='pagina-produto'>

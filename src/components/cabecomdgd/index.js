@@ -34,10 +34,9 @@ export default function Cabecomdgd(){
                 <p>Home</p>
                 <p>Sobre</p>
 
-                <section>
+                <Link className='section' to={'/pesq'}>
                     <img src='/assets/images/lupa.svg'/>
-                    <p>Buscar</p>
-                </section>
+                </Link>
             </div>
 
             <Link className={storage('usuario-logado') ? 'minhaconta' : ''}  to={!storage('usuario-logado') ? '/login' : '/minhaconta'}>{storage('usuario-logado') ? 'Minha conta' : 'Logar'}</Link>

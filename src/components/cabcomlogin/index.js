@@ -13,10 +13,9 @@ export default function Cabecalhocomlogin(){
                 <p>Home</p>
                 <p>Sobre</p>
 
-                <section>
+                <Link className='section' to={'/pesq'}>
                     <img src='/assets/images/lupa.svg'/>
-                    <input placeholder='busque aqui' type='text' />
-                </section>
+                </Link>
             </div>
 
             <Link className={storage('usuario-logado') ? 'minhaconta' : ''} to={!storage('usuario-logado') ? '/login' : '/minhaconta'}>{storage('usuario-logado') ? 'Minha conta' : 'Logar'}</Link>

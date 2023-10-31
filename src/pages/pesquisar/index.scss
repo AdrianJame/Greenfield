@@ -1,0 +1,193 @@
+.Pagina-Pesquisa{
+
+
+    .buscar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: 70px 0px 40px 0px;
+
+        gap: 40px;
+
+        h1{
+            color: #3b3b3b;
+            font-size: 30px;
+        }
+
+        .div-input-select{
+            display: flex;
+
+            img{
+                width: 20px;
+
+                cursor: pointer;
+            }
+
+            .borda{
+                width: 405px;
+                height: 55px;
+                position: relative;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .div-input{
+                display: flex;
+                z-index: 1;
+                flex-direction: row;
+                position: relative;
+
+                width: 400px;
+                height: 50px;
+
+                overflow: hidden;
+
+                input{
+                    border: none;
+                    outline: 0;
+                    
+                    height: 100%;
+                    width: 95%;
+
+                    font-size: 18px;
+
+                    padding: 0px 10px;
+                }                
+            }
+
+            .borda::before{
+                position: absolute;
+                width: 170%;
+                height: 170%;
+                content: '';
+                background-image: conic-gradient(#019708, #019708, #019708,  #019708);
+                animation: rotate_border 5s linear infinite;
+            
+            }
+            .borda::after{
+                
+                position: absolute;
+                width: 170%;
+                height: 170%;
+                content: '';
+                background-image: conic-gradient(#019708, #019708, #019708,  #019708);
+                animation: rotate_border 6s linear infinite;
+                animation-delay: -3s;
+            }
+
+            @keyframes rotate_border{
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+
+    .tudo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 97vw;
+        padding: 25px;
+
+        border-bottom: 2px solid #000;
+
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border: none;
+
+            color: #fff;
+
+            background-color: #018b3a;
+
+            width: 70%;
+            height: 35px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+            font-weight: 500;
+
+            border-radius: 5px;
+
+            transition: 1s;
+
+            img{
+                width: 20px; 
+                margin-right: 10px;
+            }
+        }
+
+        button:hover{
+            transform: translate(0px, -5px);
+        }
+
+    }
+
+    .listar-produtos{
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+
+        width: 100vw;
+
+        h1{
+            font-size: 25px;
+
+            margin-bottom: 70px;
+        }
+
+        .listar-produtosf{
+            display: flex;
+
+            padding: 10px 0px;
+
+            width: 100%;
+
+            img{
+                width: 150px;
+                height: 150px;
+
+                margin-right: 50px;
+
+            }
+
+            .produtos-desc{
+                display: flex;
+                flex-direction: column;
+
+                padding: 5px 0px;
+
+                gap: 40px;
+                
+                .produtos-nome{
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+
+                .produtos-preco{
+                    font-size: 16px;
+                    font-weight: 500;
+
+                    color: #006128;
+                }
+            }
+        }
+
+    }
+}

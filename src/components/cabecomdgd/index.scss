@@ -18,6 +18,34 @@
         width: auto;
     }
 
+    .section{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+        background-color:  transparent;
+
+        height: 50px;
+
+        border: none;
+
+        width: 50px;
+
+        border-radius: 0px;
+
+        gap: 10px;
+
+
+        img{
+            height: 16px;
+        }
+
+        p{
+            font-size: 10px !important;
+        }
+    }
+
     .meio-cabecalho{
         display: flex;
         flex-direction: row;
@@ -33,40 +61,6 @@
             color: rgba(54, 54, 54, 1);
         }
 
-        section{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            background-color: #f6f6f6;
-
-            width: 100%;
-            max-width: 350px;
-
-            gap: 10px;
-
-            padding: 0px 20px;
-
-            border-radius: 15px;
-
-            img{
-                height: 16px;
-            }
-
-          input{
-            border: 0px;
-
-            outline: 0;
-
-            height: 100%;
-
-            width: 90%;
-
-            font-size: 16px;
-
-            background-color: transparent;
-          }
-        }
     }
 
     a{
