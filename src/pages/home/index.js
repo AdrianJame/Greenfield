@@ -110,7 +110,7 @@ export default function Home() {
               
           </div>
           <div className='img1f3'>
-              <img src='./assets/images/image 4.svg'></img>
+              <img src='./assets/images/image 88.svg'></img>
           </div>
 
         </div>
@@ -125,7 +125,7 @@ export default function Home() {
         </div>
 
         <div className='img2f3'>
-            <img src='./assets/images/image 5.svg'></img>
+            <img src='./assets/images/image 304.svg'></img>
         </div>
 
             

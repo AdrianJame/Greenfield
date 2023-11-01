@@ -61,12 +61,16 @@ export default function Pag () {
                     <div className='select-pagamento'>
                         
                         <div className='conteudo-pagamento-esq'>
+                            
                             <img src='./assets/images/image-cartao-credito.svg'/>
                             <p>PAGUE COM CARTÃO</p>
+                
                         </div>
                         
                         <div className='conteudo-pagamento-seletor'>
-
+                        
+                            <input type='checkbox'></input>
+            
                         </div>
 
                     </div>
