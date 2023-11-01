@@ -285,7 +285,7 @@ export default function Login() {
 
               <button onClick={entrar} disabled={carregando}>Entrar</button>
             </section>
-            <button onClick={cadastroc}> Cadastrar</button>
+            <button className="button-cadastro" onClick={cadastroc}> Cadastrar</button>
           </div>
 
           <div className="cadastro-cell">

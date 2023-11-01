@@ -303,7 +303,7 @@
 
         .borda {
             width: 610px;
-            height: 810px;
+            height: 710px;
             position: relative;
             background-color: transparent;
             display: flex;
@@ -335,11 +335,10 @@
 
         .logincadastrocell {
             display: flex;
-
             z-index: 1;
 
             width: 600px;
-            height: 800px;
+            height: 700px;
 
             transition: ease 2s;
 
@@ -349,7 +348,7 @@
             .login-cell {
                 display: flex;
                 flex-direction: column;
-
+                align-items: center;
                 padding: 20px;
 
                 width: 100%;
@@ -378,14 +377,24 @@
                 .conteudo-login {
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
+
                     margin-top: 20px;
                     gap: 20px;
                     padding: 20px;
+
+                    width: 100%;
+
+                    margin-bottom: 60px;
 
                     .input {
                         display: flex;
                         flex-direction: row;
                         border-bottom: 1px solid white;
+
+                        width: 100%;
+
+                        margin-bottom: 20px;
 
                         img {
                             height: 30px;
@@ -401,6 +410,39 @@
 
                         width: 100%;
                     }
+
+                    button {
+                        background: linear-gradient(91deg, #009020 4.71%, #000 94.90%);
+
+                        border-radius: 50px;
+                        border: none;
+                        color: white;
+                        padding: 10px 20px;
+
+                        width: 250px;
+
+                        cursor: pointer;
+
+                        transition: 1s;
+                    }
+
+                    button:hover {
+                        transform: translate(0px, -5px);
+                    }
+                }
+
+                .button-cadastro{
+                    width: 200px;
+                    height: 35px;
+
+                    background-color: #fff;
+
+                    border-radius: 20px;
+
+                    font-size: 16px;
+                    font-weight: 500;
+
+
                 }
             }
 
@@ -423,5 +465,18 @@
 
         }
 
+    }
+
+
+    @media(max-width: 650px){
+        .borda{
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .logincadastrocell{
+            width: 98vw;
+            height: 98vh;
+        }
     }
 }
