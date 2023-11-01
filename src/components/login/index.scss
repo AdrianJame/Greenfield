@@ -381,7 +381,7 @@
 
                     margin-top: 20px;
                     gap: 20px;
-                    padding: 20px;
+                    padding: 15px;
 
                     width: 100%;
 
@@ -423,6 +423,8 @@
 
                         cursor: pointer;
 
+                        margin-bottom: 10px;
+
                         transition: 1s;
                     }
 
@@ -442,7 +444,15 @@
                     font-size: 16px;
                     font-weight: 500;
 
+                    transition: 1s;
 
+                    cursor: pointer;
+
+                    border: none;
+
+                }
+                .button-cadastro:hover {
+                    transform: translate(0px, -5px);
                 }
             }
 
@@ -460,6 +470,115 @@
 
             .cadastro-cell {
                 display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 100%;
+
+                .button-login{
+                    width: 200px;
+                    height: 35px;
+
+                    background-color: #fff;
+
+                    border-radius: 20px;
+
+                    font-size: 16px;
+                    font-weight: 500;
+
+                    transition: 1s;
+
+                    cursor: pointer;
+
+                    border: none;
+
+                }
+                .button-login:hover {
+                    transform: translate(0px, -5px);
+                }
+
+
+                .cabe-cadastro{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    width: 100%;
+
+                    padding: 20px 50px;
+
+                    width: 100%;
+
+                    margin-bottom: 40px;
+
+                    p {
+                        font-size: 30px;
+                    }
+
+                    img {
+                        width: 120px;
+                    }
+                }
+
+                .cadastro-inputs {
+                    display: flex;
+                    flex-direction: column;
+
+                    margin-top: 20px;
+                    gap: 20px;
+                    padding: 30px;
+
+                    width: 100%;
+
+
+                    .input {
+                        display: flex;
+                        flex-direction: row;
+                        border-bottom: 1px solid white;
+                    }
+
+                    input {
+                        outline: 0;
+                        background-color: black;
+                        border: none;
+                        color: white;
+                        font-size: 20px;
+                    }
+
+                    
+                }
+
+                .botao {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 40px;
+
+                    button {
+                        background: linear-gradient(91deg, #009020 4.71%, #000 94.90%);
+
+                        border-radius: 50px;
+                        border: none;
+                        color: white;
+                        padding: 10px 20px;
+
+                        cursor: pointer;
+
+                        transition: 1s;
+                    }
+
+                    button:hover {
+                        transform: translate(0px, -5px);
+                    }
+                }
+
+                .erro {
+                    align-self: center;
+                    color: white;
+                    font-size: 20px;
+                }
             }
 
 

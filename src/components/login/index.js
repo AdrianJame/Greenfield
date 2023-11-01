@@ -284,14 +284,55 @@ export default function Login() {
               </div>
 
               <button onClick={entrar} disabled={carregando}>Entrar</button>
+
+              <p>{erro}</p>
             </section>
             <button className="button-cadastro" onClick={cadastroc}> Cadastrar</button>
           </div>
 
           <div className="cadastro-cell">
-            aaaaa
-            display
-            <button onClick={Loginc}></button>
+
+            <section className="cabe-cadastro">
+              <p>Cadastrar</p>
+              <img src="/assets/images/logobranca.svg" />
+            </section>
+
+            <div className='cadastro-inputs'>
+
+              <div className='input'>
+                <img />
+                <input placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
+              </div>
+
+              <div className='input'>
+                <img />
+                <input placeholder='Nome de Usuário' value={nome} onChange={e => setNome(e.target.value)} />
+              </div>
+
+              <div className='input'>
+                <img />
+                <input placeholder='Telefone' value={telefone} onChange={e => setTelefone(e.target.value)} />
+              </div>
+
+              <div className='input'>
+                <img />
+                <input placeholder='CPF' value={cpf} onChange={e => setCpf(e.target.value)} />
+              </div>
+
+              <div className='input'>
+                <img />
+                <input placeholder='Senha' onKeyUp={tecla} value={senha} onChange={e => setSenha(e.target.value)} />
+              </div>
+
+              <div className='botao'>
+                <button onClick={Salvar}>Cadastrar-se</button>
+              </div>
+
+              <p className='erro'>{erro2}</p>
+
+            </div>
+
+            <button className="button-login" onClick={Loginc}>Login</button>
           </div>
         </section>
       </div>
