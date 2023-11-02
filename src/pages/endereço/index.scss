@@ -2,7 +2,6 @@
     background-color: #f6f6f6;
 
     width: 100%;
-    height: 198vh;
 
     overflow: hidden;
     display: flex;
@@ -36,15 +35,15 @@
             background-color: #fff;
             border-radius: 100%;
             
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
 
             
             border: 2px solid #29CD00;
 
             img {
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
             }
         }
 
@@ -68,13 +67,13 @@
 
             background-color: #fff;
             border-radius: 100%;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border: 2px solid #29CD00;
 
             img {
-                width: 30px;
-                height: 30px;
+                width: 25px;
+                height: 25px;
             }
     
         }
@@ -108,7 +107,7 @@
         flex-direction: column;
         
         width: 100vw;
-        height: 20vh;
+        height: 13vh;
         margin-top: 35px; 
 
         .produto {
@@ -131,6 +130,8 @@
         width: 100vw;
         height: 20vh;
         margin-top: 50px;
+
+        gap: 10px;
     
         .options-frete {
             background-color: #fff;
@@ -138,7 +139,6 @@
             width: 70vw;
             height: 20vh;
             border-radius: 10px;
-            margin: 4px;
         }
     }
 
@@ -151,10 +151,8 @@
         gap: 40px;
 
         width: 100vw;
-        height: 20vh;
-        margin-top: 200px;
-        margin-bottom: 400px;
-        gap: 20px;
+        height: 70vh;
+        margin-top: 30px;
 
         .logradouro {
             display: flex;
@@ -583,10 +581,15 @@
         }
 
         .logradouro-e-total-pedido {
-            
+            width: 100vw;
+            height: 75vh;
+
+            margin-top: 100px;
+
             .logradouro {
                 width: 70vw;
-
+                height: 50vh;
+           
                 .line-1 {
     
                     input {
@@ -629,8 +632,10 @@
 
             .pagamento {
                 width: 55vw;
-                height: 40vh;
+                height: 25vh;
+                margin-bottom: 25vh;
             }
+
         }
 
     }
