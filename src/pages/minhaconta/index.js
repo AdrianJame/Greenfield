@@ -6,10 +6,40 @@ import storage from 'local-storage'
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { API_URL } from '../../constants.js';
+import axios from 'axios';
 
 export default function Minhaconta(){
 
+    const [id, setId] = useState(0);
+    const [listar, setListar] = useState([]);
+    const [telefone, setTelefone] = useState('');
+    const[senha, setSenha] = useState('')
     const navigate = useNavigate()
+
+    async function Buscar(){
+        let r = await axios.get(API_URL + '/meucadastro/id?id=' + id)
+        setListar(r.data)
+    }
+
+
+    async function salvar(){
+
+            let info = {
+                telefone: telefone,
+                senha: senha
+            }
+
+            let r = await axios.put(API_URL + '/alterarinfo/' + id, info)
+
+                
+                removerinfo()
+    }
+
+
+
+
+
+
 
     function sairClick() {
         confirmAlert({
@@ -29,6 +59,45 @@ export default function Minhaconta(){
             ]
           });
     }
+
+    function sairClick2() {
+        confirmAlert({
+            title: 'Usuario',
+            message: 'Tem certeza que deseja sair da conta?',
+            buttons: [
+              {
+                label: 'Sim',
+                onClick: async () => {
+                    navigate('/login')
+                    storage.remove('usuario-logado');
+                }
+              },
+              {
+                label: 'Não'
+              }
+            ]
+          });
+    }
+
+
+
+
+    useEffect(() => {
+        const usuariologado = storage('usuario-logado');
+        setId(usuariologado.id_cliente)
+        Buscar()
+        setTelefone(usuariologado.ds_telefone)
+        setSenha(usuariologado.ds_senha)
+        
+
+
+        
+            
+}, [])
+
+
+
+
 
     function Alterarinfo() {
         const editar = document.getElementById('fundo-alterarinfo')
@@ -114,12 +183,25 @@ export default function Minhaconta(){
                     
                     <section className='fundo-alterarinfo' id='fundo-alterarinfo'>
                         <div className='alterarinfo'>
+
+                        
+
+                            <input value={telefone} onChange={e => setTelefone(e.target.value)}  />
+                            <input  value={senha} onChange={e => setSenha(e.target.value)}/>
+                            <button onClick={salvar}> Salvar Informações</button>
+                            
+
+                            
                             <button onClick={removerinfo}>fffff</button>
                         </div>
                     </section>
 
                     <section className='fundo-vercadastro' id='fundo-vercadastro'>
                         <div className='vercadastro'>
+
+                        {listar.map(item =>
+                            <p>{item.nm_cliente}</p>
+                            ) }
                         <button onClick={remover}>ssss</button>
                         </div>
                     </section>
