@@ -11,8 +11,8 @@ export default function Cabesemdgd(){
             <img src='/assets/images/image 62.svg'/>
 
             <div className='meio-cabecalho'>
-                <p>Home</p>
-                <p>Sobre</p>
+            <Link className='home-sobre' to={'/'}>Home</Link>
+                <Link className='home-sobre' to={''}>Sobre</Link>
 
                 <Link className='section' to={'/pesq'}>
                     <img src='/assets/images/lupa.svg'/>

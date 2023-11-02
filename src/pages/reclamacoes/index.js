@@ -14,8 +14,8 @@ export default function Reclamacoes(){
         let idCliente = JSON.parse(storage('usuario-logado')).id_cliente;
     
         let body = {
-            idCliente: idCliente,
-            reclamacao: reclamacao 
+            id_cliente: idCliente,
+            ds_reclamacao: reclamacao 
         }
     
     
@@ -29,6 +29,10 @@ export default function Reclamacoes(){
             <div className='faixa1'>
                 <div className='mensagens'>
                     <h2>RECLAMAÇÕES</h2>
+
+                  <input value={reclamacao} onChange={e => setReclamacao(e.target.value)} type='text' />
+
+                 <button onClick={reclamar}>Enviar reclamação</button>
                 </div>
             </div>
 

@@ -21,6 +21,7 @@ import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
 import ProdutosDecoracao from './pages/decoracao';
 import Pesquisar from './pages/pesquisar';
+import Meucadastro from './pages/meucadastro';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -46,6 +47,7 @@ root.render(
         <Route path='/cadastroproduto' element={<CadatroProdutoADM/>}/>
         <Route path='/Erro' element={<Erro/>}/>
         <Route path='/pesq' element={<Pesquisar/>}/>
+        <Route path='/meucadastro' element={<Meucadastro/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

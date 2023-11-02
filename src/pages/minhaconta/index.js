@@ -39,7 +39,7 @@ export default function Minhaconta(){
                         <div className='linha'>
 
                             <div className='agrup'>
-                                <Link className='card'>
+                                <Link to={'/meucadastro'} className='card'>
                                 <img className='imagemcard' src='./assets/images/image 227.svg'/>
                                 </Link>
                                 <p className='titulo-card'>Meu Cadastro</p>
@@ -49,7 +49,7 @@ export default function Minhaconta(){
                                 <Link className='card'>
                                     <img className='imagemcard' src='./assets/images/image 230 (1).svg' />
                                 </Link>
-                                <p className='titulo-card'> Trocar Senha</p>
+                                <p className='titulo-card'> Alterar Informações</p>
                             </div>
 
                             <div className='agrup'>
