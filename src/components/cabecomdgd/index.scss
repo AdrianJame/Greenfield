@@ -61,9 +61,18 @@
             color: rgba(54, 54, 54, 1);
         }
 
+        .home-sobre{
+            font-size: 20px;
+            color: #000;
+
+            font-weight: 400;
+
+            text-decoration: none;
+        }
+
     }
 
-    a{
+     > a{
         display: flex;
         flex-direction: row;
 
@@ -92,7 +101,7 @@
         width: 120px;
     }
 
-    a:hover{
+    > a:hover{
         transform:translate(0px, -7px);
     }
 
@@ -112,7 +121,7 @@
    
     .meio-cabecalho{
         justify-content: center;
-        p{
+        .home-sobre{
             font-size: 16px;
         }
     }

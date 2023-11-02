@@ -56,16 +56,18 @@
 
         gap: 30px;
 
-        p{
+
+        .home-sobre{
             font-size: 20px;
+            color: #000;
 
-            font-weight: 500;
+            font-weight: 400;
 
-            color: rgba(54, 54, 54, 1);
+            text-decoration: none;
         }
     }
 
-    a{
+    > a{
         display: flex;
         flex-direction: row;
 
@@ -100,7 +102,7 @@
         width: 120px;
     }
 
-    a:hover{
+    > a:hover{
         box-shadow: 0px 4px 8px 0px #000000a4;
 
         transform:translate(0px, -7px);
@@ -114,12 +116,8 @@
             gap: 10px;
             margin: 0px 10px;
 
-            p{
+            .home-sobre{
                 font-size: 16px;
-            }
-
-            section{
-
             }
         }
     }
@@ -130,7 +128,7 @@
             margin: 0px 10px;
             justify-content: center;
 
-            p{
+            .home-sobre{
                 font-size: 16px;
             }
 

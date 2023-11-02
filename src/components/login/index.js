@@ -176,7 +176,7 @@ export default function Login() {
 
                 <div className='input'>
                   <img />
-                  <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)} />
+                  <input placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
                 </div>
 
                 <div className='input'>
@@ -274,7 +274,7 @@ export default function Login() {
             <section className="conteudo-login">
               <div className='input'>
                 <img />
-                <input placeholder='E-mail ou Nome de Usuário' value={email} onChange={e => setEmail(e.target.value)} />
+                <input placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
               </div>
 
               <div className='input'>
