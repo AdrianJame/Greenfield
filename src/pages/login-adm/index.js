@@ -20,8 +20,8 @@ export default function LoginADM() {
   const loadingBarRef = useRef(null);
 
   useEffect(() => {
-    if(storage('adm-logado'))
-      navigate('/homeadm')
+  if(storage('adm-logado'))
+    navigate('/homeadm')
   }, [])
 
   async function entrar() {

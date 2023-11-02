@@ -40,7 +40,7 @@
             height: 70px;
 
             
-            border: 3px solid #29CD00;
+            border: 2px solid #29CD00;
 
             img {
                 width: 30px;
@@ -50,7 +50,7 @@
 
         .linha-verde {
             width: 300px;
-            height: 3px;
+            height: 2px;
             background-color: #29CD00;
         }
 
@@ -70,7 +70,7 @@
             border-radius: 100%;
             width: 70px;
             height: 70px;
-            border: 3px solid #29CD00;
+            border: 2px solid #29CD00;
 
             img {
                 width: 30px;
@@ -89,7 +89,7 @@
             border-radius: 100%;
             width: 70px;
             height: 70px;
-            border: 3px solid #000000;
+            border: 2px solid #000000;
 
             img {
                 width: 30px;
@@ -513,5 +513,125 @@
                 margin-top: 100px;
             }
         }
+    }
+}
+
+@media (max-width: 418px) {
+    .page-endereco {
+        .status-pedido {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+    
+    
+            .circle {
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+    
+                background-color: #fff;
+                border-radius: 100%;
+                
+                width: 50px;
+                height: 50px;
+    
+                
+                border: 2px solid #29CD00;
+    
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+    
+            .linha-verde {
+                width: 100px;
+                height: 2px;
+                background-color: #29CD00;
+            }
+    
+            .linha {
+                width: 100px;
+                height: 2px;
+                background-color: #D9D9D9;
+            }
+    
+            .circle-verde {
+    
+                width: 50px;
+                height: 50px;
+                border: 2px solid #29CD00;
+    
+            }
+    
+            .circle-s {
+                width: 50px;
+                height: 50px;
+                border: 2px solid #000000;
+    
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+        
+            }
+    
+        }
+
+        .logradouro-e-total-pedido {
+            
+            .logradouro {
+                width: 70vw;
+
+                .line-1 {
+    
+                    input {
+                        width: 50vw;
+                    }
+                }
+            
+                .line-2 {
+                    width: 50vw;
+                    
+                    .line-menor {
+                        width: 20vw;
+                    }
+    
+                    .line-maior {
+                        width: 29vw;
+                    }
+                }
+            
+                .line-3 {
+                    input {
+                        width: 50vw;
+                    }
+                }
+                
+                .line-4 {
+                    width: 50vw;
+            
+                    input {
+                        width: 15vw;
+                    }
+                }
+            
+                a {
+                    font: 11px 'Oswald', sans-serif;
+
+                    width: 50vw;
+                }
+            }
+
+            .pagamento {
+                width: 55vw;
+                height: 40vh;
+            }
+        }
+
     }
 }

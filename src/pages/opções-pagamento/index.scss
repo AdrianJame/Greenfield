@@ -39,7 +39,7 @@
             height: 70px;
 
             
-            border: 3px solid #29CD00;
+            border: 2px solid #29CD00;
 
             img {
                 width: 30px;
@@ -49,7 +49,7 @@
 
         .linha-verde {
             width: 300px;
-            height: 3px;
+            height: 2px;
             background-color: #29CD00;
         }
 
@@ -70,69 +70,67 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-                
+                    
             background-color: #fff;
             width: 50vw;
             height: 16vh;
-            padding: 50px;
+            padding: 40px;
             margin-top: 35px;
     
             .cont-esq {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-    
+        
                 .circle-verde {
-                
+                    
                     display: flex;
                     align-items: center;
                     justify-content: center;
-            
-            
+                
+                
                     background-color: #fff;
                     border-radius: 100%;
-                        
+                            
                     width: 70px;
                     height: 70px;
-            
-                        
-                    border: 3px solid #29CD00;
-            
+                
+                            
+                    border: 2px solid #29CD00;
+                
                     img {
                         width: 30px;
                         height: 30px;
-                        }
-                    }
-    
-                    .desc-frete {
-                        margin: 15px;
-                    }
-                    
-                }
-    
-                
-    
-                .cont-dir {
-    
-    
-                    a {
-                        color: #29CD00;
-    
-                        font: 18px 'Oswald', sans-serif;
-    
-                        cursor: pointer;
                     }
                 }
+        
+                .desc-frete {
+                    margin: 15px;
+                }
+                        
             }
 
-            h1 {
-                font: 25px 'Oswald', sans-serif;
+            .cont-dir {
+        
+        
+                a {
+                    color: #29CD00;
+        
+                    font: 18px 'Oswald', sans-serif;
+        
+                    cursor: pointer;
+                }
             }
+        }
 
-            h1 {
-                font: 18px 'Oswald', sans-serif;
-                margin-bottom: 14px;
-            }
+        h1 {
+            font: 25px 'Oswald', sans-serif;
+        }
+
+        h1 {
+            font: 18px 'Oswald', sans-serif;
+            margin-bottom: 14px;
+        }
 
         .escolha-pagamento {
             display: flex;
@@ -205,36 +203,18 @@
     }
 }
 
-@media (max-width:970px){
-    
-}
-
-@media (max-width:520px){
+@media (max-width: 418px) {
     .page-forma-de-pagamento {
         
         .status-pedido {
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 100px;
-    
     
             .circle-verde {
                 
-                display: flex;
-                align-items: center;
-                justify-content: center;
-    
-    
-                background-color: #fff;
-                border-radius: 100%;
-                
-                width: 65px;
+                width: 50px;
                 height: 50px;
     
                 
-                border: 3px solid #29CD00;
+                border: 2px solid #29CD00;
     
                 img {
                     width: 20px;
@@ -243,35 +223,58 @@
             }
     
             .linha-verde {
-                width: 235px;
-                height: 3px;
+                width: 100px;
+                height: 2px;
                 background-color: #29CD00;
             }
-    
         }
 
         .section-pagamento {
-
+            
             .frete-e-pagamento {
-                
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+                width: 85vw;
+                padding: 15px;
+               
+                .cont-esq {
+                    display: flex;
+                    flex-direction: row;
+
+
+                    .circle-verde {
+                         
+                        width: 50px;
+                        height: 50px;
                     
-                background-color: #fff;
-                width: 80vw;
+                                
+                        border: 2px solid #29CD00;
+                    
+                        img {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+            
+                    .desc-frete {
+                        p {
+                            font: 15px 'Oswald', sans-serif;
+                        }
+                    }      
+                } 
             }
 
             .escolha-pagamento {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                    
-                background-color: #fff;
-                width: 80vw;
-                height: 16vh;
-                padding: 50px;
+                width: 85vw;
+                padding: 30px;
+            }
+        }
+
+        .section-pagamento {
+        
+            .pagamento {
+
+                width: 50vw;
+                height: 50vh;
+                
             }
         }
     }

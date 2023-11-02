@@ -39,7 +39,7 @@
             height: 70px;
 
             
-            border: 3px solid #29CD00;
+            border: 2px solid #29CD00;
 
             img {
                 width: 30px;
@@ -440,6 +440,32 @@
     }
 }
 
+@media (max-width: 931px) {
+    .page-carrinho {
+        .info {
+            display: flex;
+            flex-direction: row;
+
+
+            input {
+            
+                padding: 5px 10px;
+
+            }
+
+            button {
+                padding: 7px 10px;
+
+                background-color: #009020;
+                color: #fff;
+
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 @media(max-width: 926px){
     .page-carrinho {
         
@@ -507,7 +533,7 @@
                 height: 65px;
     
                 
-                border: 3px solid #29CD00;
+                border: 2px solid #29CD00;
     
                 img {
                     width: 25px;
@@ -517,7 +543,7 @@
     
             .linha {
                 width: 235px;
-                height: 3px;
+                height: 2px;
                 background-color: #D9D9D9;
             }
     
@@ -579,8 +605,6 @@
         }
     }
 }
-
-
 
 @media (max-width: 520px) {
     .page-carrinho {
@@ -675,27 +699,127 @@
     }
 }
 
-@media (max-width: 931px) {
+@media (max-width: 418px) {
     .page-carrinho {
-        .info {
-            display: flex;
-            flex-direction: row;
-
-
-            input {
+        .status-pedido {
             
-                padding: 5px 10px;
-
+            .circle {
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+    
+                background-color: #fff;
+                border-radius: 100%;
+                
+                width: 50px;
+                height: 50px;
             }
 
-            button {
-                padding: 7px 10px;
+            .linha {
+                width: 120px;
+                height: 2px;
+                background-color: #D9D9D9;
+            }
 
-                background-color: #009020;
-                color: #fff;
+            .circle-s {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+}
 
-                border: none;
-                cursor: pointer;
+@media (max-width: 414px) {
+    .page-carrinho {
+        
+        .status-pedido {
+            
+            .circle {
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+    
+                background-color: #fff;
+                border-radius: 100%;
+                
+                width: 50px;
+                height: 50px;
+    
+                
+                border: 2px solid #29CD00;
+    
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .linha {
+                width: 100px;
+                height: 2px;
+                background-color: #D9D9D9;
+            }
+    
+            .circle-s {
+                width: 50px;
+                height: 50px;
+                
+                border: 2px solid #000000;
+    
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+        
+            }
+        }
+
+        .faixa-03 {
+            
+            .cupom-e-frete {
+                
+                .info {
+                    display: flex;
+                    justify-content: center;
+                    padding: 20px;
+
+                    input {
+                        width: 44vw;
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 375px) {
+    .page-carrinho {
+        
+        .status-pedido {
+            
+            .circle {
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+    
+                background-color: #fff;
+                border-radius: 100%;
+                
+                width: 50px;
+                height: 50px;
+            }
+
+            .circle-s {
+                width: 50px;
+                height: 50px;
             }
         }
     }
