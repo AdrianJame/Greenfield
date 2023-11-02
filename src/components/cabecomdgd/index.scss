@@ -138,13 +138,23 @@
 
 @media(max-width: 485px){
     .Cabecalho1{
-        justify-content: center;
+        justify-content: space-between;
         
         .meio-cabecalho{
-           gap: 7px; 
+           gap: 20px; 
 
            width: 100%;
            max-width: 260px;
+
+           .section{
+            position: relative;
+                img{
+
+                    position: absolute;
+                    top: 10px;
+                }
+           }
+
         }
     }
 }
