@@ -61,9 +61,18 @@
             color: rgba(54, 54, 54, 1);
         }
 
+        .home-sobre{
+            font-size: 20px;
+            color: #000;
+
+            font-weight: 400;
+
+            text-decoration: none;
+        }
+
     }
 
-    a{
+     > a{
         display: flex;
         flex-direction: row;
 
@@ -92,7 +101,7 @@
         width: 120px;
     }
 
-    a:hover{
+    > a:hover{
         transform:translate(0px, -7px);
     }
 
@@ -111,7 +120,8 @@
         padding: 10px;
    
     .meio-cabecalho{
-        p{
+        justify-content: center;
+        .home-sobre{
             font-size: 16px;
         }
     }
@@ -128,13 +138,23 @@
 
 @media(max-width: 485px){
     .Cabecalho1{
-        justify-content: center;
+        justify-content: space-between;
         
         .meio-cabecalho{
-           gap: 7px; 
+           gap: 20px; 
 
            width: 100%;
            max-width: 260px;
+
+           .section{
+            position: relative;
+                img{
+
+                    position: absolute;
+                    top: 10px;
+                }
+           }
+
         }
     }
 }

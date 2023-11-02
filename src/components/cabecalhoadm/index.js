@@ -49,7 +49,7 @@ export default function Cabeadm(){
 
             <section className='cabeadm-p2'>
                 <div className='linkhomeajuda'>
-                    <Link>Home</Link>
+                    <Link to={'/'}>Home</Link>
                     <Link>Ajuda <img src='/assets/images/interrogacao.svg'/></Link>
                 </div>
 
