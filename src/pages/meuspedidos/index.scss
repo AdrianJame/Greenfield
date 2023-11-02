@@ -8,7 +8,7 @@
         gap: 30px;
         padding: 0px 40px;
         background-color: #f6f6f6;
-        height: 90vh;
+        
 
     
     }
@@ -150,6 +150,29 @@
 
         .pagamento{
             max-width: 350px;
+        }
+        
+    }
+
+    @media (max-width: 665px) {
+        .linha{
+            display: flex;
+            flex-direction: column !important;
+            justify-content: flex-start !important;
+            align-items: center !important;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 373px) {
+        .pagamento{
+            max-width: 320px !important;
+            width: 100% !important;
+        }
+
+        .pagar{
+            max-width: 190px !important;
+            width: 100% !important;
         }
         
     }
