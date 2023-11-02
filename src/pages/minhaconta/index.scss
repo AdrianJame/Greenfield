@@ -55,6 +55,63 @@
         
     }
 
+    .fundo-alterarinfo{
+        display: none;
+    }
+
+    .fundo-alterarinfo.aparecer{
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+
+        width: 98vw;
+        height: 98vh;
+
+        top: 0px;
+
+        background-color: #f6f6f69a;
+
+        .alterarinfo{
+            display: flex;
+
+            height: 50vh;
+            width: 50vw;
+
+            background-color: #fff;
+        }
+    }
+
+
+    .fundo-vercadastro{
+        display: none;
+    }
+
+    .fundo-vercadastro.aparecer{
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+
+        width: 98vw;
+        height: 98vh;
+
+        top: 0px;
+
+        background-color: #f6f6f69a;
+
+        .vercadastro{
+            display: flex;
+
+            height: 50vh;
+            width: 50vw;
+
+            background-color: #fff;
+        }
+    }
+
     @media(max-width:991px) {
         .card{
             max-width: 160px;
@@ -69,7 +126,7 @@
 
         .agrup p{
             font-size: 20px;
-            max-width: 125px;
+            max-width: 200px;
         }
     }
 
@@ -102,6 +159,10 @@
             align-items: center;
             justify-content: start;
             gap: 0px;
+        }
+
+        .agrup{
+            margin-bottom: 30px;
         }
 
         
