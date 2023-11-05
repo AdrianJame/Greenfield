@@ -126,6 +126,10 @@
         }
     }
 
+    .minhaconta{
+        max-width: 150px !important;
+    }
+
     a{
         max-width: 60px;
 
@@ -133,7 +137,9 @@
 
         height: 30px;
     } 
+
     }
+
 }
 
 @media(max-width: 485px){
@@ -151,10 +157,17 @@
                 img{
 
                     position: absolute;
-                    top: 10px;
+                    top: 13px;
                 }
            }
 
+        }
+        .minhaconta{
+            max-width: 100px;
+
+            min-width: 100px;
+
+            font-size: 14px;
         }
     }
 }
@@ -176,6 +189,29 @@
                 justify-content: center;
                 width: 30px;
             }
+        }
+
+        .minhaconta{
+            font-size: 12px;
+
+            max-width: 90px !important;
+            min-width: 0px;
+        }
+    }
+
+    @media(max-width: 360px){
+        .Cabecalho1{
+            .minhaconta{
+                font-size: 10px !important;
+                max-width: 85px !important;
+            }
+
+            .meio-cabecalho{
+                gap: 10px !important;
+                .img{
+                    max-width: 16px !important;
+                }
+            } 
         }
     }
 }

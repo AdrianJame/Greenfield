@@ -30,11 +30,17 @@
 
         cursor: pointer;
 
+        transition: 1s;
+
         .imagemcard{
             max-width: 105px;
             width: 100%;
         }
         
+    }
+
+    .card:hover{
+        transform: translate(0px, -5px);
     }
 
     .agrup{
@@ -75,12 +81,55 @@
 
         .alterarinfo{
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
 
-            height: 50vh;
-            width: 50vw;
+
+            height: 40vh;
+            width: 30vw;
+
+            box-shadow: 0px 2px 5px  #0000006d;
 
             background-color: #fff;
+
+            section{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                
+                gap: 8px;
+
+                width: 100%;
+
+                input{
+                    width: 90%;
+                    height: 30px;
+
+                    font-size: 16px;
+
+                    border: none;
+                    outline: 0;
+                }
+
+                .input {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    width: 70%;
+
+                    border: 1px solid black;
+
+                    img {
+                        height: 25px;
+                    }
+                }
+            }
         }
+
     }
 
 

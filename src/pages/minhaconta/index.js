@@ -11,15 +11,12 @@ import axios from 'axios';
 export default function Minhaconta(){
 
     const [id, setId] = useState(0);
-    const [listar, setListar] = useState([]);
+    const[nome, setNome] = useState('')
     const [telefone, setTelefone] = useState('');
     const[senha, setSenha] = useState('')
     const navigate = useNavigate()
+    const[mostrarsenha, setMostrarsenha] = useState(false)
 
-    async function Buscar(){
-        let r = await axios.get(API_URL + '/meucadastro/id?id=' + id)
-        setListar(r.data)
-    }
 
 
     async function salvar(){
@@ -34,8 +31,6 @@ export default function Minhaconta(){
                 
                 removerinfo()
     }
-
-
 
 
 
@@ -85,15 +80,16 @@ export default function Minhaconta(){
     useEffect(() => {
         const usuariologado = storage('usuario-logado');
         setId(usuariologado.id_cliente)
-        Buscar()
         setTelefone(usuariologado.ds_telefone)
-        setSenha(usuariologado.ds_senha)
-        
-
-
-        
-            
+        setSenha(usuariologado.ds_senha)  
+        setNome(usuariologado.nm_cliente)             
 }, [])
+
+function tecla(e) {
+    if (e.key === 'Enter') {
+      salvar();
+    }
+  }
 
 
 
@@ -183,26 +179,36 @@ export default function Minhaconta(){
                     
                     <section className='fundo-alterarinfo' id='fundo-alterarinfo'>
                         <div className='alterarinfo'>
+                            <section>
+                                <p>Altere seu numero</p>
+                                
+                                <div className='input'>
+                                <input onKeyUp={tecla} placeholder='11 97880-7723' value={telefone} onChange={e => setTelefone(e.target.value)}  />
+                                </div> 
+                            </section>
 
-                        
+                            <section>
+                                <p>Altere sua senha</p>
 
-                            <input value={telefone} onChange={e => setTelefone(e.target.value)}  />
-                            <input  value={senha} onChange={e => setSenha(e.target.value)}/>
+                                <div className='input'>
+                                    <input onKeyUp={tecla} type={mostrarsenha ? 'text' : 'password'} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                                    <img className="olho" onClick={() => setMostrarsenha(!mostrarsenha)} src={mostrarsenha ? '/assets/images/olhopreto.png' : '/assets/images/olhofpreto.png'} />
+                                </div>
+                            </section>
+
                             <button onClick={salvar}> Salvar Informações</button>
-                            
+                               
+                               <p>Deslogue para atualizar as Informações</p>
 
-                            
-                            <button onClick={removerinfo}>fffff</button>
+                            <button onClick={removerinfo}>Voltar</button>
                         </div>
                     </section>
 
+
                     <section className='fundo-vercadastro' id='fundo-vercadastro'>
                         <div className='vercadastro'>
-
-                        {listar.map(item =>
-                            <p>{item.nm_cliente}</p>
-                            ) }
-                        <button onClick={remover}>ssss</button>
+                            <p>{nome}</p>
+                        <button onClick={remover}>Voltar</button>
                         </div>
                     </section>
 

@@ -186,3 +186,11 @@
         width: 60px !important;
     }
 }
+
+@media(max-width: 360px){
+    .minhaconta{
+        font-size: 14px !important;
+
+        min-width: 91.7px;
+    }
+}
