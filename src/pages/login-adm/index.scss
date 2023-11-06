@@ -125,4 +125,11 @@
     }
 
 
+    @media(max-width: 415px){
+        .card-login {
+            width: 98vw;
+            height: 80vh;
+        }
+    }
+
 }
