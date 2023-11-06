@@ -14,10 +14,12 @@ export default function Home() {
   async function Buscarcategorias(){
     let r = await axios.get(API_URL + '/categoria')
     setCategorias(r.data)
+    
 }
 
   return (
     <div className="Home">
+
       <Cabecomdgd/>
       
       <div className='faixa1'>
