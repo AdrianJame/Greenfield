@@ -925,170 +925,70 @@
 }
 
 
+
 @media(max-width: 1060px) {
+        .home{
 
-    .Home {
+            .faixa1{
 
-        .faixa3 {
-
-
-            .faixa3-tudo {
-                padding-left: 15px;
-
-                h1 {
-                    margin-top: 530px;
-                    font-size: 40px;
-                }
-
-                .faixa3-numeros {
-                    p {
-                        margin-top: 15px;
-                        font-size: 50px;
-                    }
-                }
-
-                .faixa3-textos {
-
-                    p {
-                        width: 500px;
-                        height: 40px;
-                        margin-top: 5px;
-                        font-size: 15px;
-                    }
-                }
             }
 
-            .faixa4 {
-                left: 420px;
-                bottom: 1150px;
-                gap: 50px;
+            .faixa3 {
 
-                h1 {}
-
-                p {
-                    font-size: 20px;
-                    width: 400px;
-                }
-            }
-
-
-        }
-
-
-    }
-}
-
-@media(max-width: 977px) {
-
-    .Home {
-
-        .faixa3 {
-
-
-            .faixa3-tudo {
-                padding-left: 15px;
-
-                h1 {
-                    margin-top: 580px;
-                    height: 20px;
-                    font-size: 30px;
-                }
-
-                .faixa3-numeros {
-                    p {
-                        margin-top: 15px;
+                .faixa3-tudo {
+    
+                    h1 {
+                        margin-top: 480px;
                         font-size: 40px;
                     }
-                }
-
-                .faixa3-textos {
-
-                    p {
-                        width: 450px;
-                        height: 50px;
-                        margin-top: 5px;
-                        font-size: 13px;
+    
+                    .faixa3-numeros {
+                        p {
+                            margin-top: 20px;
+                            font-size: 50px;
+                        }
+                    }
+    
+                    .faixa3-textos {
+    
+                        p {
+                            width: 500px;
+                            height: 50px;
+                            margin-top: 5px;
+                            font-size: 15px;
+                        }
                     }
                 }
-            }
+    
+                .faixa4 {
+                    left: 460px;
+                    bottom: 1180px;
+    
+                    h1 {
 
-            .faixa4 {
-                left: 360px;
-                bottom: 1150px;
-                gap: 50px;
-
-                h1 {}
-
-                p {
-                    font-size: 20px;
-                    width: 400px;
+                    }
+    
+                    p {
+                        font-size: 25px;
+                    }
                 }
+    
+    
             }
-
-
+    
+    
         }
-
-
     }
-}
-
-@media(max-width: 926px) {
-
-    .Home {
+    
 
 
 
-        .faixa3 {
 
 
-            .faixa3-tudo {
-                padding-left: 15px;
-
-                h1 {
-                    margin-top: 640px;
-                    height: 20px;
-                    font-size: 30px;
-                }
-
-                .faixa3-numeros {
-                    p {
-                        margin-top: 25px;
-                        font-size: 40px;
-                    }
-                }
-
-                .faixa3-textos {
-
-                    p {
-                        width: 400px;
-                        height: 30px;
-                        margin-top: 15px;
-                        font-size: 13px;
-                    }
-                }
-            }
-
-            .faixa4 {
-                left: 320px;
-                bottom: 1150px;
-                gap: 50px;
-
-                h1 {}
-
-                p {
-                    font-size: 20px;
-                    width: 400px;
-                }
-            }
 
 
-        }
 
-
-    }
-}
-
-@media(max-width: 412px) {
+@media(max-width: 493px) {
 
     .Home {
 
@@ -1105,10 +1005,12 @@
                 display: flex;
 
                 .titulo {
+                    font-size: 24px;
                     width: 300px;
                 }
 
                 p {
+                    font-size: 17   px;
                     width: 300px;
                 }
 
@@ -1267,13 +1169,13 @@
                 text-align: center;
 
                 h1 {
-                    margin-top: 100px;
+                    
                     font-size: 25px;
 
                 }
 
                 p {
-                    font-size: 20px;
+                    
                     width: 300px;
                 }
 
@@ -1320,4 +1222,10 @@
 
 
     }
+
+
+    
 }
+
+
+
