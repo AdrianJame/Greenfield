@@ -14,6 +14,8 @@ export default function Minhaconta(){
     const[nome, setNome] = useState('')
     const [telefone, setTelefone] = useState('');
     const[senha, setSenha] = useState('')
+    const[email, setEmail] = useState('')
+    const[cpf, setCpf] = useState('')
     const navigate = useNavigate()
     const[mostrarsenha, setMostrarsenha] = useState(false)
 
@@ -31,9 +33,6 @@ export default function Minhaconta(){
                 
                 removerinfo()
     }
-
-
-
 
 
     function sairClick() {
@@ -82,7 +81,10 @@ export default function Minhaconta(){
         setId(usuariologado.id_cliente)
         setTelefone(usuariologado.ds_telefone)
         setSenha(usuariologado.ds_senha)  
-        setNome(usuariologado.nm_cliente)             
+        setNome(usuariologado.nm_cliente)
+        setEmail(usuariologado.ds_email)
+        setCpf(usuariologado.ds_cpf) 
+
 }, [])
 
 function tecla(e) {
@@ -178,37 +180,53 @@ function tecla(e) {
                     </div>
                     
                     <section className='fundo-alterarinfo' id='fundo-alterarinfo'>
-                        <div className='alterarinfo'>
-                            <section>
-                                <p>Altere seu numero</p>
+                        <div className='borda'>
+                            <div className='alterarinfo'>
+                                <section>
+                                    <p>Altere seu numero</p>
+                                    
+                                    <div className='input'>
+                                    <input onKeyUp={tecla} placeholder='11 97880-7723' value={telefone} onChange={e => setTelefone(e.target.value)}  />
+                                    </div> 
+                                </section>
+
+                                <section>
+                                    <p>Altere sua senha</p>
+
+                                    <div className='input'>
+                                        <input onKeyUp={tecla} type={mostrarsenha ? 'text' : 'password'} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                                        <img className="olho" onClick={() => setMostrarsenha(!mostrarsenha)} src={mostrarsenha ? '/assets/images/olhopreto.png' : '/assets/images/olhofpreto.png'} />
+                                    </div>
+                                </section>
+
+                                <button className='salvarinfo' onClick={salvar}> Salvar Informações</button>
                                 
-                                <div className='input'>
-                                <input onKeyUp={tecla} placeholder='11 97880-7723' value={telefone} onChange={e => setTelefone(e.target.value)}  />
-                                </div> 
-                            </section>
+                                <p>Deslogue para atualizar as Informações</p>
 
-                            <section>
-                                <p>Altere sua senha</p>
-
-                                <div className='input'>
-                                    <input onKeyUp={tecla} type={mostrarsenha ? 'text' : 'password'} placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
-                                    <img className="olho" onClick={() => setMostrarsenha(!mostrarsenha)} src={mostrarsenha ? '/assets/images/olhopreto.png' : '/assets/images/olhofpreto.png'} />
-                                </div>
-                            </section>
-
-                            <button onClick={salvar}> Salvar Informações</button>
-                               
-                               <p>Deslogue para atualizar as Informações</p>
-
-                            <button onClick={removerinfo}>Voltar</button>
+                                <button className='voltar' onClick={removerinfo}>Voltar</button>
+                            </div>
                         </div>
                     </section>
 
 
                     <section className='fundo-vercadastro' id='fundo-vercadastro'>
-                        <div className='vercadastro'>
-                            <p>{nome}</p>
-                        <button onClick={remover}>Voltar</button>
+                        <div className='borda'>
+                            <div className='vercadastro'>
+                                <section>
+                                    <div className='imagem-nome'>
+                                        <img src='/assets/images/pessoacadastro.png'/>
+                                        <p>{nome}</p>
+                                    </div>
+                                    <div className='informacoes'>
+                                        <p><span>Email:</span>  {email}</p>
+                                        <p><span>CPF:</span>  {cpf}</p>
+                                        <p><span>Tel:</span>  {telefone}</p>
+                                        <p> <span>senha:</span>  ******</p>
+                                    </div>
+                                </section>
+
+                                <button className='voltar' onClick={remover}>Voltar</button>
+                            </div>
                         </div>
                     </section>
 
