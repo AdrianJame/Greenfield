@@ -65,6 +65,29 @@
         display: none;
     }
 
+    .voltar{
+        height: 25px;
+        width: 100px;
+
+        cursor: pointer;
+
+        border: 1px solid #000;
+
+        transition: 1s;
+        
+        border-radius: 5px;
+
+        outline: 0;
+    }
+
+    .voltar:hover{
+        transform: translate(0px, -5px);
+
+        border: none;
+
+        box-shadow: 0px 2px 5px #0000007a;
+    }
+
     .fundo-alterarinfo.aparecer{
         display: flex;
         position: absolute;
@@ -79,19 +102,72 @@
 
         background-color: #f6f6f69a;
 
+        .borda {
+            height: 353px;
+            width: 473px;
+            position: relative;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .borda::before {
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            content: '';
+            background-image: conic-gradient(#fff, #019708, #fff, #019708);
+            animation: rotate_border 6s linear infinite;
+
+        }
+
+        .borda::after {
+
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            content: '';
+            background-image: conic-gradient(#fff, #019708, #fff, #019708);
+            animation: rotate_border 6s linear infinite;
+            animation-delay: -3s;
+        }
+
         .alterarinfo{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
 
+            z-index: 1;
 
-            height: 40vh;
-            width: 30vw;
-
-            box-shadow: 0px 2px 5px  #0000006d;
+            height: 350px;
+            width: 470px;
 
             background-color: #fff;
+
+            .salvarinfo{
+                border: none;
+                outline: 0;
+
+                background: linear-gradient(91deg, #009020 4.71%, #000 94.34%);
+
+                height: 30px;
+                width: 150px;
+
+                color: #fff;
+                
+                border-radius: 20px;
+
+                cursor: pointer;
+
+                transition: 1s;
+            }
+
+            .salvarinfo:hover{
+                transform: translate(0px, -5px);
+            }
 
             section{
                 display: flex;
@@ -153,13 +229,86 @@
 
         .vercadastro{
             display: flex;
+            flex-direction: column;
+            align-items: center;
 
-            height: 50vh;
-            width: 50vw;
+            z-index: 1;
+
+            height: 320px;
+            width: 550px;
 
             background-color: #fff;
+
+            section{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                width: 100%;
+
+                padding: 40px 60px;
+
+                .imagem-nome{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    gap: 10px;
+
+                    p{
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                }
+
+                .informacoes{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    p{
+                        span{
+                            font-weight: 500;
+                            color: #019708;
+                        }
+                    }
+                }
+            }
+        }
+
+        .borda {
+            width: 553px;
+            height: 323px;
+            position: relative;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .borda::before {
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            content: '';
+            background-image: conic-gradient(#fff, #019708, #fff, #019708);
+            animation: rotate_border 6s linear infinite;
+
+        }
+
+        .borda::after {
+
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            content: '';
+            background-image: conic-gradient(#fff, #019708, #fff, #019708);
+            animation: rotate_border 6s linear infinite;
+            animation-delay: -3s;
         }
     }
+
+
 
     @media(max-width:991px) {
         .card{
@@ -218,6 +367,68 @@
         
     }
 
+     @media(max-width: 414px){
+        .fundo-vercadastro.aparecer{
+
+            .vercadastro{
+
+                width: 85vw !important;
+                height: 270px !important;
+
+                section{
+
+                    padding: 40px 10px;
+
+                    .imagem-nome{
+
+                        img{
+                            width: 70px;
+                        }
+
+                        p{
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .informacoes{
+                        p{
+                            font-size: 14px;
+                            span{
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: #019708;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .borda {
+                width: 85.5vw !important;
+                height: 273px !important;
+            }
+
+        }
+
+
+        .fundo-alterarinfo.aparecer{
+            .borda{
+                width: 85.5vw !important;
+                height: 403px !important;
+            }
+
+            .alterarinfo{
+                width: 85vw !important;
+                height: 400px !important;
+
+                p{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
 
 }
 
