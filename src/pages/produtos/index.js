@@ -68,9 +68,17 @@ useEffect(() => {
                     <section></section>
 
                     <div onClick={() => window.location.reload()}>
-                        <div onClick={() => navigate('/produtos/' + 5)}>
+                        <div onClick={() => navigate('/produtos/' + 4)}>
                             <img src='/assets/images/cortador.svg'/>
                             <p>Cortadores de Grama</p>
+                        </div>
+                    </div>
+                    <section></section>
+
+                    <div onClick={() => window.location.reload()}>
+                        <div onClick={() => navigate('/produtos/' + 5)}>
+                            <img src='/assets/images/vasoplanta.png'/>
+                            <p>Decorações</p>
                         </div>
                     </div>
                     
@@ -79,7 +87,7 @@ useEffect(() => {
 
 
             <section className='produtos-s3'>
-                <h1>Outras Decorações</h1>
+                <h1>Outros Produtos</h1>
 
                 <div className='parte-cards'>
                 {produto2.map(item => 

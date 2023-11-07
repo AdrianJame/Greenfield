@@ -139,7 +139,10 @@
             padding: 30px 80px;
 
             height: 250px;
-            width: 75vw;
+
+            width: 100%;
+            min-width: 1100px;
+            max-width: 1100px;
 
             box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 
@@ -153,15 +156,25 @@
                 gap: 25px;
 
                 color: #626161;
+
+                transition: 0.5s;
                 
 
                 img{
                     height: 100px;
                     width: auto;
+
+                    transition: 0.5s;
                 }
 
                 p{
                     font-weight: 500;
+                }
+            }
+
+            div:hover{
+                img{
+                    transform: translate(0px, -10px);
                 }
             }
 
@@ -184,7 +197,7 @@
         h1{
             margin: 55px 0px;
 
-            font-size: 30px;
+            font-size: 40px;
         }
 
         .parte-cards{
@@ -237,4 +250,89 @@
         }
 
     }
+
+    @media(max-width: 1160px){
+        .produtos-s2-tipos-card{
+
+            max-width: 900px !important;
+            min-width: 0px !important;
+        }
+    }
+
+    @media(max-width: 940px){
+        .produtos-s2-tipos{
+            height: 360px !important;
+        }
+        .produtos-s2-tipos-card{
+            padding: 10px !important;
+
+            max-width: 600px !important;
+
+            img{
+                height: 70px !important;
+            }
+
+            div{
+
+               p{
+                font-size: 14px !important;
+               }
+            }
+
+            section{
+                display: none;
+            }
+        }
+    }
+
+    @media(max-width: 780px){
+        .produtos-s1{
+            >h1{
+                font-size: 30px !important;
+
+                width: auto !important;
+            }
+        }
+    }
+
+    @media(max-width: 635px){
+        .produtos-s2-tipos-card{
+            flex-wrap: wrap !important;
+
+            padding: 20px !important;
+
+            gap: 20px !important;
+
+            height: 350px !important;
+
+            width: 340px !important;
+        }
+
+        .produtos-s3{
+            h1{
+                font-size: 30px;
+            }
+        }
+    }
+
+    @media(max-width: 365px){
+        .produtos-s1{
+            >h1{
+                font-size: 18px !important;
+
+                width: auto !important;
+            }
+        }
+    }
+
+    @media(max-width: 475px){
+        .produtos-s1{
+            >h1{
+                font-size: 25px !important;
+
+                width: auto !important;
+            }
+        }
+    }
+
 }

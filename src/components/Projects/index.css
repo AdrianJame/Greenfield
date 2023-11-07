@@ -37,7 +37,7 @@
 
 @media(max-width: 991px){
 
-  .slick-track, .slick-slider, .next, .back{
+  .slick-track, .slick-slider, .next, .back, .sc-hKFymg{
     display: none !important;
   }
 }
