@@ -164,229 +164,15 @@
 
             background-color: #ffffff;
 
-            width: 17vw;
-            height: 50vh;
-            border-radius: 20px;
+            width: 20vw;
+            height: 40vh;
+            border-radius: 10px;
             
         }
     }
 }
 
-@media(max-width: 1860px){
-    .page-carrinho {
-        background-color: #f6f6f6;
-    
-        width: 100%;
-        height: 167vh;
-    
-        overflow: hidden;
-    }    
-}
-
-@media(max-width: 1920px){
-    .page-carrinho {
-        background-color: #f6f6f6;
-    
-        width: 100%;
-        height: 167vh;
-    
-        overflow: hidden;
-    }    
-}
-
-@media(max-width: 1776px){
-    
-    .page-carrinho {
-        
-        .faixa-04 {
-        
-        
-            .pagamento {
-
-                background-color: #ffffff;
-                
-                width: 18vw;
-                height: 50vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-
-}
-
-@media(max-width: 1632px){
-
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-                max-width: 100%;
-                width: 20vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-
-}
-
-@media(max-width: 1580px){
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-                max-width: 100%;
-                width: 21vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-}
-
-@media(max-width: 1400px){
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-                max-width: 100%;
-                width: 22vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-}
-
-@media(max-width: 1336px){
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-                max-width: 100%;
-                width: 23vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-}
-
-@media(max-width: 1280px){
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-
-                max-width: 100%;
-                width: 24vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-}
-
-@media(max-width: 1240px){
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-
-                max-width: 100%;
-                width: 25vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-}
-
-@media(max-width: 1120px){
-    .page-carrinho {
-        
-        .faixa-04 {
-    
-            .pagamento {
-
-                background-color: #ffffff;
-
-                max-width: 100%;
-                width: 27vw;
-                height: 70vh;
-
-                margin-top: 20px;
-                margin-bottom: 20px;
-
-                border-radius: 20px;
-                
-            }
-        }
-
-    }
-}
-
-@media(max-width: 1060px){
+@media(max-width: 1024px){
     
     .page-carrinho {
         
@@ -397,8 +183,8 @@
                 background-color: #ffffff;
 
                 max-width: 100%;
-                width: 28vw;
-                height: 70vh;
+                width: 250px;
+                height: 350px;
 
                 margin-top: 20px;
                 margin-bottom: 20px;
@@ -511,7 +297,7 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 688px) {
     .page-carrinho {
         .status-pedido {
             
@@ -593,8 +379,8 @@
 
                 background-color: #ffffff;
                 max-width: 100%;
-                width: 55vw;
-                height: 70vh;
+                width: 250px;
+                height: 350px;
                 border-radius: 20px;
                 
             }
@@ -685,9 +471,9 @@
 
                 background-color: #ffffff;
                 max-width: 100%;
-                width: 55vw;
-                height: 70vh;
-                border-radius: 20px;
+                width: 220px;
+                height: 300px;
+                border-radius: 10px;
                 
             }
         }
