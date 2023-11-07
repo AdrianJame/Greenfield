@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from 'styled-components';
 import './index.css'
+import { useNavigate } from 'react-router-dom';
 
 const Project = (props) => {
+
+    const navigate = useNavigate();
     
-    const { img, disc, valor } = props.item;
+    const item = props.item;
 
   return (
-    <Container className='project'>
-        <img src={img} alt="project" />
+    <Container onClick={() => navigate('/produto/' + item.id_produto)} className='project'>
+        <img src=''/>
 
         <div className='divdodisc'>
         <div className="disc">
-            <h1>{disc}</h1>
-            <h1>{valor}</h1>
+            <h1>{item.nm_produto}</h1>
+            <h1></h1>
         </div>    
         </div>
         

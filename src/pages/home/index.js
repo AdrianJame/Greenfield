@@ -4,12 +4,14 @@ import axios from 'axios';
 
 import Cabecomdgd from '../../components/cabecomdgd';
 import RodapeGreenfield from '../../components/rodape';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const[categorias, setCategorias] = useState([])
 
+  const navigate = useNavigate();
 
   async function Buscarcategorias(){
     let r = await axios.get(API_URL + '/categoria')
@@ -149,7 +151,7 @@ export default function Home() {
 
           <p>Ter um jardim em casa pode garantir muito mais que beleza e elegância para a decoração, pois, além disso, as plantas trazem inúmeros benefícios ao ambiente e para todos os moradores do local. O jardim é um lugar para ser e estar, para contemplar, refletir e relembrar. Proporciona tranqüilidade e paz para evocar uma emoção poética. O jardim, na realidade, vai muito além: ele reafirma e restabelece a relação do homem com a natureza.</p>
 
-          <Link>Confira</Link>
+          <a onClick={() => navigate('/produtos/' + 5)}>Confira</a>
         
         </div>
 

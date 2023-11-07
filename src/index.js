@@ -19,9 +19,9 @@ import Pag from './pages/opções-pagamento';
 import Login from './components/login';
 import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
-import ProdutosDecoracao from './pages/decoracao';
+import ProdutosDecoracao from './pages/produtos';
 import Pesquisar from './pages/pesquisar';
-
+import Produto from './pages/produto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,7 +31,7 @@ root.render(
         <Route path='/homeadm' element={<Homeadm/>}/>
         <Route path='/' element={<Home/>}/>
         <Route path='/login-adm' element={<LoginADM/>}/>
-        <Route path='/decoraçao' element={<ProdutosDecoracao/>}/>
+        <Route path='/produtos/:id' element={<ProdutosDecoracao/>}/>
         <Route path='/minhaconta' element={<Minhaconta/>}/>
         <Route path='/meuspedidos' element={<Meuspedidos/>}/>
         <Route path='/reclamacoes' element={<Reclamacoes/>} />
@@ -46,6 +46,7 @@ root.render(
         <Route path='/cadastroproduto' element={<CadatroProdutoADM/>}/>
         <Route path='/Erro' element={<Erro/>}/>
         <Route path='/pesq' element={<Pesquisar/>}/>
+        <Route path='/produto/:id' element={<Produto/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
