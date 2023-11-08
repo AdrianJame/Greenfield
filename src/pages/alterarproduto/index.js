@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 export default function AlterarProdutoADM () {
     const[categorias, setCategorias] = useState([])
-    const[alterar, setAlterar] = useState([])
+    const[alterar, setAlterar] = useState({})
 
     const navigate = useNavigate();
 
@@ -38,14 +38,14 @@ export default function AlterarProdutoADM () {
         setCategoriaselecionada(alterar.id_categoria)
         setGarantia(alterar.nr_garantia)
         setPreco(alterar.vl_preco)
-        setEstoque(alterar.ds_estoque)
+        setEstoque(alterar.qtd_estoque)
         setDescricao(alterar.ds_produto)
         setDimensoes(alterar.ds_dimensoes)
         setMaterial(alterar.ds_material)
         setExtra(alterar.ds_extra)
     }
 
-    console.log(alterar)
+    console.log(alterar.nm_produto)
 
 
 
@@ -67,7 +67,7 @@ export default function AlterarProdutoADM () {
 
 
 
-    async function Salvar(){
+    async function Salvaraa(){
         try{
             let produto = {
                 nome: nome,
@@ -81,44 +81,22 @@ export default function AlterarProdutoADM () {
                 material: material,
                 extra: extra
             }
-
-            if(id == 0){
-                let r = await axios.post(API_URL + '/produtos', produto)
-                setErro('Produto adicionado')
-            }
-
-            else if(id != 0){
                 let r = await axios.put(API_URL + '/produtos/' + id, produto);
                 setErro('Produto alterado')
-            }
 
-            limpar()
-
-            navigate('/produtosadm')
+                navigate('/produtosadm')
         }
 
         catch(err){
             setErro(err.response.data.erro)
           }
     }
-    
-    async function limpar(){
-        setNome('')
-        setFabricante('')
-        setCategoriaselecionada('')
-        setPreco('')
-        setEstoque('')
-        setGarantia('')
-        setDescricao('')
-        setDimensoes('')
-        setMaterial('')
-        setExtra('')
-    }
+
 
 
     function teclaEnter(e) {
         if (e.key === 'Enter') {
-            Salvar();
+            Salvaraa();
         }}
 
     return (
@@ -229,7 +207,7 @@ export default function AlterarProdutoADM () {
 
            
                 <div className='botao-salvar'>
-                     <button onClick={Salvar}>Salvar</button>
+                     <button onClick={Salvaraa}>Salvar</button>
                 </div>
                 <p className='erro'>{erro}</p>
 
