@@ -22,6 +22,7 @@ import Erro from './pages/erroadm';
 import ProdutosDecoracao from './pages/produtos';
 import Pesquisar from './pages/pesquisar';
 import Produto from './pages/produto';
+import AlterarProdutoADM from './pages/alterarproduto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -47,6 +48,7 @@ root.render(
         <Route path='/Erro' element={<Erro/>}/>
         <Route path='/pesq' element={<Pesquisar/>}/>
         <Route path='/produto/:id' element={<Produto/>}/>
+        <Route path='/altpro/:id' element={<AlterarProdutoADM/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

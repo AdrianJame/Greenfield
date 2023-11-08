@@ -1,0 +1,349 @@
+.page-alterar-produto {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+
+    padding: 50px 50px;
+
+    background-color: #363636;
+
+    .session-01 {
+        display: flex;
+        flex-direction: column;
+
+
+        background-color: #1F2023;
+
+        width: 1000px;
+
+        padding-bottom: 30px;
+
+
+        border-radius: 5px;
+        
+
+        .cabecalho-cadastro-produtos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0px 10px;
+
+            margin: 15px;
+
+            h1 {
+                color: #fff;
+                font-family: 'Oswald', sans-serif;
+            }
+        }
+
+        .session-01-conteudo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            gap: 100px;
+
+
+            .conteudo-esquerda {
+                display: flex;
+                flex-direction: column;
+
+                
+                
+    
+                .imagem-com-fundo-escuro {
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    background-color: #131313;
+                    
+                    width: 350px;
+                    height: 350px;
+    
+                    border-radius: 5px;
+                }
+                
+                .imagens-adicionais {
+    
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    margin-top: 20px;
+                    
+
+                    .imagem-com-fundo-escuro-pequeno {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        background-color: #131313;
+                        
+                        width: 120px;
+                        height: 120px;
+    
+                        border-radius: 8px;
+    
+                        margin: 10px;
+                    }
+    
+                }
+                
+            }
+
+            .conteudo-direita {
+                display: flex;
+                flex-direction: column;
+
+
+                .linha {
+
+                    align-items: center;
+
+                    margin-bottom: 30px;
+                    
+                    
+                    .risco {
+                     height: 1px;
+                     width: 350px;
+                     background-color: #d9d9d9;
+                    }
+                    
+                    
+                    input {
+                        border: none;
+                        
+                        background-color: transparent;
+                        color: #fff;
+    
+                        padding: 0px 10px;
+
+                        height: 20px;
+
+                        font-size: 16px;
+    
+                        width: 100%;
+                        max-width: 335px;
+                        
+                    }
+    
+                    input:focus {
+                        box-shadow: 0;
+                        outline: 0;
+    
+                    }
+                    input::placeholder{
+                        color: #ffffffb2;
+                    }
+
+                    select{
+                        width: 150px;
+                        height: 30px;
+
+                        background-color: transparent;
+
+                        border-radius: 5px;
+
+                        color: #fff;
+
+                        font-size: 16px;
+
+                        margin: 5px 0px;
+
+                        border: 1px solid #fff;
+                    
+                        option{
+                            color: #000;
+                        }
+                    }
+
+                    p{
+                        font-size: 16px;
+
+                        color: #fff;
+
+                        margin-top: 10px;
+                    }
+    
+                }
+
+            }
+        }
+
+    }
+
+    .line {
+        height: 1px;
+        width: 1000px;
+        background-color: #d9d9d9;
+        margin-top: 50px;
+    }
+
+    .session-02 {
+        display: flex;
+        flex-direction: column;
+        
+        margin-top: 50px;
+
+        h1 {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+        }
+
+        .session-02-conteudo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+    
+            .desc-produto {
+
+                input {
+                    background-color: #1F2023;
+
+                    width: 1000px;
+                    height: 400px;
+
+                    border-radius: 5px;
+                    border: none;
+                    
+                    color: #fff;
+    
+                    padding: 0px 10px;
+    
+                }
+
+            }
+
+        }
+    }
+
+    .session-03 {
+        display: flex;
+        flex-direction: column;
+        
+        margin-top: 50px;
+
+        h1 {
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+        }
+
+        .session-03-conteudo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+    
+            .desc-produto {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+
+                background-color: #1F2023;
+
+                gap: 50px;
+
+                width: 1000px;
+                height: 500px;
+
+                border-radius: 5px;
+                border: none;
+                    
+                color: #fff;
+    
+                padding: 0px 10px;
+
+                input {
+                
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    margin: 20px;
+                    border: none;
+
+                    width: 85%;
+                    
+                    color: #fff;
+                    background-color: #1F2023;
+
+                    outline: 0;
+                    
+                }
+
+            }
+
+        }
+    }
+
+    .botao-salvar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+        button {
+            margin-top: 40px;
+            
+            border-radius: 10px;
+            background: linear-gradient(90deg, #009020 0%, #000 100%);
+            color: #fff;
+            
+            padding: 10px 50px;
+
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            
+            border: none;
+            cursor: pointer;
+
+        }
+    }
+
+    @media(max-width:1190px){
+        .session-01{
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .session-02{
+            max-width: 900px;
+            width: 100%;
+
+            input{
+                max-width: 900px;
+            width: 100%;
+            }
+        }
+
+        
+        .desc-produto{
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .line{
+            max-width: 900px;
+            width: 100%;
+        }
+    
+    }
+
+    @media(max-width:1020px){
+        
+    }
+
+}

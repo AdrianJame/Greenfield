@@ -261,7 +261,9 @@
 
     @media(max-width: 940px){
         .produtos-s2-tipos{
-            height: 360px !important;
+            height: 360px !important;       
+            align-items: center !important;
+            justify-content: center !important;
         }
         .produtos-s2-tipos-card{
             padding: 10px !important;

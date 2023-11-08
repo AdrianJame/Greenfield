@@ -120,7 +120,7 @@ async function Deletar(id){
                         <p>{item.vl_preco}</p>
                         <p>{item.vl_preco}</p>
 
-                        <Link to={'/cadastrarproduto'}  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></Link>
+                        <a onClick={() => navigate('/altpro/' + item.id_produto)}  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></a>
                         <p onClick={() => Deletar(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
                     </div> 
                 )}
