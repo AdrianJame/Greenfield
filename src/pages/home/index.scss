@@ -1055,7 +1055,7 @@
 
         .faixa3 {
             max-width: 890px;
-            height: 1382px;
+            height: 1370px;
             background-color: #000000;
             display: flex;
             justify-content: flex-start;
@@ -1219,7 +1219,67 @@
         }
 
         .faixa5 {
-            display: none;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 115vh;
+
+
+            .imagem-esquerda{
+
+                >img{
+                    height: 300px;
+                    width: auto;
+                }
+            }
+
+
+            .conteudo-direita{
+
+                display: flex;
+
+                h1 {
+                    font: 20px '';
+                    font-family: 'Oswald', sans-serif;
+                }
+    
+                h2 {
+                    font: 20px '';
+                    font-family: 'Oswald', sans-serif;
+                }
+    
+                span {
+                    font: 20px '';
+                    font-family: 'Oswald', sans-serif;
+                    color: #20A000;
+                }
+    
+    
+                >p {
+                    margin-top: 20px;
+    
+                    width: 300px;
+    
+                    font-family: 'Oswald', sans-serif;
+                }
+    
+                a {
+                    background-color: #009020;
+    
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: 'Oswald', sans-serif;
+    
+                    border-radius: 10px;
+                    margin-top: 50px;
+                    width: 130px;
+                    padding: 10px 20px;
+    
+                    cursor: pointer;
+                }
+
+
+            }
         }
 
 
@@ -1227,6 +1287,17 @@
 
 
     
+}
+
+
+@media(max-width: 391px){
+
+    .home{
+
+        .faixa5{
+            height: 180vh;
+        }
+    }
 }
 
 
