@@ -104,6 +104,7 @@ async function Deletar(id){
                 <div className='tipos-listar'>
                     <img src='/assets/images/estrelabranca.svg'/>
 
+                    <p className='img'>Img</p>
                     <p>Produto</p>
                     <p>Categoria</p>
                     <p>estoque</p>
@@ -112,10 +113,10 @@ async function Deletar(id){
 
                 {listar.map(item => 
                     <div className='listarprodutos'>
-                        <img onClick={() => Fav(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
+                        <img className='fav' onClick={() => Fav(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
                         <img src=''/>
                         
-                        <p>{item.nm_produto}</p>
+                        <p title={item.nm_produto}>{item.nm_produto}</p>
                         <p>{item.nm_categoria}</p>
                         <p>{item.vl_preco}</p>
                         <p>{item.vl_preco}</p>

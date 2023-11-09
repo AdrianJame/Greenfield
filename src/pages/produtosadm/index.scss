@@ -160,11 +160,15 @@
             flex-direction: row;
             align-items: center;
 
-            gap: 125px;
+            gap: 60px;
 
             padding: 15px 0px;
 
             border-bottom: 1px solid #fff;
+
+            .img{
+                width: 60px !important;
+            }
 
             img{
                 height: 25px;
@@ -174,7 +178,7 @@
             p{
                 font-size: 20px;
 
-                width: 86px;
+                width: 120px;
             }
         }
 
@@ -185,7 +189,7 @@
             
             padding: 60px 0px;
 
-            gap: 125px;
+            gap: 70px;
 
             border-bottom: 2px solid #fff ;
 
@@ -195,12 +199,21 @@
                 text-align: center;
                 font-size: 16px;
 
-                width: 86px;
+                width: 120px;
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             img{
-                width: 25px;
-                height: 25px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .fav{
+                height: 25px !important;
+                width: auto !important;
             }
 
             .editarexcluir{
@@ -232,5 +245,16 @@
 
     .categoriap{
         color: white;
+    }
+    
+
+    @media(max-width: 1953px){
+        .tipos-listar{
+            gap: 35px !important;
+        }
+        .listarprodutos{
+            gap: 35px !important;
+        }
+
     }
 }
