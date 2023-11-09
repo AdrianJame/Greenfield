@@ -9,7 +9,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        width: 100vw;
+        width: 100%;
         height: 500px;
         gap: 70px;
 
@@ -981,6 +981,149 @@
     
         }
     }
+
+
+    @media(max-width:835px){
+        
+            
+            
+            .faixa1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 500px;
+                gap: 0px !important;
+                
+                
+
+
+                .faixa1-textos {
+        
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 30px;
+                    width: 450px;
+                    text-align: start;
+            
+            
+                    .titulo {
+                        width: 425px;
+            
+                        span {
+                            color: #156700;
+                        }
+                    }
+            
+            
+            
+                    p {
+                        font-size: 17px;
+                        width: 435px;
+                    }
+            
+            
+                }
+
+                .limpezadejardim {
+                    img {
+                        width: 350px;
+                    }
+                }
+            }
+
+        
+
+            .faixa2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 700px;
+                background-color: #f6f6f6;
+                gap: 60px;
+
+
+                .faixa2-textos {
+                    width: 500px;
+                    height: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                }
+        
+                .cards {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 90vw !important;
+                    height: 200px;
+                    
+                }
+        
+        
+                    .card {
+                        width: 720px;
+                        height: 180px;
+                        background-color: #dddd;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 15px;
+                        text-align: center;
+                        align-items: center;
+        
+                        img {
+                            position: relative;
+                            bottom: 35px;
+                            width: 100%;
+                            max-width: 90px;
+        
+                        }
+        
+                        h2 {
+        
+                            font-family: 'Oswald', sans-serif;
+                            color: #156700;
+                        }
+        
+                        p {
+                            font-family: 'Oswald', sans-serif;
+                            font-size: 10px;
+                        }
+                    }
+
+            }
+        
+
+            
+        
+                
+                
+        
+            
+        
+            
+        
+            .faixa3{
+                display: none;
+            }
+
+            .faixa4{
+                display: none;
+            }
+
+            .faixa5{
+                display: none !important;
+            }
+            
+        }
+
+        
+    
     
 
 
