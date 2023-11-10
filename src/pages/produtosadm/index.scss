@@ -257,4 +257,133 @@
         }
 
     }
+
+    @media(max-width: 1350px){
+        .tipos-listar{
+            gap: 20px !important;
+        }
+        .listarprodutos{
+            gap: 20px !important;
+        }
+
+    }
+
+    @media(max-width: 1197px){
+        .produtosadm-body{
+            padding: 30px;
+        }
+
+        .card{
+            width: 803px !important;
+            .card-s1{
+                p{
+                    font-size: 20px !important;
+                }
+
+                img{
+                    height: 20px !important;
+                }
+
+                .card-input{
+                    padding: 10px !important;
+
+                    width: 200px !important;
+
+                    input{
+                        width: 90% !important;
+                    }
+                }
+            }
+
+            .card-s2{
+                .card-s2-categoria{
+                    p{
+                        font-size: 20px !important;
+
+                        height: 20px !important;
+                    }
+                }
+
+                .card-s2-maisproduto{
+                    width: 150px !important;
+
+                    p{
+                        font-size: 20px !important;
+                    }
+
+                    img{
+                        height: 25px !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width: 1108px){
+        .produtosadm-body{
+            .tipos-listar{
+                gap: 10px !important;
+            }
+            .listarprodutos{
+                gap: 10px !important;
+            }
+        }
+
+        .card{
+            width: 670px !important;
+            .card-s1{
+                p{
+                    font-size: 20px !important;
+                }
+
+                img{
+                    height: 20px !important;
+                }
+
+                .card-input{
+                    padding: 10px !important;
+
+                    width: 180px !important;
+
+                    input{
+                        width: 90% !important;
+                    }
+                }
+            }
+
+            .card-s2{
+
+                .card-s2-maisproduto{
+                    width: 150px !important;
+
+                }
+            }
+        }
+    }
+
+    
+    @media(max-width: 1060px){
+        .produtosadm-body{
+            .tipos-listar{
+                gap: 20px !important;
+
+                p{
+                    width: 80px;
+
+                    font-size: 16px;
+                }
+
+                .img{
+                    width: 45px !important;
+                }
+            }
+            .listarprodutos{
+                gap: 20px !important;
+
+                p{
+                    width: 80px;
+                }
+            }
+        }
+    }
 }
