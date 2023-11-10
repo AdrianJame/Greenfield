@@ -1097,27 +1097,1218 @@
                     }
 
             }
-        
 
-            
+
+            .faixa3 {
+                width: 100%;
+                height: 55vh !important;
+                color: #f6f6f6;
         
-                
-                
         
-            
+                .faixa3-img-textos {
         
-            
         
-            .faixa3{
-                display: none;
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: 2000px;
+                    }
+                }
+        
+                .faixa3-tudo {
+                    display: flex;
+                    width: 48% !important;
+                    height: 700px;
+                    z-index: 2;
+                    position: relative;
+                    bottom: 1030px !important;
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 10px;
+                    padding-left: 20px !important;
+                    gap: 3px !important;
+        
+                    h1 {
+                        height: 0px !important;
+                        font-size: 27px !important;
+                    }
+        
+        
+                    .faixa3-textos-numeros {
+                        display: flex;
+                        flex-direction: row;
+                        width: 800px !important;
+                        height: 200px !important;
+        
+        
+                        .faixa3-numeros {
+
+                            p{
+                                display: none;
+                                margin-top: 25px !important;
+                                font-size: 40px !important;
+                            }
+                            
+        
+                        }
+        
+                        .faixa3-textos {
+                            display: flex;
+                            
+                            flex-direction: column;
+                            width: 500px !important;
+                            height: 300px !important;
+                            
+        
+                            p {
+                                margin-top: 45px !important;
+                                width: 400px !important;
+                                font-size: 14px !important;
+                                
+                            }
+
+                            #dica3{
+                                display: none;
+                            }
+        
+                        }
+        
+        
+        
+                    }
+        
+                }
+        
+                .img1f3 {
+                    width: 100%;
+                    height: 250px;
+                    display: none;
+        
+                    img {
+        
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+        
+                .faixa4 {
+                    width: 600px;
+                    height: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: #f6f6f6;
+                    z-index: 2;
+                    position: relative;
+                    left: 245px !important;
+                    bottom: 1100px !important;
+                    gap: 40px !important;
+                    text-align: center;
+        
+                    h1 {
+                        font-size: 30px !important;
+        
+                    }
+        
+                    p {
+                        font-size: 20px !important;
+                        width: 400px !important;
+                    }
+        
+                    a {
+                        background-color: #5B5B5B;
+                        width: 250px;
+                        height: 50px;
+                        border-radius: 20px;
+                        color: #f6f6f6;
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 25px;
+        
+                    }
+                }
+        
+        
+                .img2f3 {
+                    width: 100%;
+                    height: 250px;
+                    display: none;
+        
+                    img {
+        
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+        
             }
 
-            .faixa4{
-                display: none;
+            .faixa5 {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 150px;
+        
+        
+                width: 100vw;
+                height: 80vh !important;
+                
+        
+        
+                .imagem-esquerda {
+        
+                    >img {
+                        height: 500px;
+                        width: auto;
+                    }
+        
+                }
+        
+                .conteudo-direita {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+        
+        
+                    h1 {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    h2 {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    span {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                        color: #20A000;
+                    }
+        
+        
+                    >p {
+                        margin-top: 20px;
+        
+                        width: 550px;
+        
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    a {
+                        background-color: #009020;
+        
+                        color: #fff;
+                        text-decoration: none;
+                        font-family: 'Oswald', sans-serif;
+        
+                        border-radius: 10px;
+                        margin-top: 50px;
+                        width: 130px;
+                        padding: 10px 20px;
+        
+                        cursor: pointer;
+                    }
+        
+                }
+        
+            }
+            
+        }
+
+        
+    
+    
+
+
+
+
+
+
+
+
+@media(max-width: 493px) {
+
+    .Home {
+
+        .faixa1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+
+            .faixa1-textos {
+                width: 600px;
+                height: 700px;
+                display: flex;
+
+                .titulo {
+                    font-size: 24px;
+                    width: 300px;
+                }
+
+                p {
+                    font-size: 17px;
+                    width: 300px;
+                }
+
+
+
+
             }
 
-            .faixa5{
-                display: none !important;
+            .limpezadejardim {
+                img {
+                    width: 240px;
+                }
+            }
+        }
+
+
+        .faixa2 {
+            display: flex;
+            height: 900px;
+            justify-content: start;
+            gap: 70px;
+
+            .faixa2-textos {
+                margin-top: 40px;
+            }
+
+
+
+            .cards {
+                display: flex;
+                flex-direction: column;
+                height: 650px;
+
+                justify-content: space-between;
+            }
+
+        }
+
+
+
+        .faixa3 {
+            max-width: 890px;
+            height: 1370px;
+            background-color: #000000;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            padding-left: 0px;
+
+
+
+            .faixa3-img-textos {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                height: auto;
+                max-width: 200px;
+                display: none;
+
+                img {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    display: none;
+
+
+                }
+            }
+
+
+            .faixa3-tudo {
+
+                position: static;
+                padding-left: 0px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+
+
+                h1 {
+
+                    margin-top: 0px;
+                    margin-bottom: 20px;
+                    height: 50px;
+                    font-size: 30px;
+                    padding-left: 15px;
+
+
+                }
+
+                .faixa3-numeros {
+
+                    p {
+                        padding-left: 15px;
+                        width: 40px;
+                        height: 120px;
+                        font-size: 40px;
+                    }
+                }
+
+                .faixa3-textos {
+
+
+                    p {
+                        padding-left: 15px;
+                        width: 260px;
+                        height: 90px;
+                        font-size: 13px;
+
+                    }
+                }
+
+                .img1f3 {
+
+
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    display: flex;
+                    width: 200%;
+                    z-index: 2;
+
+                    height: auto;
+
+                    img {
+                        width: 240%;
+                    }
+
+
+                }
+            }
+
+
+
+            .faixa4 {
+                display: flex;
+
+                position: static;
+                width: 100%;
+                height: 350px;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                
+                color: #f6f6f6;
+                z-index: 0;
+                
+                
+                
+                
+                gap: 80px;
+                text-align: center;
+
+                h1 {
+                    
+                    font-size: 25px;
+
+                }
+
+                p {
+                    
+                    width: 300px;
+                }
+
+                a {
+                    background-color: #5B5B5B;
+                    width: 200px;
+                    height: 40px;
+                    border-radius: 20px;
+                    color: #f6f6f6;
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 25px;
+
+                }
+            }
+
+            .img2f3 {
+                display: flex;
+                
+                align-items: start;
+                
+                
+                width: 100%;
+
+                margin-top: 100px;
+
+                height: auto;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+
+
+
+        }
+
+        .faixa5 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 115vh;
+
+
+            .imagem-esquerda{
+
+                >img{
+                    height: 300px;
+                    width: auto;
+                }
+            }
+
+
+            .conteudo-direita{
+
+                display: flex;
+
+                h1 {
+                    font: 20px '';
+                    font-family: 'Oswald', sans-serif;
+                }
+    
+                h2 {
+                    font: 20px '';
+                    font-family: 'Oswald', sans-serif;
+                }
+    
+                span {
+                    font: 20px '';
+                    font-family: 'Oswald', sans-serif;
+                    color: #20A000;
+                }
+    
+    
+                >p {
+                    margin-top: 20px;
+    
+                    width: 300px;
+    
+                    font-family: 'Oswald', sans-serif;
+                }
+    
+                a {
+                    background-color: #009020;
+    
+                    color: #fff;
+                    text-decoration: none;
+                    font-family: 'Oswald', sans-serif;
+    
+                    border-radius: 10px;
+                    margin-top: 50px;
+                    width: 130px;
+                    padding: 10px 20px;
+    
+                    cursor: pointer;
+                }
+
+
+            }
+        }
+
+
+    }
+
+
+    
+}
+
+
+@media(max-width: 770px){
+        
+            
+            
+            .faixa1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100% !important;
+                height: 500px;
+                gap: 0px !important;
+                
+                
+
+
+                .faixa1-textos {
+        
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 30px;
+                    width: 500px !important;
+                    text-align: start;
+            
+            
+                    .titulo {
+                        width: 400px !important;
+            
+                        span {
+                            color: #156700;
+                        }
+                    }
+            
+            
+            
+                    p {
+                        font-size: 17px;
+                        width: 405px !important;
+                    }
+            
+            
+                }
+
+                .limpezadejardim {
+                    img {
+                        width: 300px !important;
+                    }
+                }
+            }
+
+        
+
+            .faixa2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 700px;
+                background-color: #f6f6f6;
+                gap: 60px;
+
+
+                .faixa2-textos {
+                    width: 500px;
+                    height: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                }
+        
+                .cards {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 90vw !important;
+                    height: 200px;
+                    
+                }
+        
+        
+                    .card {
+                        width: 720px;
+                        height: 180px;
+                        background-color: #dddd;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 15px;
+                        text-align: center;
+                        align-items: center;
+        
+                        img {
+                            position: relative;
+                            bottom: 35px;
+                            width: 100%;
+                            max-width: 90px;
+        
+                        }
+        
+                        h2 {
+        
+                            font-family: 'Oswald', sans-serif;
+                            color: #156700;
+                        }
+        
+                        p {
+                            font-family: 'Oswald', sans-serif;
+                            font-size: 10px;
+                        }
+                    }
+
+            }
+
+
+            .faixa3 {
+                width: 100%;
+                height: 55vh !important;
+                color: #f6f6f6;
+        
+        
+                .faixa3-img-textos {
+        
+        
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: 2000px;
+                    }
+                }
+        
+                .faixa3-tudo {
+                    display: flex;
+                    width: 48% !important;
+                    height: 700px;
+                    z-index: 2;
+                    position: relative;
+                    bottom: 930px !important;
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 10px;
+                    padding-left: 20px !important;
+                    gap: 3px !important;
+        
+                    h1 {
+                        height: 0px !important;
+                        font-size: 27px !important;
+                    }
+        
+        
+                    .faixa3-textos-numeros {
+                        display: flex;
+                        flex-direction: row;
+                        width: 800px !important;
+                        height: 200px !important;
+        
+        
+                        .faixa3-numeros {
+
+                            p{
+                                display: none;
+                                margin-top: 25px !important;
+                                font-size: 40px !important;
+                            }
+                            
+        
+                        }
+        
+                        .faixa3-textos {
+                            display: flex;
+                            
+                            flex-direction: column;
+                            width: 500px !important;
+                            height: 300px !important;
+                            
+        
+                            p {
+                                margin-top: 45px !important;
+                                width: 400px !important;
+                                font-size: 14px !important;
+                                
+                            }
+
+                            #dica3{
+                                display: none;
+                            }
+        
+                        }
+        
+        
+        
+                    }
+        
+                }
+        
+                .img1f3 {
+                    width: 100%;
+                    height: 250px;
+                    display: none;
+        
+                    img {
+        
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+        
+                .faixa4 {
+                    width: 600px;
+                    height: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: #f6f6f6;
+                    z-index: 2;
+                    position: relative;
+                    left: 225px !important;
+                    bottom: 1100px !important;
+                    gap: 40px !important;
+                    text-align: center;
+        
+                    h1 {
+                        font-size: 30px !important;
+        
+                    }
+        
+                    p {
+                        font-size: 20px !important;
+                        width: 400px !important;
+                    }
+        
+                    a {
+                        background-color: #5B5B5B;
+                        width: 250px;
+                        height: 50px;
+                        border-radius: 20px;
+                        color: #f6f6f6;
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 25px;
+        
+                    }
+                }
+        
+        
+                .img2f3 {
+                    width: 100%;
+                    height: 250px;
+                    display: none;
+        
+                    img {
+        
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+        
+            }
+
+            .faixa5 {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 150px;
+        
+        
+                width: 100vw;
+                height: 80vh !important;
+                
+        
+        
+                .imagem-esquerda {
+        
+                    >img {
+                        height: 500px;
+                        width: auto;
+                    }
+        
+                }
+        
+                .conteudo-direita {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+        
+        
+                    h1 {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    h2 {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    span {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                        color: #20A000;
+                    }
+        
+        
+                    >p {
+                        margin-top: 20px;
+        
+                        width: 550px;
+        
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    a {
+                        background-color: #009020;
+        
+                        color: #fff;
+                        text-decoration: none;
+                        font-family: 'Oswald', sans-serif;
+        
+                        border-radius: 10px;
+                        margin-top: 50px;
+                        width: 130px;
+                        padding: 10px 20px;
+        
+                        cursor: pointer;
+                    }
+        
+                }
+        
+            }
+            
+        }
+
+
+
+        @media(max-width:835px){
+        
+            
+            
+            .faixa1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                height: 500px;
+                gap: 0px !important;
+                
+                
+
+
+                .faixa1-textos {
+        
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 30px;
+                    width: 450px;
+                    text-align: start;
+            
+            
+                    .titulo {
+                        width: 425px;
+            
+                        span {
+                            color: #156700;
+                        }
+                    }
+            
+            
+            
+                    p {
+                        font-size: 17px;
+                        width: 435px;
+                    }
+            
+            
+                }
+
+                .limpezadejardim {
+                    img {
+                        width: 350px;
+                    }
+                }
+            }
+
+        
+
+            .faixa2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 700px;
+                background-color: #f6f6f6;
+                gap: 60px;
+
+
+                .faixa2-textos {
+                    width: 500px;
+                    height: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                }
+        
+                .cards {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    width: 90vw !important;
+                    height: 200px;
+                    
+                }
+        
+        
+                    .card {
+                        width: 720px;
+                        height: 180px;
+                        background-color: #dddd;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 15px;
+                        text-align: center;
+                        align-items: center;
+        
+                        img {
+                            position: relative;
+                            bottom: 35px;
+                            width: 100%;
+                            max-width: 90px;
+        
+                        }
+        
+                        h2 {
+        
+                            font-family: 'Oswald', sans-serif;
+                            color: #156700;
+                        }
+        
+                        p {
+                            font-family: 'Oswald', sans-serif;
+                            font-size: 10px;
+                        }
+                    }
+
+            }
+
+
+            .faixa3 {
+                width: 100%;
+                height: 55vh !important;
+                color: #f6f6f6;
+        
+        
+                .faixa3-img-textos {
+        
+        
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: 2000px;
+                    }
+                }
+        
+                .faixa3-tudo {
+                    display: flex;
+                    width: 48% !important;
+                    height: 700px;
+                    z-index: 2;
+                    position: relative;
+                    bottom: 1030px !important;
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 10px;
+                    padding-left: 20px !important;
+                    gap: 3px !important;
+        
+                    h1 {
+                        height: 0px !important;
+                        font-size: 27px !important;
+                    }
+        
+        
+                    .faixa3-textos-numeros {
+                        display: flex;
+                        flex-direction: row;
+                        width: 800px !important;
+                        height: 200px !important;
+        
+        
+                        .faixa3-numeros {
+
+                            p{
+                                display: none;
+                                margin-top: 25px !important;
+                                font-size: 40px !important;
+                            }
+                            
+        
+                        }
+        
+                        .faixa3-textos {
+                            display: flex;
+                            
+                            flex-direction: column;
+                            width: 500px !important;
+                            height: 300px !important;
+                            
+        
+                            p {
+                                margin-top: 45px !important;
+                                width: 400px !important;
+                                font-size: 14px !important;
+                                
+                            }
+
+                            #dica3{
+                                display: none;
+                            }
+        
+                        }
+        
+        
+        
+                    }
+        
+                }
+        
+                .img1f3 {
+                    width: 100%;
+                    height: 250px;
+                    display: none;
+        
+                    img {
+        
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+        
+                .faixa4 {
+                    width: 600px;
+                    height: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: #f6f6f6;
+                    z-index: 2;
+                    position: relative;
+                    left: 245px !important;
+                    bottom: 1100px !important;
+                    gap: 40px !important;
+                    text-align: center;
+        
+                    h1 {
+                        font-size: 30px !important;
+        
+                    }
+        
+                    p {
+                        font-size: 20px !important;
+                        width: 400px !important;
+                    }
+        
+                    a {
+                        background-color: #5B5B5B;
+                        width: 250px;
+                        height: 50px;
+                        border-radius: 20px;
+                        color: #f6f6f6;
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 25px;
+        
+                    }
+                }
+        
+        
+                .img2f3 {
+                    width: 100%;
+                    height: 250px;
+                    display: none;
+        
+                    img {
+        
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+        
+            }
+
+            .faixa5 {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 150px;
+        
+        
+                width: 100vw;
+                height: 80vh !important;
+                
+        
+        
+                .imagem-esquerda {
+        
+                    >img {
+                        height: 500px;
+                        width: auto;
+                    }
+        
+                }
+        
+                .conteudo-direita {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+        
+        
+                    h1 {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    h2 {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    span {
+                        font: 30px '';
+                        font-family: 'Oswald', sans-serif;
+                        color: #20A000;
+                    }
+        
+        
+                    >p {
+                        margin-top: 20px;
+        
+                        width: 550px;
+        
+                        font-family: 'Oswald', sans-serif;
+                    }
+        
+                    a {
+                        background-color: #009020;
+        
+                        color: #fff;
+                        text-decoration: none;
+                        font-family: 'Oswald', sans-serif;
+        
+                        border-radius: 10px;
+                        margin-top: 50px;
+                        width: 130px;
+                        padding: 10px 20px;
+        
+                        cursor: pointer;
+                    }
+        
+                }
+        
             }
             
         }
@@ -1442,6 +2633,10 @@
         }
     }
 }
+
+
+
+
 
 
 

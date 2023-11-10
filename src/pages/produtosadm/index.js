@@ -56,13 +56,13 @@ async function Deletar(id){
   } 
 
 
-  async function Fav(item){
-
+  async function Fav(id, favoritado){
     let fav = {
-        favorito: favorito
+        favorito: favoritado
     }
      
     let x = await axios.put(API_URL + '/favorito/' + id, fav)
+    Listarprodutos();
   }
 
 
@@ -113,7 +113,7 @@ async function Deletar(id){
 
                 {listar.map(item => 
                     <div className='listarprodutos'>
-                        <img className='fav' onClick={() => Fav(item)} src={!favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
+                        <img className='fav' onClick={() => Fav(item.id_produto, item.bt_favorito == 1 ? false : true)} src={item.bt_favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
                         <img src=''/>
                         
                         <p title={item.nm_produto}>{item.nm_produto}</p>

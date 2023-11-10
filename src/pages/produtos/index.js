@@ -18,7 +18,7 @@ export default function ProdutosDecoracao(){
     const navigate = useNavigate();
 
     async function Listarprodutos(){
-        let r = await axios.get(API_URL + '/produtos');
+        let r = await axios.get(API_URL + '/favoritado/id?id=' + id);
         setProduto(r.data);
     }
 

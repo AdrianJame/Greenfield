@@ -108,7 +108,7 @@ export default function Home() {
               <div className='faixa3-textos'>
                 <p>Quem está começando a se aventurar no mundo da jardinagem, deve começar munido de pá, espátula fina e rastelo. Mas é interessanteter outras peças para ajudar na manutenção das plantinhas.</p>
                 <p>É a luz que define onde uma planta deve ficar. Portanto, o primeiro passo é avaliar a luminosidade dos ambientes da sua casa ou do seu jardim.</p>
-                <p>É fundamental que as plantas estejam acomodadas em um solo adequado - tanto em jardins quanto em vasos - para desenvolver suas rízes. Muitas vezes, usar apenas terra pode compactar este solo. Por isso, é indicado misturar um pouco de areia de construção, assim a área fica mais drenada para a água escoar.</p>
+                <p id='dica3'>É fundamental que as plantas estejam acomodadas em um solo adequado - tanto em jardins quanto em vasos - para desenvolver suas rízes. Muitas vezes, usar apenas terra pode compactar este solo. Por isso, é indicado misturar um pouco de areia de construção, assim a área fica mais drenada para a água escoar.</p>
               </div>
 
               
