@@ -1,123 +1,94 @@
-import './index.scss';
-import Cabecalhocomlogin from '../../components/cabcomlogin';
-import RodapeGreenfield from '../../components/rodape';
+import './index.scss'
+import Cabecalhocomlogin from '../../components/cabcomlogin'
+import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
 
-export default function Pagamento(){
-    return(
-        <div className='pagamento'>
+export default function Pag () {
+    
+    return (
+        
+        <div className='page-forma-de-pagamento'>
+            
             <Cabecalhocomlogin/>
 
-            <div className='faixa1'>
-                
-                    <h1>Pagamento</h1>
-                
-                <div className='caminho-pag'>
-                    <div className='bolinha'>
-                        <img src='./assets/images/image 180.svg'></img>
-                    </div>
-                    <div className='linha'></div>
+            <h1>Pagamento</h1>
+            
+            <div className='status-pedido'>
 
-                    <div className='bolinha'>
-                        <img src='./assets/images/image 67.svg'></img>
-                    </div>
-                    <div className='linha'></div>
-
-                    <div className='bolinha'>
-                        <img src='./assets/images/image 193.svg'></img>
-                    </div>
-                    
-
+                <div className='circle-verde'>
+                    <img src='./assets/images/carrinho-status.svg'/>
                 </div>
+                    <div className='linha-verde'></div>
+
+                <div className='circle-verde'>
+                    <img src='./assets/images/ping-verde.svg'/>
+                </div>
+                    <div className='linha-verde'></div>
+
+                <div className='circle-verde'>
+                    <img src='./assets/images/icon-dinheiro-verde.svg'/>
+                </div>
+
             </div>
 
-            <div className='faixa2'>
+            <div className='section-pagamento'>
 
-                <div className='conteudo'>
+                <div className='frete-e-pagamento'>
 
-                    <div className='texto-e-inputs'>
+                    <div className='cont-esq'>
 
-                    <div className='texto-e-inputs-esq'>
-
-                        <p className='parcelas'> 
-                            PARCELAS
-                        </p>
-
-
-                        <select>
-                            <option >Selecione</option>
-                            <option ></option>
-                            <option ></option>
-                            <option ></option>
-                        </select>
-
-                        <p>
-                            Números do Cartão
-                        </p>
-
-                        <input className='in' placeholder="**** **** ****"></input>
-
-                        <p>
-
-                            Nome do Titular
-                        </p>
-
-                        <input className='in' placeholder="Nome completo"></input>
-
-                        <p>
-                            Validade do cartão
-
-                        </p>
-
-                        <div className='validade-cartao'> 
-                            <input placeholder="MM"></input>
-
-                            <input placeholder="AA"></input>
+                        <div className='circle-verde'>
+                            <img src='./assets/images/ping-verde.svg'/>
                         </div>
 
-                        <p>
-                            Código de Segurança
-                        </p>
-
-                        <input placeholder="***" className='code-seguranca'></input>
-
+                        <div className='desc-frete'>
+                            <p>Frete:</p>
+                            <p>Entrega em até</p>
+                        </div>
 
                     </div>
 
-                    <div className='dir'>
-                        <p>
-                            CPF do titular do cartão
-                        </p>
-
-                        <input placeholder="000.000.000-00"></input>
-
-                        <p>Data de Nascimento</p>
-
-                        <input placeholder="Ex: 01/01/2002"></input>
+                    <div className='cont-dir'>
+                        <a>Editar</a>
                     </div>
-
-
-
-
-                    </div>
-
-                    <button> CONTINUAR</button>
-
 
                 </div>
 
+                <h1>ESCOLHA A FORMA DE PAGAMENTO</h1>
+
+                <div className='escolha-pagamento'>
+
+                    <div className='select-pagamento'>
+                        
+                        <div className='conteudo-pagamento-esq'>
+                            
+                            <img src='./assets/images/image-cartao-credito.svg'/>
+                            <p>PAGUE COM CARTÃO</p>
                 
+                        </div>
+                        
+                        <div className='conteudo-pagamento-seletor'>
+                        
+                            <input type='checkbox'></input>
+            
+                        </div>
 
-               
+                    </div>
 
+                </div>
 
             </div>
-            
+
+            <div className='section-pagamento'>
+
+                <div className='pagamento'>
+
+                </div>
+
+            </div>
 
             <RodapeGreenfield/>
+                
         </div>
     )
 }
-    
-        
-            

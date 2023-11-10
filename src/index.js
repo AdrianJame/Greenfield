@@ -13,9 +13,9 @@ import Homeadm from './pages/home-adm';
 import Produtosadm from './pages/produtosadm';
 import Statuspedido from './pages/statuspedido';
 import Statusdevenda from './pages/statusvenda';
-import Pagamento from './pages/pagamento';
+import FormaDePagamento from './pages/formapagamento';
 import Logradouro from './pages/endereço';
-import Pag from './pages/opções-pagamento';
+import Pag from './pages/pagamento';
 import Login from './components/login';
 import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
@@ -40,9 +40,9 @@ root.render(
         <Route path='/produtosadm' element={<Produtosadm/>} />
         <Route path='/statuspedidos' element={<Statuspedido/>}/>
         <Route path='/statusvenda' element={<Statusdevenda/>}/>
-        <Route path='/pagamento' element={<Pagamento/>}/>
+        <Route path='/formadepagamento' element={<FormaDePagamento/>}/>
         <Route path='/endereço' element={<Logradouro/>}/>
-        <Route path='/formadepagamento' element={<Pag/>}/>
+        <Route path='/pagamento' element={<Pag/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/cadastroproduto' element={<CadatroProdutoADM/>}/>
         <Route path='/Erro' element={<Erro/>}/>
