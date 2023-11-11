@@ -20,6 +20,8 @@ export default function CadatroProdutoADM () {
     const [erro, setErro] = useState('')
     const[descricao, setDescricao] = useState('')
 
+    const[imagem, setImagem] = useState()
+
     const[dimensoes, setDimensoes] = useState('')
     const[material, setMaterial] = useState('')
     const[extra, setExtra] = useState('')
@@ -98,6 +100,15 @@ export default function CadatroProdutoADM () {
             Salvar();
         }}
 
+
+        function escolherImagem(){
+            document.getElementById('imagemprod').click();
+        }
+
+        function mostrarImagem(){
+            return URL.createObjectURL(imagem);
+        }
+
     return (
         <div className='page-cadastro-adm'>
             
@@ -112,8 +123,17 @@ export default function CadatroProdutoADM () {
                     
                     <div className='conteudo-esquerda'>
 
-                        <div className='imagem-com-fundo-escuro'>
-                            <img src='./assets/images/adicionar-imagem.svg'/>
+                        <div className='imagem-com-fundo-escuro' onClick={escolherImagem}>
+
+                            {!imagem &&
+                                <img src='./assets/images/adicionar-imagem.svg'/>
+                            }
+
+                            {imagem &&
+                            <img className='imagem-prod' src={mostrarImagem()}></img>
+                            }
+
+                            <input id='imagemprod' type='file' onChange={e => setImagem(e.target.files[0])} />
                         </div>
 
                         <div className='imagens-adicionais'>

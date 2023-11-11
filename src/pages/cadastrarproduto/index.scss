@@ -68,6 +68,18 @@
                     height: 350px;
     
                     border-radius: 5px;
+
+                    #imagemprod{
+                        visibility: hidden;
+                        position: absolute;
+                    }
+
+                    .imagem-prod{
+                     width: 350px;
+                     height: 350px;
+                     border-radius: 5px;
+
+                    }
                 }
                 
                 .imagens-adicionais {
