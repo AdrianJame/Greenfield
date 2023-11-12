@@ -6,14 +6,13 @@ import { API_URL } from '../../constants';
 import { Link, useParams } from 'react-router-dom';
 
 export default function Produto(){
-    const[produto, setProduto] = useState()
+    const[produtos, setProdutos] = useState([])
 
     const id = useParams().id;
 
      async function Listarproduto(){
-         let r = await axios.get(API_URL + '/produto/' + id);
-         setProduto(r.data);
-         console.log(produto)
+         let r = await axios.get(API_URL + '/produto/9');
+         setProdutos(r.data);
      }
 
     useEffect(() => {
@@ -25,7 +24,7 @@ export default function Produto(){
             <Cabesemdgd/>
             <section className='conteudo-pagina'>
 
-                
+            {produtos.map(item => 
                     <div className='card-produto'>
                             <section className='cabe-card'>
                                 <p>Categoria</p>
@@ -44,8 +43,8 @@ export default function Produto(){
 
                                     <div className='descricao-produto'>
                                         <div className='info-produto'>
-                                            <p className='nome-produto'></p>
-                                            <p className='fabri'>Fabricante: <span></span></p>
+                                            <p className='nome-produto'>{item.nm_produto}</p>
+                                            <p className='fabri'>Fabricante: <span>{item.ds_fabricante}</span></p>
 
                                             <p className='maisven'>Mais vendido</p>
 
@@ -55,7 +54,7 @@ export default function Produto(){
                                         <div className='info-paga'>
                                             <section className='antigop'>
                                                 <img src='/assets/images/boleto.svg'/>
-                                                <p>De  <span>por:</span></p>
+                                                <p>De {item.vl_preco} <span>por:</span></p>
                                             </section>
 
                                             <section className='preco'>
@@ -64,7 +63,7 @@ export default function Produto(){
                                             </section>
 
                                             <section className='parcela'>
-                                                <div className='pag-cartao'><img src='/assets/images/cartao.svg'/> <p></p></div>
+                                                <div className='pag-cartao'><img src='/assets/images/cartao.svg'/> <p>{item.vl_preco}</p></div>
                                                 <p>3x de R$ 2,19 sem Juros no cartão</p>
                                             </section>
                                         </div>
@@ -76,15 +75,15 @@ export default function Produto(){
                                 </section>
 
                     </div>
-          
-                
+                )}    
+                {produtos.map(item => 
                     <div>
                         <div className='linha'></div>
 
                         <div className='card-produto'>
                             <h1 className='titulo'>Descrição do Produto</h1>
 
-                            <p></p>
+                            <p>{item.ds_produto}</p>
                         </div>
 
                         <div className='linha'></div>
@@ -95,6 +94,7 @@ export default function Produto(){
                             <p></p>
                         </div>
                     </div>
+                )}
                
             </section>
         </div>

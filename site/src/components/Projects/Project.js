@@ -10,9 +10,10 @@ const Project = (props) => {
     
     const item = props.item;
 
+
   return (
     <Container onClick={() => navigate('/produto/' + item.id_produto)} className='project'>
-        <img src={BuscarImagem(item.ds_img1)}/>
+        <img src={BuscarImagem(item.ds_img1)} alt='erro no carregamento'/>
 
         <div className='divdodisc'>
         <div className="disc">
@@ -38,8 +39,10 @@ const Container = styled.div`
 
 
     img{
-        width: 100%;
-        height: 100%;
+        position: relative;
+        left: 80px;
+        width: auto;
+        height: 300px;
         object-fit: cover;
         transition: transform 400ms ease-in-out;
 
