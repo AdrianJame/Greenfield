@@ -42,6 +42,7 @@ nm_categoria varchar(100)
 
 insert into tb_categoria(nm_categoria)
 					values('');
+					
 create table tb_produto (
 id_produto int primary key auto_increment,
 nm_produto varchar(100),
@@ -95,13 +96,6 @@ qtd_item int,
 id_pedido int,
 id_produto int,
 foreign key(id_pedido) references tb_pedido (id_pedido),
-foreign key (id_produto) references tb_produto (id_produto)
-);
-
-create table tb_img(
-id_img int primary key auto_increment,
-ds_img varchar(1000),
-id_produto int,
 foreign key (id_produto) references tb_produto (id_produto)
 );
 
