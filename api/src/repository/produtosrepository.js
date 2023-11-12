@@ -20,6 +20,16 @@ export async function Listarfavo(id){
     return resp
 }
 
+
+export async function Listarnaofavo(id){
+    let sql = `select * from tb_produto 
+    where bt_favorito = false and id_categoria = ?`
+
+    let [resp] = await conexao.query(sql, [id])
+
+    return resp
+}
+
 export async function Listarnome(nome){
     let sql = `select * 
     from tb_produto

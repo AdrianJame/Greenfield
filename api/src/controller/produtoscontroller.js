@@ -1,4 +1,4 @@
-import { Listartodos, Cadastrarproduto, Editarproduto, deletarproduto, Favorito, Listarnome, Listarporcategoria, Listarporid, Listarfavo, alterarImagem } from "../repository/produtosrepository.js";
+import { Listartodos, Cadastrarproduto, Editarproduto, deletarproduto, Favorito, Listarnome, Listarporcategoria, Listarporid, Listarfavo, alterarImagem, Listarnaofavo } from "../repository/produtosrepository.js";
 import { Router } from "express";
 
 import multer from 'multer';
@@ -32,6 +32,17 @@ endpoints.get('/favoritado/id', async (req, resp) => {
     try{
         const {id} = req.query
         let dados = await Listarfavo(id)
+        resp.send(dados);
+    }
+    catch (err){
+        resp.status(500).send({ err: err.message})
+    };
+})
+
+endpoints.get('/naofav/id', async (req, resp) => {
+    try{
+        const {id} = req.query
+        let dados = await Listarnaofavo(id)
         resp.send(dados);
     }
     catch (err){
