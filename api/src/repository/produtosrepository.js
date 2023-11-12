@@ -141,7 +141,7 @@ export async function deletarproduto(id){
 export async function alterarImagem(imagem, id) {
     const comando = `
         update tb_produto
-        set img_img1 = ?
+        set ds_img1 = ?
         where id_produto = ?
     `
 
