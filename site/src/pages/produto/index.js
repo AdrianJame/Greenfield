@@ -83,7 +83,7 @@ export default function Produto(){
                         <div className='card-produto'>
                             <h1 className='titulo'>Descrição do Produto</h1>
 
-                            <p>{ds_produto}</p>
+                            <p>{item.ds_produto}</p>
                         </div>
 
                         <div className='linha'></div>
