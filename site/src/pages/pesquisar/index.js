@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 import Cabesemdgd from '../../components/cabecalhosemdgd';
 import { API_URL } from '../../constants';
 import RodapeGreenfield from '../../components/rodape';
-
+import { BuscarImagem } from '../../api/prod';
+import { useNavigate } from 'react-router-dom';
 export default function Pesquisar(){
 
     const[listar, setListar] = useState([]);
     const[nome, setNome] = useState();
+
+    const navigate = useNavigate()
     
     async function Buscarpornome(){  
             let r = await axios.get(API_URL + '/produto/nome?nome=' + nome)
@@ -57,14 +60,14 @@ export default function Pesquisar(){
                 {listar.map(item =>
                     <div className='tudo'>
                         <div className='listar-produtosf'> 
-                            <img/>
+                            <img src={BuscarImagem(item.ds_img1)}/>
                             <div className='produtos-desc'>
                                 <p className='produtos-nome'>{item.nm_produto}</p>
                                 <p className='produtos-preco'>R$ {item.vl_preco}</p>
                             </div>
                         </div>
 
-                        <button><img src='/assets/images/carrinho-branco.png'/> Comprar</button>
+                        <button onClick={() => navigate('/produto/' + item.id_produto)}><img src='/assets/images/carrinho-branco.png'/> Comprar</button>
                     </div>
                 )}
 
