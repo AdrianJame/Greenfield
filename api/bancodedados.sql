@@ -39,9 +39,6 @@ create table tb_categoria(
 id_categoria int primary key auto_increment,
 nm_categoria varchar(100) 
 );
-
-insert into tb_categoria(nm_categoria)
-					values('');
 					
 create table tb_produto (
 id_produto int primary key auto_increment,

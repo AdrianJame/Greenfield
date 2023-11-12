@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import './index.css'
 import { useNavigate } from 'react-router-dom';
+import { BuscarImagem } from '../../api/prod';
 
 const Project = (props) => {
 
@@ -11,7 +12,7 @@ const Project = (props) => {
 
   return (
     <Container onClick={() => navigate('/produto/' + item.id_produto)} className='project'>
-        <img src={item.ds_img1}/>
+        <img src={BuscarImagem(item.ds_img1)}/>
 
         <div className='divdodisc'>
         <div className="disc">
