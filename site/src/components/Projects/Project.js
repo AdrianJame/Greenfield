@@ -11,13 +11,13 @@ const Project = (props) => {
 
   return (
     <Container onClick={() => navigate('/produto/' + item.id_produto)} className='project'>
-        <img src=''/>
+        <img src={item.ds_img1}/>
 
         <div className='divdodisc'>
         <div className="disc">
             <h1>{item.nm_produto}</h1>
             <h1></h1>
-        </div>    
+        </div>
         </div>
         
     </Container>
