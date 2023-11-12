@@ -8,6 +8,7 @@ import { API_URL } from '../../constants.js';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RodapeGreenfield from '../../components/rodape';
+import { BuscarImagem } from '../../api/prod';
 
 export default function ProdutosDecoracao(){
     const [produto, setProduto] = useState([])
@@ -92,7 +93,7 @@ useEffect(() => {
                 <div className='parte-cards'>
                 {produto2.map(item => 
                         <section onClick={() => navigate('/produto/' + item.id_produto)} className='card'>
-                            <img src='' />
+                            <img src={BuscarImagem(item.ds_img1)} />
                             <p>{item.nm_produto}</p>
                             <p>{item.vl_preco}</p>
                         </section>
