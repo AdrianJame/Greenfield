@@ -30,7 +30,7 @@ useEffect(() => {
 
 
     async function Listarporcat(){
-        let r = await axios.get(API_URL + `/naofav/${id}`);
+        let r = await axios.get(API_URL + '/naofav/id?id=' + id);
         setProduto2(r.data);
     }
 

@@ -1,5 +1,238 @@
 .pagina-produto{
+    background-color: #EBEBEB;
+    min-height: 100vh;
+
     .conteudo-pagina{
+        margin-top: 100px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         .card-produto{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 40px;
+            
+            margin-bottom: 80px;
+
+            width: 100%;
+            max-width: 1300px;
+
+            background-color: #fff;
+
+            border-radius: 8px;
+
+            box-shadow: 0px 3px 15px #00000072;
+
+            .cabe-card{
+                display: flex;
+                justify-content: space-between;
+
+                width: 100%;
+
+                padding-bottom: 5px;
+
+                margin-bottom: 30px;
+
+                border-bottom: 2px solid #00000047;
+
+                p{
+                    color: #156700;
+                    
+                    font-weight: 500;
+                }
+            }
+
+            .conteudo-card{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+
+                .imagens-card{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    width: 45%;
+
+                    padding-top: 50px;
+
+                    > img{
+                        height: 450px;
+                    }
+
+                    section{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+
+                        width: 100%;
+
+                        gap: 30px;
+
+                        img{
+                            height: 120px;
+                            width: 120px;
+                        }
+                    }
+                }
+
+                .descricao-produto{
+                    width: 45%;
+
+                    color:#fff;
+
+                    padding: 30px;
+
+                    border-radius: 8px;
+
+                    background-color: #333333;
+
+                    .info-produto{
+                        .nome-produto{
+                            font-size: 18px;
+                            font-weight: 500;
+
+                            margin-bottom: 20px;
+                        }
+
+                        .fabri{
+                            margin-bottom: 10px;
+                            span{
+                                color: #20A000;
+                                font-weight: 400;
+                            }
+                        }
+
+                        .maisven{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            width: 150px;
+                            height: 25px;
+
+                            border-radius: 20px;
+
+                            background-color: #20A000;
+
+                            margin-bottom: 10px;
+                        }
+                        
+                        .vendido{
+                            font-size: 12px;
+                            span{
+                                color: #20A000;
+                            }
+                        }
+                    }
+
+                    .info-paga{
+                        margin-top: 70px;
+                        .antigop{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+
+                            gap: 5px;
+
+                            margin-bottom: 10px;
+
+                            img{
+                                height: 30px;
+                            }
+                            p{
+                                font-weight: 500;
+
+                                text-decoration: line-through;
+                                
+                            }
+                        }
+
+                        .preco{
+                            padding-left: 30px;
+
+                            margin-bottom: 20px;
+
+                            .valor{
+                                font-size: 35px;
+                                font-weight: 500;
+
+                                color: #29CD00;
+
+                                margin-bottom: 8px;
+                            }
+
+                            p{
+                                font-size: 14px;
+                            }
+                        }
+
+                        .parcela{
+                            margin-bottom: 150px;
+
+                            .pag-cartao{
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+
+                                gap: 8px;
+
+                                margin-bottom: 5px;
+
+                                img{
+                                    height: 30px;
+                                }
+
+                                p{
+                                    font-weight: 500;
+
+                                    color: #29CD00;
+                                }
+                            }
+                            > p{
+                                padding-left: 35px;
+                            }
+
+                        }
+                    }
+
+                    .botao-comprar{
+                        width: 100%;
+                        a{
+                            width: 100% !important;
+                            height: 30px;
+    
+                            text-decoration: none;
+    
+                            background-color: #20A000;
+                        }
+                    }
+                }
+            }
+         }
+
+         .linha{
+            width: 1300px;
+            height: 2px;
+
+            margin-bottom: 80px;
+
+            background-color: #29CD00;
+         }
+
+        .card-produto{
+            .titulo{
+                font-size: 25px;
+                font-weight: 600px !important;
+
+                color: #20A000;
+
+                margin-bottom: 25px;
+            }   
+        } 
+
         
     }
 }
