@@ -60,21 +60,21 @@ export default function Home() {
 
             <div className='cards'>
 
-              <div className='card'>
+              <div onClick={() => navigate('/produtos/' + 1)} className='card'>
                 <img src='./assets/images/sementes.svg'/>
                 <h2>Sementes</h2>
                 <p>TODO JARDIM COMEÇA COM UMA SIMPLES SEMENTE.</p>
 
               </div>
 
-              <div className='card'>
+              <div className='card' onClick={() => navigate('/produtos/' + 2)}>
                 <img src='./assets/images/ferramentas.svg'/>
                 <h2>Ferramentas</h2>
                 <p>TER AS FERRAMENTAS CERTAS É FUNDAMENTAL PARA FACILITAR O TRABALHO E GARANTIR UM RESULTADO SATISFATÓRIO.</p>
                 
               </div>
 
-              <div className='card'>
+              <div className='card' onClick={() => navigate('/produtos/' + 3)}>
                 <img src='./assets/images/fertilizantes.svg'/>
                 <h2>Fertilizantes</h2>
                 <p>O FERTILIZANTE É O SEGREDO PARA UM JARDIM SAUDÁVEL E BONITO.</p>
@@ -124,7 +124,7 @@ export default function Home() {
 
           <p>Com nossos cortadores de grama, você pode ter um gramado perfeito em pouco tempo!</p>
 
-          <Link>Compre Já</Link>
+          <a onClick={() => navigate('/produtos/' + 4)}>Compre Já</a>
 
         </div>
 
