@@ -4,6 +4,9 @@ import axios from 'axios';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
+import { Cadastrarproduto, EnviarImagem } from '../../api/prod.js';
+
+
 
 export default function CadatroProdutoADM () {
     const[categorias, setCategorias] = useState([])
@@ -43,31 +46,43 @@ export default function CadatroProdutoADM () {
           }
       }, [])
 
+      
+
 
 
     async function Salvar(){
         try{
-            let produto = {
-                nome: nome,
-                fabri: fabricante,
-                categoria: categoriaselecionada,
-                preco: preco,
-                estoque: estoque,
-                garantia: garantia,
-                descricao: descricao,
-                dimensoes: dimensoes,
-                material: material,
-                extra: extra
+                if (!imagem) {
+                    throw new Error('Imagem Obrigatória')
+                }
+    
+                
+                    
+                
+    
+            // const produto = {
+            //     nome: nome,
+            //     fabri: fabricante,
+            //     categoria: categoriaselecionada,
+            //     preco: preco,
+            //     estoque: estoque,
+            //     garantia: garantia,
+            //     descricao: descricao,
+            //     dimensoes: dimensoes,
+            //     material: material,
+            //     extra: extra
+            //     
+            // }
+
+            if(id === 0){
+                const novoProduto = await Cadastrarproduto(nome, fabricante, categoriaselecionada, preco, estoque, garantia, descricao, dimensoes, material, extra);
+                    const re = await EnviarImagem(novoProduto.id, imagem)
+    
+                    setErro('Produto Cadastrado!')
             }
 
-            if(id == 0){
-                let r = await axios.post(API_URL + '/produtos', produto)
-                setErro('Produto adicionado')
-            }
-
-            else if(id != 0){
-                let r = await axios.put(API_URL + '/produtos/' + id, produto);
-                setErro('Produto alterado')
+            else {
+                
             }
 
             limpar()
@@ -76,7 +91,13 @@ export default function CadatroProdutoADM () {
         }
 
         catch(err){
+            
+
+            if (err.response)
             setErro(err.response.data.erro)
+
+            else
+            setErro(err.message)
           }
     }
     
@@ -91,6 +112,7 @@ export default function CadatroProdutoADM () {
         setDimensoes('')
         setMaterial('')
         setExtra('')
+        setImagem()
         setId(0)
     }
 
@@ -104,6 +126,7 @@ export default function CadatroProdutoADM () {
         function escolherImagem(){
             document.getElementById('imagemprod').click();
         }
+
 
         function mostrarImagem(){
             return URL.createObjectURL(imagem);
@@ -226,7 +249,7 @@ export default function CadatroProdutoADM () {
 
            
                 <div className='botao-salvar'>
-                     <button onClick={Salvar} >Salvar</button>
+                     <button onClick={Salvar } >Salvar</button>
                 </div>
                 <p className='erro'>{erro}</p>
 
