@@ -9,6 +9,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import { Link } from 'react-router-dom'
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
+import { BuscarImagem } from '../../api/prod.js';
 
 
 export default function Produtosadm(){
@@ -114,7 +115,7 @@ async function Deletar(id){
                 {listar.map(item => 
                     <div className='listarprodutos'>
                         <img className='fav' onClick={() => Fav(item.id_produto, item.bt_favorito == 1 ? false : true)} src={item.bt_favorito ? '/assets/images/image.png' : '/assets/images/estrelabranca.svg'}/>
-                        <img src=''/>
+                        <img src= {BuscarImagem(item.ds_img1)}/>
                         
                         <p title={item.nm_produto}>{item.nm_produto}</p>
                         <p>{item.nm_categoria}</p>
