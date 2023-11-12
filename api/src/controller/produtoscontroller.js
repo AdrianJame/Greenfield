@@ -61,7 +61,7 @@ endpoints.get('/produto/:id', async (req, resp) => {
     };
 })
 
-endpoints.post('/produtos', async (req, resp) => {
+endpoints.post('/produto', async (req, resp) => {
     try{
         let produtos = req.body
         let dados = await Cadastrarproduto(produtos)
@@ -69,7 +69,9 @@ endpoints.post('/produtos', async (req, resp) => {
     }
 
     catch (err){
-        resp.status(500).send({ erro: 'Ocorreu um erro!'})
+        resp.status(400).send({
+            erro: err.message
+        });
     }
 })
 
@@ -114,7 +116,7 @@ endpoints.delete('/deletarproduto/:id', async (req, resp) => {
 
 export default endpoints;
 
-endpoints.put('/produto/:id/imagem', upload.single('produtosIma'), async (req, resp) => {
+endpoints.put('/produto/:id/imagem', upload.single('fotosProdutos'), async (req, resp) => {
     try {
 
         if (!req.file) {

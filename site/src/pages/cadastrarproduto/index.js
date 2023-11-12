@@ -15,7 +15,7 @@ export default function CadatroProdutoADM () {
 
     const[nome, setNome] = useState('');
     const[fabricante, setFabricante] = useState('');
-    const[categoriaselecionada, setCategoriaselecionada] = useState('')
+    const[categoriaselecionada, setCategoriaselecionada] = useState(0)
     const[preco, setPreco] = useState('');
     const[estoque, setEstoque] = useState('');
     const[garantia, setGarantia] = useState('');
@@ -23,7 +23,7 @@ export default function CadatroProdutoADM () {
     const [erro, setErro] = useState('')
     const[descricao, setDescricao] = useState('')
 
-    const[imagem, setImagem] = useState()
+    const[imagem, setImagem] = useState('')
 
     const[dimensoes, setDimensoes] = useState('')
     const[material, setMaterial] = useState('')
@@ -51,15 +51,10 @@ export default function CadatroProdutoADM () {
 
 
     async function Salvar(){
+
         try{
-                if (!imagem) {
-                    throw new Error('Imagem Obrigatória')
-                }
-    
                 
-                    
-                
-    
+
             // const produto = {
             //     nome: nome,
             //     fabri: fabricante,
@@ -74,16 +69,22 @@ export default function CadatroProdutoADM () {
             //     
             // }
 
-            if(id === 0){
+            
+
                 const novoProduto = await Cadastrarproduto(nome, fabricante, categoriaselecionada, preco, estoque, garantia, descricao, dimensoes, material, extra);
-                    const re = await EnviarImagem(novoProduto.id, imagem)
+                    let idp = (novoProduto.id)
+                    console.log(idp);
+
+
+                    const re = await EnviarImagem(imagem,idp)
+                    
     
                     setErro('Produto Cadastrado!')
-            }
+                    console.log(novoProduto.id);
+                    alert('foi')
+            
 
-            else {
-                
-            }
+            
 
             limpar()
 
@@ -100,6 +101,8 @@ export default function CadatroProdutoADM () {
             setErro(err.message)
           }
     }
+
+    
     
     async function limpar(){
         setNome('')

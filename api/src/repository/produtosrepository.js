@@ -58,7 +58,7 @@ export async function Listarporcategoria(id){
 
 export async function Cadastrarproduto(produtos){
     let sql = `insert into tb_produto(nm_produto, ds_fabricante, vl_preco, nr_garantia, ds_produto, id_categoria, vl_preco_promocao, bt_promocao, qtd_estoque, ds_material, ds_dimensoes, ds_extra )
-    values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+    values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )`
 
     let [info] = await conexao.query(sql, [
         produtos.nome,
@@ -76,7 +76,7 @@ export async function Cadastrarproduto(produtos){
     
     ])
 
-    produtos.id = info.insertID
+    produtos.id = info.insertId
 
     return produtos;
 }
@@ -141,7 +141,7 @@ export async function deletarproduto(id){
 export async function alterarImagem(imagem, id) {
     const comando = `
         update tb_produto
-        set ds_img1 = ?
+        set img_img1 = ?
         where id_produto = ?
     `
 

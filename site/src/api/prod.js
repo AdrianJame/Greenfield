@@ -6,9 +6,9 @@ const api = axios.create({
     baseURL: API_URL
 });
 
-export async function EnviarImagem(id, imagem) {
+export async function EnviarImagem(imagem, id) {
     const formData = new FormData();
-    formData.append('produtosIma', imagem)
+    formData.append('fotosProdutos', imagem)
     const resposta = await api.put(`/produto/${id}/imagem`, formData, {
         headers: {
             "Content-Type": "multipart/form-data"
@@ -25,7 +25,7 @@ export function BuscarImagem(imagem) {
 }
 
 
-export async function Cadastrarproduto(nome, fabricante, categoriaselecionada, preco, estoque, garantia, descricao, dimensoes, material, extra, imagem) {
+export async function Cadastrarproduto(nome, fabricante, categoriaselecionada, preco, estoque, garantia, descricao, dimensoes, material, extra) {
     const resposta = await api.post('/produto', {
                 nome: nome,
                 fabri: fabricante,
@@ -36,8 +36,7 @@ export async function Cadastrarproduto(nome, fabricante, categoriaselecionada, p
                 descricao: descricao,
                 dimensoes: dimensoes,
                 material: material,
-                extra: extra,
-                imagem: imagem
+                extra: extra
 
     });
 

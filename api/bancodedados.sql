@@ -58,9 +58,9 @@ ds_material varchar(100),
 ds_dimensoes varchar(100),
 ds_extra varchar(1000),
 bt_favorito boolean,
-ds_img1,
-ds_img2,
-ds_img3
+ds_img1 varchar(1000),
+ds_img2 varchar(1000),
+ds_img3 varchar(1000)
 );
 
 select * from tb_cliente;
