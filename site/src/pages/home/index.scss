@@ -111,6 +111,7 @@
                 p {
                     font-family: 'Oswald', sans-serif;
                     font-size: 10px;
+                    font-weight: 500;
                 }
             }
 
@@ -232,6 +233,13 @@
                 align-items: center;
                 font-size: 25px;
 
+                transition: 0.5s;
+
+                cursor: pointer;
+            }
+            a:hover{
+                box-shadow: 5px 5px 10px #ffffff5e;
+                transform: translate(0px, -2px);
             }
         }
 
@@ -319,6 +327,12 @@
                 padding: 10px 20px;
 
                 cursor: pointer;
+                transition: 0.5s;
+            }
+
+            a:hover{
+                box-shadow: 5px 5px 10px #0000005e;
+                transform: translate(0px, -2px);
             }
 
         }

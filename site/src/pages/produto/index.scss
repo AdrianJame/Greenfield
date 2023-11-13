@@ -2,6 +2,30 @@
     background-color: #EBEBEB;
     min-height: 100vh;
 
+    .botao-comprar{
+        width: 100%;
+        .AAAA{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+
+            width: 100% !important;
+            height: 30px;
+
+            text-decoration: none;
+
+            background-color: #20A000;
+
+            transition: 3s;
+        }
+
+        .AAAA:hover{
+            transform: translate(0px, -10px);
+        }
+    }
+
     .conteudo-pagina{
         margin-top: 100px;
 
@@ -98,7 +122,7 @@
                         }
 
                         .fabri{
-                            margin-bottom: 10px;
+                            margin-bottom: 20px;
                             span{
                                 color: #20A000;
                                 font-weight: 400;
@@ -117,7 +141,7 @@
 
                             background-color: #20A000;
 
-                            margin-bottom: 10px;
+                            margin-bottom: 30px;
                         }
                         
                         .vendido{
@@ -129,7 +153,7 @@
                     }
 
                     .info-paga{
-                        margin-top: 70px;
+                        margin-top: 60px;
                         .antigop{
                             display: flex;
                             flex-direction: row;
@@ -153,7 +177,7 @@
                         .preco{
                             padding-left: 30px;
 
-                            margin-bottom: 20px;
+                            margin-bottom: 40px;
 
                             .valor{
                                 font-size: 35px;
@@ -170,7 +194,7 @@
                         }
 
                         .parcela{
-                            margin-bottom: 150px;
+                            margin-bottom: 120px;
 
                             .pag-cartao{
                                 display: flex;
@@ -198,17 +222,6 @@
                         }
                     }
 
-                    .botao-comprar{
-                        width: 100%;
-                        a{
-                            width: 100% !important;
-                            height: 30px;
-    
-                            text-decoration: none;
-    
-                            background-color: #20A000;
-                        }
-                    }
                 }
             }
          }

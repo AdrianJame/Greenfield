@@ -60,7 +60,7 @@ export default function Home() {
 
             <div className='cards'>
 
-              <div onClick={() => navigate('/produtos/' + 1)} className='card'>
+              <div  className='card' onClick={() => navigate('/produtos/' + 1)}>
                 <img src='./assets/images/sementes.svg'/>
                 <h2>Sementes</h2>
                 <p>TODO JARDIM COMEÇA COM UMA SIMPLES SEMENTE.</p>
