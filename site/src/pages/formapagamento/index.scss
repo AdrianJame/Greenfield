@@ -147,16 +147,21 @@
 
                 .parcelas{
                     color: #29CD00;
-                    font-size: 25px;
+                    font: 24px 'Oswald', sans-serif;
                     
                 }
 
 
                 select{
                     width: 230px;
-                    height: 50px;
+                    height: 25px;
                     border: 2px solid #000;
                 }
+
+                p {
+                    font: 14px 'Oswald', sans-serif;
+                }
+
             }
 
             .dir{
@@ -166,6 +171,10 @@
                 flex-direction: column;
                 gap: 20px;
                 padding-top: 90px;
+
+                p {
+                    font: 15px 'Oswald', sans-serif;
+                }
                 
             }
 
@@ -185,6 +194,25 @@
 
                 width: 50px;
 
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .pagamento {
+        
+        .faixa1 {
+            height: 70vh;
+        }
+
+
+        .faixa2 {
+            .conteudo{
+                width: 70vw;
+                height: 80vh;
+
+                margin-bottom: 50px;
             }
         }
     }
