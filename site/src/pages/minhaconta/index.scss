@@ -98,9 +98,10 @@
         width: 98vw;
         height: 120vh;
 
-        top: 0px;
+        
+        backdrop-filter: blur(2px);
 
-        background-color: #f6f6f69a;
+        top: 0px;
 
         .borda {
             height: 353px;
@@ -144,6 +145,7 @@
 
             height: 350px;
             width: 470px;
+
 
             background-color: #fff;
 
@@ -223,9 +225,9 @@
         width: 98vw;
         height: 120vh;
 
-        top: 0px;
+        backdrop-filter: blur(2px);
 
-        background-color: #f6f6f69a;
+        top: 0px;
 
         .vercadastro{
             display: flex;
