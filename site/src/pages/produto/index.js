@@ -14,7 +14,7 @@ export default function Produto(){
     const id = useParams().id;
 
      async function Listarproduto(){
-         let r = await axios.get(API_URL + '/produto/9');
+         let r = await axios.get(API_URL + '/produto/' + id);
          setProdutos(r.data);
 
          
@@ -93,7 +93,7 @@ export default function Produto(){
 
                     </div> 
 
-                    <div>
+                    <div className='desc-info'>
                         <div className='linha'></div>
 
                         <div className='card-produto'>
@@ -107,10 +107,11 @@ export default function Produto(){
                         <div className='card-produto'>
                             <h1 className='titulo'>Informações do Produto</h1>
 
-                            <p> {produtos.ds_material}</p>
-
-                            <p> {produtos.ds_dimensoes}</p>
-                            <p> {produtos.ds_extras}</p>
+                            <ul>
+                                <li className='p-info'> {produtos.ds_material}</li>
+                                <li className='p-info'> {produtos.ds_dimensoes}</li>
+                                <li className='p-info'> {produtos.ds_extras}</li>
+                            </ul>
                         </div>
                     </div>
                

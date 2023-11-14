@@ -19,6 +19,8 @@
             background-color: #20A000;
 
             transition: 3s;
+
+            color: #fff;
         }
 
         .AAAA:hover{
@@ -48,6 +50,10 @@
 
             box-shadow: 0px 3px 15px #00000072;
 
+            .p-info{
+                margin-bottom: 20px;
+            }
+
             .cabe-card{
                 display: flex;
                 justify-content: space-between;
@@ -76,6 +82,7 @@
                 .imagens-card{
                     display: flex;
                     flex-direction: column;
+                    align-items: center;
                     gap: 15px;
 
                     width: 45%;
@@ -83,7 +90,8 @@
                     padding-top: 50px;
 
                     > img{
-                        height: 450px;
+                        width: 85%;
+                        height: auto;
                     }
 
                     section{
@@ -246,6 +254,117 @@
             }   
         } 
 
-        
+    }
+    
+
+
+    .desc-info{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        width: 90%;
+
+
+        .linha{
+            width: 100% !important;
+        }
+    }
+
+    @media(max-width: 1420px){
+        .card-produto{
+            width: 90% !important;
+        }
+    }
+
+    @media(max-width: 950px){
+        .card-produto{
+            width: 90% !important;
+        }
+
+    }
+
+    
+    @media(max-width: 935px){
+        .imagens-card{
+            justify-content: space-between;
+        }
+
+    }
+
+    @media(max-width: 780px){
+        .descricao-produto{
+            .parcela{
+                margin-bottom: 60px !important;
+            }
+
+            .info-paga{
+                margin-top: 20px !important;
+            }
+        }
+
+        .imagens-card{
+            section{
+                img{
+                    width: 80px !important;
+                    height: 80px !important;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 690px){
+        .conteudo-card{
+            flex-direction: column !important;
+            align-items: center;
+
+            gap: 30px;
+        }
+        .descricao-produto{
+            width: 100% !important;
+        }
+
+        .imagens-card{
+            width: 80% !important;
+
+            > img{
+                width: 60% !important;
+            }
+        }
+    }
+
+    @media(max-width: 350px){
+        .imagens-card{
+
+            height: 350px;
+            section{
+                img{
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+            }
+        }
+    }
+
+    
+    @media(max-width: 330px){
+        .card-produto{
+            padding: 20px !important;
+        }
+        .imagens-card{
+
+            height: 350px;
+
+            > img{
+                height: 200px !important;
+                width: auto !important;
+            }
+            section{
+                img{
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+            }
+        }
     }
 }
