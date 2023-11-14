@@ -44,7 +44,7 @@ export default function Produto(){
 
                     <div className='card-produto'>
                             <section className='cabe-card'>
-                                <p>Categoria</p>
+                                <p>{produtos.nm_categoria}</p>
 
                                 <img src=''/>
                             </section>
