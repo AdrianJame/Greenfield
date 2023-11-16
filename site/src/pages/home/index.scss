@@ -27,7 +27,8 @@
 
 
         .titulo {
-            width: 425px;
+            width: 575px;
+            font-size: 40px;
 
             span {
                 color: #156700;
@@ -37,8 +38,8 @@
 
 
         p {
-            font-size: 14px;
-            width: 425px;
+            font-size: 20px;
+            width: 575px;
         }
 
 
@@ -57,16 +58,32 @@
         align-items: center;
         flex-direction: column;
         width: 100vw;
-        height: 500px;
+        height: 700px;
         background-color: #f6f6f6;
-        gap: 20px;
+        gap: 120px;
 
         .faixa2-textos {
-            width: 500px;
+            width: 600px;
             height: 100px;
             display: flex;
             flex-direction: column;
             text-align: center;
+            justify-content: center;
+
+            h1{
+                text-align: center;
+                font-size: 45px;
+                width: 600px;
+
+                span{
+                    color: #156700;
+                }
+            }
+
+            h2{
+                font-size: 40px;
+                width: 600px;
+            }
         }
 
         .cards {
@@ -79,8 +96,8 @@
 
 
             .card {
-                width: 220px;
-                height: 180px;
+                width: 350px;
+                height: 250px;
                 background-color: #dddd;
                 display: flex;
                 flex-direction: column;
@@ -104,13 +121,14 @@
 
                     font-family: 'Oswald', sans-serif;
                     color: #156700;
+                    font-size: 35px;
 
                     margin-bottom: 10px;
                 }
 
                 p {
                     font-family: 'Oswald', sans-serif;
-                    font-size: 10px;
+                    font-size: 20px;
                     font-weight: 500;
                 }
             }
@@ -595,6 +613,94 @@
 @media(max-width: 1516px) {
 
     .Home {
+
+        .faixa2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 700px;
+            background-color: #f6f6f6;
+            gap: 120px;
+    
+            .faixa2-textos {
+                width: 600px;
+                height: 100px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+    
+                h1{
+                    text-align: center;
+                    font-size: 45px;
+                    width: 600px;
+    
+                    span{
+                        color: #156700;
+                    }
+                }
+    
+                h2{
+                    font-size: 40px;
+                    width: 600px;
+                }
+            }
+    
+            .cards {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 90vw;
+                height: 200px;
+    
+    
+    
+                .card {
+                    width: 350px;
+                    height: 250px;
+                    background-color: #dddd;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 15px;
+                    text-align: center;
+                    align-items: center;
+    
+                    cursor: pointer;
+    
+                    transition: 0.5s;
+    
+                    img {
+                        position: relative;
+                        bottom: 35px;
+                        width: 100%;
+                        max-width: 90px;
+    
+                    }
+    
+                    h2 {
+    
+                        font-family: 'Oswald', sans-serif;
+                        color: #156700;
+                        font-size: 35px;
+    
+                        margin-bottom: 10px;
+                    }
+    
+                    p {
+                        font-family: 'Oswald', sans-serif;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                }
+    
+                .card:hover{
+                    box-shadow: 3px 3px 10px #00000061;
+                }
+            }
+    
+        }
 
         .faixa3 {
 
@@ -1243,7 +1349,7 @@
             flex-direction: column;
             width: 100%;
             height: 115vh;
-
+            
 
             .imagem-esquerda{
 
