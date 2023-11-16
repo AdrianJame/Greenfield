@@ -5,36 +5,52 @@ import Cabesemdgd from '../../components/cabecalhosemdgd';
 import { API_URL } from '../../constants';
 import { Link, useParams } from 'react-router-dom';
 import { BuscarImagem } from '../../api/prod';
+import localStorage from 'local-storage';
 
 export default function Produto(){
     const[produtos, setProdutos] = useState([])
+    const[precoparc, setPrecoparc] = useState()
     const[preco, setPreco] = useState()
     const[desc, setDesc] = useState()
 
-    const id = useParams().id;
+    const  id  = useParams().id;
 
      async function Listarproduto(){
          let r = await axios.get(API_URL + '/produto/' + id);
          setProdutos(r.data);
 
-         
-        setPreco(Number(produtos.vl_preco) / 3)
-
-        const x = Number(produtos.vl_preco) * 0.13;
-        setDesc(Number(produtos.vl_preco) - x)
-        console.log(x)
-        
+        setPreco(Number(produtos.vl_preco))
      }
 
 
-     function calculos(){
+     function calculo(){
+        const parcela = preco / 3;
 
+        setPrecoparc(parcela);
      }
+
+     
+    function AdicionarCarrinho(){
+        let carrinho = [];
+
+        if(localStorage('carrinho')){
+            carrinho = localStorage('carrinho')
+        }
+
+        if(!carrinho.find(item => item.id === id)){
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+        }
+
+        localStorage('carrinho', carrinho);
+
+    }
+
 
     useEffect(() => {
         Listarproduto()
-        calculos()
-
 }, [])
 
     return(
@@ -81,12 +97,12 @@ export default function Produto(){
 
                                             <section className='parcela'>
                                                 <div className='pag-cartao'><img src='/assets/images/cartao.svg'/> <p>R${produtos.vl_preco}</p></div>
-                                                <p>3x de R$ {preco} sem Juros no cartão</p>
+                                                <p>3x de R$ {precoparc} sem Juros no cartão</p>
                                             </section>
                                         </div>
 
                                         <div className='botao-comprar'>
-                                            <Link className='AAAA'> Comprar</Link>
+                                            <a className='AAAA' onClick={AdicionarCarrinho()}> Comprar</a>
                                         </div>
                                     </div>
                                 </section>

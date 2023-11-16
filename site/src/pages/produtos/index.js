@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RodapeGreenfield from '../../components/rodape';
 import { BuscarImagem } from '../../api/prod';
+import localStorage from 'local-storage';
 
 export default function ProdutosDecoracao(){
     const [produto, setProduto] = useState([])
@@ -17,6 +18,7 @@ export default function ProdutosDecoracao(){
     const id = useParams().id;
 
     const navigate = useNavigate();
+
 
     async function Listarprodutos(){
         let r = await axios.get(API_URL + '/favoritado/id?id=' + id);
