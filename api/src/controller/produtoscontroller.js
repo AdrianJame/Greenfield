@@ -1,4 +1,4 @@
-import { Listartodos, Cadastrarproduto, Editarproduto, deletarproduto, Favorito, Listarnome, Listarporcategoria, Listarporid, Listarfavo, alterarImagem, Listarnaofavo, alterarImagem2, alterarImagem1 } from "../repository/produtosrepository.js";
+import { Listartodos, Cadastrarproduto, Editarproduto, deletarproduto, Favorito, Listarnome, Listarporcategoria, Listarporid, Listarfavo, alterarImagem, Listarnaofavo} from "../repository/produtosrepository.js";
 import { Router } from "express";
 
 import multer from 'multer';
@@ -151,42 +151,3 @@ endpoints.put('/produto/:id/imagem', upload.single('fotosProdutos'), async (req,
     }
 });
 
-endpoints.put('/produto/:id/imagem1', upload.single('fotosProdutos'), async (req, resp) => {
-    try {
-
-        const { id } = req.params;
-        const imagem = req.file.path;
-
-        const resposta = await alterarImagem1(imagem, id)
-        if (resposta != 1) {
-            throw new Error('imagem não pode ser salva')
-        }
-
-        resp.status(204).send()
-        
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-});
-
-endpoints.put('/produto/:id/imagem2', upload.single('fotosProdutos'), async (req, resp) => {
-    try {
-
-        const { id } = req.params;
-        const imagem = req.file.path;
-
-        const resposta = await alterarImagem2(imagem, id)
-        if (resposta != 1) {
-            throw new Error('imagem não pode ser salva')
-        }
-
-        resp.status(204).send()
-        
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-});

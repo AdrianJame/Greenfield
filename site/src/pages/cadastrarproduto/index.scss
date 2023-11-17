@@ -85,55 +85,7 @@
 
                 }
 
-                .imagem-prod1{
-                    width: 110px;
-                    height: 110px;
-                    border-radius: 5px;
-                }
                 
-                .imagem-prod2{
-                    width: 110px;
-                    height: 110px;
-                    border-radius: 5px;
-                }
-
-                #imagemprod1{
-                    visibility: hidden;
-                    position: absolute;
-                }
-
-                
-                #imagemprod2{
-                    visibility: hidden;
-                    position: absolute;
-                }
-                
-                .imagens-adicionais {
-    
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-                    
-                    margin-top: 20px;
-                    
-
-                    .imagem-com-fundo-escuro-pequeno {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        
-                        background-color: #131313;
-                        
-                        width: 120px;
-                        height: 120px;
-    
-                        border-radius: 8px;
-    
-                        margin: 10px;
-                    }
-    
-                }
                 
             }
 

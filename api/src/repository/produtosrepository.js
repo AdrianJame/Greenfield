@@ -159,25 +159,4 @@ export async function alterarImagem(imagem, id) {
     return resp.affectedRows;
 }
 
-export async function alterarImagem1(imagem, id) {
-    const comando = `
-        update tb_produto
-        set ds_img2 = ?
-        where id_produto = ?
-    `
-
-    const [resp] = await conexao.query(comando, [imagem, id]);
-    return resp.affectedRows;
-}
-
-export async function alterarImagem2(imagem, id) {
-    const comando = `
-        update tb_produto
-        set ds_img3 = ?
-        where id_produto = ?
-    `
-
-    const [resp] = await conexao.query(comando, [imagem, id]);
-    return resp.affectedRows;
-}
 
