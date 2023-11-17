@@ -121,15 +121,14 @@
 
                     font-family: 'Oswald', sans-serif;
                     color: #156700;
-                    font-size: 35px;
-
+                    font-size: 25px !important;
                     margin-bottom: 10px;
                 }
 
                 p {
                     font-family: 'Oswald', sans-serif;
-                    font-size: 20px;
-                    font-weight: 500;
+                    font-size: 17px !important;
+                    
                 }
             }
 
@@ -790,6 +789,9 @@
 
     .Home {
 
+
+    
+
         .faixa3 {
 
             .faixa3-tudo {
@@ -1125,7 +1127,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 700px;
+            height: 900px;
 
             .faixa1-textos {
                 width: 600px;
@@ -1138,7 +1140,7 @@
                 }
 
                 p {
-                    font-size: 17   px;
+                    font-size: 17px;
                     width: 300px;
                 }
 
@@ -1163,6 +1165,22 @@
 
             .faixa2-textos {
                 margin-top: 40px;
+                width: 300px;
+
+                h1{
+                    text-align: center;
+                    font-size: 25px;
+                    width: 300px;
+    
+                    span{
+                        color: #156700;
+                    }
+                }
+    
+                h2{
+                    font-size: 20px;
+                    width: 300px;
+                }
             }
 
 
@@ -1171,8 +1189,23 @@
                 display: flex;
                 flex-direction: column;
                 height: 650px;
+                gap: 50px;
 
                 justify-content: space-between;
+
+
+
+                .card{
+                    width: 270px;
+
+                    h1{
+                        font-size: 14px !important;
+                    }
+
+                    p{
+                        font-size: 13px !important;
+                    }
+                }
             }
 
         }
