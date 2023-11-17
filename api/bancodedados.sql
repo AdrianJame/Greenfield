@@ -44,7 +44,8 @@ insert into tb_admin(nm_usuario, ds_email, ds_senha)
 insert into tb_admin(nm_usuario, ds_email, ds_senha)
 			values('Pedro Leonildo', 'pedroleonildo@greenfield.com', 'admin@greenfield');
 
-insert into tb_admin(nm_usuario, ds_email, ds_senha)
+insert into t
+b_admin(nm_usuario, ds_email, ds_senha)
 			values('Pedro Henrique', 'pedrohenrique@greenfield.com', 'admin@greenfield');
 
 insert into tb_admin(nm_usuario, ds_email, ds_senha)

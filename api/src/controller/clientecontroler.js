@@ -25,6 +25,12 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
         if(!cliente.email)
             throw new Error('⚠ email obrigatório')
 
+        if (!cliente.email.includes('@'))
+            throw new Error('Email Inválido');
+
+        if (!/mail\.com$/i.test(cliente.email))
+            throw new Error('Email Inválido');
+
         if(!cliente.telefone)
             throw new Error('⚠ telefone obrigatorio')
 
@@ -39,6 +45,8 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
         if(duplicadoEmail){
             throw new Error('Email já cadastrado.');
         }
+
+
 
         const duplicadocpf = await verificarDuplicadocpf(cliente.cpf);
 

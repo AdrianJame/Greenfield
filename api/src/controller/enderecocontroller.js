@@ -24,6 +24,7 @@ endpoints.post('/endereco', async (req, resp) => {
         if(!enderecos.uf)
             throw new Error('⚠ senha obrigatorio')
 
+
         const dados = await Cadastrarendereco(enderecos)
         resp.send(dados)
     }
