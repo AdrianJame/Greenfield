@@ -2,8 +2,55 @@ import './index.scss'
 import Cabecalhocomlogin from '../../components/cabcomlogin'
 import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
+import localStorage from 'local-storage';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Compcarrinho from '../../components/compcarrinho';
 
 export default function Carrinho () {
+
+    const[itens, setItens] = useState([]);
+
+
+    function Removeritem(id){
+        let carrinho = localStorage('carrinho');
+        carrinho = carrinho.filter(item => item.id != id)
+
+        localStorage('carrinho', carrinho)
+        carregarcarrinho();
+    }
+
+    function Total(){
+        let total = 0;
+
+        for(let item of itens){
+            total = total + item.produto.vl_preco * item.qtd;
+        }
+
+        return total;
+    }
+
+    async function carregarcarrinho(){
+        let carrinho = localStorage('carrinho')
+
+        let temp = [];
+
+        for(let produtos of carrinho){
+            let r = await axios.get(API_URL + '/produto/' + produtos.id)
+            temp.push({
+                produto: r.data,
+                qtd: produtos.qtd
+            })
+            setItens(temp)
+        }
+    }
+
+
+
+    useEffect(() => {
+        carregarcarrinho()
+    }, [])
+
 
     return(
         <div className='page-carrinho'>
@@ -30,11 +77,13 @@ export default function Carrinho () {
             </div>
 
             <div className='faixa-02'>
-                
-                <div className='produto'>
-                    
-                </div>
-            
+                <section className='carrinho'>
+                    {itens.map(item => 
+                        <Compcarrinho item={item} Removeritem={Removeritem}/>
+                    )}             
+                </section>
+
+                <h1>{Total()}</h1>
             </div>
 
             <div className='faixa-03'>

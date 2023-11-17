@@ -6,27 +6,29 @@ import { API_URL } from '../../constants';
 import { Link, useParams } from 'react-router-dom';
 import { BuscarImagem } from '../../api/prod';
 import localStorage from 'local-storage';
+import { toast } from 'react-toastify'
 
 export default function Produto(){
     const[produtos, setProdutos] = useState([])
-    const[precoparc, setPrecoparc] = useState()
-    const[preco, setPreco] = useState()
-    const[desc, setDesc] = useState()
 
     const  id  = useParams().id;
 
      async function Listarproduto(){
          let r = await axios.get(API_URL + '/produto/' + id);
          setProdutos(r.data);
-
-        setPreco(Number(produtos.vl_preco))
      }
 
 
-     function calculo(){
-        const parcela = preco / 3;
+     function Parce(preco){
+        let parcela = preco / 3;
+        return parcela;
+     }
 
-        setPrecoparc(parcela);
+     function Desconto(preco){
+        let i = preco * 0.10;
+        let desconto = preco - i;
+
+        return desconto.toFixed(2);
      }
 
      
@@ -42,15 +44,14 @@ export default function Produto(){
                 id: id,
                 qtd: 1
             })
+            localStorage('carrinho', carrinho);
         }
-
-        localStorage('carrinho', carrinho);
-
     }
 
 
     useEffect(() => {
         Listarproduto()
+        Parce()
 }, [])
 
     return(
@@ -68,10 +69,7 @@ export default function Produto(){
                                 <section className='conteudo-card'>
                                     <div className='imagens-card'>
                                         <img src={BuscarImagem(produtos.ds_img1)}/>
-                                        <section>
-                                            <img src=''/>
-                                            <img src=''/>
-                                        </section>
+
                                     </div>
 
                                     <div className='descricao-produto'>
@@ -91,13 +89,13 @@ export default function Produto(){
                                             </section>
 
                                             <section className='preco'>
-                                                <p className='valor'>R${desc}</p>
+                                                <p className='valor'>R${Desconto(produtos.vl_preco)}</p>
                                                 <p>à vista no boleto</p>
                                             </section>
 
                                             <section className='parcela'>
                                                 <div className='pag-cartao'><img src='/assets/images/cartao.svg'/> <p>R${produtos.vl_preco}</p></div>
-                                                <p>3x de R$ {precoparc} sem Juros no cartão</p>
+                                                <p>3x de R$ {Parce(produtos.vl_preco)} sem Juros no cartão</p>
                                             </section>
                                         </div>
 

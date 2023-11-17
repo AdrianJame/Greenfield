@@ -27,6 +27,7 @@ export async function EnviarImagem1(imagem, id) {
         },
     })
 
+
     return resposta.status; 
 }
 
