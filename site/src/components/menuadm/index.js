@@ -11,6 +11,9 @@ export default function Menuadm(){
 
     const[nome, setNome] = useState('');
     const[email, setEmail] = useState('');
+    const[id, setId] = useState('');
+
+
 
     const [color, setColor] = useState('#000000');
 
@@ -25,9 +28,27 @@ export default function Menuadm(){
             const usuariologado = storage('adm-logado');
             setNome(usuariologado.nome)
             setEmail(usuariologado.email)
+            setId(usuariologado.id)
 
             generateRandomColor()
     }, [])
+
+        function Levaremail(){
+            let x = ''
+          if(id == 1){
+            }
+          else  if(id == 2){
+                
+            }
+          else  if(id == 3){
+                
+            }
+           else if(id == 4){
+                
+            }
+
+            return x
+        }
 
 
 async function Trocar(){
@@ -58,8 +79,8 @@ async function Trocar(){
 
             <section className='menu-meio'>
                 <Link>Consultar Análise</Link>
-                <Link>Consultar Email</Link>
-                <Link to={'/homeadm'    }>Home</Link>
+                <a>Consultar Email</a>
+                <Link to={'/homeadm'}>Home</Link>
                 <Link>Status de Vendas</Link>
             </section>
 
