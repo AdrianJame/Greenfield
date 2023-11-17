@@ -5,6 +5,7 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
 import { useParams } from 'react-router-dom';
+import { BuscarImagem, EnviarImagem } from '../../api/prod';
 
 export default function AlterarProdutoADM () {
     const[categorias, setCategorias] = useState([])
@@ -24,6 +25,7 @@ export default function AlterarProdutoADM () {
     const[dimensoes, setDimensoes] = useState('')
     const[material, setMaterial] = useState('')
     const[extra, setExtra] = useState('')
+    const[imagem, setImagem] = useState('')
 
 
     const id = useParams().id;
@@ -33,19 +35,18 @@ export default function AlterarProdutoADM () {
         setAlterar(r.data)
 
 
-        setNome(alterar.nm_produto)
-        setFabricante(alterar.ds_fabricante)
-        setCategoriaselecionada(alterar.id_categoria)
-        setGarantia(alterar.nr_garantia)
-        setPreco(alterar.vl_preco)
-        setEstoque(alterar.qtd_estoque)
-        setDescricao(alterar.ds_produto)
-        setDimensoes(alterar.ds_dimensoes)
-        setMaterial(alterar.ds_material)
-        setExtra(alterar.ds_extra)
+        setPreco(r.data.vl_preco)
+        setNome(r.data.nm_produto)
+        setFabricante(r.data.ds_fabricante)
+        setEstoque(r.data.qtd_estoque)
+        setGarantia(r.data.nr_garantia)
+        setDescricao(r.data.ds_produto)
+        setDimensoes(r.data.ds_dimensoes)
+        setMaterial(r.data.ds_material)
+        setExtra(r.data.ds_extra)
     }
 
-    console.log(alterar.nm_produto)
+
 
 
 
@@ -67,22 +68,25 @@ export default function AlterarProdutoADM () {
 
 
 
-    async function Salvaraa(){
+    async function Salvar(){
         try{
             let produto = {
                 nome: nome,
                 fabri: fabricante,
-                categoria: categoriaselecionada,
                 preco: preco,
-                estoque: estoque,
                 garantia: garantia,
                 descricao: descricao,
-                dimensoes: dimensoes,
+                categoria: categoriaselecionada,
+                estoque: estoque,
                 material: material,
+                dimensoes: dimensoes,
                 extra: extra
             }
-                let r = await axios.put(API_URL + '/produtos/' + id, produto);
+                let r = await axios.put(API_URL + '/alterarproduto/' + id, produto);
+
                 setErro('Produto alterado')
+
+                const re = await EnviarImagem(imagem, id)
 
                 navigate('/produtosadm')
         }
@@ -92,11 +96,25 @@ export default function AlterarProdutoADM () {
           }
     }
 
+    function escolherImagem(){
+        document.getElementById('imagemprod').click();
+    }
+
+
+
+
+    function mostrarImagem(){
+        return URL.createObjectURL(imagem);
+
+    }
+
+    
+
 
 
     function teclaEnter(e) {
         if (e.key === 'Enter') {
-            Salvaraa();
+            Salvar();
         }}
 
     return (
@@ -106,25 +124,24 @@ export default function AlterarProdutoADM () {
 
                 <div className='cabecalho-cadastro-produtos'>
                     <h1>CADASTRAR PRODUTOS</h1>
-                    <img src='./assets/images/logobranca.svg'/>
+                    <img src='/assets/images/logobranca.svg'/>
                 </div>
 
                 <div className='session-01-conteudo'>
                     
                     <div className='conteudo-esquerda'>
 
-                        <div className='imagem-com-fundo-escuro'>
-                            <img src='./assets/images/adicionar-imagem.svg'/>
-                        </div>
+                    <div className='imagem-com-fundo-escuro' onClick={escolherImagem}>
 
-                        <div className='imagens-adicionais'>
-                            <div className='imagem-com-fundo-escuro-pequeno'>
-                                <img src='./assets/images/adicionar-imagem-pequeno.svg'/>
-                            </div>
+                        {!imagem &&
+                            <img src={BuscarImagem(alterar.ds_img1)}/>
+                        }
 
-                            <div className='imagem-com-fundo-escuro-pequeno'>
-                                <img src='./assets/images/adicionar-imagem-pequeno.svg'/>
-                            </div>
+                        {imagem &&
+                        <img className='imagem-prod' src={mostrarImagem()}></img>
+                        }
+
+                        <input id='imagemprod' type='file' onChange={e => setImagem(e.target.files[0])} />
                         </div>
 
                     </div>
@@ -207,7 +224,7 @@ export default function AlterarProdutoADM () {
 
            
                 <div className='botao-salvar'>
-                     <button onClick={Salvaraa}>Salvar</button>
+                     <button onClick={Salvar}>Salvar</button>
                 </div>
                 <p className='erro'>{erro}</p>
 

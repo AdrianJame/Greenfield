@@ -24,8 +24,7 @@ export default function CadatroProdutoADM () {
     const[descricao, setDescricao] = useState('')
 
     const[imagem, setImagem] = useState('')
-    const[imagem1, setImagem1] = useState('')
-    const[imagem2, setImagem2] = useState('')
+
 
     const[dimensoes, setDimensoes] = useState('')
     const[material, setMaterial] = useState('')
@@ -56,6 +55,8 @@ export default function CadatroProdutoADM () {
 
         try{
 
+            if(preco > 0 && garantia >= 0 && estoque > 0){
+
                 const novoProduto = await Cadastrarproduto(nome, fabricante, categoriaselecionada, preco, estoque, garantia, descricao, dimensoes, material, extra);
                     let idp = (novoProduto.id)
                     console.log(idp);
@@ -74,6 +75,19 @@ export default function CadatroProdutoADM () {
             limpar()
 
             navigate('/produtosadm')
+            }
+
+            else if(preco <= 0){
+                setErro('O preço não pode ser menor que 0')
+            }
+
+            else if(garantia < 0){
+                setErro('a garantia não pode ser menor que 0')
+            }
+
+            else if(estoque <= 0){
+                setErro('O estoque não pode ser menor ou igual a 0')
+            }
         }
 
         catch(err){

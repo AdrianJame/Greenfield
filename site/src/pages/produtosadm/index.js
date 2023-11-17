@@ -119,7 +119,7 @@ async function Deletar(id){
                         
                         <p title={item.nm_produto}>{item.nm_produto}</p>
                         <p>{item.nm_categoria}</p>
-                        <p>{item.vl_preco}</p>
+                        <p>{item.qtd_estoque}</p>
                         <p>{item.vl_preco}</p>
 
                         <a onClick={() => navigate('/altpro/' + item.id_produto)}  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></a>

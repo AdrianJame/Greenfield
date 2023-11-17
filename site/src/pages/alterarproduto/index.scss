@@ -10,6 +10,36 @@
 
     background-color: #363636;
 
+    .imagem-com-fundo-escuro {
+                    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+        
+        background-color: #131313;
+        
+        width: 350px;
+        height: 350px;
+
+        border-radius: 5px;
+
+        #imagemprod{
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .imagem-prod{
+         width: 350px;
+         height: 350px;
+         border-radius: 5px;
+
+        }
+
+    }
+
+
     .session-01 {
         display: flex;
         flex-direction: column;
