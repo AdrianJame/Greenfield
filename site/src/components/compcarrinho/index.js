@@ -1,6 +1,7 @@
 import './index.scss';
 import { useState, useEffect } from 'react';
 import localStorage from 'local-storage';
+import { BuscarImagem } from '../../api/prod';
 
 export default function Compcarrinho({item: { produto }, Removeritem}){
     const[qtdproduto, setQtd] = useState([]);
@@ -31,21 +32,25 @@ export default function Compcarrinho({item: { produto }, Removeritem}){
 
     return(
         <div className='compcarrinho'>
-            <div>
-                <img src=''/>
-                <h1>{produto.nm_produto}</h1> 
+            <div className='produto'>
+                <img src={BuscarImagem(produto.ds_img1)}/>
 
-                <select onChange={e => Alterarquant(e.target.value)} value={qtdproduto}>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select> 
+                <section className='nomeproduto'>
+                    <h1>{produto.nm_produto}</h1> 
+                    <p>Oferta programada para boleto ou pix</p>
+                </section>
 
-                <p>{qtdproduto == 0 ? produto.vl_preco : Calculosubtotal()}</p>  
+                    <select onChange={e => Alterarquant(e.target.value)} value={qtdproduto}>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select> 
 
-                <button >excluir</button>                        
+                    <p>R${qtdproduto == 0 ? produto.vl_preco : Calculosubtotal()}</p>  
+
+                <img className='excluir' src='/assets/images/xcarrinho.svg'/>                       
             </div>
         </div>
     )

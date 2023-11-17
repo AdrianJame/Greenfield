@@ -21,7 +21,7 @@ export default function Produto(){
 
      function Parce(preco){
         let parcela = preco / 3;
-        return parcela;
+        return parcela.toFixed(2);
      }
 
      function Desconto(preco){

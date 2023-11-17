@@ -26,8 +26,26 @@ export default function Carrinho () {
         for(let item of itens){
             total = total + item.produto.vl_preco * item.qtd;
         }
+        return total.toFixed(2);
+    }
 
-        return total;
+    function Parcela(){
+        let x = Total() / 3;
+
+        return x
+    }
+
+    function Desconto(){
+        let x = Total() * 0.10;
+        let d = Total() - x
+
+        return d
+    }
+
+    function Cupomtotal(){
+        let x = Total() - 0.00;
+
+        return x.toFixed(2)
     }
 
     async function carregarcarrinho(){
@@ -83,7 +101,6 @@ export default function Carrinho () {
                     )}             
                 </section>
 
-                <h1>{Total()}</h1>
             </div>
 
             <div className='faixa-03'>
@@ -107,7 +124,28 @@ export default function Carrinho () {
             <div className='faixa-04'>
 
                 <div className='pagamento'>
+                    <section className='pag-p1'><p>Subtotal</p> <p>R${Total()}</p></section>
+                    <section className='pag-p1'><p>Frete</p> <p>R$0.00</p></section>
+                    
+                    <div className='pag-linha'></div>
 
+                    <section className='pag-p1'><p>Desconto com cupom</p> <p>R$0.00</p></section>
+
+                    <section className='faixa-verde'><p className='total'>Total</p> <p>R${Cupomtotal()}</p></section>
+
+                    <section className='pag-parcela'>
+                        <img src='/assets/images/cartao.svg'/>
+                        <p>3x de R${Parcela()} s/juros</p>
+                    </section>
+
+                    <div className='pag-linha'></div>
+
+                    <section className='desc'>
+                        <img src='/assets/images/boleto.svg'/>
+                        <div><p className='p-desc'>R${Desconto()}</p> <p>Com desconto à vista no boleto</p></div>
+                    </section>
+
+                    <a>Continuar</a>
                 </div>
 
             </div>
