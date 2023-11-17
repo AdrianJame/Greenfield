@@ -18,8 +18,6 @@ export async function EnviarImagem(imagem, id) {
     return resposta.status; 
 }
 
-
-
 export function BuscarImagem(imagem) {
     console.log(`${api.getUri()}/${imagem}`);
 
