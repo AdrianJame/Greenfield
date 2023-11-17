@@ -55,7 +55,7 @@ export default function CadatroProdutoADM () {
 
         try{
 
-            if(preco > 0 && garantia >= 0 && estoque > 0){
+            if(preco > 0 && garantia >= 0 && estoque > 0 && imagem != ''){
 
                 const novoProduto = await Cadastrarproduto(nome, fabricante, categoriaselecionada, preco, estoque, garantia, descricao, dimensoes, material, extra);
                     let idp = (novoProduto.id)
