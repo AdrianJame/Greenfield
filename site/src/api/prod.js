@@ -18,29 +18,7 @@ export async function EnviarImagem(imagem, id) {
     return resposta.status; 
 }
 
-export async function EnviarImagem1(imagem, id) {
-    const formData = new FormData();
-    formData.append('', imagem)
-    const resposta = await api.put(`/produto/${id}/imagem1`, formData, {
-        headers: {
-            "Content-Type": "multipart/form-data"
-        },
-    })
 
-    return resposta.status; 
-}
-
-export async function EnviarImagem2(imagem, id) {
-    const formData = new FormData();
-    formData.append('fotosProdutos', imagem)
-    const resposta = await api.put(`/produto/${id}/imagem2`, formData, {
-        headers: {
-            "Content-Type": "multipart/form-data"
-        },
-    })
-
-    return resposta.status; 
-}
 
 export function BuscarImagem(imagem) {
     console.log(`${api.getUri()}/${imagem}`);

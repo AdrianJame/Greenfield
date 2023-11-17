@@ -4,7 +4,7 @@ import axios from 'axios';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
-import { Cadastrarproduto, EnviarImagem, EnviarImagem2, EnviarImagem1 } from '../../api/prod.js';
+import { Cadastrarproduto, EnviarImagem } from '../../api/prod.js';
 
 
 
@@ -63,9 +63,6 @@ export default function CadatroProdutoADM () {
 
                     const re = await EnviarImagem(imagem,idp)
                     
-                    const re1 = await EnviarImagem1(imagem1,idp)
-
-                    const re2 = await EnviarImagem2(imagem2,idp)
     
                     setErro('Produto Cadastrado!')
                     console.log(novoProduto.id);
@@ -118,13 +115,7 @@ export default function CadatroProdutoADM () {
             document.getElementById('imagemprod').click();
         }
 
-        function escolherImagem1(){
-            document.getElementById('imagemprod1').click();
-        }
-
-        function escolherImagem2(){
-            document.getElementById('imagemprod2').click();
-        }
+        
 
 
         function mostrarImagem(){
@@ -132,13 +123,7 @@ export default function CadatroProdutoADM () {
 
         }
         
-        function mostrarImagem1(){
-            return URL.createObjectURL(imagem1);
-        }
         
-        function mostrarImagem2(){
-            return URL.createObjectURL(imagem2);
-        }
 
     return (
         <div className='page-cadastro-adm'>
@@ -170,35 +155,7 @@ export default function CadatroProdutoADM () {
 
 
 
-                        <div className='imagens-adicionais' onClick={escolherImagem1}>
-                            <div className='imagem-com-fundo-escuro-pequeno'>
-                                {!imagem1 &&
-                                    <img className='imagem-prod1' src='./assets/images/adicionar-imagem1.svg'/>
-                                }
-
-                                {imagem1 &&
-                                <img className='imagem-prod1' src={mostrarImagem1()}></img>
-                                }
-
-                                <input id='imagemprod1' type='file' onChange={e => setImagem1(e.target.files[0])} />
-                            </div>
-
-
-
-
-
-                            <div className='imagem-com-fundo-escuro-pequeno' onClick={escolherImagem2}>
-                                {!imagem2 &&
-                                    <img className='imagem-prod2' src='./assets/images/adicionar-imagem2.svg'/>
-                                }
-
-                                {imagem2 &&
-                                <img className='imagem-prod2' src={mostrarImagem2()}></img>
-                                }
-
-                                <input id='imagemprod2' type='file' onChange={e => setImagem2(e.target.files[0])} />
-                            </div>
-                        </div>
+                        
 
                     </div>
 
