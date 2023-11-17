@@ -5,7 +5,7 @@ import express, { json } from 'express'
 import admcontroller from './controller/admcontroller.js'
 import clientecontroler from './controller/clientecontroler.js'
 import categoriacontroller from './controller/categoriacontroller.js'
-
+// import pedidocontroller from './controller/pedidocontroller.js'
 import produtoscontroller from './controller/produtoscontroller.js'
 
 
@@ -17,6 +17,7 @@ server.use(clientecontroler);
 server.use(categoriacontroller);
 server.use(admcontroller);
 server.use(produtoscontroller);
+// server.use(pedidocontroller);
 
 server.use('/storage/fotosProdutos', express.static('storage/fotosProdutos'))
 

@@ -2,8 +2,79 @@ import './index.scss';
 import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
 import { API_URL } from '../../constants.js';
+import { useState } from 'react';
+
+
 
 export default function Meuspedidos(){
+
+
+
+
+
+
+
+
+
+function exibirImagem(item) {
+    if (item.produto.imagens.length > 0)
+        return API_URL + '/' + item.produto.imagens[0];
+    else
+        return '/produto-padrao.png';
+}
+
+
+
+async function salvarPedido() {
+
+    const [itens, setItens] = useState([]);
+    const [enderecos, setEnderecos] = useState([]);
+    const [exibirEndereco, setExibirEndereco] = useState(false);
+
+    const [idEndereco, setIdEndereco] = useState();
+    
+
+    const [nome, setNome] = useState('');
+    const [numero, setNumero] = useState('');
+    const [vencimento, setVencimento] = useState('');
+    const [cvv, setCvv] = useState('');
+    const [tipo, setTipo] = useState('');
+    const [parcela, setParcela] = useState('');
+
+    try {
+        let produtos = Storage('carrinho');
+        let id = Storage('cliente-logado').id;
+
+        let pedido =
+        {
+            cupom: cupom,
+            frete: frete,
+            idEndereco: idEndereco,
+            tipoPagamento: 'Cartão',
+            cartao: {
+                nome: nome,
+                numero: numero,
+                vencimento: vencimento,
+                codSeguranca: cvv,
+                formaPagamento: tipo,
+                parcelas: parcela
+            },
+            produtos: produtos
+        }
+
+        const r = await salvarNovoPedido(id, pedido);
+        alert('Pedido foi inserido com sucesso');
+        Storage('carrinho', []);
+        navigate('/');
+
+    }
+    catch (err) {
+        alert(err.response.data.erro);
+    }
+
+}
+
+
     return(
         <div className='meuspedidos'>
             <Cabecalhocomlogin/>
