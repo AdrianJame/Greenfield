@@ -3,6 +3,8 @@ import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
 import { API_URL } from '../../constants.js';
 import { useState } from 'react';
+import { salvarNovoPedido } from '../../api/pedido.js';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -10,7 +12,20 @@ export default function Meuspedidos(){
 
 
 
+const navigate = useNavigate()
+const [itens, setItens] = useState([]);
+const [enderecos, setEnderecos] = useState([]);
+const [exibirEndereco, setExibirEndereco] = useState(false);
 
+const [idEndereco, setIdEndereco] = useState();
+
+
+const [nome, setNome] = useState('');
+const [numero, setNumero] = useState('');
+const [vencimento, setVencimento] = useState('');
+const [cvv, setCvv] = useState('');
+const [tipo, setTipo] = useState('');
+const [parcela, setParcela] = useState('');
 
 
 
@@ -25,21 +40,9 @@ function exibirImagem(item) {
 
 
 
-async function salvarPedido() {
+ async function salvarPedido() {
 
-    const [itens, setItens] = useState([]);
-    const [enderecos, setEnderecos] = useState([]);
-    const [exibirEndereco, setExibirEndereco] = useState(false);
-
-    const [idEndereco, setIdEndereco] = useState();
-    
-
-    const [nome, setNome] = useState('');
-    const [numero, setNumero] = useState('');
-    const [vencimento, setVencimento] = useState('');
-    const [cvv, setCvv] = useState('');
-    const [tipo, setTipo] = useState('');
-    const [parcela, setParcela] = useState('');
+   
 
     try {
         let produtos = Storage('carrinho');
@@ -47,19 +50,7 @@ async function salvarPedido() {
 
         let pedido =
         {
-            cupom: cupom,
-            frete: frete,
-            idEndereco: idEndereco,
-            tipoPagamento: 'Cartão',
-            cartao: {
-                nome: nome,
-                numero: numero,
-                vencimento: vencimento,
-                codSeguranca: cvv,
-                formaPagamento: tipo,
-                parcelas: parcela
-            },
-            produtos: produtos
+            nome: nome
         }
 
         const r = await salvarNovoPedido(id, pedido);
