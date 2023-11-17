@@ -40,7 +40,7 @@ root.render(
         <Route path='/produtosadm' element={<Produtosadm/>} />
         <Route path='/statuspedidos' element={<Statuspedido/>}/>
         <Route path='/statusvenda' element={<Statusdevenda/>}/>
-        <Route path='/formadepagamento' element={<FormaDePagamento/>}/>
+        <Route path='/formadepagamento/:id' element={<FormaDePagamento/>}/>
         <Route path='/endereço' element={<Logradouro/>}/>
         <Route path='/pagamento' element={<Pag/>}/>
         <Route path='/login' element={<Login/>}/>

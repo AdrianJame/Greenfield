@@ -3,8 +3,33 @@ import Cabecalhocomlogin from '../../components/cabcomlogin'
 import RodapeGreenfield from '../../components/rodape'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../../constants.js';
+import { useEffect, useState } from 'react';
 
 export default function Logradouro () {
+const[endereco, setEndereco] = useState([])
+
+const[logradouro , setLogradouro] = useState()
+const[bairro , setBairro] = useState()
+const[cidade , setCidade] = useState()
+const[uf , setUf] = useState()
+
+
+
+const checkCep = (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log(cep)
+    fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
+        console.log(data)
+        setLogradouro(data.logradouro)
+        setBairro(data.bairro)
+        setCidade(data.localidade)
+        setUf(data.uf)
+    });
+
+}
+
+
+
     return (
         <div className='page-endereco'>
             
@@ -54,7 +79,8 @@ export default function Logradouro () {
                     <div className='logradouro'>
                         
                         <div className='line-1'>
-                            <input placeholder='Logradouro*' type='text'/>
+                            <input placeholder='INSIRA O CEP' type='text' onBlur={checkCep}/>
+                            <input placeholder='Logradouro*' type='text' value={logradouro} onChange={e => setLogradouro(e.target.value)}/>
                         </div>
                         
                         <div className='line-2'>
@@ -67,12 +93,12 @@ export default function Logradouro () {
                         </div>
                         
                         <div className='line-4'>
-                            <input placeholder='Bairro*' type='text' />
-                            <input placeholder='Cidade*' type='text' />
-                            <input placeholder='UF*' type='text' />
+                            <input placeholder='Bairro*' type='text' value={bairro} onChange={e => setBairro(e.target.value)}/>
+                            <input placeholder='Cidade*' type='text' value={cidade} onChange={e => setCidade(e.target.value)}/>
+                            <input placeholder='UF*' type='text' value={uf} onChange={e => setUf(e.target.value)}/>
                         </div>
 
-                        <Link>SALVAR ALTERAÇÕES</Link>
+                        <a>SALVAR ALTERAÇÕES</a>
 
                     </div>
 

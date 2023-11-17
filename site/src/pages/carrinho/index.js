@@ -6,11 +6,14 @@ import localStorage from 'local-storage';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Compcarrinho from '../../components/compcarrinho';
-
+import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development';
+import { checkCep } from '../../api/prod';
 export default function Carrinho () {
 
     const[itens, setItens] = useState([]);
+    const[ende, setEnde] = useState([]);
 
+    const navigate = useNavigate();
 
     function Removeritem(id){
         let carrinho = localStorage('carrinho');
@@ -63,6 +66,15 @@ export default function Carrinho () {
         }
     }
 
+    const checkCep = (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log(cep)
+    fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
+        console.log(data)
+    });
+
+}
+
 
 
     useEffect(() => {
@@ -113,7 +125,7 @@ export default function Carrinho () {
                     </div>    
                     
                     <div className='info'>
-                        <input placeholder='INSIRA O CEP' type='text'/>
+                        <input placeholder='INSIRA O CEP' type='text' onBlur={checkCep}/>
                         <button>Calcular</button>
                     </div>  
                         
@@ -145,7 +157,7 @@ export default function Carrinho () {
                         <div><p className='p-desc'>R${Desconto()}</p> <p>Com desconto à vista no boleto</p></div>
                     </section>
 
-                    <a>Continuar</a>
+                    <a onClick={() => navigate('/endereço')}>Continuar</a>
                 </div>
 
             </div>
