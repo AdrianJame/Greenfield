@@ -7,10 +7,10 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 // import ModalEndereco from '../../components/modalEndereco'
 import Storage, { set } from 'local-storage'
-// import { listar } from '../../api/enderecoAPI'
+//import { listar } from '../../api/enderecoAPI'
 // import CardEndereco from '../../components/cardEndereco';
-// import { buscarProdutoPorId } from '../../api/produtoAPI'
-
+//import { buscarProdutoPorId } from '../../api/produtoAPI'
+import { toast } from 'react-toastify'
 
 export default function Meuspedidos(){
 
@@ -34,42 +34,42 @@ export default function Meuspedidos(){
 
     const navigate = useNavigate();
 
-    async function carregarEnderecos() {
-        const id = Storage('usuario-logado').id;
-        const r = await listar(id);
-        setEnderecos(r);
-    }
+    // async function carregarEnderecos() {
+    //     const id = Storage('usuario-logado').id;
+    //     const r = await listar(id);
+    //     setEnderecos(r);
+    // }
 
-    function exibirNovoEndereco() {
-        setExibirEndereco(true);
-    }
+    // function exibirNovoEndereco() {
+    //     setExibirEndereco(true);
+    // }
 
-    function fecharNovoEndereco() {
-        setExibirEndereco(false);
-        carregarEnderecos();
-    }
+    // function fecharNovoEndereco() {
+    //     setExibirEndereco(false);
+    //     carregarEnderecos();
+    // }
 
 
 
-    async function carregarItens() {
-        let carrinho = Storage('carrinho');
-        if (carrinho) {
+    // async function carregarItens() {
+    //     let carrinho = Storage('carrinho');
+    //     if (carrinho) {
 
-            let temp = [];
+    //         let temp = [];
 
-            for (let produto of carrinho) {
-                let p = await buscarProdutoPorId(produto.id);
+    //         for (let produto of carrinho) {
+    //             let p = await buscarProdutoPorId(produto.id);
 
-                temp.push({
-                    produto: p,
-                    qtd: produto.qtd
-                })
-            }
+    //             temp.push({
+    //                 produto: p,
+    //                 qtd: produto.qtd
+    //             })
+    //         }
 
-            setItens(temp);
-        }
+    //         setItens(temp);
+    //     }
 
-    }
+    // }
 
     function calcularTotal() {
         let total = 0;
@@ -88,46 +88,46 @@ export default function Meuspedidos(){
 
 
 
-    async function salvarPedido() {
+    // async function salvarPedido() {
 
-        try {
-            let produtos = Storage('carrinho');
-            let id = Storage('usuario-logado').id;
+    //     try {
+    //         let produtos = Storage('carrinho');
+    //         let id = Storage('usuario-logado').id;
 
-            let pedido =
-            {
-                frete: frete,
-                idEndereco: idEndereco,
-                tipoPagamento: 'Cartão',
-                cartao: {
-                    nome: nome,
-                    numero: numero,
-                    vencimento: vencimento,
-                    codSeguranca: cvv,
-                    formaPagamento: tipo,
-                    parcelas: parcela
-                },
-                produtos: produtos
-            }
+    //         let pedido =
+    //         {
+    //             frete: frete,
+    //             idEndereco: idEndereco,
+    //             tipoPagamento: 'Cartão',
+    //             cartao: {
+    //                 nome: nome,
+    //                 numero: numero,
+    //                 vencimento: vencimento,
+    //                 codSeguranca: cvv,
+    //                 formaPagamento: tipo,
+    //                 parcelas: parcela
+    //             },
+    //             produtos: produtos
+    //         }
 
-            const r = await salvarNovoPedido(id, pedido);
-            toast.dark('Pedido foi inserido com sucesso');
-            Storage('carrinho', []);
-            navigate('/');
+    //         const r = await salvarNovoPedido(id, pedido);
+    //         toast.dark('Pedido foi inserido com sucesso');
+    //         Storage('carrinho', []);
+    //         navigate('/');
 
-        }
-        catch (err) {
-            toast.error(err.response.data.erro);
-        }
+    //     }
+    //     catch (err) {
+    //         toast.error(err.response.data.erro);
+    //     }
 
-    }
+    // }
 
 
 
 
     useEffect(() => {
-        carregarEnderecos();
-        carregarItens();
+        // carregarEnderecos();
+        // carregarItens();
     }, [])
 
 
