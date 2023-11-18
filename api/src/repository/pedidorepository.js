@@ -2,6 +2,8 @@ import conexao from "./connection.js";
 
 
 
+
+
 export async function inserirPedido(novoPedido) {
     const comando = `
         INSERT INTO tb_pedido (
@@ -77,3 +79,13 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
     const [info] = await conexao.query(comando, [idPedido, idProduto, qtd, preco ]);
     return info.affectedRows;
 }
+
+
+
+
+
+
+
+
+
+

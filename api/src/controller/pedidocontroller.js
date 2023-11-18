@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { inserirPedidoItem, inserirPagamento, inserirPedido } from "../repository/pedidorepository.js";
-
+import { criarNovoPedido } from "../service/novoPedidoService.js";
+import { Listarporid } from "../repository/produtosrepository.js";
 
 const endpoints = Router();
 
@@ -15,7 +16,7 @@ endpoints.post('/api/pedido/:idUsuario/', async (req, resp) => {
         await inserirPagamento(idPedidoCriado, info.cartao);
 
         for (let item of info.produtos) {
-            const prod = await buscarProdutoPorId(item.id);
+            const prod = await Listarporid(item.id);
             await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
         }
 

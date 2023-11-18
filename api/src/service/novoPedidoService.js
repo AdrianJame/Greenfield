@@ -1,3 +1,4 @@
+
 import randomString from 'randomstring'
 
 export function criarNotaFiscal() {
