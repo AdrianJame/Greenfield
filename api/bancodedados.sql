@@ -3,13 +3,15 @@ use greenfield;
 
 
 create table tb_cartao(
-id_cartao int primary key auto_increment,
-nr_cartao int,
-nm_titular varchar(100),
-vl_cartao decimal(15,2),
-ds_cartao varchar(100),
-ds_cpf_titular_cartao varchar(100),
-dt_nascimento date
+	id_cartao	int primary key auto_increment,
+    id_pedido			int,
+    nm_cartao			varchar(200),
+    nr_cartao			varchar(200),
+    dt_vencimento		varchar(200),
+    cod_seguranca		varchar(200),
+    nr_parcelas			int,
+    ds_forma_pagamento	varchar(200),
+    foreign key (id_pedido) references tb_pedido (id_pedido)
 );
 
 create table tb_cliente(
@@ -98,37 +100,40 @@ ds_img3 varchar(1000)
 select * from tb_produto;
 
 create table tb_endereço(
-    id_endereco int primary key auto_increment,
-	ds_logradouro varchar(100),
-	nr_numero int,
-	ds_complemento varchar(100),
-	nm_referencia varchar(100),
-	ds_bairro varchar(100),
-	ds_cidade varchar(100),
-	ds_uf varchar(100)
+	id_cliente_endereco			int primary key auto_increment,
+	id_cliente				int,
+    ds_referencia               varchar(200),
+    ds_cep						varchar(50),
+    ds_logradouro				varchar(400),
+    ds_bairro					varchar(100),
+    ds_cidade					varchar(100),
+    ds_estado					varchar(100),
+    ds_numero					varchar(100),
+    ds_complemento				varchar(200),
+    foreign key (id_cliente) references tb_cliente (id_cliente)
 );
 
 create table tb_pedido(
-id_pedido int primary key auto_increment,
-ds_nota_fiscal varchar(100),
-tp_formas_pagamento varchar(100),
-qtd_parcelas int,
-dt_pedido datetime,
-ds_situacao varchar(100),
-id_cliente int,
-id_endereço int,
-foreign key (id_cliente) references tb_cliente (id_cliente),
-foreign key (id_endereço) references tb_endereço (id_endereco)
+	id_pedido			int primary key auto_increment,
+    id_cliente		int,
+    id_cliente_endereco	int,
+    dt_pedido			datetime,
+    cod_nota_fiscal		varchar(200),
+    tp_frete			varchar(200),
+    vl_frete			decimal(15,2),
+    ds_status			varchar(200),
+    tp_pagamento		varchar(200),
+    foreign key (id_cliente) references tb_cliente (id_cliente),
+    foreign key (id_cliente_endereco) references tb_cliente_endereco (id_cliente_endereco)
 );
 
 CREATE TABLE tb_item_pedido (
-    id_item_pedido INT PRIMARY KEY AUTO_INCREMENT,
-    qtd_item INT,
-    id_pedido INT,
-    id_produto INT,
-    FOREIGN KEY (id_pedido)
-        REFERENCES tb_pedido (id_pedido),
-    FOREIGN KEY (id_produto)
-        REFERENCES tb_produto (id_produto)
+    id_pedido_item		int primary key auto_increment,
+    id_pedido			int,
+    id_produto			int,
+    qtd_itens			int,
+    vl_produto			decimal(15,2),
+    foreign key (id_pedido) references tb_pedido (id_pedido),
+    foreign key (id_produto) references tb_produto (id_produto)
 );
 
