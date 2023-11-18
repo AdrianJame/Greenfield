@@ -1,12 +1,12 @@
 import 'dotenv/config'
 import cors from 'cors'
-import express, { json } from 'express'
+import express from 'express'
 
 import admcontroller from './controller/admcontroller.js'
 import clientecontroler from './controller/clientecontroler.js'
 import categoriacontroller from './controller/categoriacontroller.js'
-// import pedidocontroller from './controller/pedidocontroller.js'
 import produtoscontroller from './controller/produtoscontroller.js'
+// import pedidocontroller from './controller/pedidocontroller.js'
 
 
 const server = express();
