@@ -20,7 +20,7 @@ export async function inserirPedido(novoPedido) {
     `
 
     const [info] = await conexao.query(comando, [
-        novoPedido.idUsuario,
+        novoPedido.idCliente,
         novoPedido.idEndereco,
         novoPedido.data,
         novoPedido.notaFiscal,

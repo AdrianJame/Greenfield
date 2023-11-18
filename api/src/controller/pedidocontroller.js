@@ -5,12 +5,12 @@ import { Listarporid } from "../repository/produtosrepository.js";
 
 const endpoints = Router();
 
-endpoints.post('/api/pedido/:idUsuario/', async (req, resp) => {
+endpoints.post('/api/pedido/:idCliente/', async (req, resp) => {
     try {
-        const { idUsuario } = req.params;
+        const { idCliente } = req.params;
         const info = req.body;
 
-        const novoPedido = criarNovoPedido(idUsuario, info);
+        const novoPedido = criarNovoPedido(idCliente, info);
 
         const idPedidoCriado = await inserirPedido(novoPedido);
         await inserirPagamento(idPedidoCriado, info.cartao);
