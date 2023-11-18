@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { inserirPagamento, inserirPedido, inserirPedidoItem } from "../repository/pedidorepository.js";
-import { buscarProdutoPorId } from "../repository/produtorepository.js";
-import {criarNovoPedido, criarNotaFiscal } from "../service/novoProdutoService.js";
+import { inserirPedidoItem, inserirPagamento, inserirPedido } from "../repository/pedidorepository.js";
+
+
 const endpoints = Router();
 
 endpoints.post('/api/pedido/:idUsuario/', async (req, resp) => {
@@ -32,4 +32,4 @@ endpoints.post('/api/pedido/:idUsuario/', async (req, resp) => {
 
 
 
-export default endpoints;
+export default endpoints
