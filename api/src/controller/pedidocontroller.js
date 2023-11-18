@@ -32,5 +32,4 @@ endpoints.post('/api/pedido/:idCliente/', async (req, resp) => {
 })
 
 
-
 export default endpoints

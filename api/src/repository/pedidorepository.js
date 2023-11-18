@@ -1,9 +1,6 @@
 import conexao from "./connection.js";
 
 
-
-
-
 export async function inserirPedido(novoPedido) {
     const comando = `
         INSERT INTO tb_pedido (
@@ -32,7 +29,6 @@ export async function inserirPedido(novoPedido) {
     return info.insertId;
 }
 
-
 export async function inserirPagamento(idPedido, novoPagamento) {
     const comando = `
             INSERT INTO tb_cartao (
@@ -59,11 +55,6 @@ export async function inserirPagamento(idPedido, novoPagamento) {
     return info.affectedRows;
 }
 
-
-
-
-
-
 export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
     const comando = `
         INSERT INTO tb_item_pedido (
@@ -79,13 +70,5 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
     const [info] = await conexao.query(comando, [idPedido, idProduto, qtd, preco ]);
     return info.affectedRows;
 }
-
-
-
-
-
-
-
-
 
 
