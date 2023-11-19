@@ -6,9 +6,9 @@ import { BuscarImagem } from '../../api/prod';
 export default function Compcarrinho({item: { produto }, Removeritem}){
     const[qtdproduto, setQtd] = useState([]);
 
-    //  function Remover(id){
-    //     Removeritem(id)
-    //  }
+      function Remover(id){
+         Removeritem(id)
+     }
 
     function Calculosubtotal(){
         const subtotal = qtdproduto * produto.vl_preco
@@ -50,7 +50,7 @@ export default function Compcarrinho({item: { produto }, Removeritem}){
 
                     <p>R${qtdproduto == 0 ? produto.vl_preco : Calculosubtotal()}</p>  
 
-                <img className='excluir' src='/assets/images/xcarrinho.svg'/>                       
+                <img className='excluir' onClick={() => Remover(produto.id_produto)} src='/assets/images/xcarrinho.svg'/>                       
             </div>
         </div>
     )

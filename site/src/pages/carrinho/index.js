@@ -21,6 +21,7 @@ export default function Carrinho () {
 
         localStorage('carrinho', carrinho)
         carregarcarrinho();
+        window.location.reload()
     }
 
     function Total(){
