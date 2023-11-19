@@ -49,24 +49,6 @@ export default function Produto(){
     }
 
      
-    // function AdicionarCarrinho(){
-    //     let carrinho = [];
-
-    //     if(localStorage('carrinho')){
-    //         carrinho = localStorage('carrinho')
-    //     }
-
-    //     if(!carrinho.find(item => item.id === id)){
-    //         carrinho.push({
-    //             id: id,
-    //             qtd: 1
-    //         })
-    //         localStorage('carrinho', carrinho);
-    //     }
-    // }
-
-
-
 
     useEffect(() => {
         Listarproduto()
