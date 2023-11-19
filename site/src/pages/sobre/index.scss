@@ -1,0 +1,68 @@
+.pagina-sobre{
+    display: flex;
+    flex-direction: column;
+    .faixa{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 55px;
+        padding-bottom: 10px;
+        
+
+        img{
+            width: 10%;
+            margin: 20px;
+
+        }
+
+        .textos{
+           
+            h1{
+                margin-bottom: 20px;
+            }
+            width: 70%;
+            
+        }
+        
+
+    }
+
+    .imagem2{
+        width: 200px;
+    }
+
+    .imagem-resp{
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .faixa{
+        img{
+            margin: 10px !important;
+            width: 20% !important;
+        }
+    }
+}
+
+@media (max-width: 500px
+) {
+    .faixa{
+        flex-direction: column !important;
+        align-items: center !important;
+
+        img{
+            width: 30% !important;
+        }
+    }
+
+    .imagem2{
+        display: none;
+    }
+
+    .imagem-resp{
+        display: flex !important;
+        width: 30% !important;
+        margin-left: 20px !important;
+    }
+}
