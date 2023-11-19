@@ -51,24 +51,15 @@ export default function Produto(){
 
 
 
-    async function Adicionarfav(){
-        let fav = {
-            cliente: idCliente,
-            produto: id
-        }
-
-        let r = await axios.post(API_URL + '/itemfavorito', fav)
-  
-    }
-
 
     useEffect(() => {
         Listarproduto()
         Parce()
         if(localStorage('usuario-logado')){
             const usuariologado = localStorage('usuario-logado')
-            setIdCliente(usuariologado.id)
+            setIdCliente(usuariologado.id_cliente)
         }
+
 }, [])
 
     return(
@@ -80,7 +71,7 @@ export default function Produto(){
                             <section className='cabe-card'>
                                 <p>{produtos.nm_categoria}</p>
 
-                                <img src=''/>
+                               <p className='fav'>Adicionar favorito</p>
                             </section>
 
                                 <section className='conteudo-card'>

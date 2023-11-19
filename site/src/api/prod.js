@@ -36,8 +36,8 @@ export async function Cadastrarproduto(nome, fabricante, categoriaselecionada, p
                 descricao: descricao,
                 dimensoes: dimensoes,
                 material: material,
-                extra: extra
-
+                extra: extra,
+                fav: false
     });
 
     return resposta.data

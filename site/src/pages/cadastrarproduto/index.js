@@ -5,7 +5,7 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
 import { Cadastrarproduto, EnviarImagem } from '../../api/prod.js';
-
+import { toast } from  'react-toastify'
 
 
 export default function CadatroProdutoADM () {
@@ -67,7 +67,7 @@ export default function CadatroProdutoADM () {
     
                     setErro('Produto Cadastrado!')
                     console.log(novoProduto.id);
-                    alert('foi')
+                    alert('Produto Cadastrado')
             
 
             
@@ -75,6 +75,10 @@ export default function CadatroProdutoADM () {
             limpar()
 
             navigate('/produtosadm')
+            }
+
+            else if(imagem == ''){
+                setErro('Não pode adicionar sem imagem')
             }
 
             else if(preco <= 0){

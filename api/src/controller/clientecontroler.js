@@ -152,6 +152,13 @@ endpoints.get('/itemfavorito/:id', async (req, resp) => {
 endpoints.post('/itemfavorito', async (req, resp) => {
     try{
         let favorito = req.body
+
+        if(!favorito.cliente)
+        throw new Error('⚠ cliente obrigatório')
+
+        if(!favorito.produto)
+        throw new Error('⚠ produto obrigatório')
+
         let dados = await AdicionarFavorito(favorito)
         resp.send(dados)
     }
