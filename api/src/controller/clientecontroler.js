@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod } from "../repository/clienterepository.js";
+import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod, CadastrarCartao } from "../repository/clienterepository.js";
 
 const endpoints = Router();
 
@@ -182,6 +182,22 @@ endpoints.delete('/deletarfavoritoporprod/:id', async (req, resp) => {
     }
     catch(err){
         resp.status(500).send({ erro: err.message})
+    }
+})
+
+
+
+endpoints.post('/cadastrocartao/:id', async (req,resp) => {
+
+    try {
+        let cartao = req.body;
+        let dados = await CadastrarCartao(cartao)
+        resp.send(dados)
+
+    } catch (error) {
+            resp.status(400).send({
+            erro: err.message
+        });
     }
 })
 

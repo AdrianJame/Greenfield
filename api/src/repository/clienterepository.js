@@ -167,3 +167,24 @@ export async function AdicionarFavorito(fav){
 
     return fav
 }
+
+
+export async function CadastrarCartao(cartao){
+    let sql = `
+        insert into tb_cartao(id_pedido, nm_cartao, nr_cartao, dt_vencimento, cod_seguranca, nr_parcelas, ds_forma_pagamento)
+                            values(?, ?, ?, ?, ?, ?, ?)
+    `
+    let [info] = await conexao.query(sql, [
+        cartao.pedido,
+        cartao.nome,
+        cartao.numero,
+        cartao.vencimento,
+        cartao.cvv,
+        cartao.parcelas,
+        cartao.formadeoagamento
+    ] )
+
+    cartao.id = info.insertId
+
+    return cartao
+}
