@@ -23,11 +23,9 @@ import ProdutosDecoracao from './pages/produtos';
 import Pesquisar from './pages/pesquisar';
 import Produto from './pages/produto';
 import AlterarProdutoADM from './pages/alterarproduto';
-<<<<<<< HEAD
 import Favorito from './pages/favoritos';
-=======
 import Sobre from './pages/sobre';
->>>>>>> d1af1bbe53092abfa597d5ed649a4c6508e6e5d9
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
