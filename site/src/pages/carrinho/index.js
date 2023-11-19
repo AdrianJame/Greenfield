@@ -35,7 +35,7 @@ export default function Carrinho () {
     function Parcela(){
         let x = Total() / 3;
 
-        return x
+        return x.toFixed(2)
     }
 
     function Desconto(){
