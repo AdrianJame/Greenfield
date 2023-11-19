@@ -6,7 +6,8 @@ import { API_URL } from '../../constants';
 import localStorage from 'local-storage';
 import { BuscarImagem } from '../../api/prod';
 import RodapeGreenfield from '../../components/rodape';
-
+import { toast, ToastContainer } from  'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
 export default function Favorito(){
 
     const[favorito, setFavorito] = useState([])
@@ -47,6 +48,7 @@ export default function Favorito(){
                 qtd: 1
             })
             localStorage('carrinho', carrinho);
+            toast.success('Produto adicionado ao carrinho')
         }
     }
 
@@ -72,6 +74,7 @@ export default function Favorito(){
                                 <p className='nome'>{item.nm_produto}</p>
                                 <p className='preco'>R$ {item.vl_preco.toFixed(2)}</p>
                             </div>
+                                <ToastContainer/>
                                 <a onClick={() => AdicionarCarrinho(item.id_produto)}>Adicionar ao Carrinho</a>
 
                                 <img className='excluir' onClick={() => Deletar(item.id_favorito)} src='/assets/images/xcarrinho.svg'/>

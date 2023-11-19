@@ -6,7 +6,9 @@ import { API_URL } from '../../constants';
 import { Link, useParams } from 'react-router-dom';
 import { BuscarImagem } from '../../api/prod';
 import localStorage from 'local-storage';
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from  'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
+
 
 export default function Produto(){
     const[produtos, setProdutos] = useState([])
@@ -48,8 +50,17 @@ export default function Produto(){
         return desconto.toFixed(2);
     }
 
-     
+    async function Adicionarfavorito(){
 
+        let fav ={
+            cliente: idCliente,
+            produto: id
+        }
+
+        let r = await axios.post(API_URL + '/itemfavorito', fav)
+        toast.success('Produto adicionado aos favoritos')
+    }
+    
     useEffect(() => {
         Listarproduto()
         Parce()
@@ -68,14 +79,13 @@ export default function Produto(){
                     <div className='card-produto'>
                             <section className='cabe-card'>
                                 <p>{produtos.nm_categoria}</p>
-
-                               <p className='fav'>Adicionar favorito</p>
+                                <ToastContainer/>
+                               <p className='fav' onClick={() => Adicionarfavorito()}>Adicionar favorito</p>
                             </section>
 
                                 <section className='conteudo-card'>
                                     <div className='imagens-card'>
                                         <img src={BuscarImagem(produtos.ds_img1)}/>
-
                                     </div>
 
                                     <div className='descricao-produto'>
@@ -106,7 +116,7 @@ export default function Produto(){
                                         </div>
 
                                         <div className='botao-comprar'>
-                                            <a className='AAAA' onClick={AdicionarCarrinho()}> Comprar</a>
+                                            <a className='AAAA' onClick={() => AdicionarCarrinho()}> Comprar</a>
                                         </div>
                                     </div>
                                 </section>

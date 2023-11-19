@@ -21,10 +21,10 @@ import CadatroProdutoADM from './pages/cadastrarproduto';
 import Erro from './pages/erroadm';
 import ProdutosDecoracao from './pages/produtos';
 import Pesquisar from './pages/pesquisar';
-import Produto from './pages/produto';
 import AlterarProdutoADM from './pages/alterarproduto';
 import Favorito from './pages/favoritos';
 import Sobre from './pages/sobre';
+import Produto from './pages/produto';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
