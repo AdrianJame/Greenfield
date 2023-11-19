@@ -23,6 +23,9 @@ import ProdutosDecoracao from './pages/produtos';
 import Pesquisar from './pages/pesquisar';
 import Produto from './pages/produto';
 import AlterarProdutoADM from './pages/alterarproduto';
+import Favorito from './pages/favoritos';
+import Sobre from './pages/sobre';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -49,6 +52,8 @@ root.render(
         <Route path='/pesq' element={<Pesquisar/>}/>
         <Route path='/produto/:id' element={<Produto/>}/>
         <Route path='/altpro/:id' element={<AlterarProdutoADM/>}/>
+        <Route path='/favorito' element={<Favorito/>}/>
+        <Route path='/sobre' element={<Sobre/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

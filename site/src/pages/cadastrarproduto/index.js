@@ -5,7 +5,8 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
 import { Cadastrarproduto, EnviarImagem } from '../../api/prod.js';
-
+import { toast, ToastContainer } from  'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 export default function CadatroProdutoADM () {
@@ -65,9 +66,9 @@ export default function CadatroProdutoADM () {
                     const re = await EnviarImagem(imagem,idp)
                     
     
-                    setErro('Produto Cadastrado!')
+                    toast.dark('Produto Cadastrado!')
                     console.log(novoProduto.id);
-                    alert('foi')
+                   
             
 
             
@@ -77,16 +78,20 @@ export default function CadatroProdutoADM () {
             navigate('/produtosadm')
             }
 
+            else if(imagem == ''){
+                toast.dark('Não pode adicionar sem imagem')
+            }
+
             else if(preco <= 0){
-                setErro('O preço não pode ser menor que 0')
+                toast.dark('O preço não pode ser menor que 0')
             }
 
             else if(garantia < 0){
-                setErro('a garantia não pode ser menor que 0')
+                toast.dark('a garantia não pode ser menor que 0')
             }
 
             else if(estoque <= 0){
-                setErro('O estoque não pode ser menor ou igual a 0')
+                toast.dark('O estoque não pode ser menor ou igual a 0')
             }
         }
 
@@ -94,10 +99,10 @@ export default function CadatroProdutoADM () {
             
 
             if (err.response)
-            setErro(err.response.data.erro)
+            toast.dark(err.response.data.erro)
 
             else
-            setErro(err.message)
+            toast.dark(err.message)
           }
     }
 
@@ -251,6 +256,7 @@ export default function CadatroProdutoADM () {
 
            
                 <div className='botao-salvar'>
+                    <ToastContainer/>
                      <button onClick={Salvar } >Salvar</button>
                 </div>
                 <p className='erro'>{erro}</p>
