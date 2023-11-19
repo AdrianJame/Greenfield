@@ -2,7 +2,33 @@
     background-color: #EBEBEB;
     min-height: 100vh;
 
+    .botao-comprar{
+        width: 100%;
+        .AAAA{
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
+            border-radius: 10px;
+
+            width: 100% !important;
+            height: 30px;
+
+            text-decoration: none;
+
+            background-color: #20A000;
+
+            transition: 3s;
+
+            color: #fff;
+
+            cursor: pointer;
+        }
+
+        .AAAA:hover{
+            transform: translate(0px, -10px);
+        }
+    }
 
     .conteudo-pagina{
         margin-top: 100px;
