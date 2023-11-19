@@ -121,3 +121,49 @@ export async function AlterarInfo(id, cliente){
 
 
 
+export async function Buscaritemfavorito(id){
+    let comando = `select * from tb_favorito
+    inner join tb_produto
+    on tb_favorito.id_produto = tb_produto.id_produto
+    where id_cliente = ?`;
+
+    let [dados] = await conexao.query(comando, [id]);
+
+    return dados;
+}
+
+
+export async function deletarfavorito(id){
+    let sql = `delete from tb_favorito where id_favorito = ?`
+
+    let [info] = await conexao.query(sql, [id])
+
+    let linha = info.affectedRows;
+    return linha;
+}
+
+
+export async function deletarfavoritoporprod(id){
+    let sql = `delete from tb_favorito where id_produto = ?`
+
+    let [info] = await conexao.query(sql, [id])
+
+    let linha = info.affectedRows;
+    return linha;
+}
+
+
+
+export async function AdicionarFavorito(fav){
+    let sql = `insert into tb_favorito(id_cliente, id_produto)
+    value(?, ?)`
+
+    let [info] = await conexao.query(sql,[ 
+        fav.cliente,
+        fav.produto
+    ])
+
+    fav.id = info.insertId
+
+    return fav
+}

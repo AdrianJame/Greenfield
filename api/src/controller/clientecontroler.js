@@ -1,11 +1,11 @@
 import { Router } from "express";
 
-import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo } from "../repository/clienterepository.js";
+import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod } from "../repository/clienterepository.js";
 
-const endpoint = Router();
+const endpoints = Router();
 
 
-endpoint.get('/cliente', async (req, resp) => {
+endpoints.get('/cliente', async (req, resp) => {
     let r = await Consultar();
 
     resp.send(r);
@@ -13,7 +13,7 @@ endpoint.get('/cliente', async (req, resp) => {
 
 
 
-endpoint.post('/cliente/cadastro', async (req, resp) => {
+endpoints.post('/cliente/cadastro', async (req, resp) => {
     try {
         const cliente = await req.body;
 
@@ -65,7 +65,7 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
     
 })
 
-  endpoint.post('/usuario/login', async (req, resp) => {
+  endpoints.post('/usuario/login', async (req, resp) => {
     try {
       let email = req.body.email;
       let senha = req.body.senha;
@@ -83,7 +83,7 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
   })
 
 
-    endpoint.post('/reclamacao', async (req, resp) =>{
+    endpoints.post('/reclamacao', async (req, resp) =>{
 
         try{
             let reclamacao = req.body;
@@ -99,7 +99,7 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
         
     })
 
-    endpoint.get('/meucadastro/id', async (req, resp) => {
+    endpoints.get('/meucadastro/id', async (req, resp) => {
         try{
             const {id} = req.query
             let dados = await MeuCadastro(id)
@@ -112,7 +112,7 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
         
     } )
 
-    endpoint.put('/alterarinfo/:id', async (req, resp) => {
+    endpoints.put('/alterarinfo/:id', async (req, resp) => {
         try{
             let id = req.params.id;
             let cliente = req.body;
@@ -128,8 +128,67 @@ endpoint.post('/cliente/cadastro', async (req, resp) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+endpoints.get('/itemfavorito/:id', async (req, resp) => {
+    try{
+        const {id} = req.params
+        let dados = await Buscaritemfavorito(id)
+        resp.send(dados);
+    }
+    catch (err){
+        resp.status(500).send({ err: err.message})
+    };
+})
+
+endpoints.post('/itemfavorito', async (req, resp) => {
+    try{
+        let favorito = req.body
+        let dados = await AdicionarFavorito(favorito)
+        resp.send(dados)
+    }
+
+    catch (err){
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+endpoints.delete('/deletarfavorito/:id', async (req, resp) => {
+    try{
+        let id = req.params.id;
+        let r = await deletarfavorito(id);
+        resp.send()
+    }
+    catch(err){
+        resp.status(500).send({ erro: err.message})
+    }
+})
+
+endpoints.delete('/deletarfavoritoporprod/:id', async (req, resp) => {
+    try{
+        let id = req.params.id;
+        let r = await deletarfavoritoporprod(id);
+        resp.send()
+    }
+    catch(err){
+        resp.status(500).send({ erro: err.message})
+    }
+})
+
+
+
   
-  export default endpoint;
+  export default endpoints;
 
 
 

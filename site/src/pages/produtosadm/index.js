@@ -33,6 +33,11 @@ useEffect(() => {
 }, [])
 
 
+async function Deletarfavopro(id){
+    let x = await axios.delete(API_URL + '/deletarfavoritoporprod/' + id);
+    Deletar(id)
+}
+
 
 
 async function Deletar(id){
@@ -123,7 +128,7 @@ async function Deletar(id){
                         <p>{item.vl_preco}</p>
 
                         <a onClick={() => navigate('/altpro/' + item.id_produto)}  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></a>
-                        <p onClick={() => Deletar(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
+                        <p onClick={() => Deletarfavopro(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
                     </div> 
                 )}
             </section>

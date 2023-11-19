@@ -10,6 +10,7 @@ import { toast } from 'react-toastify'
 
 export default function Produto(){
     const[produtos, setProdutos] = useState([])
+    const [idCliente, setIdCliente] = useState('');
 
     const  id  = useParams().id;
 
@@ -49,9 +50,25 @@ export default function Produto(){
     }
 
 
+
+    async function Adicionarfav(){
+        let fav = {
+            cliente: idCliente,
+            produto: id
+        }
+
+        let r = await axios.post(API_URL + '/itemfavorito', fav)
+  
+    }
+
+
     useEffect(() => {
         Listarproduto()
         Parce()
+        if(localStorage('usuario-logado')){
+            const usuariologado = localStorage('usuario-logado')
+            setIdCliente(usuariologado.id)
+        }
 }, [])
 
     return(
