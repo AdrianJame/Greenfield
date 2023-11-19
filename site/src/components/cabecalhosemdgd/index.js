@@ -12,7 +12,7 @@ export default function Cabesemdgd(){
 
             <div className='meio-cabecalho'>
             <Link className='home-sobre' to={'/'}>Home</Link>
-                <Link className='home-sobre' to={''}>Sobre</Link>
+                <Link className='home-sobre' to={'/sobre'}>Sobre</Link>
 
                 <Link className='section' to={'/pesq'}>
                     <img src='/assets/images/lupa.svg'/>
