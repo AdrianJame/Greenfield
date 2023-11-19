@@ -2,8 +2,20 @@ import './index.scss'
 import Cabecalhocomlogin from '../../components/cabcomlogin'
 import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Pag () {
+
+    const [nome, setNome] = useState('');
+    const [numero, setNumero] = useState('');
+    const [vencimento, setVencimento] = useState('');
+    const [cvv, setCvv] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [datanascimento, setDatanascimento] = useState('');
+
+
+
     
     return (
         
@@ -79,12 +91,77 @@ export default function Pag () {
 
             </div>
 
-            <div className='section-pagamento'>
+            <div className='faixa2'>
 
-                <div className='pagamento'>
+                <div className='conteudo'>
+
+                    <div className='texto-e-inputs'>
+
+                    <div className='texto-e-inputs-esq'>
+
+                        <p className='parcelas'> 
+                            PARCELAS
+                        </p>
+
+
+                        <select>
+                            <option value={1}>01x à Vista</option>
+                            <option value={1}>01x sem Juros</option>
+                            <option value={2}>02x sem Juros</option>
+                            <option value={3}>03x sem Juros</option>
+                        </select>
+
+                        <p>
+                            Números do Cartão
+                        </p>
+
+                        <input className='in' placeholder="**** **** ****"  type='text' value={numero} onChange={e => setNumero(e.target.value)} ></input>
+
+                        <p>
+
+                            Nome do Titular
+                        </p>
+
+                        <input className='in' placeholder="Nome completo" type='text' value={nome} onChange={e => setNome(e.target.value)} ></input>
+
+                        <p>
+                            Validade do cartão
+
+                        </p>
+
+                        <div className='validade-cartao'> 
+                            <input placeholder="Ex:01/01" type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}></input>
+
+                            
+                        </div>
+
+                        <p>
+                            Código de Segurança
+                        </p>
+
+                        <input placeholder="***" className='code-seguranca' type='text' value={cvv} onChange={e => setCvv(e.target.value)}></input>
+
+
+                    </div>
+
+                    <div className='dir'>
+                        <p>
+                            CPF do titular do cartão
+                        </p>
+
+                        <input placeholder="000.000.000-00" type='text' value={cpf} onChange={e => setCpf(e.target.value)}></input>
+
+                        <p>Data de Nascimento</p>
+
+                        <input placeholder="Ex: 01/01/2002" type='text' value={datanascimento} onChange={e => setDatanascimento(e.target.value)}></input>
+                    </div>
+
+                    </div>
+
+                    <Link>Finalizar pedido</Link>
 
                 </div>
-
+    
             </div>
 
             <RodapeGreenfield/>

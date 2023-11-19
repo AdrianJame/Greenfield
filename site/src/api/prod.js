@@ -6,6 +6,12 @@ const api = axios.create({
     baseURL: API_URL
 });
 
+
+export async function Listarporid(id) {
+    const r = await api.get('/produto/' + id);
+    return r.data;
+}
+
 export async function EnviarImagem(imagem, id) {
     const formData = new FormData();
     formData.append('fotosProdutos', imagem)

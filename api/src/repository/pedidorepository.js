@@ -72,3 +72,16 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco) {
 }
 
 
+export async function ListarPedido(){
+    const comando = `
+        select * from tb_pedido 
+        inner join tb_cliente
+        on tb_cliente.id_cliente = tb_pedido.id_cliente 
+    `
+
+    let [resp] = await conexao.query(comando)
+
+    return resp
+}
+
+

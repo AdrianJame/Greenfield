@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { inserirPedidoItem, inserirPagamento, inserirPedido } from "../repository/pedidorepository.js";
+import { inserirPedidoItem, inserirPagamento, inserirPedido, ListarPedido } from "../repository/pedidorepository.js";
 import { criarNovoPedido } from "../service/novoPedidoService.js";
 import { Listarporid } from "../repository/produtosrepository.js";
 
 const endpoints = Router();
 
-endpoints.post('/api/pedido/:idCliente/', async (req, resp) => {
+endpoints.post('/pedido/:idCliente/', async (req, resp) => {
     try {
         const { idCliente } = req.params;
         const info = req.body;
@@ -32,4 +32,16 @@ endpoints.post('/api/pedido/:idCliente/', async (req, resp) => {
 })
 
 
+endpoints.get('/pedido/', async (req, resp) => {
+    
+    try{
+        let dados = await ListarPedido()
+        resp.send(dados);
+    }
+    catch (err){
+        resp.status(500).send({ erro: 'Ocorreu um erro!'})
+    };
+
+}
+)
 export default endpoints
