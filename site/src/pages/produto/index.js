@@ -34,6 +34,7 @@ export default function Produto(){
                 qtd: 1
             })
             localStorage('carrinho', carrinho);
+            toast.success('Produto adicionado ao Carrinho')
         }
     }
 
@@ -116,6 +117,7 @@ export default function Produto(){
                                         </div>
 
                                         <div className='botao-comprar'>
+                                            <ToastContainer/>
                                             <a className='AAAA' onClick={() => AdicionarCarrinho()}> Comprar</a>
                                         </div>
                                     </div>
