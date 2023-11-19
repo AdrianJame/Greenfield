@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 import { BuscarImagem } from '../../api/prod';
 import localStorage from 'local-storage';
 import { toast } from 'react-toastify'
-import AdicionarCarrinho from '../../components/adicionarcarrinho';
+
 export default function Produto(){
     const[produtos, setProdutos] = useState([])
     const [idCliente, setIdCliente] = useState('');
@@ -17,6 +17,22 @@ export default function Produto(){
     async function Listarproduto(){
          let r = await axios.get(API_URL + '/produto/' + id);
          setProdutos(r.data);
+    }
+
+    function AdicionarCarrinho(){
+        let carrinho = [];
+
+        if(localStorage('carrinho')){
+            carrinho = localStorage('carrinho')
+        }
+
+        if(!carrinho.find(item => item.id === id)){
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+            localStorage('carrinho', carrinho);
+        }
     }
 
 
@@ -32,10 +48,33 @@ export default function Produto(){
         return desconto.toFixed(2);
     }
 
+     
+    // function AdicionarCarrinho(){
+    //     let carrinho = [];
+
+    //     if(localStorage('carrinho')){
+    //         carrinho = localStorage('carrinho')
+    //     }
+
+    //     if(!carrinho.find(item => item.id === id)){
+    //         carrinho.push({
+    //             id: id,
+    //             qtd: 1
+    //         })
+    //         localStorage('carrinho', carrinho);
+    //     }
+    // }
+
+
+
 
     useEffect(() => {
         Listarproduto()
         Parce()
+        if(localStorage('usuario-logado')){
+            const usuariologado = localStorage('usuario-logado')
+            setIdCliente(usuariologado.id_cliente)
+        }
 
 }, [])
 
@@ -84,7 +123,9 @@ export default function Produto(){
                                             </section>
                                         </div>
 
-                                        <AdicionarCarrinho id={id}/>
+                                        <div className='botao-comprar'>
+                                            <a className='AAAA' onClick={AdicionarCarrinho()}> Comprar</a>
+                                        </div>
                                     </div>
                                 </section>
 

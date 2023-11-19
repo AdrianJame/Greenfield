@@ -155,7 +155,7 @@ function tecla(e) {
                         <div className='linha'>
 
                             <div className='agrup'>
-                                <Link className='card'>
+                                <Link className='card' to={'/favorito'}>
                                     <img className='imagemcard' src='./assets/images/image 233.svg' />
                                 </Link>
                                 <p className='titulo-card'> Favoritos </p>
