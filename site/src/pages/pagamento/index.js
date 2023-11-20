@@ -32,18 +32,12 @@ export default function Pag () {
                     storage.remove('carrinho');
                     
                 }
-
                 else {
 
                     toast.dark('Pedido não realizado!')
                 }
-
                 window.location.reload()
             }
-
-
-
-
 
         } catch (err) {
             console.log(err.message);

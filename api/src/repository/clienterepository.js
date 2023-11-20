@@ -115,12 +115,6 @@ export async function AlterarInfo(id, cliente){
 }
 
 
-
-
-
-
-
-
 export async function Buscaritemfavorito(id){
     let comando = `select * from tb_favorito
     inner join tb_produto
