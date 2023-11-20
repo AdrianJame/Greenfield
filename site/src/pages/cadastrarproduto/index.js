@@ -39,17 +39,27 @@ export default function CadatroProdutoADM () {
         setCategorias(r.data)
     }
 
+//  function Text(){
+//      const textarea = document.querySelector("textarea")
+//      textarea.addEventListener("keyup", e => {
+//          let scHeight = e.target.scroollHeight;
+//          textarea.style.height = "auto"; 
+//          textarea.style.height = `${scHeight}px`;
+//      })
+//  }
+
+
 
     useEffect(() => {
         Buscarcategorias()
+        // Text()
 
         if(!storage('adm-logado')){
             navigate('/erro')
           }
-      }, [])
+    }, [])
 
-      
-
+    
 
 
     async function Salvar(){
@@ -230,7 +240,7 @@ export default function CadatroProdutoADM () {
                 <div className='session-02-conteudo'>
                     
                     <div className='desc-produto'>
-                        <input value={descricao} onChange={e => setDescricao(e.target.value)}></input>
+                        <textarea className='descri' value={descricao} onChange={e => setDescricao(e.target.value)}></textarea>
                     </div>
                 
                 </div>
@@ -246,9 +256,9 @@ export default function CadatroProdutoADM () {
 
                     <div className='session-03-conteudo'>
                             <div className='desc-produto'>
-                                <input value={material} onChange={e => setMaterial(e.target.value)} type="text" placeholder="Material:"></input>
-                                <input onKeyUp={teclaEnter} value={dimensoes} onChange={e => setDimensoes(e.target.value)} type="text" placeholder="Dimensões:"></input> 
-                                <input value={extra} onChange={e => setExtra(e.target.value)} type="text" placeholder="Informações Extras:"></input> 
+                                <textarea value={material} onChange={e => setMaterial(e.target.value)} type="text" placeholder="Material:"></textarea>
+                                <textarea onKeyUp={teclaEnter} value={dimensoes} onChange={e => setDimensoes(e.target.value)} type="text" placeholder="Dimensões:"></textarea> 
+                                <textarea value={extra} onChange={e => setExtra(e.target.value)} type="text" placeholder="Informações Extras:"></textarea> 
                             </div>
                     </div>
 

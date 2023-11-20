@@ -26,7 +26,7 @@ export default function AlterarProdutoADM () {
     const[material, setMaterial] = useState('')
     const[extra, setExtra] = useState('')
     const[imagem, setImagem] = useState('')
-
+    const[image, setImage] = useState('')
 
     const id = useParams().id;
 
@@ -34,6 +34,7 @@ export default function AlterarProdutoADM () {
         let r = await axios.get(API_URL + '/produto/' + id)
         setAlterar(r.data)
 
+        console.log(alterar)
 
         setPreco(r.data.vl_preco)
         setNome(r.data.nm_produto)
@@ -44,6 +45,7 @@ export default function AlterarProdutoADM () {
         setDimensoes(r.data.ds_dimensoes)
         setMaterial(r.data.ds_material)
         setExtra(r.data.ds_extra)
+        setImage(r.data.ds_img1)
     }
 
 
@@ -86,7 +88,8 @@ export default function AlterarProdutoADM () {
 
                 setErro('Produto alterado')
 
-                const re = await EnviarImagem(imagem, id)
+                    const re = await EnviarImagem(imagem, id)
+
 
                 navigate('/produtosadm')
         }
@@ -134,7 +137,7 @@ export default function AlterarProdutoADM () {
                     <div className='imagem-com-fundo-escuro' onClick={escolherImagem}>
 
                         {!imagem &&
-                            <img src={BuscarImagem(alterar.ds_img1)}/>
+                            <img className='imagem-prod' src={BuscarImagem(alterar.ds_img1)}/>
                         }
 
                         {imagem &&

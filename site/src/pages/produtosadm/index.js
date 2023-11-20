@@ -15,6 +15,7 @@ import { BuscarImagem } from '../../api/prod.js';
 export default function Produtosadm(){
     const[favorito, setFavorito] = useState(false)
     const[id, setId] = useState(0);
+    const[nome, setNome] = useState('');
 
 const navigate = useNavigate();
 
@@ -24,6 +25,17 @@ const[listar, setListar] = useState([]);
         let r = await axios.get(API_URL + '/produtos');
         setListar(r.data);
     }
+
+    async function Buscarpornome(){  
+        let r = await axios.get(API_URL + '/produto/nome?nome=' + nome)
+        setListar(r.data)
+
+    }
+
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            Buscarpornome();
+        }}
 
 useEffect(() => {
     Listarprodutos()
@@ -81,8 +93,8 @@ async function Deletar(id){
                 <div className='card'>
                     <div className='card-s1'>
                         <section className='card-input'>
-                            <input placeholder='Nome, preço ou codigo'/>
-                            <img src='/assets/images/lupaadm.svg'/>
+                            <input placeholder='Buscar por Nome' onKeyUp={teclaEnter} value={nome} onChange={e => setNome(e.target.value)}/>
+                            <img onClick={Buscarpornome} src='/assets/images/lupaadm.svg'/>
                         </section>
 
                         <section className='card-filtro'>

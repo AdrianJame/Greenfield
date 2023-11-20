@@ -73,25 +73,12 @@ export async function Loginc(email, senha) {
     return linha;
   }
 
-export async function inserirReclamacao(reclamacao){
-    let comando = `
-    insert into tb_reclamacao (ds_reclamacao)
-                        value(?)`
-
-    let [info] = await conexao.query(comando, [
-        reclamacao.textoreclamacao
-    ]);
-
-    reclamacao.id = info.insertId;
-
-    return reclamacao;
-};
-
-export async function MeuCadastro(id) {
+  
+  export async function MeuCadastro(id) {
     let comando = `select * from tb_cliente where id_cliente = ?`
 
     const [dados] = await conexao.query(comando, [id])
-
+    
     return dados;
 }
 
@@ -101,7 +88,7 @@ export async function AlterarInfo(id, cliente){
     set ds_telefone = ?,
     ds_senha = ?
     where id_cliente = ?`
-
+    
     let [info] = await conexao.query(comando, [
         cliente.telefone,
         cliente.senha,
@@ -111,10 +98,8 @@ export async function AlterarInfo(id, cliente){
 
     let linha = info.affectedRows;
     return linha;
-
+    
 }
-
-
 
 
 
@@ -126,18 +111,18 @@ export async function Buscaritemfavorito(id){
     inner join tb_produto
     on tb_favorito.id_produto = tb_produto.id_produto
     where id_cliente = ?`;
-
+    
     let [dados] = await conexao.query(comando, [id]);
-
+    
     return dados;
 }
 
 
 export async function deletarfavorito(id){
     let sql = `delete from tb_favorito where id_favorito = ?`
-
+    
     let [info] = await conexao.query(sql, [id])
-
+    
     let linha = info.affectedRows;
     return linha;
 }
@@ -145,9 +130,9 @@ export async function deletarfavorito(id){
 
 export async function deletarfavoritoporprod(id){
     let sql = `delete from tb_favorito where id_produto = ?`
-
+    
     let [info] = await conexao.query(sql, [id])
-
+    
     let linha = info.affectedRows;
     return linha;
 }
@@ -169,3 +154,31 @@ export async function AdicionarFavorito(fav){
 }
 
 
+
+export async function inserirReclamacao(reclamacao){
+    let comando = `
+    insert into tb_reclamacao (ds_reclamacao, id_cliente)
+                        value(?, ?)`
+
+    let [info] = await conexao.query(comando, [
+        reclamacao.texto,
+        reclamacao.cliente
+    ]);
+
+    reclamacao.id = info.insertId;
+
+    return reclamacao;
+};
+
+
+
+export async function Minhasreclamacoes(id) {
+    let comando = `select * from tb_reclamacao
+    inner join tb_cliente
+    on tb_reclamacao.id_cliente = tb_cliente.id_cliente
+    where tb_reclamacao.id_cliente = 1`
+
+    const [dados] = await conexao.query(comando, [id])
+    
+    return dados;
+}

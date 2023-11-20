@@ -95,7 +95,7 @@ endpoints.put('/alterarproduto/:id', async (req, resp) => {
     }
 
     catch(err){
-        resp.status(500).send({ erro: 'Ocorreu um erro!'})
+        resp.status(500).send({ erro: err.message})
     }
 })
 

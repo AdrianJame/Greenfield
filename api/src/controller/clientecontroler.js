@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod } from "../repository/clienterepository.js";
+import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod, Minhasreclamacoes } from "../repository/clienterepository.js";
 
 const endpoints = Router();
 
@@ -98,6 +98,28 @@ endpoints.post('/cliente/cadastro', async (req, resp) => {
             }
         
     })
+
+    endpoints.get('/reclamacao/:id', async (req, resp) => {
+        try{
+            const {id} = req.params.id
+            let dados = await Minhasreclamacoes(id)
+            resp.send(dados);
+        }
+        catch (err){
+            resp.status(500).send({ err: err.message})
+        };
+    })
+
+
+
+
+
+
+
+
+
+
+
 
     endpoints.get('/meucadastro/id', async (req, resp) => {
         try{

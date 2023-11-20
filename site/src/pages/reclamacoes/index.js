@@ -2,26 +2,50 @@ import './index.scss';
 import Cabesemdgd from '../../components/cabecalhosemdgd';
 import RodapeGreenfield from '../../components/rodape';
 import { API_URL } from '../../constants.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import storage from 'local-storage'
-
+import { toast, ToastContainer } from  'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Reclamacoes(){
-    const [reclamacao, setReclamacao] = useState();
 
-    function reclamar() {
-        let idCliente = JSON.parse(storage('usuario-logado')).id_cliente;
+    var listar = [];
+
+    const [reclamacao, setReclamacao] = useState();
+    const [idCliente, setIdCliente] = useState();
+    const [re, setRe] = useState();
+
+    async function reclamar() {
     
         let body = {
-            id_cliente: idCliente,
-            ds_reclamacao: reclamacao 
+            texto: reclamacao, 
+            cliente: idCliente
         }
     
-    
-        let r = axios.post(API_URL + '/reclamacao', body)
-    
+        let r = await axios.post(API_URL + '/reclamacao', body)
+        toast.success('reclamação enviada')
     }
+
+    async function Listar(){
+        let r = await axios.get(API_URL + '/reclamacao/' + ID())
+        listar(r.data)
+
+        
+    }
+
+
+    function ID(){
+        let usuario = storage('usuario-logado')
+        let x = usuario.id_cliente;
+
+        return x;
+    }
+
+    useEffect(() => {
+        Listar()
+        ID()
+    }, [])
 
     return(
         <div className='reclamacoes'>
@@ -30,10 +54,16 @@ export default function Reclamacoes(){
                 <div className='mensagens'>
                     <h2>RECLAMAÇÕES</h2>
 
-                  <input value={reclamacao} onChange={e => setReclamacao(e.target.value)} type='text' />
-
-                 <button onClick={reclamar}>Enviar reclamação</button>
+                  <textarea value={reclamacao} onChange={e => setReclamacao(e.target.value)} type='text' />
+                  <ToastContainer/>
+                <button onClick={reclamar}>Enviar reclamação</button>
                 </div>
+
+                {listar.map(item => 
+                    <section>
+                        <p></p>
+                    </section>
+                )}
             </div>
 
             <RodapeGreenfield />

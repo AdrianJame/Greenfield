@@ -118,7 +118,8 @@ export async function Editarproduto(id, produtos){
         produtos.estoque,
         produtos.dimensoes,
         produtos.material,
-        produtos.extra
+        produtos.extra,
+        id
     ])
 
     let linha = info.affectedRows;
