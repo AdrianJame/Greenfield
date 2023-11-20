@@ -87,6 +87,10 @@ endpoints.post('/cliente/cadastro', async (req, resp) => {
 
         try{
             let reclamacao = req.body;
+
+            if(!reclamacao.texto)
+            throw new Error('⚠ Reclamacao obrigatoria')
+            
             let r = await inserirReclamacao(reclamacao)
             resp.send(r)
         }
