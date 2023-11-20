@@ -181,6 +181,9 @@ export default function Pag () {
                         <p>Data de Nascimento</p>
 
                         <input placeholder="Ex: 01/01/2002" type='text' value={datanascimento} onChange={e => setDatanascimento(e.target.value)}></input>
+
+
+                        <a className='cadastrarcartao'>Cadastrar Cartão</a>
                     </div>
 
                     </div>

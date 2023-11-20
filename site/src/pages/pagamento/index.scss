@@ -308,6 +308,26 @@
                 width: 50px;
 
             }
+
+            .cadastrarcartao{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                text-decoration: none;
+                font: 15px 'Oswald', sans-serif; 
+
+                width: 25vw;
+                height: 40px;
+                padding: 20px 20px;
+
+                background-color: #20A000;
+                color: #fff;
+
+                border: none;
+                
+                margin-top: 50px;
+            }
         }
     }
 }
