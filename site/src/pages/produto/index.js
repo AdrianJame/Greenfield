@@ -8,7 +8,7 @@ import { BuscarImagem } from '../../api/prod';
 import localStorage from 'local-storage';
 import { toast, ToastContainer } from  'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
-
+import RodapeGreenfield from '../../components/rodape';
 
 export default function Produto(){
     const[produtos, setProdutos] = useState([])
@@ -148,6 +148,8 @@ export default function Produto(){
                     </div>
                
             </section>
+
+            <RodapeGreenfield />
         </div>
     )
 }
