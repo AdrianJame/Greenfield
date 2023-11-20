@@ -9,6 +9,16 @@
 
         min-height: 63.5vh;
 
+        h1{
+            display: flex;
+            align-items: center;
+            img{
+                height: 40px;
+
+                margin-left: 20px;
+            }
+        }
+
         .card-favoritos{
             display: flex;
             flex-direction: column;

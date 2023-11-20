@@ -25,9 +25,17 @@ export default function ProdutosDecoracao(){
         setProduto(r.data);
     }
 
+    function Desconto(preco){
+        let x = preco * 0.10;
+        let d = preco - x
+
+        return d.toFixed(2)
+    }
+
 useEffect(() => {
         Listarprodutos()
         Listarporcat()
+        Desconto()
 }, [])
 
 
@@ -96,8 +104,11 @@ useEffect(() => {
                 {produto2.map(item => 
                         <section onClick={() => navigate('/produto/' + item.id_produto)} className='card'>
                             <img src={BuscarImagem(item.ds_img1)} />
-                            <p>{item.nm_produto}</p>
-                            <p>{item.vl_preco}</p>
+                            <p className='nomeproduto'>{item.nm_produto}</p>
+                            <div>
+                                <p className='preco'>R${item.vl_preco}</p>
+                                <p className='desconto'>R${Desconto(item.vl_preco)}</p>
+                            </div>
                         </section>
                 )}
                 </div>

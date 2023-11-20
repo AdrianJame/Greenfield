@@ -236,8 +236,34 @@
 
                 img{
                     height: 65%;
+                    max-width: 100%;
+
+                    border-radius: 8px;
+                }
+
+                .nomeproduto{
+                    font-size: 18px;
+                    font-weight: 500;
                 }
                 
+                .preco{
+                    font-size: 18px;
+
+                    color: rgb(61, 61, 61);
+
+                    text-decoration: line-through;
+                }
+
+                .desconto{
+                    font-size: 22px;
+                    
+                    color: rgb(0, 145, 0);
+                }
+                div{
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
             }
 
             .card:hover{
