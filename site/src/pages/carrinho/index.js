@@ -13,6 +13,7 @@ export default function Carrinho () {
     const[itens, setItens] = useState([]);
     const[ende, setEnde] = useState([]);
     const[cupom, setCupom] = useState('');
+    const [Erro, setErro] = useState('');
 
     const navigate = useNavigate();
 
@@ -148,6 +149,7 @@ export default function Carrinho () {
 
             <div className='faixa-02'>
                 <section className='carrinho'>
+                    
                     {itens.map(item => 
                         <Compcarrinho item={item} Removeritem={Removeritem}/>
                     )}             
