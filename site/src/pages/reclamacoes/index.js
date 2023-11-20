@@ -10,28 +10,35 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Reclamacoes(){
 
-    var listar = [];
+    const [listar, setListar] = useState([]);
 
     const [reclamacao, setReclamacao] = useState();
     const [idCliente, setIdCliente] = useState();
     const [re, setRe] = useState();
 
     async function reclamar() {
+        
+        try{
+            let r = await axios.post(API_URL + '/reclamacao', body)
+            toast.success('reclamação enviada')
+        }
+
+        catch(err){
+            toast.dark(err.message)
+          }
     
         let body = {
             texto: reclamacao, 
             cliente: idCliente
         }
     
-        let r = await axios.post(API_URL + '/reclamacao', body)
-        toast.success('reclamação enviada')
     }
 
     async function Listar(){
         let r = await axios.get(API_URL + '/reclamacao/' + ID())
-        listar(r.data)
+        setListar(r.data)
 
-        
+        console.log(listar)
     }
 
 
@@ -59,11 +66,6 @@ export default function Reclamacoes(){
                 <button onClick={reclamar}>Enviar reclamação</button>
                 </div>
 
-                {listar.map(item => 
-                    <section>
-                        <p></p>
-                    </section>
-                )}
             </div>
 
             <RodapeGreenfield />
