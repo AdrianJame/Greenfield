@@ -4,29 +4,36 @@ import RodapeGreenfield from '../../components/rodape'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../../constants.js';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+import Compcarrinho from '../../components/compcarrinho';
+import localStorage from 'local-storage';
+
 
 export default function Logradouro () {
-const[endereco, setEndereco] = useState([])
+    const[endereco, setEndereco] = useState([])
 
-const[logradouro , setLogradouro] = useState()
-const[bairro , setBairro] = useState()
-const[cidade , setCidade] = useState()
-const[uf , setUf] = useState()
+    const[logradouro , setLogradouro] = useState()
+    const[bairro , setBairro] = useState()
+    const[cidade , setCidade] = useState()
+    const[uf , setUf] = useState()
+
+    
 
 
+    const checkCep = (e) => {
+        const cep = e.target.value.replace(/\D/g, '');
+        console.log(cep)
+        fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
+            console.log(data)
+            setLogradouro(data.logradouro)
+            setBairro(data.bairro)
+            setCidade(data.localidade)
+            setUf(data.uf)
+        });
 
-const checkCep = (e) => {
-    const cep = e.target.value.replace(/\D/g, '');
-    console.log(cep)
-    fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
-        console.log(data)
-        setLogradouro(data.logradouro)
-        setBairro(data.bairro)
-        setCidade(data.localidade)
-        setUf(data.uf)
-    });
+    }
 
-}
+    
 
 
 
@@ -56,9 +63,11 @@ const checkCep = (e) => {
 
                 <div className='faixa-02'>
                     
-                    <div className='produto'>
-                        
-                    </div>
+                <section className='carrinho'>
+                    {/* {itens.map(item => 
+                        <Compcarrinho item={item} />
+                    )}              */}
+                </section>
                 
                 </div>
 

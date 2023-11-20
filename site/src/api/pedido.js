@@ -7,7 +7,7 @@
 
 
  export async function salvarNovoPedido(idCliente, novoPedido) {
-     const r = await api.post('/api/pedido/' + idCliente, novoPedido);
+     const r = await api.post('/pedido/' + idCliente, novoPedido);
     return r.data;
  }
 

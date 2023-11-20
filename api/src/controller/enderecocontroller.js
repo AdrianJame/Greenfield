@@ -5,7 +5,7 @@ import { Router } from "express";
 const endpoints = Router();
 
 
-endpoints.post('/endereco', async (req, resp) => {
+endpoints.post('/api/:id/endereco', async (req, resp) => {
     try{
         const enderecos = req.body
         
@@ -13,22 +13,22 @@ endpoints.post('/endereco', async (req, resp) => {
             throw new Error('⚠ enderecos obrigatório')
 
         if(!enderecos.num)
-            throw new Error('⚠ email obrigatório')
+            throw new Error('⚠ numero obrigatório')
 
         if(!enderecos.bairro)
-            throw new Error('⚠ telefone obrigatorio')
+            throw new Error('⚠ bairro obrigatorio')
 
         if(!enderecos.cidade)
-            throw new Error('⚠ cpf obrigatorio')
+            throw new Error('⚠ cidade obrigatorio')
 
-        if(!enderecos.uf)
-            throw new Error('⚠ senha obrigatorio')
+        if(!enderecos.estado)
+            throw new Error('⚠ estado obrigatorio')
 
 
         const dados = await Cadastrarendereco(enderecos)
         resp.send(dados)
     }
-
+    
     catch (err){
         resp.status(400).send({
             erro: err.message
