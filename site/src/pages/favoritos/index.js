@@ -63,7 +63,7 @@ export default function Favorito(){
             <Cabesemdgd/>
 
             <section className='conteudo-favorito'>
-                <h1>Produtos favoritos</h1>
+                <h1>Produtos favoritos <img src='/assets/images/coracao.svg'/></h1>
 
                 <div className='card-favoritos'>
                     {favorito.map(item => 
