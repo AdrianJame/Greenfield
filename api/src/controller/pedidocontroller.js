@@ -56,6 +56,5 @@ endpoints.get('/pedido/', async (req, resp) => {
         resp.status(500).send({ erro: 'Ocorreu um erro!'})
     };
 
-}
-)
+})
 export default endpoints
