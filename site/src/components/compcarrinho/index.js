@@ -4,11 +4,29 @@ import localStorage from 'local-storage';
 import { BuscarImagem } from '../../api/prod';
 
 export default function Compcarrinho({item: { produto }, Removeritem}){
-    const[qtdproduto, setQtd] = useState([]);
+    const[qtdproduto, setQtd] = useState(1);
 
-    //  function Remover(id){
-    //     Removeritem(id)
-    //  }
+      function Remover(id){
+         Removeritem(id)
+     }
+
+     function MaisQtd(){
+        let x = qtdproduto + 1
+
+        setQtd(x)
+
+        Alterarquant()
+     }
+
+     function MenosQtd(){
+        if(qtdproduto > 1){
+            let x = qtdproduto - 1
+   
+            setQtd(x)
+
+            Alterarquantmenos()
+        }
+     }
 
     function Calculosubtotal(){
         const subtotal = qtdproduto * produto.vl_preco
@@ -16,18 +34,28 @@ export default function Compcarrinho({item: { produto }, Removeritem}){
         return subtotal;
     }
 
-    function Alterarquant(novaQtd){
-            setQtd(novaQtd)
-
-
+    function Alterarquant(){
         let carrinho = localStorage('carrinho')
         let itemstorage = carrinho.find(item => item.id == produto.id_produto)
-        itemstorage.qtd = novaQtd;
+        itemstorage.qtd = qtdproduto + 1;
 
         localStorage('carrinho', carrinho)
+        window.location.reload()
+    }
+
+    function Alterarquantmenos(){
+        let carrinho = localStorage('carrinho')
+        let itemstorage = carrinho.find(item => item.id == produto.id_produto)
+        itemstorage.qtd = qtdproduto - 1;
+
+        localStorage('carrinho', carrinho)
+        window.location.reload()
     }
 
     useEffect(() => {
+        let carrinho = localStorage('carrinho')
+        const itemstorage = carrinho.find(item => item.id == produto.id_produto)
+        setQtd(itemstorage.qtd)
     }, [])
 
     return(
@@ -40,17 +68,15 @@ export default function Compcarrinho({item: { produto }, Removeritem}){
                     <p>Oferta programada para boleto ou pix</p>
                 </section>
 
-                    <select onChange={e => Alterarquant(e.target.value)} value={qtdproduto}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select> 
+                    <div className='Alterarqtd'>
+                        <img onClick={() => MenosQtd()} src='/assets/images/menos.svg'/>
+                        <p className='numero'>{qtdproduto}</p>
+                        <img onClick={() => MaisQtd()} src='/assets/images/mais.svg'/>
+                    </div>
 
-                    <p>R${qtdproduto == 0 ? produto.vl_preco : Calculosubtotal()}</p>  
+                    <p>R${Calculosubtotal()}</p>  
 
-                <img className='excluir' src='/assets/images/xcarrinho.svg'/>                       
+                <img className='excluir' onClick={() => Remover(produto.id_produto)} src='/assets/images/xcarrinho.svg'/>                       
             </div>
         </div>
     )

@@ -12,6 +12,7 @@ export default function Carrinho () {
 
     const[itens, setItens] = useState([]);
     const[ende, setEnde] = useState([]);
+    const[cupom, setCupom] = useState('');
 
     const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ export default function Carrinho () {
 
         localStorage('carrinho', carrinho)
         carregarcarrinho();
+        window.location.reload()
     }
 
     function Total(){
@@ -46,9 +48,44 @@ export default function Carrinho () {
     }
 
     function Cupomtotal(){
-        let x = Total() - 0.00;
+        if(cupom == 'Greenfield'){
+            let m = Total() * 0.20;
+            let x = Total() - m
+    
+            return x.toFixed(2)
+        }
 
-        return x.toFixed(2)
+        else if(cupom == 'Adrian'){
+            let m = Total() * 0.10;
+            let x = Total() - m
+    
+            return x.toFixed(2)
+        }
+        else if(cupom == 'Pedrol'){
+            let m = Total() * 0.10;
+            let x = Total() - m
+    
+            return x.toFixed(2)
+        }
+        else if(cupom == 'Pedroh'){
+            let m = Total() * 0.10;
+            let x = Total() - m
+    
+            return x.toFixed(2)
+        }
+        else if(cupom == 'Matheus'){
+            let m = Total() * 0.10;
+            let x = Total() - m
+    
+            return x.toFixed(2)
+        }
+
+        else{
+            let x = Total()
+
+            return x
+        }
+        
     }
 
 
@@ -123,14 +160,9 @@ export default function Carrinho () {
                 <div className='cupom-e-frete'>
 
                     <div className='info'>
-                        <input placeholder='CUPOM DE DESCONTO' type='text'/>
-                        <button>Inserir</button>
-                    </div>    
-                    
-                    <div className='info'>
-                        <input placeholder='INSIRA O CEP' type='text' onBlur={checkCep}/>
-                        <button>Calcular</button>
-                    </div>  
+                        <input value={cupom} onChange={e => setCupom(e.target.value)}  placeholder='CUPOM DE DESCONTO' type='text'/>
+                        <button onClick={Cupomtotal}>Inserir</button>
+                    </div>           
                         
                 </div>
 
