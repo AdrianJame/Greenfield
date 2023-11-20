@@ -51,6 +51,9 @@ export default function Carrinho () {
         return x.toFixed(2)
     }
 
+
+
+
     async function carregarcarrinho(){
         let carrinho = localStorage('carrinho')
 

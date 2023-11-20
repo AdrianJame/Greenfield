@@ -4,6 +4,9 @@ import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import {toast}  from 'react-toastify'
+import { salvarNovoPedido } from '../../api/pedido.js';
+import storage from 'local-storage'
 
 export default function Pag () {
 
@@ -13,9 +16,39 @@ export default function Pag () {
     const [cvv, setCvv] = useState('');
     const [cpf, setCpf] = useState('');
     const [datanascimento, setDatanascimento] = useState('');
+    const [itens, setItem] = useState([]);
+    const [IDuser, SetIDuser] = useState(0);
+    const [produtosIds, setProdutosIds] = useState([]);
+
+
+    async function AdicionarPedidos() {
+        try {
+            for (let produtoId of produtosIds) {
+
+                if (IDuser !== 0 && produtoId !== 0) {
+
+                    const resposta = await salvarNovoPedido(IDuser, produtoId);
+                    toast.success('Pedido Realizado!');
+                    storage.remove('carrinho');
+                    
+                }
+
+                else {
+
+                    toast.dark('Pedido não realizado!')
+                }
+
+                window.location.reload()
+            }
 
 
 
+
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
     
     return (
         
@@ -158,7 +191,7 @@ export default function Pag () {
 
                     </div>
 
-                    <Link>Finalizar pedido</Link>
+                    <Link onClick={AdicionarPedidos}>Finalizar pedido</Link>
 
                 </div>
     

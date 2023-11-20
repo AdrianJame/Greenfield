@@ -1,16 +1,6 @@
 import './index.scss';
 import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
-import { API_URL } from '../../constants.js';
-import { salvarNovoPedido } from '../../api/pedido.js';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react'
-// import ModalEndereco from '../../components/modalEndereco'
-import Storage, { set } from 'local-storage'
-// import CardEndereco from '../../components/cardEndereco';
-import { Listarporid } from '../../api/prod.js';
-import { toast } from 'react-toastify'
-
 
 export default function Meuspedidos(){
 

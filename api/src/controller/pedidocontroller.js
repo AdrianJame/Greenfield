@@ -32,6 +32,20 @@ endpoints.post('/pedido/:idCliente/', async (req, resp) => {
 })
 
 
+endpoints.post('/pedido', async (req, resp) => {
+    try {
+        const pedidos = req.body;
+        const resposta = await inserirPedido(pedidos);
+
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
+
+
 endpoints.get('/pedido/', async (req, resp) => {
     
     try{

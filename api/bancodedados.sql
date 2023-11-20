@@ -98,10 +98,8 @@ create table tb_pedido(
     id_cliente_endereco	int,
     dt_pedido			datetime,
     cod_nota_fiscal		varchar(200),
-    tp_frete			varchar(200),
     vl_frete			decimal(15,2),
     ds_status			varchar(200),
-    tp_pagamento		varchar(200),
     foreign key (id_cliente) references tb_cliente (id_cliente),
     foreign key (id_cliente_endereco) references tb_endereço (id_cliente_endereco)
 );

@@ -6,25 +6,20 @@ export async function inserirPedido(novoPedido) {
         INSERT INTO tb_pedido (
             id_cliente,
             id_cliente_endereco,
-            dt_pedido,
-            cod_nota_fiscal,
-            tp_frete,
+            dt_pedido,           
             vl_frete,
             ds_status,
-            tp_pagamento
         )
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?)
     `
 
     const [info] = await conexao.query(comando, [
         novoPedido.idCliente,
         novoPedido.idEndereco,
         novoPedido.data,
-        novoPedido.notaFiscal,
-        novoPedido.tipoFrete,
         novoPedido.valorFrete,
         novoPedido.status,
-        novoPedido.tipoPagamento
+
     ]);
     return info.insertId;
 }
