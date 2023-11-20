@@ -81,15 +81,13 @@ export default function Pag () {
                         </div>
 
                         <div className='desc-frete'>
-                            <p>Frete:</p>
-                            <p>Entrega em até</p>
+                            <p>Frete: expresso</p>
+                            <p>Entrega em até 5 dias uteís</p>
                         </div>
 
                     </div>
 
-                    <div className='cont-dir'>
-                        <a>Editar</a>
-                    </div>
+                    
 
                 </div>
 

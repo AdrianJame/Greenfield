@@ -7,15 +7,63 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Compcarrinho from '../../components/compcarrinho';
 import localStorage from 'local-storage';
+import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development.js';
+
+
 
 
 export default function Logradouro () {
     const[endereco, setEndereco] = useState([])
+    const [itens, setItens] = useState([])
+    const navigate = useNavigate()
 
     const[logradouro , setLogradouro] = useState()
     const[bairro , setBairro] = useState()
     const[cidade , setCidade] = useState()
     const[uf , setUf] = useState()
+
+    async function carregarcarrinho(){
+        let carrinho = localStorage('carrinho')
+
+        let temp = [];
+
+        for(let produtos of carrinho){
+            let r = await axios.get(API_URL + '/produto/' + produtos.id)
+            temp.push({
+                produto: r.data,
+                qtd: produtos.qtd
+            })
+            setItens(temp)
+        }
+    }
+
+    function Parcela(){
+        let x = Total() / 3;
+
+        return x.toFixed(2)
+    }
+
+    function Desconto(){
+        let x = Total() * 0.10;
+        let d = Total() - x
+
+        return d
+    }
+
+    function Total(){
+        let total = 0;
+
+        for(let item of itens){
+            total = total + item.produto.vl_preco * item.qtd;
+        }
+        return total.toFixed(2);
+    }
+
+
+
+    useEffect(() => {
+        carregarcarrinho()
+    }, [])
 
     
 
@@ -64,9 +112,9 @@ export default function Logradouro () {
                 <div className='faixa-02'>
                     
                 <section className='carrinho'>
-                    {/* {itens.map(item => 
+                     {itens.map(item => 
                         <Compcarrinho item={item} />
-                    )}              */}
+                    )}              
                 </section>
                 
                 </div>
@@ -114,7 +162,28 @@ export default function Logradouro () {
                     <div className='faixa-04'>
 
                         <div className='pagamento'>
+                                    <section className='pag-p1'><p>Subtotal</p> <p>R${Total()}</p></section>
+                                <section className='pag-p1'><p>Frete</p> <p>R$0.00</p></section>
+                                
+                                <div className='pag-linha'></div>
 
+                                <section className='pag-p1'><p>Desconto com cupom</p> <p>R$0.00</p></section>
+
+                                <section className='faixa-verde'><p className='total'>Total</p> <p>R$</p></section>
+
+                                <section className='pag-parcela'>
+                                    <img src='/assets/images/cartao.svg'/>
+                                    <p>3x de R${Parcela()} s/juros</p>
+                                </section>
+
+                                <div className='pag-linha'></div>
+
+                                <section className='desc'>
+                                    <img src='/assets/images/boleto.svg'/>
+                                    <div><p className='p-desc'>R${Desconto()}</p> <p>Com desconto à vista no boleto</p></div>
+                                </section>
+
+                                <a onClick={() => navigate('/pagamento')}>Continuar</a>
                         </div>
 
                     </div>
