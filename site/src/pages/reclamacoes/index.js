@@ -35,23 +35,18 @@ export default function Reclamacoes(){
     }
 
     async function Listar(){
-        let r = await axios.get(API_URL + '/reclamacao/' + ID())
+        let r = await axios.get(API_URL + '/reclamacao/' + idCliente)
         setListar(r.data)
 
         console.log(listar)
     }
 
 
-    function ID(){
-        let usuario = storage('usuario-logado')
-        let x = usuario.id_cliente;
-
-        return x;
-    }
 
     useEffect(() => {
         Listar()
-        ID()
+        const usuario = storage('usuario-logado')
+        setIdCliente(usuario.id_cliente)
     }, [])
 
     return(
@@ -65,10 +60,8 @@ export default function Reclamacoes(){
                   <ToastContainer/>
                 <button onClick={reclamar}>Enviar reclamação</button>
                 </div>
-
             </div>
-
-            <RodapeGreenfield />
+            <RodapeGreenfield/>
         </div>
     )
 }
