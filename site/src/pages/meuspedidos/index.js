@@ -2,8 +2,9 @@ import './index.scss';
 import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
 
-
 export default function Meuspedidos(){
+
+
 
 
     return(
@@ -41,7 +42,7 @@ export default function Meuspedidos(){
     
                         <div className='forma-pagamento'>
                             <h2>FORMA DE PAGAMENTO SELECIONADA</h2>
-
+    
                             <div className='linha'>
                                 <div className='pagamento'>
                                         
