@@ -142,7 +142,7 @@ export default function Produto(){
                             <ul>
                                 <li className='p-info'> {produtos.ds_material}</li>
                                 <li className='p-info'> {produtos.ds_dimensoes}</li>
-                                <li className='p-info'> {produtos.ds_extras}</li>
+                                <li className='p-info'> {produtos.ds_extra}</li>
                             </ul>
                         </div>
                     </div>
