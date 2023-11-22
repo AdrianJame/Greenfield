@@ -72,40 +72,40 @@ export default function Pag () {
     }
 
 
-    async function salvarPedido() {
+    // async function salvarPedido() {
 
-        try {
-            let produtos = Storage('carrinho');
-            let id = Storage('usuario-logado').id;
+    //     try {
+    //         let produtos = Storage('carrinho');
+    //         let id = Storage('usuario-logado').id;
 
-            let pedido =
-            {   
+    //         let pedido =
+    //         {   
 
-                idEndereco: idEndereco,
-                frete: frete,
-                tipoPagamento: 'Cartão',
-                cartao: {
-                    nome: nome,
-                    numero: numero,
-                    vencimento: vencimento,
-                    codSeguranca: cvv,
-                    parcelas: parcela,
-                    formaPagamento: tipo
-                },
-                produtos: produtos
-            }
+    //             idEndereco: idEndereco,
+    //             frete: frete,
+    //             tipoPagamento: 'Cartão',
+    //             cartao: {
+    //                 nome: nome,
+    //                 numero: numero,
+    //                 vencimento: vencimento,
+    //                 codSeguranca: cvv,
+    //                 parcelas: parcela,
+    //                 formaPagamento: tipo
+    //             },
+    //             produtos: produtos
+    //         }
 
-            const r = await salvarNovoPedido(id, pedido);
-            toast.dark('Pedido foi inserido com sucesso');
-            Storage('carrinho', []);
-            navigate('/');
+    //         const r = await salvarNovoPedido(id, pedido);
+    //         toast.dark('Pedido foi inserido com sucesso');
+    //         Storage('carrinho', []);
+    //         navigate('/');
 
-        }
-        catch (err) {
-            toast.error(err.response.data.erro);
-        }
+    //     }
+    //     catch (err) {
+    //         toast.error(err.response.data.erro);
+    //     }
 
-    }
+    // }
 
     useEffect(() => {
         carregarEnderecos();

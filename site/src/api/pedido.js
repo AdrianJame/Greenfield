@@ -6,9 +6,18 @@
 })
 
 
- export async function salvarNovoPedido(idCliente, novoPedido) {
-     const r = await api.post('/pedido/' + idCliente, novoPedido);
-    return r.data;
- }
+export async function PedidoAdd(idCliente, produtoId) {
+    const r = await api.post('/pedido', {
+        idCliente: idCliente,
+        produtoId: produtoId
+    });
 
+    return r.data
+}
+
+
+export async function MostrarPedidosUsuario(id) {
+    const resposta = await api.get(`/pedido/usuario/${id}`)
+    return resposta.data;
+}
  

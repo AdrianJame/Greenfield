@@ -11,7 +11,7 @@ export async function listar(idCliente) {
             ds_cidade				cidade,
             ds_estado				estado,
             ds_complemento			complemento
-       from tb_endereço 
+       from tb_endereco 
       where id_cliente = ?
     `
 
@@ -23,7 +23,7 @@ export async function listar(idCliente) {
 
 export  async function cadastrarEndereco(idCliente, endereco) {
     const comando = `
-    insert into tb_endereço (id_cliente, ds_referencia, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
+    insert into tb_endereco (id_cliente, ds_referencia, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
                              values (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `
 

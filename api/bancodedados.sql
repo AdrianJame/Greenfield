@@ -77,7 +77,7 @@ ds_senha varchar(100),
 ds_telefone varchar(100)
 );
 
-create table tb_endereço(
+create table tb_endereco(
 	id_cliente_endereco			int primary key auto_increment,
 	id_cliente				int,
     ds_referencia               varchar(200),
@@ -94,14 +94,14 @@ create table tb_endereço(
 
 create table tb_pedido(
 	id_pedido			int primary key auto_increment,
-    id_cliente		int,
+    id_cliente		    int,
     id_cliente_endereco	int,
     dt_pedido			datetime,
-    vl_frete			decimal(15,2),
+    vl_frete			int,
     ds_status			varchar(200),
     tp_pagamento        varchar(200),
     foreign key (id_cliente) references tb_cliente (id_cliente),
-    foreign key (id_cliente_endereco) references tb_endereço (id_cliente_endereco)
+    foreign key (id_cliente_endereco) references tb_endereco (id_cliente_endereco)
 );
 
 create table tb_cartao(
