@@ -62,7 +62,7 @@ async function Trocar(){
             </section>
 
             <section className='menu-meio'>
-                <Link to={'/produtosadm'}>produtos</Link>
+                <Link to={'/produtosadm'}>Consutar Produtos</Link>
                 <Link to={'/responder'}>Consultar Reclamações</Link>
                 <Link to={'/homeadm'}>Home</Link>
                 <Link>Status de Pedido</Link>
