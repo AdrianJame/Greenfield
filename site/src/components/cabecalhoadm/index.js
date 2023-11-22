@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
-
+import { confirmAlert } from 'react-confirm-alert';
 export default function Cabeadm(){
     const[listar, setListar] = useState();
     const [admlogado, setLogado] = useState();
@@ -39,6 +39,25 @@ export default function Cabeadm(){
         generateRandomColor()
     }, [])
 
+    async function Trocar(){
+        confirmAlert({
+            title: 'ADM',
+            message: 'Tem certeza que deseja trocar de usuario?',
+            buttons: [
+              {
+                label: 'Sim',
+                onClick: async () => {
+                    navigate('/login-adm')
+                    storage.remove('adm-logado');
+                }
+              },
+              {
+                label: 'Não'
+              }
+            ]
+          });
+    }
+
     return(
         <header className='cabeadm'>
 
@@ -56,7 +75,7 @@ export default function Cabeadm(){
                 <div className='foto-alterar'>
                     <div className='img' style={{ backgroundColor: color }}>{nome.charAt(0)}</div>
 
-                    <button>Alterar conta</button>
+                    <button onClick={Trocar}>Alterar conta</button>
                 </div>
             </section>
 

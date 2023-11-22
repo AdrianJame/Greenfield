@@ -188,9 +188,7 @@ export default function Logradouro () {
                                 
                                 <div className='pag-linha'></div>
 
-                                <section className='pag-p1'><p>Desconto com cupom</p> <p>R$0.00</p></section>
-
-                                <section className='faixa-verde'><p className='total'>Total</p> <p>R$</p></section>
+                                <section className='faixa-verde'><p className='total'>Total</p> <p>R${Total()}</p></section>
 
                                 <section className='pag-parcela'>
                                     <img src='/assets/images/cartao.svg'/>

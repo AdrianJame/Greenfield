@@ -189,7 +189,10 @@
 
 
                 .faixa3-numeros {
-                    font-size: 90px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 35px;
+                    font-size: 60px;
 
                 }
 

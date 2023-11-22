@@ -33,22 +33,6 @@ export default function Menuadm(){
             generateRandomColor()
     }, [])
 
-        function Levaremail(){
-            let x = ''
-          if(id == 1){
-            }
-          else  if(id == 2){
-                
-            }
-          else  if(id == 3){
-                
-            }
-           else if(id == 4){
-                
-            }
-
-            return x
-        }
 
 
 async function Trocar(){
