@@ -26,7 +26,7 @@ export default function Responder(){
             let body = {
                 resposta: resposta,
             };
-            let r = await axios.put(API_URL + '/resposta/' + id, body);
+            let r = await axios.put(API_URL + '/responder/' + id, body);
             toast.success('resposta enviada');
             window.location.reload()
         } catch (err) {
@@ -42,6 +42,12 @@ export default function Responder(){
     useEffect(() => {
         Listar()
     }, [])
+
+    
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            Resposta();
+        }}
       
     return(
         <div className='Pagina-responder'>
@@ -53,7 +59,20 @@ export default function Responder(){
                 <div className='card'>
                     {lista.map(item => 
                         <div>
-                            
+                            <h4>{item.nm_cliente}</h4>
+                            <p className='reclamacao'>Reclamação: {item.ds_reclamacao}</p>
+
+                            {item.ds_resposta == undefined ?
+                                <div>
+                                    <ToastContainer/>
+                                    <textarea placeholder='Responder' value={resposta} onChange={e => setReposta(e.target.value)}/>
+                                    <button className='enviar' onClick={() => Resposta(item.id_reclamacao)}>Enviar</button>
+                                </div>
+                                :
+                                <div>
+                                    <p>Resposta: {item.ds_resposta}</p>
+                                </div>
+                            }
                         </div>
                     )}
                 </div>

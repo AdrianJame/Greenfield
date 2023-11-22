@@ -53,7 +53,10 @@ export default function Reclamacoes(){
 
     }, []);
 
-
+    function teclaEnter(e) {
+        if (e.key === 'Enter') {
+            reclamar();
+        }}
 
     
     return(
@@ -63,7 +66,7 @@ export default function Reclamacoes(){
                 <div className='mensagens'>
                     <h2>Reclame aqui</h2>
 
-                    <textarea value={reclamacao} onChange={e => setReclamacao(e.target.value)} type='text' />
+                    <textarea value={reclamacao} onKeyUp={teclaEnter} onChange={e => setReclamacao(e.target.value)} type='text' />
                     <ToastContainer/>
                     <button className='aa' onClick={reclamar}>Enviar reclamação</button>
                 </div>
