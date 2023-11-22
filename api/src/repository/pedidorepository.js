@@ -20,7 +20,18 @@ export async function AdicionarPedido(pedidos) {
     return pedidos;
 };
 
+
 export async function MostrarPedidosUsuarios() {
+
+    novoPedido.id = info.insertId
+
+    return novoPedido;
+
+}
+
+
+
+export async function inserirPagamento(idPedido, novoPagamento) {
     const comando = `
     SELECT
             P.id_produto            AS ID,

@@ -1,0 +1,98 @@
+.Pagina-responder{
+    display: flex;
+    flex-direction: row;
+
+    background-color: #3a3a3b;
+    color: #fff;
+
+    .conteudo-pagina-resposta{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        padding: 50px 20px;
+
+        h1{
+            margin-bottom: 80px;
+        }
+
+        .card{
+            display: flex;
+            flex-direction: column;
+
+
+            background-color: #1F2023;
+
+            width: 900px;
+
+            padding: 10px 20px;
+
+            > div{
+                display: flex;
+                flex-direction: column;
+                
+                gap: 10px;
+
+                padding: 20px 0px;
+
+                border-bottom: 1px solid #fff;
+                
+                p{
+                    margin-left: 20px;
+                }
+
+                .reclamacao{
+                    font-weight: 500;
+                }
+
+                textarea{
+                    display: flex;
+                    resize: none;
+                    outline: 0;
+            
+                    padding: 20px;
+                    background-color: #1F2023;
+            
+                    width: 70%;
+                    height: 100px;
+            
+                    font-size: 18px;
+            
+                    border-radius: 5px;
+                    border: none;
+                    
+                    color: #fff;
+            
+                }
+                textarea::-webkit-scrollbar{
+                    width: 10px;
+                }
+
+                .enviar{
+                    margin-left: 20px;
+
+                    background-color: #fff;
+
+                    color: #000;
+
+                    border-radius: 7px;
+                    
+                    cursor: pointer;
+
+                    width: 70px;
+                    height: 30px;
+
+                    transition: 1s;
+                }
+
+                button:hover{
+                    transform: scale(1.09);
+
+                    box-shadow: 0px 2px 5px #ffffff62;
+                }
+            }
+        }
+    }
+}
