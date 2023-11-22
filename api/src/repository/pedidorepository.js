@@ -12,8 +12,8 @@ export async function inserirPedido(novoPedido) {
             tp_pagamento
         )
         VALUES (?, ?, ?, ?, ?, ?)
-    `
-
+    `;
+            console.log(comando); 
     const [info] = await conexao.query(comando, [
         novoPedido.idCliente,
         novoPedido.idEndereco,
@@ -22,20 +22,35 @@ export async function inserirPedido(novoPedido) {
         novoPedido.status,
         novoPedido.tipoPagamento
     ]);
+
+    
+
 }
-export async function inserirPagamento(idPedido, idCartao) {
+
+
+
+export async function inserirPagamento(idPedido, novoPagamento) {
     const comando = `
             INSERT INTO tb_pagamento_cartao (
                 id_pedido,
-                id_cartao
+                nm_cartao,
+                nr_cartao,
+                dt_vencimento,
+                cod_seguranca,
+                nr_parcelas,
+                ds_forma_pagamento
             )
             VALUES (?, ?, ?, ?, ?, ?, ?);
     `
 
-    const [info] = await conexao.query(comando,[
+    const [info] = await conexao.query(comando, [
         idPedido,
-        idCartao
-
+        novoPagamento.nome,
+        novoPagamento.numero,
+        novoPagamento.vencimento,
+        novoPagamento.codSeguranca,
+        novoPagamento.parcelas,
+        novoPagamento.formaPagamento
     ]);
     return info.affectedRows;
 }
