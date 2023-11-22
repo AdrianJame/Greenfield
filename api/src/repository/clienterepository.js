@@ -151,8 +151,7 @@ export async function AdicionarFavorito(fav){
 
 
 export async function inserirReclamacao(reclamacao){
-    let comando = `
-    insert into tb_reclamacao (ds_reclamacao, id_cliente)
+    let comando = `insert into tb_reclamacao (ds_reclamacao, id_cliente)
                         value(?, ?)`
 
     let [info] = await conexao.query(comando, [

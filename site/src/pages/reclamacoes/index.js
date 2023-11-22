@@ -24,6 +24,7 @@ export default function Reclamacoes(){
             };
             let r = await axios.post(API_URL + '/reclamacao', body);
             toast.success('reclamação enviada');
+            window.location.reload()
         } catch (err) {
             toast.dark(err.message);
         }
