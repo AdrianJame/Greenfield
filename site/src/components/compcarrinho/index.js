@@ -76,7 +76,7 @@ export default function Compcarrinho({item: { produto }, Removeritem}){
 
                     <p>R${Calculosubtotal()}</p>  
 
-                <img className='excluir' onClick={() => Remover(produto.id_produto)} src='/assets/images/xcarrinho.svg'/>                       
+                <img className='excluir' onClick={() => Remover(produto .id_produto)} src='/assets/images/xcarrinho.svg'/>                       
             </div>
         </div>
     )

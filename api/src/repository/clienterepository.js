@@ -164,6 +164,15 @@ export async function inserirReclamacao(reclamacao){
     return reclamacao;
 };
 
+export async function deletareclamacao(id){
+    let sql = `delete from tb_reclamacao where id_reclamacao = ?`
+    
+    let [info] = await conexao.query(sql, [id])
+    
+    let linha = info.affectedRows;
+    return linha;
+}
+
 
 
 export async function Minhasreclamacoes(id) {

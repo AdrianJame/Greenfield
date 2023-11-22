@@ -158,18 +158,18 @@ export default function Carrinho () {
 
             </div>
 
-            <div className='faixa-03'>
+            {/* <div className='faixa-03'>
                         
                 <div className='cupom-e-frete'>
 
                     <div className='info'>
-                        <input value={cupom} onChange={e => setCupom(e.target.value)}  placeholder='CUPOM DE DESCONTO' type='text'/>
+                        <input   placeholder='CUPOM DE DESCONTO' type='text'/>
                         <button onClick={Cupomtotal}>Inserir</button>
                     </div>           
                         
                 </div>
 
-            </div>
+            </div> */}
 
             <div className='faixa-04'>
 
@@ -181,7 +181,6 @@ export default function Carrinho () {
 
                     <section className='pag-p1'><p>Desconto com cupom</p> <p>R$0.00</p></section>
 
-                    <section className='faixa-verde'><p className='total'>Total</p> <p>R${Cupomtotal()}</p></section>
 
                     <section className='pag-parcela'>
                         <img src='/assets/images/cartao.svg'/>

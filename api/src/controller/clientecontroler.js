@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod, Minhasreclamacoes } from "../repository/clienterepository.js";
+import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod, Minhasreclamacoes, deletareclamacao } from "../repository/clienterepository.js";
 
 const endpoints = Router();
 
@@ -219,7 +219,17 @@ endpoints.delete('/deletarfavoritoporprod/:id', async (req, resp) => {
 })
 
 
-
+endpoints.delete('/deletareclamacao/:id', async (req, resp) => {
+    try{
+        let id = req.params.id;
+        let produtos = req.body;
+        let r = await deletareclamacao(id, produtos);
+        resp.send()
+    }
+    catch(err){
+        resp.status(500).send({ erro: 'Ocorreu um erro!'})
+    }
+})
 
 
   

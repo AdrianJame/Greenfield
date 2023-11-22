@@ -48,9 +48,16 @@ export default function Reclamacoes(){
  
     }, [])
 
+    
+
+    async function Deletar(id){
+        let r = await axios.delete(API_URL + '/deletareclamacao/' + id)
+        window.location.reload()
+   }
+
+
     useEffect(() => {
             Listar()
-
     }, []);
 
     function teclaEnter(e) {
@@ -80,6 +87,7 @@ export default function Reclamacoes(){
                                 : 
                                 <h2 className='reclamacao'><span>Resposta:</span> {item.ds_resposta}</h2>
                             }
+                            <img onClick={() => Deletar(item.id_reclamacao)} className='deletar' src='/assets/images/xcarrinho.svg'/>
                         </div>
                     )}
                 </div>
