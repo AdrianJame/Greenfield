@@ -112,7 +112,6 @@ create table tb_cartao(
     dt_vencimento		varchar(200),
     cod_seguranca		varchar(200),
     nr_parcelas			int,
-    ds_forma_pagamento	varchar(200),
     foreign key (id_cliente) references tb_cliente (id_cliente)
 );
 
@@ -120,13 +119,9 @@ create table tb_cartao(
 create table tb_pagamento_cartao (
 	id_pagamento_cartao	int primary key auto_increment,
     id_pedido			int,
-    nm_cartao			varchar(200),
-    nr_cartao			varchar(200),
-    dt_vencimento		varchar(200),
-    cod_seguranca		varchar(200),
-    nr_parcelas			int,
-    ds_forma_pagamento	varchar(200),
-    foreign key (id_pedido) references tb_pedido (id_pedido)
+    id_cartao           int,
+    foreign key (id_pedido) references tb_pedido (id_pedido),
+    foreign key (id_cartao) references tb_cartao (id_cartao)
 );
 
 
