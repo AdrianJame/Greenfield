@@ -8,6 +8,14 @@
     flex-direction: column;
     justify-content: space-between;
 
+    .sem{
+        display: none;
+    }
+
+    .sem.aparecer{
+        display: block;
+    }
+
     h1 {
         text-align: center;
 

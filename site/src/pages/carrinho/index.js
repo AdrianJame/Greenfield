@@ -97,7 +97,6 @@ export default function Carrinho () {
 
         let temp = [];
 
-        if(!carrinho == undefined){
             for(let produtos of carrinho){
                 let r = await axios.get(API_URL + '/produto/' + produtos.id)
                 temp.push({
@@ -106,12 +105,6 @@ export default function Carrinho () {
                 })
                 setItens(temp)
             }
-        }
-
-        else{
-            const editar = document.getElementById('NOT')
-            editar.classList.remove('aparecer')
-        }
     }
 
     const checkCep = (e) => {
@@ -160,7 +153,6 @@ export default function Carrinho () {
                     {itens.map(item => 
                             <Compcarrinho item={item} Removeritem={Removeritem}/>
                     )}  
-
 
             </section>
 
