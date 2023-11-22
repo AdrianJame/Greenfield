@@ -161,12 +161,12 @@ export default function Logradouro () {
                         </div>
                         
                         <div className='line-2'>
-                            <input className='line-menor' placeholder='Número*' type='text' />
-                            <input className='line-maior' placeholder='Complemento*' type='text'/>
+                            <input className='line-menor' placeholder='Número*' type='text'value={numero} onChange={e => setNumero(e.target.value)} />
+                            <input className='line-maior' placeholder='Complemento*' type='text'value={complemento} onChange={e => setComplemento(e.target.value)}/>
                         </div>
                         
                         <div className='line-3'>
-                            <input placeholder='Referência' type='text' />
+                            <input placeholder='Referência' type='text' value={referencia} onChange={e => setReferencia(e.target.value)}/>
                         </div>
                         
                         <div className='line-4'>
