@@ -119,6 +119,13 @@
 
                 }
 
+                .fertilizante{
+                    bottom: 25px !important;
+                    max-width: 100px !important;
+                    width: 100% !important;
+                    margin-bottom: 10px;
+                }
+
                 h2 {
 
                     font-family: 'Oswald', sans-serif;
@@ -288,7 +295,7 @@
 
 
         width: 100vw;
-        height: 600px;
+        height: 900px;
 
 
         .imagem-esquerda {
@@ -520,6 +527,14 @@
 
 }
 
+@media (max-width: 1600px){
+    .Home{
+        .faixa5{
+            height: 700px !important;
+        }
+    }
+}
+
 
 @media(max-width: 1580px) {
 
@@ -558,6 +573,10 @@
             }
 
 
+        }
+
+        .faixa5{
+            height: 700px !important;
         }
 
 
@@ -738,8 +757,14 @@
 
         }
 
+        .faixa5{
+            height: 500px !important;
+        }
+
 
     }
+
+    
 
 }
 
@@ -749,10 +774,12 @@
 
         .faixa3 {
 
+
+            height: 900px;
             .faixa3-tudo {
 
                 h1 {
-                    margin-top: 310px;
+                    margin-top: 320px;
                     font-size: 40px;
                 }
 
@@ -767,7 +794,7 @@
 
                     p {
                         width: 670px;
-                        height: 90px;
+                        height: 80px;
                         margin-top: 10px;
                         font-size: 17px;
                     }
@@ -780,6 +807,10 @@
             }
 
 
+        }
+
+        .faixa5{
+            height: 600px !important;
         }
 
 
@@ -799,14 +830,14 @@
             .faixa3-tudo {
 
                 h1 {
-                    margin-top: 350px;
+                    margin-top: 370px;
                     font-size: 30px;
                 }
 
                 .faixa3-numeros {
                     p {
                         margin-top: 40px;
-                        font-size: 50px;
+                        font-size: 40px;
                     }
                 }
 
@@ -956,6 +987,10 @@
             }
 
 
+        }
+
+        .faixa5{
+            height: 500px !important;
         }
 
 
@@ -1129,11 +1164,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 900px;
+            height: 700px;
 
             .faixa1-textos {
                 width: 600px;
-                height: 700px;
+                
                 display: flex;
 
                 .titulo {
@@ -1383,7 +1418,7 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 115vh;
+            height: 800px;
             
 
             .imagem-esquerda{

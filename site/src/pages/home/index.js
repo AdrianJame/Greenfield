@@ -63,21 +63,21 @@ export default function Home() {
               <div  className='card' onClick={() => navigate('/produtos/' + 1)}>
                 <img src='./assets/images/sementes.svg'/>
                 <h2>Sementes</h2>
-                <p>TODO JARDIM COMEÇA COM UMA SIMPLES SEMENTE.</p>
+                <p>Plante o futuro que você deseja com as nossas sementes de qualidade, escolha nossas sementes e deixe seu jardim florescer</p>
 
               </div>
 
               <div className='card' onClick={() => navigate('/produtos/' + 2)}>
                 <img src='./assets/images/ferramentas.svg'/>
                 <h2>Ferramentas</h2>
-                <p>TER AS FERRAMENTAS CERTAS É FUNDAMENTAL PARA FACILITAR O TRABALHO E GARANTIR UM RESULTADO SATISFATÓRIO.</p>
+                <p>Ter as ferramentas certas é fundamental para facilitar o trabalho e garantir um resultado satisfatório.</p>
                 
               </div>
 
               <div className='card' onClick={() => navigate('/produtos/' + 3)}>
-                <img src='./assets/images/fertilizantes.svg'/>
+                <img className='fertilizante' src='./assets/images/fertilizantes.svg'/>
                 <h2>Fertilizantes</h2>
-                <p>O FERTILIZANTE É O SEGREDO PARA UM JARDIM SAUDÁVEL E BONITO.</p>
+                <p>Transforme seu jardim em um verdadeiro paraíso com os fertilizantes, experimente nossos fertilizantes e veja a diferença</p>
               </div>
 
             </div>
