@@ -40,7 +40,7 @@ const Container = styled.div`
 
     img{
         position: relative;
-        left: 80px;
+        left: 50px;
         width: auto;
         height: 300px;
         object-fit: cover;

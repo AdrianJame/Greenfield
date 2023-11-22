@@ -49,7 +49,7 @@ useEffect(() => {
             <Cabesemdgd/>
 
             <section className='produtos-s1'>
-                <h1>Os produtos mais vendidos para decorar o seu jardim.</h1>
+                <h1>Os produtos mais vendidos para o seu jardim.</h1>
 
                 <Projects produtos={produto}/>
             </section>
@@ -104,7 +104,7 @@ useEffect(() => {
                 {produto2.map(item => 
                         <section onClick={() => navigate('/produto/' + item.id_produto)} className='card'>
                             <img src={BuscarImagem(item.ds_img1)} />
-                            <p className='nomeproduto'>{item.nm_produto}</p>
+                            <p className='nomeproduto' title={item.nm_produto}>{item.nm_produto}</p>
                             <div>
                                 <p className='preco'>R${item.vl_preco}</p>
                                 <p className='desconto'>R${Desconto(item.vl_preco)}</p>

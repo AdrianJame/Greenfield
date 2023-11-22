@@ -97,13 +97,20 @@ export default function Carrinho () {
 
         let temp = [];
 
-        for(let produtos of carrinho){
-            let r = await axios.get(API_URL + '/produto/' + produtos.id)
-            temp.push({
-                produto: r.data,
-                qtd: produtos.qtd
-            })
-            setItens(temp)
+        if(!carrinho == undefined){
+            for(let produtos of carrinho){
+                let r = await axios.get(API_URL + '/produto/' + produtos.id)
+                temp.push({
+                    produto: r.data,
+                    qtd: produtos.qtd
+                })
+                setItens(temp)
+            }
+        }
+
+        else{
+            const editar = document.getElementById('NOT')
+            editar.classList.remove('aparecer')
         }
     }
 
@@ -151,9 +158,11 @@ export default function Carrinho () {
                 <section className='carrinho'>
                     
                     {itens.map(item => 
-                        <Compcarrinho item={item} Removeritem={Removeritem}/>
-                    )}             
-                </section>
+                            <Compcarrinho item={item} Removeritem={Removeritem}/>
+                    )}  
+
+
+            </section>
 
             </div>
 

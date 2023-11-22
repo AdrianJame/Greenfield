@@ -29,6 +29,8 @@
 }
 
 .slick-list, .slick-slider, .slick-track{
+
+  width: 100%;
   padding: 1.5rem 0;
 
   height: 750px;
@@ -54,6 +56,7 @@
   opacity: 1;
   background-color: transparent;
   height: 320px;
+
 }
 
 .center .project{
@@ -61,7 +64,7 @@
   pointer-events: none;
 }
 
-.jKQCBp,.eOzOxh, .koqPzt{
+.jKQCBp,.eOzOxh, .koqPzt, .dJFCLx, .bIWVbA, .gYTwMc{
   background-color: transparent !important;
 }
 

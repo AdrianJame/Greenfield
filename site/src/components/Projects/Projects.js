@@ -24,6 +24,7 @@ const Container = styled.div`
     padding: 3rem 0;
     text-align: center;
     position: relative;
+    
     @media(max-width: 840px){
         width: 90%;
     }

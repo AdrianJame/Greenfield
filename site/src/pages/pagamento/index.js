@@ -254,7 +254,7 @@ export default function Pag () {
 
                     </div>
                     <ToastContainer/>
-                    <a onClick={salvarPedido}>Finalizar pedido</a>
+                    <a>Finalizar pedido</a>
 
                 </div>
     
