@@ -128,6 +128,7 @@ create table tb_pagamento_cartao (
 create table tb_reclamacao(
 id_reclamacao int primary key auto_increment,
 ds_reclamacao varchar(100),
+ds_resposta varchar(100),
 id_cliente int,
 foreign key (id_cliente) references tb_cliente (id_cliente)
 );

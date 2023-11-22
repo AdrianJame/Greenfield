@@ -23,7 +23,9 @@ export async function inserirPedido(novoPedido) {
         novoPedido.tipoPagamento
     ]);
 
-    
+    novoPedido.id = info.insertId
+
+    return novoPedido;
 
 }
 

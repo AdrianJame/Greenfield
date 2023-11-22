@@ -1,0 +1,28 @@
+.Pagina-responder{
+    display: flex;
+    flex-direction: row;
+
+    background-color: #3a3a3b;
+    color: #fff;
+
+    .conteudo-pagina-resposta{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        padding: 50px 20px;
+
+        h1{
+            margin-bottom: 80px;
+        }
+
+        .card{
+            background-color: #1F2023;
+
+            width: 900px;
+
+        }
+    }
+}

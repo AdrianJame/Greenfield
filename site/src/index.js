@@ -25,7 +25,7 @@ import AlterarProdutoADM from './pages/alterarproduto';
 import Favorito from './pages/favoritos';
 import Sobre from './pages/sobre';
 import Produto from './pages/produto';
-
+import Responder from './pages/responder';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -54,6 +54,7 @@ root.render(
         <Route path='/altpro/:id' element={<AlterarProdutoADM/>}/>
         <Route path='/favorito' element={<Favorito/>}/>
         <Route path='/sobre' element={<Sobre/>} />
+        <Route path='/responder' element={<Responder/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

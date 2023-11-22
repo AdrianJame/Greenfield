@@ -10,55 +10,75 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Reclamacoes(){
 
-    const [listar, setListar] = useState([]);
-
+    const [riscar, setRiscar] = useState([]);
     const [reclamacao, setReclamacao] = useState();
     const [idCliente, setIdCliente] = useState();
-    const [re, setRe] = useState();
+
+    console.log(riscar);
 
     async function reclamar() {
-        
-        try{
-            let r = await axios.post(API_URL + '/reclamacao', body)
-            toast.success('reclamação enviada')
+        try {
+            let body = {
+                texto: reclamacao,
+                cliente: idCliente,
+            };
+            let r = await axios.post(API_URL + '/reclamacao', body);
+            toast.success('reclamação enviada');
+            window.location.reload()
+        } catch (err) {
+            toast.dark(err.message);
         }
-
-        catch(err){
-            toast.dark(err.message)
-          }
-    
-        let body = {
-            texto: reclamacao, 
-            cliente: idCliente
-        }
-    
     }
 
-    async function Listar(){
-        let r = await axios.get(API_URL + '/reclamacao/' + idCliente)
-        setListar(r.data)
+    async function Listar() {
+        try {
+            const r = await axios.get(API_URL + '/reclamacao/' + idCliente);
+            setRiscar(r.data);
+            
 
-        console.log(listar)
+        } catch (err) {
+            toast.dark(err.message);
+        }
     }
-
-
 
     useEffect(() => {
-        Listar()
-        const usuario = storage('usuario-logado')
-        setIdCliente(usuario.id_cliente)
+
+        const usuario = storage('usuario-logado');
+            setIdCliente(usuario.id_cliente);
+ 
     }, [])
 
+    useEffect(() => {
+            Listar()
+
+    }, []);
+
+
+
+    
     return(
         <div className='reclamacoes'>
             <Cabesemdgd/>
             <div className='faixa1'>
                 <div className='mensagens'>
-                    <h2>RECLAMAÇÕES</h2>
+                    <h2>Reclame aqui</h2>
 
-                  <textarea value={reclamacao} onChange={e => setReclamacao(e.target.value)} type='text' />
-                  <ToastContainer/>
-                <button onClick={reclamar}>Enviar reclamação</button>
+                    <textarea value={reclamacao} onChange={e => setReclamacao(e.target.value)} type='text' />
+                    <ToastContainer/>
+                    <button className='aa' onClick={reclamar}>Enviar reclamação</button>
+                </div>
+                <div className='Suas-reclamacoes'>
+                        <h2>Suas reclamações</h2>
+                    {riscar.map(item =>
+                        <div className='Listar-reclamacoes'>
+                            <h3 className='reclamacao'>{item.ds_reclamacao}</h3>
+                            {item.ds_resposta == undefined ? 
+                                <p className='nao-respondeu'>Não respondido</p>
+                                : 
+                                <h2 className='reclamacao'><span>Resposta:</span> {item.ds_resposta}</h2>
+                            }
+                        </div>
+                    )}
                 </div>
             </div>
             <RodapeGreenfield/>
