@@ -8,7 +8,9 @@ import axios from 'axios';
 import Compcarrinho from '../../components/compcarrinho';
 import localStorage from 'local-storage';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development.js';
-
+import { salvar } from '../../api/endereco.js';
+import { toast, ToastContainer } from  'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 
@@ -20,7 +22,12 @@ export default function Logradouro () {
     const[logradouro , setLogradouro] = useState()
     const[bairro , setBairro] = useState()
     const[cidade , setCidade] = useState()
-    const[uf , setUf] = useState()
+    const[estado , setEstado] = useState()
+    const[complemento, setComplemento] = useState()
+    const[numero, setNumero] = useState()
+    const[cep, setCep] = useState()
+    const[referencia, setReferencia] = useState()
+
 
     async function carregarcarrinho(){
         let carrinho = localStorage('carrinho')
@@ -59,6 +66,19 @@ export default function Logradouro () {
         return total.toFixed(2);
     }
 
+    async function salvarEndereco() {
+        try {
+            const id = Storage('cliente-logado').id;
+            const r = await salvar(id, referencia, cep, logradouro, bairro, cidade, estado, numero, complemento);
+            toast.dark('Endereço salvo');
+
+            
+        }
+        catch (err) {
+            toast.error(err.response.data.erro);
+        }
+    }   
+
 
 
     useEffect(() => {
@@ -76,7 +96,7 @@ export default function Logradouro () {
             setLogradouro(data.logradouro)
             setBairro(data.bairro)
             setCidade(data.localidade)
-            setUf(data.uf)
+            setEstado(data.uf)
         });
 
     }
@@ -152,10 +172,10 @@ export default function Logradouro () {
                         <div className='line-4'>
                             <input placeholder='Bairro*' type='text' value={bairro} onChange={e => setBairro(e.target.value)}/>
                             <input placeholder='Cidade*' type='text' value={cidade} onChange={e => setCidade(e.target.value)}/>
-                            <input placeholder='UF*' type='text' value={uf} onChange={e => setUf(e.target.value)}/>
+                            <input placeholder='Estado*' type='text' value={estado} onChange={e => setEstado(e.target.value)}/>
                         </div>
 
-                        <a>SALVAR ALTERAÇÕES</a>
+                        <a onClick={salvarEndereco}>SALVAR ALTERAÇÕES</a>
 
                     </div>
 

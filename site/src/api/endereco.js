@@ -6,9 +6,14 @@ const api = axios.create({
     baseURL: API_URL
 });
 
-export async function salvarEndereco(idCliente, referencia, cep, logradouro, bairro, cidade, estado, numero, complemento) {
-    const r = await api.post('/api/' + idCliente + '/endereco', {
-         referencia, cep, logradouro, bairro, cidade, estado, numero, complemento });
+export async function salvar(idCliente, referencia, cep, logradouro, bairro, cidade, estado, numero, complemento) {
+    const r = await api.post('/api/usuario/' + idCliente + '/endereco', { referencia, cep, logradouro, bairro, cidade, estado, numero, complemento });
+    return r.data;
+}
+
+
+export async function listar(idCliente) {
+    const r = await api.get('/api/usuario/' + idCliente + '/endereco');
     return r.data;
 }
 

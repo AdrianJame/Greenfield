@@ -7,6 +7,7 @@ import clientecontroler from './controller/clientecontroler.js'
 import categoriacontroller from './controller/categoriacontroller.js'
 import produtoscontroller from './controller/produtoscontroller.js'
 import pedidocontroller from './controller/pedidocontroller.js'
+import enderecocontroller from './controller/enderecocontroller.js'
 
 
 const server = express();
@@ -18,6 +19,8 @@ server.use(categoriacontroller);
 server.use(admcontroller);
 server.use(produtoscontroller);
 server.use(pedidocontroller);
+server.use(enderecocontroller);
+
 
 server.use('/storage/fotosProdutos', express.static('storage/fotosProdutos'))
 
