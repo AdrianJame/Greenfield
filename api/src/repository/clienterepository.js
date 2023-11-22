@@ -177,3 +177,29 @@ export async function Minhasreclamacoes(id) {
     
     return dados;
 }
+
+export async function cadastrarcartao(idCliente) {
+    const comando = `
+            INSERT INTO tb_cartao (
+                id_cliente,
+                nm_cartao,
+                nr_cartao,
+                dt_vencimento,
+                cod_seguranca,
+                nr_parcelas,
+                ds_forma_pagamento
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?);
+    `
+
+    const [info] = await conexao.query(comando, [
+        idCliente,
+        novoPagamento.nome,
+        novoPagamento.numero,
+        novoPagamento.vencimento,
+        novoPagamento.codSeguranca,
+        novoPagamento.parcelas,
+        novoPagamento.formaPagamento
+    ]);
+    return info.affectedRows;
+}

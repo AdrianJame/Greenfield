@@ -68,7 +68,7 @@ export default function Logradouro () {
 
     async function salvarEndereco() {
         try {
-            const id = Storage('cliente-logado').id;
+            const id = Storage('usuario-logado').id;
             const r = await salvar(id, referencia, cep, logradouro, bairro, cidade, estado, numero, complemento);
             toast.dark('Endereço salvo');
 
@@ -175,6 +175,7 @@ export default function Logradouro () {
                             <input placeholder='Estado*' type='text' value={estado} onChange={e => setEstado(e.target.value)}/>
                         </div>
 
+                        <ToastContainer/>
                         <a onClick={salvarEndereco}>SALVAR ALTERAÇÕES</a>
 
                     </div>

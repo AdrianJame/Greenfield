@@ -3,10 +3,14 @@ import Cabecalhocomlogin from '../../components/cabcomlogin'
 import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import {toast}  from 'react-toastify'
+import { useState , useEffect} from 'react';
 import { salvarNovoPedido } from '../../api/pedido.js';
-import storage from 'local-storage'
+import storage from 'local-storage';
+import { toast, ToastContainer } from  'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import { useNavigate } from 'react-router-dom'
+import { Listarporid } from '../../api/prod.js';
+import { listar } from '../../api/endereco.js';
 
 export default function Pag () {
 
@@ -16,33 +20,97 @@ export default function Pag () {
     const [cvv, setCvv] = useState('');
     const [cpf, setCpf] = useState('');
     const [datanascimento, setDatanascimento] = useState('');
-    const [itens, setItem] = useState([]);
+    const [itens, setItens] = useState([]);
     const [IDuser, SetIDuser] = useState(0);
     const [produtosIds, setProdutosIds] = useState([]);
+    const [enderecos, setEnderecos] = useState([]);
+    const [exibirEndereco, setExibirEndereco] = useState(false);
+    const [idEndereco, setIdEndereco] = useState();
+    const [frete, setFrete] = useState('');
+    const [tipo, setTipo] = useState('');
+    const [parcela, setParcela] = useState('');
 
 
-    async function AdicionarPedidos() {
-        try {
-            for (let produtoId of produtosIds) {
+    const navigate = useNavigate();
 
-                if (IDuser !== 0 && produtoId !== 0) {
 
-                    const resposta = await salvarNovoPedido(IDuser, produtoId);
-                    toast.success('Pedido Realizado!');
-                    storage.remove('carrinho');
-                    
-                }
-                else {
+    async function carregarEnderecos() {
+        const id = Storage('cliente-logado').id;
+        const r = await listar(id);
+        setEnderecos(r);
+    }
 
-                    toast.dark('Pedido não realizado!')
-                }
-                window.location.reload()
+
+
+
+    // function exibirImagem(item) {
+    //     if (item.produto.imagens.length > 0)
+    //         return API_URL + '/' + item.produto.imagens[0];
+    //     else
+    //         return '/produto-padrao.png';
+    // }
+
+
+    async function carregarItens() {
+        let carrinho = Storage('carrinho');
+        if (carrinho) {
+
+            let temp = [];
+
+            for (let produto of carrinho) {
+                let p = await Listarporid(produto.id);
+
+                temp.push({
+                    produto: p,
+                    qtd: produto.qtd
+                })
             }
 
-        } catch (err) {
-            console.log(err.message);
+            setItens(temp);
         }
+
     }
+
+
+    async function salvarPedido() {
+
+        try {
+            let produtos = Storage('carrinho');
+            let id = Storage('usuario-logado').id;
+
+            let pedido =
+            {   
+
+                idEndereco: idEndereco,
+                frete: frete,
+                tipoPagamento: 'Cartão',
+                cartao: {
+                    nome: nome,
+                    numero: numero,
+                    vencimento: vencimento,
+                    codSeguranca: cvv,
+                    parcelas: parcela,
+                    formaPagamento: tipo
+                },
+                produtos: produtos
+            }
+
+            const r = await salvarNovoPedido(id, pedido);
+            toast.dark('Pedido foi inserido com sucesso');
+            Storage('carrinho', []);
+            navigate('/');
+
+        }
+        catch (err) {
+            toast.error(err.response.data.erro);
+        }
+
+    }
+
+    useEffect(() => {
+        carregarEnderecos();
+        carregarItens();
+    }, [])
     
     return (
         
@@ -185,8 +253,8 @@ export default function Pag () {
                     </div>
 
                     </div>
-
-                    <Link onClick={AdicionarPedidos}>Finalizar pedido</Link>
+                    <ToastContainer/>
+                    <a onClick={salvarPedido}>Finalizar pedido</a>
 
                 </div>
     

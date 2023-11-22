@@ -6,11 +6,12 @@ export async function inserirPedido(novoPedido) {
         INSERT INTO tb_pedido (
             id_cliente,
             id_cliente_endereco,
-            dt_pedido,           
+            dt_pedido,
             vl_frete,
             ds_status,
+            tp_pagamento
         )
-        VALUES (?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?)
     `
 
     const [info] = await conexao.query(comando, [
@@ -19,21 +20,14 @@ export async function inserirPedido(novoPedido) {
         novoPedido.data,
         novoPedido.valorFrete,
         novoPedido.status,
-
+        novoPedido.tipoPagamento
     ]);
-    return info.insertId;
 }
-
 export async function inserirPagamento(idPedido, novoPagamento) {
     const comando = `
-            INSERT INTO tb_cartao (
+            INSERT INTO tb_pagamento_cartao (
                 id_pedido,
-                nm_cartao,
-                nr_cartao,
-                dt_vencimento,
-                cod_seguranca,
-                nr_parcelas,
-                ds_forma_pagamento
+                id_cliente
             )
             VALUES (?, ?, ?, ?, ?, ?, ?);
     `
