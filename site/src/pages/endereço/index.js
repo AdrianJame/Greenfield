@@ -96,6 +96,7 @@ export default function Logradouro () {
         let ide = (resposta.id)
         alert(ide)
         toast.success('Endereço cadastrado com Sucesso')
+        Apareca()
         limpar()
   
       } catch (err) {
@@ -119,6 +120,11 @@ export default function Logradouro () {
         salvarEndereco()
       }
   
+    }
+
+    function Apareca(){
+        const editar = document.getElementById('faixa-04')
+        editar.classList.add('aparecer')
     }
 
 
@@ -253,7 +259,7 @@ export default function Logradouro () {
 
                     </div>
 
-                    <div className='faixa-04'>
+                    <div className='faixa-04' id='faixa-04'> 
 
                         <div className='pagamento'>
                                     <section className='pag-p1'><p>Subtotal</p> <p>R${Totalproduto()}</p></section>
