@@ -1,4 +1,4 @@
-create database greenfield;
+
 use greenfield;
 
 
@@ -92,16 +92,26 @@ create table tb_endereco(
 );
 
 
-create table tb_pedido(
-	id_pedido			int primary key auto_increment,
-    id_cliente		    int,
-    id_cliente_endereco	int,
-    dt_pedido			datetime,
-    vl_frete			int,
-    ds_status			varchar(200),
-    tp_pagamento        varchar(200),
+create table tb_status_pedido (
+	id_status_pedido	int primary key not null auto_increment,
+    ds_status_pedido 	varchar(100) not null
+);
+
+
+CREATE TABLE tb_pedido(
+	id_pedido int PRIMARY KEY auto_increment,
+	id_cliente int,
+    id_produto int,
+    id_status_pedido int,
+	id_cliente_endereco int,
+	dt_pedido datetime,
+    
     foreign key (id_cliente) references tb_cliente (id_cliente),
-    foreign key (id_cliente_endereco) references tb_endereco (id_cliente_endereco)
+    foreign key (id_status_pedido) references tb_status_pedido(id_status_pedido),
+    foreign key (id_cliente_endereco) references tb_endereco (id_cliente_endereco),
+    foreign key (id_produto) references tb_produto (id_produto)
+
+
 );
 
 create table tb_cartao(
@@ -115,14 +125,6 @@ create table tb_cartao(
     foreign key (id_cliente) references tb_cliente (id_cliente)
 );
 
-
-create table tb_pagamento_cartao (
-	id_pagamento_cartao	int primary key auto_increment,
-    id_pedido			int,
-    id_cartao           int,
-    foreign key (id_pedido) references tb_pedido (id_pedido),
-    foreign key (id_cartao) references tb_cartao (id_cartao)
-);
 
 
 create table tb_reclamacao(
@@ -143,6 +145,8 @@ CREATE TABLE tb_item_pedido (
     foreign key (id_pedido) references tb_pedido (id_pedido),
     foreign key (id_produto) references tb_produto (id_produto)
 );
+
+
 
 create table tb_favorito(
  id_favorito int primary key auto_increment,

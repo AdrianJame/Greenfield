@@ -1,8 +1,36 @@
 import { Router } from "express";
-import { MostrarPedidosUsuarios, AdicionarPedido, MostrarPedidosPorIdUsuario, adicionarProdutoPedido } from "../repository/pedidorepository.js";
+import { AdicionarPedido, AlterarStatusPedido, MostrarPedidoUsuario, MostrarPedidosPorIdUsuario, MostrarPedidosUsuarios } from "../repository/pedidorepository.js";
 
 
 const endpoints = Router();
+
+endpoints.put('/pedido/status/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const pedido = req.body;
+
+        const resposta = await AlterarStatusPedido(pedido, id);
+
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+})
+
+endpoints.post('/pedido', async (req, resp) => {
+    try {
+        const pedidos = req.body;
+        const resposta = await AdicionarPedido(pedidos);
+
+        resp.send(resposta);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    }
+});
 
 endpoints.get('/pedido/admin', async (req, resp) => {
     try {
@@ -15,27 +43,23 @@ endpoints.get('/pedido/admin', async (req, resp) => {
     }
 })
 
-endpoints.post('/pedido', async (req, resp) => {
+endpoints.get('/pedido/usuario/:id', async (req, resp) => {
     try {
 
-        let infoPedido = req.body;
+        const { id } = req.params
 
-        let produtos = infoPedido.produtos;
+        const resposta = await MostrarPedidoUsuario(id)
+        resp.send(resposta)
 
-        let pedidoCriado = await AdicionarPedido(infoPedido);
-
-        for (let i = 0; i < produtos.length; i++) {
-            await adicionarProdutoPedido(pedidoCriado.id, produtos[i]);
-        }
-
-        resp.send(pedidoCriado);
-
-    } catch (error) {
-        resp.status(500).send(error.message);
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
     }
 })
 
-endpoints.get('/pedido/usuario/:id', async (req, resp) => {
+
+endpoints.get('/pedidos/usuario/:id', async (req, resp) => {
     try {
 
         const { id } = req.params
@@ -48,4 +72,9 @@ endpoints.get('/pedido/usuario/:id', async (req, resp) => {
         });
     }
 })
-export default endpoints
+
+
+
+
+
+export default endpoints ;

@@ -1,68 +1,54 @@
-import conexao from "./connection.js";
-
+import conexao from './connection.js';
 
 export async function AdicionarPedido(pedidos) {
     const comando = `
-        INSERT INTO tb_pedido(id_cliente, id_cliente_endereco, dt_pedido, vl_frete, ds_status, tp_pagamento)
-                    VALUES (?, ?, ?, ?, ?, ?)
+        INSERT INTO tb_pedido(id_cliente, id_produto, id_status_pedido, id_endereco, dt_pedido)
+                    VALUES (?, ?, 1, ?, NOW())
 
     `
     const [resp] = await conexao.query(comando, [
-        pedidos.idCliente,
-        pedidos.idEndereco,
-        pedidos.data,
-        pedidos.valor,
-        pedidos.status,
-        pedidos.tipo
-
+        pedidos.IDCliente,
+        pedidos.IDProduto,
+        pedidos.Status,
+        pedidos.Data
     ]);
     pedidos.id = resp.insertId;
     return pedidos;
 };
 
-export async function adicionarProdutoPedido(idPedido, produto) {
-    let comando =
-    `
-        insert into tb_item_pedido (id_pedido, id_produto, qtd_itens, vl_produto)
-                                values(?, ?, ?, ?)
-    `
+export async function AlterarStatusPedido (status, id) {
+    const comando = `
+        UPDATE tb_pedido
+        SET
+            id_status_pedido = ?
+        WHERE id_pedido = ?
+       
+    `;
 
-    let [r] = await conexao.query(comando, [idPedido, produto.id, produto.quantidade, produto.preco]);
-
-    return r;
-}
-
-
+    const [ resp ] = await conexao.query(comando, [status.IdStatus, id])
+    return resp.affectedRows
+}   
 
 export async function MostrarPedidosUsuarios() {
-
-    novoPedido.id = info.insertId
-
-    return novoPedido;
-
-}
-
-
-
-export async function inserirPagamento(idPedido, novoPagamento) {
     const comando = `
     SELECT
             P.id_produto            AS ID,
+            C.id_cliente            AS IDcliente,
+            S.id_status_pedido      AS IDStatus,
             ds_status_pedido        AS Status,
-            NM_NOME_COMP            AS Usuario,
-            NM_PRODUTO              AS Produto,
-            NR_PRECO                AS Preco,
-            NR_PRECO_PROMOCIONAL    AS PrecoPromo,
-            DT_PEDIDO               AS Data,
-            IMG_PRODUTO             AS Imagem
+            nm_cliente              AS Usuario,
+            nm_produto              AS Produto,
+            nr_preco                AS Preco,
+            dt_pedido               AS Data,
+            img_produto             AS Imagem
     FROM tb_pedido AS A
 
     INNER JOIN
         tb_status_pedido AS S ON A.id_status_pedido = S.id_status_pedido
     INNER JOIN 
-        TB_CADASTRO_USER AS C ON A.ID_USER = C.ID_USER
+        tb_cliente AS C ON A.id_cliente = C.id_cliente
     INNER JOIN
-        tb_produto AS P ON A.id_produto = P.ID_INSTRUMENTOS
+        tb_produto AS P ON A.id_produto = P.id_produto
 
     `
 
@@ -73,24 +59,24 @@ export async function inserirPagamento(idPedido, novoPagamento) {
 
 export async function MostrarPedidosPorIdUsuario(id) {
     const comando = `
-    SELECT
-            P.ID_INSTRUMENTOS       AS ID,
-            ds_status_pedido        AS Status,
-            NM_NOME_COMP            AS Usuario,
-            NM_PRODUTO              AS Produto,
-            NR_PRECO                AS Preco,
-            NR_PRECO_PROMOCIONAL    AS PrecoPromo,
-            DT_PEDIDO               AS Data,
-            IMG_PRODUTO             AS Imagem
-    FROM TB_PEDIDO AS A
+   SELECT
+        P.id_produto            AS ID,
+        S.id_status_pedido      AS IDStatus,
+        ds_status_pedido        AS Status,
+        nm_cliente              AS Usuario,
+        nm_produto              AS Produto,
+        nr_preco                AS Preco,
+        dt_pedido               AS Data,
+        img_produto             AS Imagem
+    FROM tb_pedido AS A
 
     INNER JOIN
         tb_status_pedido AS S ON A.id_status_pedido = S.id_status_pedido
     INNER JOIN 
-        TB_CADASTRO_USER AS C ON A.ID_USER = C.ID_USER
+        tb_cliente AS C ON A.id_cliente = C.id_cliente
     INNER JOIN
-        TB_PRODUTO AS P ON A.ID_INSTRUMENTOS = P.ID_INSTRUMENTOS
-    WHERE A.ID_USER = ?;
+        tb_produto AS P ON A.id_produto = P.id_produto
+    WHERE id_cliente = ?;
 
     `
 
@@ -99,3 +85,29 @@ export async function MostrarPedidosPorIdUsuario(id) {
 }
 
 
+export async function MostrarPedidoUsuario(id) {
+    const comando = `
+    SELECT
+        P.id_produto            AS ID,
+        S.id_status_pedido      AS IDStatus,
+        ds_status_pedido        AS Status,
+        nm_cliente              AS Usuario,
+        nm_produto              AS Produto,
+        nr_preco                AS Preco,
+        dt_pedido               AS Data,
+        img_produto             AS Imagem
+    FROM tb_pedido AS A
+
+    INNER JOIN
+        tb_status_pedido AS S ON A.id_status_pedido = S.id_status_pedido
+    INNER JOIN 
+        tb_cliente AS C ON A.id_cliente = C.id_cliente
+    INNER JOIN
+        tb_produto AS P ON A.id_produto = P.id_produto
+    WHERE id_pedido = ?;
+
+    `
+
+    const [resp] = await conexao.query(comando, [id]);
+    return resp[0];
+}
