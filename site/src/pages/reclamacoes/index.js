@@ -26,7 +26,7 @@ export default function Reclamacoes(){
             toast.success('reclamação enviada');
             window.location.reload()
         } catch (err) {
-            toast.dark(err.message);
+            toast.dark('Não foi possivel enviar sua reclamação tente novamente mais tarde');
         }
     }
 
@@ -37,7 +37,7 @@ export default function Reclamacoes(){
             
 
         } catch (err) {
-            toast.dark(err.message);
+            toast.dark('Não foi possivel mostrar suas reclamações');
         }
     }
 
