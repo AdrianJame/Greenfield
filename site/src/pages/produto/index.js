@@ -118,7 +118,7 @@ export default function Produto(){
 
                                         <div className='botao-comprar'>
                                             <ToastContainer/>
-                                            <a className='AAAA' onClick={() => AdicionarCarrinho()}> Comprar</a>
+                                            <a className='AAAA' onClick={() => AdicionarCarrinho()}>Adicionar ao Carrinho</a>
                                         </div>
                                     </div>
                                 </section>
