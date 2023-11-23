@@ -4,7 +4,7 @@ import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
 import { Link } from 'react-router-dom';
 import { useState , useEffect} from 'react';
-import { salvarNovoPedido } from '../../api/pedido.js';
+import { PedidoAdd, salvarNovoPedido } from '../../api/pedido.js';
 import storage from 'local-storage';
 import { toast, ToastContainer } from  'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -12,9 +12,10 @@ import { useNavigate } from 'react-router-dom'
 import { Listarporid } from '../../api/prod.js';
 import { listar } from '../../api/endereco.js';
 import axios from 'axios';
+import { BuscarCartaoPorID } from '../../api/cliente.js';
 
 
-export default function Pag () {
+export default function Pag (props) {
 
     const [nome, setNome] = useState('');
     const [numero, setNumero] = useState('');
@@ -23,7 +24,7 @@ export default function Pag () {
     const [cpf, setCpf] = useState('');
     const [datanascimento, setDatanascimento] = useState('');
     const [itens, setItens] = useState([]);
-    const [IDuser, SetIDuser] = useState(0);
+    const [idcliente, SetIdcliente] = useState(0);
     const [produtosIds, setProdutosIds] = useState([]);
     const [enderecos, setEnderecos] = useState([]);
     const [exibirEndereco, setExibirEndereco] = useState(false);
@@ -31,6 +32,7 @@ export default function Pag () {
     const [frete, setFrete] = useState('');
     const [tipo, setTipo] = useState('');
     const [parcela, setParcela] = useState('');
+    const [cartoes, setCartoes] = useState([]);
 
     const navigate = useNavigate();
 
@@ -41,6 +43,45 @@ export default function Pag () {
         const r = await listar(id);
         setEnderecos(r);
     }
+
+    const id = props.produtoId
+    console.log(id);    
+    
+
+    async function AdicionarPedidos() {
+        try {
+           
+
+                if (cartoes.length == 0) {
+
+                    toast.dark('Adicione um cartão!')
+                    
+                    
+                }
+
+                else if (idcliente !== 0 || id !== 0) {
+                    await PedidoAdd(idcliente, id);
+                    toast.success('Pedido Realizado!');
+                }
+
+                else {
+
+                    toast.dark('Pedido não realizado!')
+                }
+
+
+        } catch (err) {
+            console.log(err.message);
+        }
+    }
+
+    async function BuscarCartao() {
+        
+        const r = await BuscarCartaoPorID(idcliente)
+        setCartoes(r)
+
+    }
+
 
     async function salvarCartao(){
         const cartao = {
@@ -97,6 +138,20 @@ export default function Pag () {
             setItens(temp);
         }
     }
+
+    useEffect(() => {
+        
+        if (storage('usuario-logado')) {
+            const usuariologado = storage('usuario-logado');
+            SetIdcliente(usuariologado.id);
+            console.log(idcliente);
+        }
+        
+    }, [storage('usuario-logado')]);
+
+    useEffect(() => {
+        BuscarCartao()
+    }, [idcliente])
 
     function Apareca(){
         setAparecer(!aparecer)
@@ -258,7 +313,7 @@ export default function Pag () {
 
                     </div>
                     <ToastContainer/>
-                    <a>Finalizar pedido</a>
+                    <a onClick={AdicionarPedidos}>Finalizar pedido</a>
 
                 </div>
     

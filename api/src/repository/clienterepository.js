@@ -211,3 +211,20 @@ export async function cadastrarcartao(idCliente, novoPagamento) {
     ]);
     return info.affectedRows;
 }
+
+
+export async function MapearCartaoPorID(id) {
+    const comando = `
+        SELECT
+            id_cartao      AS ID,
+            id_cliente         AS ClienteID,
+            nm_cartao      AS Titular,
+            nr_cartao       AS NumeroDoCartao
+        
+        from tb_cartao
+
+        WHERE id_cliente = ?
+    `
+    const [resp] = await conexao.query(comando, [id])
+    return resp;
+}

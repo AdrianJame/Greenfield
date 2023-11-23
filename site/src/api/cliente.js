@@ -10,3 +10,8 @@ export async function salvarCartao(idCliente, nome, numero, vencimento, codSegur
     const r = await api.post('/cadastro/cartao' + idCliente + '/endereco', { nome, numero, vencimento, codSeguranca, parcelas });
     return r.data;
 }
+
+export async function BuscarCartaoPorID(id) {
+    const resposta = await api.get(`/cliente/cartoes/${id}`)
+    return resposta.data
+}

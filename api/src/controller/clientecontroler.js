@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod, Minhasreclamacoes, deletareclamacao, cadastrarcartao } from "../repository/clienterepository.js";
+import { Loginc, cadastro, inserirReclamacao, Consultar, verificarDuplicadoEmail, verificarDuplicadocpf, MeuCadastro, AlterarInfo, Buscaritemfavorito, AdicionarFavorito, deletarfavorito, deletarfavoritoporprod, Minhasreclamacoes, deletareclamacao, cadastrarcartao, MapearCartaoPorID } from "../repository/clienterepository.js";
 
 const endpoints = Router();
 
@@ -248,6 +248,22 @@ endpoints.post('/cadastro/cartao', async (req, resp) =>{
         resp.status(400).send({
             erro: err.message
         })
+    }
+})
+
+
+endpoints.get('/cliente/cartoes/:id', async (req, resp) => {
+    try {
+        const { id } = req.params
+
+        const resposta = await MapearCartaoPorID(id)
+
+        resp.send(resposta)
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
     }
 })
 
