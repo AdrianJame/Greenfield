@@ -186,7 +186,7 @@ export async function Minhasreclamacoes(id) {
     return dados;
 }
 
-export async function cadastrarcartao(idCliente) {
+export async function cadastrarcartao(idCliente, novoPagamento) {
     const comando = `
             INSERT INTO tb_cartao (
                 id_cliente,
@@ -194,10 +194,10 @@ export async function cadastrarcartao(idCliente) {
                 nr_cartao,
                 dt_vencimento,
                 cod_seguranca,
-                nr_parcelas,
-                ds_forma_pagamento
+                nr_parcelas
+                
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?);
+            VALUES (?, ?, ?, ?, ?, ?);
     `
 
     const [info] = await conexao.query(comando, [
@@ -206,8 +206,8 @@ export async function cadastrarcartao(idCliente) {
         novoPagamento.numero,
         novoPagamento.vencimento,
         novoPagamento.codSeguranca,
-        novoPagamento.parcelas,
-        novoPagamento.formaPagamento
+        novoPagamento.parcelas
+        
     ]);
     return info.affectedRows;
 }

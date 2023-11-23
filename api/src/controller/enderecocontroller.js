@@ -5,7 +5,7 @@ import { Router } from "express";
 const endpoints = Router();
 
 
-endpoints.get('/api/usuario/:id/endereco', async (req, resp) => {
+endpoints.get('/endereco', async (req, resp) => {
     try {
         const id = req.params.id;
         
@@ -22,25 +22,25 @@ endpoints.get('/api/usuario/:id/endereco', async (req, resp) => {
 
 
 
-endpoints.post('/api/usuario/:id/endereco', async (req, resp) => {
+endpoints.post('/endereco', async (req, resp) => {
     try {
         const id = req.params.id;
         const endereco = req.body;
 
 
-        // if(!enderecos.logra)
+        // if(!endereco.logra)
         //     throw new Error('⚠ enderecos obrigatório')
 
-        // if(!enderecos.num)
+        // if(!endereco.num)
         //     throw new Error('⚠ numero obrigatório')
 
-        // if(!enderecos.bairro)
+        // if(!endereco.bairro)
         //     throw new Error('⚠ bairro obrigatorio')
 
-        // if(!enderecos.cidade)
+        // if(!endereco.cidade)
         //     throw new Error('⚠ cidade obrigatorio')
 
-        // if(!enderecos.estado)
+        // if(!endereco.estado)
         //     throw new Error('⚠ estado obrigatorio')
 
         const r = await cadastrarEndereco(id, endereco);

@@ -20,6 +20,19 @@ export async function AdicionarPedido(pedidos) {
     return pedidos;
 };
 
+export async function adicionarProdutoPedido(idPedido, produto) {
+    let comando =
+    `
+        insert into tb_item_pedido (id_pedido, id_produto, qtd_itens, vl_produto)
+                                values(?, ?, ?, ?)
+    `
+
+    let [r] = await conexao.query(comando, [idPedido, produto.id, produto.quantidade, produto.preco]);
+
+    return r;
+}
+
+
 
 export async function MostrarPedidosUsuarios() {
 

@@ -66,18 +66,48 @@ export default function Logradouro () {
         return total.toFixed(2);
     }
 
-    async function salvarEndereco() {
-        try {
-            const id = Storage('usuario-logado').id;
-            const r = await salvar(id, referencia, cep, logradouro, bairro, cidade, estado, numero, complemento);
-            toast.dark('Endereço salvo');
+    async function salvarEndereco(){
+    const endereco = {
 
-            
-        }
-        catch (err) {
-            toast.error(err.response.data.erro);
-        }
-    }   
+        referencia: referencia,
+        cep: cep,
+        logradouro:logradouro,
+        bairro: bairro,
+        cidade: cidade, 
+        estado: estado,
+        numero: numero,
+        complemento: complemento
+       
+      };
+
+      try {
+  
+        let resposta = await axios.post( API_URL + '/endereco', endereco)
+        toast.success('Endereço cadastrado com Sucesso')
+        limpar()
+  
+      } catch (err) {
+        toast.error(err.response.data.erro);
+      };
+    }
+  
+    function limpar() {
+        setReferencia('')
+        setCep('')
+        setLogradouro('')
+        setBairro('')
+        setCidade('')
+        setEstado('')
+        setNumero('')
+        setComplemento('')
+      }
+    
+    function TeclaEnter(e) {
+      if (e.key === 'Enter') {
+        salvarEndereco()
+      }
+  
+    }
 
 
 

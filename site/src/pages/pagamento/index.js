@@ -11,6 +11,8 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import { useNavigate } from 'react-router-dom'
 import { Listarporid } from '../../api/prod.js';
 import { listar } from '../../api/endereco.js';
+import axios from 'axios';
+
 
 export default function Pag () {
 
@@ -30,27 +32,50 @@ export default function Pag () {
     const [tipo, setTipo] = useState('');
     const [parcela, setParcela] = useState('');
 
-
     const navigate = useNavigate();
 
-
     async function carregarEnderecos() {
-        const id = Storage('cliente-logado').id;
+        const id = Storage('usuario-logado').id;
         const r = await listar(id);
         setEnderecos(r);
     }
 
-
-
-
-    // function exibirImagem(item) {
-    //     if (item.produto.imagens.length > 0)
-    //         return API_URL + '/' + item.produto.imagens[0];
-    //     else
-    //         return '/produto-padrao.png';
-    // }
-
-
+    async function salvarCartao(){
+        const cartao = {
+    
+            nome: nome,
+            numero: numero,
+            vencimento:vencimento,
+            codSeguranca: cvv,
+            parcelas: parcela
+          };
+    
+          try {
+      
+            let resposta = await axios.post( API_URL + '/cadastro/cartao', cartao)
+            toast.success('Cartao cadastrado com Sucesso')
+            limpar()
+      
+          } catch (err) {
+            toast.error(err.response.data.erro);
+          };
+        }
+      
+        function limpar() {
+            setNome('')
+            setNumero('')
+            setVencimento('')
+            setCvv('')
+            setParcela('')
+            
+          }
+        
+        function TeclaEnter(e) {
+          if (e.key === 'Enter') {
+            salvarCartao()
+          }
+      
+        }
     async function carregarItens() {
         let carrinho = Storage('carrinho');
         if (carrinho) {
@@ -68,45 +93,7 @@ export default function Pag () {
 
             setItens(temp);
         }
-
     }
-
-
-    // async function salvarPedido() {
-
-    //     try {
-    //         let produtos = Storage('carrinho');
-    //         let id = Storage('usuario-logado').id;
-
-    //         let pedido =
-    //         {   
-
-    //             idEndereco: idEndereco,
-    //             frete: frete,
-    //             tipoPagamento: 'Cartão',
-    //             cartao: {
-    //                 nome: nome,
-    //                 numero: numero,
-    //                 vencimento: vencimento,
-    //                 codSeguranca: cvv,
-    //                 parcelas: parcela,
-    //                 formaPagamento: tipo
-    //             },
-    //             produtos: produtos
-    //         }
-
-    //         const r = await salvarNovoPedido(id, pedido);
-    //         toast.dark('Pedido foi inserido com sucesso');
-    //         Storage('carrinho', []);
-    //         navigate('/');
-
-    //     }
-    //     catch (err) {
-    //         toast.error(err.response.data.erro);
-    //     }
-
-    // }
-
     useEffect(() => {
         carregarEnderecos();
         carregarItens();
@@ -197,8 +184,8 @@ export default function Pag () {
                         </p>
 
 
-                        <select>
-                            <option value={1}>01x à Vista</option>
+                        <select type='option'  value={parcela} onChange={e => setParcela(e.target.value)}>
+                            <option value={1} >01x à Vista</option>
                             <option value={1}>01x sem Juros</option>
                             <option value={2}>02x sem Juros</option>
                             <option value={3}>03x sem Juros</option>
@@ -249,7 +236,7 @@ export default function Pag () {
                         <input placeholder="Ex: 01/01/2002" type='text' value={datanascimento} onChange={e => setDatanascimento(e.target.value)}></input>
 
 
-                        <a className='cadastrarcartao'>Cadastrar Cartão</a>
+                        <a className='cadastrarcartao' onClick={salvarCartao}>Cadastrar Cartão</a>
                     </div>
 
                     </div>

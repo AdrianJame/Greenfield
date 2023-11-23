@@ -28,6 +28,7 @@ export  async function cadastrarEndereco(idCliente, endereco) {
     `
 
     const [info] = await conexao.query(comando, [idCliente, endereco.referencia, endereco.cep, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado, endereco.numero, endereco.complemento]);
+    
     return info.insertId;
 }
 
