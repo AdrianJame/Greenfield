@@ -6,10 +6,12 @@
 })
 
 
-export async function PedidoAdd(idCliente, produtoId) {
+export async function PedidoAdd(idCliente, idEndereco, data, valor, tipo) {
     const r = await api.post('/pedido', {
         idCliente: idCliente,
-        produtoId: produtoId
+        idEndereco: idEndereco,
+        valor: valor,
+        tipo: tipo
     });
 
     return r.data

@@ -34,8 +34,10 @@ export default function Pag () {
 
     const navigate = useNavigate();
 
+    const [aparecer, setAparecer] = useState(true);
+
     async function carregarEnderecos() {
-        const id = Storage('usuario-logado').id;
+        const id = storage('usuario-logado').id;
         const r = await listar(id);
         setEnderecos(r);
     }
@@ -67,7 +69,8 @@ export default function Pag () {
             setVencimento('')
             setCvv('')
             setParcela('')
-            
+            setCpf('')
+            setDatanascimento('')
           }
         
         function TeclaEnter(e) {
@@ -77,7 +80,7 @@ export default function Pag () {
       
         }
     async function carregarItens() {
-        let carrinho = Storage('carrinho');
+        let carrinho = storage('carrinho');
         if (carrinho) {
 
             let temp = [];
@@ -94,6 +97,21 @@ export default function Pag () {
             setItens(temp);
         }
     }
+
+    function Apareca(){
+        setAparecer(!aparecer)
+        if(aparecer == false){
+            const editar = document.getElementById('faixa2')
+            editar.classList.remove('aparecer')
+        }
+        else if(aparecer == true){
+            const editar = document.getElementById('faixa2')
+            editar.classList.add('aparecer')
+        }
+    }
+
+
+
     useEffect(() => {
         carregarEnderecos();
         carregarItens();
@@ -139,10 +157,9 @@ export default function Pag () {
                             <p>Frete: expresso</p>
                             <p>Entrega em até 5 dias uteís</p>
                         </div>
-
+                        
+                        <p className='para'>R$ 8.99</p>
                     </div>
-
-                    
 
                 </div>
 
@@ -161,7 +178,7 @@ export default function Pag () {
                         
                         <div className='conteudo-pagamento-seletor'>
                         
-                            <input type='checkbox'></input>
+                            <input onClick={() => Apareca()} type='checkbox'></input>
             
                         </div>
 
@@ -171,9 +188,9 @@ export default function Pag () {
 
             </div>
 
-            <div className='faixa2'>
+            <div className='faixa2' id='faixa2'>
 
-                <div className='conteudo'>
+                <div className='conteudo' id='conteudo'>
 
                     <div className='texto-e-inputs'>
 
@@ -224,7 +241,7 @@ export default function Pag () {
 
                     </div>
 
-                    <div className='dir'>
+                    <div  className='dir'>
                         <p>
                             CPF do titular do cartão
                         </p>

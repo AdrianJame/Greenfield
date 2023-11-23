@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 export default function Responder(){
     const navigate = useNavigate();
     
-    const[resposta, setReposta] = useState('');
+    const[resposta, setReposta] = useState();
 
     const[lista, setLista] = useState([]);
 

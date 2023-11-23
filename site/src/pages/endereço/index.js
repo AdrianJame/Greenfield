@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.developm
 import { salvar } from '../../api/endereco.js';
 import { toast, ToastContainer } from  'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
+import { PedidoAdd } from '../../api/pedido';
 
 
 
@@ -27,7 +28,8 @@ export default function Logradouro () {
     const[numero, setNumero] = useState()
     const[cep, setCep] = useState()
     const[referencia, setReferencia] = useState()
-
+    const[frete, setFrete] = useState(8.99)
+    const [idCliente, setIdCliente] = useState();
 
     async function carregarcarrinho(){
         let carrinho = localStorage('carrinho')
@@ -57,7 +59,7 @@ export default function Logradouro () {
         return d
     }
 
-    function Total(){
+    function Totalproduto(){
         let total = 0;
 
         for(let item of itens){
@@ -65,6 +67,14 @@ export default function Logradouro () {
         }
         return total.toFixed(2);
     }
+
+    function Total(){
+        let produtos = Totalproduto()
+        let total = Number(produtos) + 8.99;
+
+        return total.toFixed(2);
+    }
+    console.log(Totalproduto())
 
     async function salvarEndereco(){
     const endereco = {
@@ -82,7 +92,9 @@ export default function Logradouro () {
 
       try {
   
-        let resposta = await axios.post( API_URL + '/endereco', endereco)
+        const resposta = await axios.post( API_URL + '/endereco', endereco)
+        let ide = (resposta.id)
+        alert(ide)
         toast.success('Endereço cadastrado com Sucesso')
         limpar()
   
@@ -113,6 +125,8 @@ export default function Logradouro () {
 
     useEffect(() => {
         carregarcarrinho()
+        const usuario = localStorage('usuario-logado');
+        setIdCliente(usuario.id_cliente);
     }, [])
 
     
@@ -121,14 +135,32 @@ export default function Logradouro () {
     const checkCep = (e) => {
         const cep = e.target.value.replace(/\D/g, '');
         console.log(cep)
-        fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
-            console.log(data)
-            setLogradouro(data.logradouro)
-            setBairro(data.bairro)
-            setCidade(data.localidade)
-            setEstado(data.uf)
-        });
+        if(cep != ''){
+            fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
+                console.log(data)
+                setLogradouro(data.logradouro)
+                setBairro(data.bairro)
+                setCidade(data.localidade)
+                setEstado(data.uf)
+            });
+        }
 
+        else{
+
+        }
+
+    }
+
+
+    async function SalvarPedido(){
+
+
+        const novoProduto = await PedidoAdd(idCliente, 1, data, valor, );
+      
+    
+                    toast.dark('pedido Cadastrado!')
+                    console.log(novoProduto.id);
+                   
     }
 
     
@@ -170,6 +202,25 @@ export default function Logradouro () {
                 </div>
 
                 
+                <div className='frete-e-pagamento'>
+
+                    <div className='cont-esq'>
+
+                        <div className='circle-verde'>
+                            <img src='./assets/images/ping-verde.svg'/>
+                        </div>
+
+                        <div className='desc-frete'>
+                            <p>Frete: expresso</p>
+                            <p>Entrega em até 5 dias uteís</p>
+                        </div>
+                        
+                        <p className='para'>R$ 8.99</p>
+                    </div>
+
+                </div>
+
+                
 
                 <div className='logradouro-e-total-pedido'>
 
@@ -196,15 +247,15 @@ export default function Logradouro () {
                         </div>
 
                         <ToastContainer/>
-                        <a onClick={salvarEndereco}>SALVAR ALTERAÇÕES</a>
+                        <a onClick={salvarEndereco}>Salvar Endereço</a>
 
                     </div>
 
                     <div className='faixa-04'>
 
                         <div className='pagamento'>
-                                    <section className='pag-p1'><p>Subtotal</p> <p>R${Total()}</p></section>
-                                <section className='pag-p1'><p>Frete</p> <p>R$0.00</p></section>
+                                    <section className='pag-p1'><p>Subtotal</p> <p>R${Totalproduto()}</p></section>
+                                <section className='pag-p1'><p>Frete</p> <p>R${frete}</p></section>
                                 
                                 <div className='pag-linha'></div>
 

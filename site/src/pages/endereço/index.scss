@@ -1,4 +1,7 @@
 .page-endereco {
+    display: flex;
+    flex-direction: column;
+
     background-color: #f6f6f6;
 
     width: 100%;
@@ -15,6 +18,62 @@
 
         font: 35px 'Oswald', sans-serif;
         font-weight: bolder;
+    }
+
+    .frete-e-pagamento {
+                
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+                
+        background-color: #fff;
+        width: 50vw;
+        height: 16vh;
+        padding: 40px;
+        margin: 50px 0px;
+
+        .cont-esq {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+    
+            .circle-verde {
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            
+            
+                background-color: #fff;
+                border-radius: 100%;
+                        
+                width: 70px;
+                height: 70px;
+            
+                        
+                border: 2px solid #29CD00;
+            
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            
+            .para{
+                position: absolute;
+
+                top: 42px;
+                right: 20px;
+            }
+    
+            .desc-frete {
+                margin: 15px;
+            }
+                    
+        }
+
     }
     
     .status-pedido {
@@ -256,6 +315,8 @@
 
                 text-decoration: none;
                 font: 15px 'Oswald', sans-serif; 
+
+                cursor: pointer;
 
                 width: 40vw;
                 height: 40px;
