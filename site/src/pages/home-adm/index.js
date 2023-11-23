@@ -53,10 +53,10 @@ useEffect(() => {
                   <p>Cadastre seus produtos e altere-os</p>
               </Link>
 
-              <Link className='card'>
+              <Link className='card' to={'/responder'}>
                   <img src='./assets/images/image 265.svg'></img>
-                  <h2>ANÁLISE</h2>
-                  <p>Confira gráficos com estatísticas sobre suas vendas</p>
+                  <h2>Reclamações</h2>
+                  <p>Confira e Responda reclamações de clientes</p>
               </Link>
 
           </div>

@@ -33,22 +33,6 @@ export default function Menuadm(){
             generateRandomColor()
     }, [])
 
-        function Levaremail(){
-            let x = ''
-          if(id == 1){
-            }
-          else  if(id == 2){
-                
-            }
-          else  if(id == 3){
-                
-            }
-           else if(id == 4){
-                
-            }
-
-            return x
-        }
 
 
 async function Trocar(){
@@ -78,7 +62,7 @@ async function Trocar(){
             </section>
 
             <section className='menu-meio'>
-                <Link>Consultar Análise</Link>
+                <Link to={'/produtosadm'}>Consutar Produtos</Link>
                 <Link to={'/responder'}>Consultar Reclamações</Link>
                 <Link to={'/homeadm'}>Home</Link>
                 <Link>Status de Pedido</Link>

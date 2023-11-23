@@ -48,46 +48,6 @@ export default function Carrinho () {
         return d
     }
 
-    function Cupomtotal(){
-        if(cupom == 'Greenfield'){
-            let m = Total() * 0.20;
-            let x = Total() - m
-    
-            return x.toFixed(2)
-        }
-
-        else if(cupom == 'Adrian'){
-            let m = Total() * 0.10;
-            let x = Total() - m
-    
-            return x.toFixed(2)
-        }
-        else if(cupom == 'Pedrol'){
-            let m = Total() * 0.10;
-            let x = Total() - m
-    
-            return x.toFixed(2)
-        }
-        else if(cupom == 'Pedroh'){
-            let m = Total() * 0.10;
-            let x = Total() - m
-    
-            return x.toFixed(2)
-        }
-        else if(cupom == 'Matheus'){
-            let m = Total() * 0.10;
-            let x = Total() - m
-    
-            return x.toFixed(2)
-        }
-
-        else{
-            let x = Total()
-
-            return x
-        }
-        
-    }
 
 
 
@@ -179,8 +139,7 @@ export default function Carrinho () {
                     
                     <div className='pag-linha'></div>
 
-                    <section className='pag-p1'><p>Desconto com cupom</p> <p>R$0.00</p></section>
-
+                    <section className='faixa-verde'><p className='total'>Total</p> <p>R${Total()}</p></section>
 
                     <section className='pag-parcela'>
                         <img src='/assets/images/cartao.svg'/>
