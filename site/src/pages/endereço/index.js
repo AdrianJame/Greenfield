@@ -152,16 +152,16 @@ export default function Logradouro () {
     }
 
 
-    async function SalvarPedido(){
+    // async function SalvarPedido(){
 
 
-        const novoProduto = await PedidoAdd(idCliente, 1, data, valor, );
+    //     const novoProduto = await PedidoAdd(idCliente, 1, data, valor, );
       
     
-                    toast.dark('pedido Cadastrado!')
-                    console.log(novoProduto.id);
+    //                 toast.dark('pedido Cadastrado!')
+    //                 console.log(novoProduto.id);
                    
-    }
+    // }
 
     
 
