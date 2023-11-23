@@ -201,23 +201,25 @@ export default function Logradouro () {
                 
                 </div>
 
-                
-                <div className='frete-e-pagamento'>
+                <div className='frete'>
 
-                    <div className='cont-esq'>
+                    <div className='frete-e-pagamento'>
 
-                        <div className='circle-verde'>
-                            <img src='./assets/images/ping-verde.svg'/>
+                        <div className='cont-esq'>
+
+                            <div className='circle-verde'>
+                                <img src='./assets/images/ping-verde.svg'/>
+                            </div>
+
+                            <div className='desc-frete'>
+                                <p>Frete: expresso</p>
+                                <p>Entrega em até 5 dias uteís</p>
+                            </div>
+                            
+                            <p className='para'>R$ 8.99</p>
                         </div>
 
-                        <div className='desc-frete'>
-                            <p>Frete: expresso</p>
-                            <p>Entrega em até 5 dias uteís</p>
-                        </div>
-                        
-                        <p className='para'>R$ 8.99</p>
                     </div>
-
                 </div>
 
                 

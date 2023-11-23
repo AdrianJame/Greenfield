@@ -10,6 +10,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    .frete{
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+    }
 
     h1 {
         text-align: center;
