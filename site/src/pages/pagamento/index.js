@@ -38,11 +38,11 @@ export default function Pag (props) {
 
     const [aparecer, setAparecer] = useState(true);
 
-    async function carregarEnderecos() {
-        const id = storage('usuario-logado').id;
-        const r = await listar(id);
-        setEnderecos(r);
-    }
+    // async function carregarEnderecos() {
+    //     const id = storage('usuario-logado').id;
+    //     const r = await listar(id);
+    //     setEnderecos(r);
+    // }
 
     const id = props.produtoId
     console.log(id);    
@@ -98,9 +98,10 @@ export default function Pag (props) {
             let resposta = await axios.post( API_URL + '/cadastro/cartao', cartao)
             toast.success('Cartao cadastrado com Sucesso')
             limpar()
+            Apareca2()
       
           } catch (err) {
-            toast.error(err.response.data.erro);
+            toast.error('Preencha todos os campos');
           };
         }
       
@@ -139,15 +140,7 @@ export default function Pag (props) {
         }
     }
 
-    useEffect(() => {
-        
-        if (storage('usuario-logado')) {
-            const usuariologado = storage('usuario-logado');
-            SetIdcliente(usuariologado.id);
-            console.log(idcliente);
-        }
-        
-    }, [storage('usuario-logado')]);
+    
 
     useEffect(() => {
         BuscarCartao()
@@ -165,10 +158,15 @@ export default function Pag (props) {
         }
     }
 
+    function Apareca2(){
+            const editar = document.getElementById('finalizar')
+            editar.classList.add('aparecer')
+    }
+
 
 
     useEffect(() => {
-        carregarEnderecos();
+        //carregarEnderecos();
         carregarItens();
     }, [])
     
@@ -257,7 +255,7 @@ export default function Pag (props) {
 
 
                         <select type='option'  value={parcela} onChange={e => setParcela(e.target.value)}>
-                            <option value={1} >01x à Vista</option>
+                            <option>Escolha a quantidade de parcelas</option>
                             <option value={1}>01x sem Juros</option>
                             <option value={2}>02x sem Juros</option>
                             <option value={3}>03x sem Juros</option>
@@ -313,7 +311,13 @@ export default function Pag (props) {
 
                     </div>
                     <ToastContainer/>
+<<<<<<< HEAD
                     <a onClick={AdicionarPedidos}>Finalizar pedido</a>
+=======
+                    <div className='finalizar' id='finalizar'>
+                        <a>Finalizar pedido</a>
+                    </div>
+>>>>>>> 7b021035edbadffff2441ac47d3d3d74425e1ff4
 
                 </div>
     
