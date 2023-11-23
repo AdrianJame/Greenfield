@@ -139,17 +139,7 @@ export default function Logradouro () {
                 
                 </div>
 
-                <div className='faixa-frete'>
-
-                    <div className='options-frete'>
-
-                    </div>
-
-                    <div className='options-frete'>
-                        
-                    </div>
-                    
-                </div>
+                
 
                 <div className='logradouro-e-total-pedido'>
 

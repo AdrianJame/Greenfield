@@ -133,21 +133,21 @@ function tecla(e) {
                                 <a onClick={Vercadastro} to={'/meucadastro'} className='card'>
                                 <img className='imagemcard' src='./assets/images/image 227.svg'/>
                                 </a>
-                                <p className='titulo-card'>Meu Cadastro</p>
+                                <h1 className='titulo-card'>Meu Cadastro</h1>
                             </div>
 
                             <div className='agrup'>
                                 <a onClick={Alterarinfo} className='card'>
                                     <img className='imagemcard' src='./assets/images/image 230 (1).svg' />
                                 </a>
-                                <p className='titulo-card'> Alterar Informações</p>
+                                <h1 className='titulo-card'> Alterar Informações</h1>
                             </div>
 
                             <div className='agrup'>
                                 <Link to={'/meuspedidos'} className='card'>
                                     <img className='imagemcard' src='./assets/images/image 231.svg'/>
                                 </Link>
-                                <p className='titulo-card'> Meus Pedidos </p>
+                                <h1 className='titulo-card'> Meus Pedidos </h1>
                             </div>
 
                         </div>
@@ -158,21 +158,21 @@ function tecla(e) {
                                 <Link className='card' to={'/favorito'}>
                                     <img className='imagemcard' src='./assets/images/image 233.svg' />
                                 </Link>
-                                <p className='titulo-card'> Favoritos </p>
+                                <h1 className='titulo-card'> Favoritos </h1>
                             </div>
 
                             <div className='agrup'>
                                 <Link to={'/reclamacoes'} className='card'>
                                     <img className='imagemcard' src='./assets/images/image 236.svg' />
                                 </Link>
-                                <p className='titulo-card'> Reclamações</p>
+                                <h1 className='titulo-card'> Reclamações</h1>
                             </div>
 
                             <div onClick={sairClick} className='agrup'>
                                 <Link className='card'>
                                     <img className='imagemcard' src='./assets/images/image 237.svg' />
                                 </Link>
-                                <p className='titulo-card'> Sair </p>
+                                <h1 className='titulo-card'> Sair </h1>
                             </div>
                             
                         </div>

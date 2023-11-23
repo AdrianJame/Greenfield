@@ -31,7 +31,7 @@ export default function Compcarrinho({item: { produto }, Removeritem}){
     function Calculosubtotal(){
         const subtotal = qtdproduto * produto.vl_preco
 
-        return subtotal;
+        return subtotal.toFixed(2);
     }
 
     function Alterarquant(){
