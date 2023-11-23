@@ -28,20 +28,20 @@ endpoints.post('/endereco', async (req, resp) => {
         const endereco = req.body;
 
 
-        // if(!endereco.logra)
-        //     throw new Error('⚠ enderecos obrigatório')
+         if(!endereco.logradouro)
+             throw new Error('⚠ logradouro obrigatório')
 
-        // if(!endereco.num)
-        //     throw new Error('⚠ numero obrigatório')
+         if(!endereco.numero)
+             throw new Error('⚠ numero obrigatório')
 
-        // if(!endereco.bairro)
-        //     throw new Error('⚠ bairro obrigatorio')
+         if(!endereco.bairro)
+             throw new Error('⚠ bairro obrigatorio')
 
-        // if(!endereco.cidade)
-        //     throw new Error('⚠ cidade obrigatorio')
+         if(!endereco.cidade)
+             throw new Error('⚠ cidade obrigatorio')
 
-        // if(!endereco.estado)
-        //     throw new Error('⚠ estado obrigatorio')
+         if(!endereco.estado)
+             throw new Error('⚠ estado obrigatorio')
 
         const r = await cadastrarEndereco(id, endereco);
         resp.status(204).send();
