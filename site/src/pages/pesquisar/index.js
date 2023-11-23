@@ -67,7 +67,7 @@ export default function Pesquisar(){
                             </div>
                         </div>
 
-                        <button onClick={() => navigate('/produto/' + item.id_produto)}><img src='/assets/images/carrinho-branco.png'/> Comprar</button>
+                        <button onClick={() => navigate('/produto/' + item.id_produto)}> Ver produto</button>
                     </div>
                 )}
 
