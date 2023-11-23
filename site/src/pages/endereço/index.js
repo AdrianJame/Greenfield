@@ -56,7 +56,7 @@ export default function Logradouro () {
         let x = Total() * 0.10;
         let d = Total() - x
 
-        return d
+        return d.toFixed(2);
     }
 
     function Totalproduto(){
