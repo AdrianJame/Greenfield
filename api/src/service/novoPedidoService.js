@@ -14,15 +14,18 @@ export function lerValorFrete(frete) {
 }
 
 
-export function criarNovoPedido(idCliente, info) {
+export function criarNovoPedido(idUsuario, info) {
     
     let agora = new Date();
     let valorFrete = lerValorFrete(info.frete);
+    let notaFiscal = criarNotaFiscal();
 
     return {
-        idCliente: idCliente,
+        idUsuario: idUsuario,
         idEndereco: info.idEndereco,
         data: agora,
+        notaFiscal: notaFiscal,
+        tipoFrete: info.frete,
         valorFrete: valorFrete,
         status: 'Confirmando Pagamento',
         tipoPagamento: 'Cartão'

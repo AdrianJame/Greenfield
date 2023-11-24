@@ -63,7 +63,7 @@ endpoints.get('/categoria/:id', async (req, resp) => {
 
 endpoints.get('/produto/:id', async (req, resp) => {
     try{
-        const {id} = req.params
+        const {id} = req.params.id
         let dados = await Listarporid(id)
         resp.send(dados);
     }

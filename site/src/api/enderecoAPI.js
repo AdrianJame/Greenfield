@@ -13,7 +13,7 @@ export async function salvar(idCliente, referencia, cep, logradouro, bairro, cid
 
 
 export async function listar(idCliente) {
-    const r = await api.get('/endereco/' + idCliente);
+    const r = await api.get('/api/usuario/' + idCliente + '/endereco');
     return r.data;
 }
 

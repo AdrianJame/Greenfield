@@ -26,6 +26,7 @@ import Favorito from './pages/favoritos';
 import Sobre from './pages/sobre';
 import Produto from './pages/produto';
 import Responder from './pages/responder';
+import Pedido from './pages/pedido'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -55,6 +56,7 @@ root.render(
         <Route path='/favorito' element={<Favorito/>}/>
         <Route path='/sobre' element={<Sobre/>} />
         <Route path='/responder' element={<Responder/>} />
+        <Route path='/pedido' element={<Pedido/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

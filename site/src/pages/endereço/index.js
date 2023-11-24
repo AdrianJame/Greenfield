@@ -8,10 +8,10 @@ import axios from 'axios';
 import Compcarrinho from '../../components/compcarrinho';
 import localStorage from 'local-storage';
 import { useNavigate } from 'react-router-dom/dist/umd/react-router-dom.development.js';
-import { salvar } from '../../api/endereco.js';
+import { salvar } from '../../api/enderecoAPI.js';
 import { toast, ToastContainer } from  'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css';
-import { PedidoAdd } from '../../api/pedido';
+import { PedidoAdd } from '../../api/pedidoAPI.js';
 
 
 

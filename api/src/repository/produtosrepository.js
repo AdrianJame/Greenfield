@@ -24,7 +24,7 @@ export async function ListarProdutosPorId(id) {
        where id_produto = ?
         `
 
-    const [registros] = await con.query(comando, [id]);
+    const [registros] = await conexao.query(comando, [id]);
     return registros[0];
 }
 

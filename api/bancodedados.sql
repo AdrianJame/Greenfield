@@ -97,32 +97,30 @@ create table tb_status_pedido (
     ds_status_pedido 	varchar(100) not null
 );
 
-
-CREATE TABLE tb_pedido(
-	id_pedido int PRIMARY KEY auto_increment,
-	id_cliente int,
-    id_produto int,
-    id_status_pedido int,
-	id_cliente_endereco int,
-	dt_pedido datetime,
-    
-    foreign key (id_cliente) references tb_cliente (id_cliente),
-    foreign key (id_status_pedido) references tb_status_pedido(id_status_pedido),
-    foreign key (id_cliente_endereco) references tb_endereco (id_cliente_endereco),
-    foreign key (id_produto) references tb_produto (id_produto)
-
-
+create table tb_pedido (
+	id_pedido			int primary key auto_increment,
+    id_usuario			int,
+    id_usuario_endereco	int,
+    dt_pedido			datetime,
+    cod_nota_fiscal		varchar(200),
+    tp_frete			varchar(200),
+    vl_frete			decimal(15,2),
+    ds_status			varchar(200),
+    tp_pagamento		varchar(200),
+    foreign key (id_usuario) references tb_usuario (id_usuario),
+    foreign key (id_usuario_endereco) references tb_usuario_endereco (id_usuario_endereco)
 );
 
-create table tb_cartao(
-	id_cartao	int primary key auto_increment,
-    id_cliente			int,
+create table tb_pagamento_cartao (
+	id_pagamento_cartao	int primary key auto_increment,
+    id_pedido			int,
     nm_cartao			varchar(200),
     nr_cartao			varchar(200),
     dt_vencimento		varchar(200),
     cod_seguranca		varchar(200),
     nr_parcelas			int,
-    foreign key (id_cliente) references tb_cliente (id_cliente)
+    ds_forma_pagamento	varchar(200),
+    foreign key (id_pedido) references tb_pedido (id_pedido)
 );
 
 

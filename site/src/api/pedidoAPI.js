@@ -34,3 +34,8 @@ export async function MostrarPedidosUsuario(id) {
     const resposta = await api.get(`/pedidos/usuario/${id}`)
     return resposta.data;
 }
+
+export async function salvarNovoPedido(idCliente, novoPedido) {
+    const r = await api.post('/api/pedido/' + idCliente, novoPedido);
+    return r.data;
+}

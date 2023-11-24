@@ -4,13 +4,13 @@ import RodapeGreenfield from '../../components/rodape'
 import { API_URL } from '../../constants.js';
 import { Link } from 'react-router-dom';
 import { useState , useEffect} from 'react';
-import { PedidoAdd, salvarNovoPedido } from '../../api/pedido.js';
+import { PedidoAdd, salvarNovoPedido } from '../../api/pedidoAPI.js';
 import storage from 'local-storage';
 import { toast, ToastContainer } from  'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { useNavigate } from 'react-router-dom'
 import { Listarporid } from '../../api/prod.js';
-import { listar } from '../../api/endereco.js';
+import { listar } from '../../api/enderecoAPI.js';
 import axios from 'axios';
 import { BuscarCartaoPorID } from '../../api/cliente.js';
 
@@ -311,13 +311,13 @@ export default function Pag (props) {
 
                     </div>
                     <ToastContainer/>
-<<<<<<< HEAD
+
                     <a onClick={AdicionarPedidos}>Finalizar pedido</a>
-=======
+
                     <div className='finalizar' id='finalizar'>
                         <a>Finalizar pedido</a>
                     </div>
->>>>>>> 7b021035edbadffff2441ac47d3d3d74425e1ff4
+
 
                 </div>
     
