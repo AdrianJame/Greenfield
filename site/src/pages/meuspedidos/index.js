@@ -21,35 +21,6 @@ export default function Meuspedidos(){
       }, [])
 
     
-    // const navigate = useNavigate();
-
-    // let login = get('user-login');
-
-    // if (!login) {
-    //     navigate('/login');
-    // }
-
-    // const [produtosPedidos, setProdutosPedidos] = useState([]);
-    // const [carregando, setCarregando] = useState(false);
-
-    // async function buscarPedidos() {
-    //     setCarregando(true);
-
-    //     try {
-    //         let pedidos = await buscarPedidoPorCliente(login.id);
-
-    //         let produtos = await buscarProdutosArrayPedidos(pedidos);
-
-    //         setProdutosPedidos(produtos);
-
-    //     } catch (error) {
-    //         console.log(error);
-    //         toast.error('Não foi possível carregar os seus pedidos.')
-    //     }
-
-    //     setCarregando(false);
-    // }
-
 
 
     return(
@@ -76,17 +47,17 @@ export default function Meuspedidos(){
                                 
                                     </div>
     
-                            <h6>ver resumo</h6>
+                           
                         </div>
                         
                         <div className='dt-pedido'>
-                            <p></p>
+                            <p>Status do Pedido: {item.ds_status}</p>
                         </div>
                         
     
                         <div className='detalhe-pedido'>
-                            <h6>mais detalhes do pedido</h6>
-                            <img src='./assets/images/image 241.svg' />
+                            
+                            
                         </div>
     
     
@@ -95,6 +66,13 @@ export default function Meuspedidos(){
     
                             <div className='linha'>
                                 <div className='pagamento'>
+
+                                <img src='./assets/images/image-cartao-credito.svg' />
+
+                                <p> tet{item.tb_pagamento}</p>
+                                
+                                
+
                                         
                                 </div>
     

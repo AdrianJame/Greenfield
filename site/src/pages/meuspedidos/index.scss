@@ -111,19 +111,31 @@
                 display: flex;
                 flex-direction: row;
                 width: 100%;
-                justify-content: space-between;
+                
             }
 
             .pagamento{
-                height: 180px;
-                width: 850px;
+                height: 70px;
+                width: 375px;
                 background-color: white;
+                display: flex;
+                align-items: center;
+                padding-left: 25px;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
             }
 
             .pagar{
                height: 230px;
                background-color: white;
                width: 420px;
+               
+            }
+
+            img{
+                width: 100%;
+                max-width: 60px;
             }
         }
 
