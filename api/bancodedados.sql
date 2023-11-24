@@ -99,17 +99,22 @@ create table tb_status_pedido (
 
 create table tb_pedido (
 	id_pedido			int primary key auto_increment,
-    id_usuario			int,
-    id_usuario_endereco	int,
+    id_cliente			int,
+    id_cliente_endereco	int,
     dt_pedido			datetime,
     cod_nota_fiscal		varchar(200),
     tp_frete			varchar(200),
     vl_frete			decimal(15,2),
     ds_status			varchar(200),
     tp_pagamento		varchar(200),
-    foreign key (id_usuario) references tb_usuario (id_usuario),
-    foreign key (id_usuario_endereco) references tb_usuario_endereco (id_usuario_endereco)
+    foreign key (id_cliente) references tb_usuario (id_cliente),
+    foreign key (id_cliente_endereco) references tb_endereco (id_cliente_endereco)
 );
+
+select * from tb_pedido 
+inner join tb_cliente
+on tb_pedido.id_cliente = tb_cliente.id_cliente
+where tb_pedido.id_cliente = 2;
 
 create table tb_pagamento_cartao (
 	id_pagamento_cartao	int primary key auto_increment,

@@ -19,7 +19,7 @@ export default function Pedido() {
     const [itens, setItens] = useState([]);
     const [enderecos, setEnderecos] = useState([]);
     const [exibirEndereco, setExibirEndereco] = useState(false);
-    const [pedidos, setPedidos] = useState([])
+    
 
     const [idEndereco, setIdEndereco] = useState();
     
@@ -52,9 +52,7 @@ export default function Pedido() {
     }
 
 
-    async function Busacarpedidos(){
-        
-    }
+   
 
 
 

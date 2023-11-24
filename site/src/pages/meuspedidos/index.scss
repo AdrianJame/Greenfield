@@ -55,9 +55,17 @@
             }
         }
 
+        .esquerda{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
         .esquerda img{
             height: 30px;
             width: 30px;
+
         }
 
         .dt-pedido{

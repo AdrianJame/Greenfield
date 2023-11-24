@@ -87,17 +87,15 @@ export async function MostrarPedidosPorIdUsuario(id) {
 
 export async function MostrarPedidoUsuario(id) {
     const comando = `
-    SELECT * from tb_pedido
-    INNER JOIN
-        tb_cliente ON tb_pedido.id_cliente = tb_cliente.id_cliente
-    INNER JOIN
-        tb_produto ON tb_pedido.id_produto = tb_produto.id_produto
-    WHERE tb_pedido.id_cliente = ?;
+    select * from tb_pedido 
+    inner join tb_cliente
+    on tb_pedido.id_cliente = tb_cliente.id_cliente
+    where tb_pedido.id_cliente = ?;
 
     `
 
     const [resp] = await conexao.query(comando, [id]);
-    return resp[0];
+    return resp;
 }
 
 

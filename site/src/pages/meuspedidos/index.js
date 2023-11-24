@@ -1,10 +1,24 @@
 import './index.scss';
 import Cabecalhocomlogin from '../../components/cabcomlogin';
 import RodapeGreenfield from '../../components/rodape';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { API_URL } from '../../constants';
+import localStorage from 'local-storage';
 
 export default function Meuspedidos(){
 
+    const [pedidos, setPedidos] = useState([])
 
+    async function Busacarpedidos(){
+        const id = localStorage('usuario-logado').id_cliente;
+        let r = await axios.get(API_URL + '/pedido/usuario/' + id)
+        setPedidos(r.data)
+    }
+
+    useEffect(() => {
+        Busacarpedidos()
+      }, [])
 
     
     // const navigate = useNavigate();
@@ -45,7 +59,10 @@ export default function Meuspedidos(){
             <div className='faixa1'>
                 <h1>MEUS PEDIDOS</h1>
                 
-
+                {pedidos.map(item =>
+                                
+                            
+                                
                 <div className='pedido'>
                 
                     <h3><span>MINHA CONTA</span> - MEUS PEDIDOS </h3>
@@ -53,9 +70,11 @@ export default function Meuspedidos(){
 
                     
                             <div className='pedido-info'>
-                            <div className='esquerda'>
+                                 <div className='esquerda'>
                                 <img src='./assets/images/image 180.svg' />
-                            </div>
+                                <h4>Pedido N°: {item.id_pedido} </h4>
+                                
+                                    </div>
     
                             <h6>ver resumo</h6>
                         </div>
@@ -79,15 +98,14 @@ export default function Meuspedidos(){
                                         
                                 </div>
     
-                                <div className='pagar'>
-                                    
-                                </div>
+                              
                             </div>
-                        </div>
+                    </div>
                         
                 
 
                 </div>
+                )}
                
                 
 
