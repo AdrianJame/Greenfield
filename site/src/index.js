@@ -27,6 +27,7 @@ import Sobre from './pages/sobre';
 import Produto from './pages/produto';
 import Responder from './pages/responder';
 import Pedido from './pages/pedido'
+import Pedidosadm from './pages/pedidosadm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -57,6 +58,8 @@ root.render(
         <Route path='/sobre' element={<Sobre/>} />
         <Route path='/responder' element={<Responder/>} />
         <Route path='/pedido' element={<Pedido/>} />
+        <Route path='/pedidosadm' element={<Pedidosadm/>} />
+        
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

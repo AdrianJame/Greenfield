@@ -16,16 +16,19 @@ export async function AdicionarPedido(pedidos) {
     return pedidos;
 };
 
-export async function AlterarStatusPedido (status, id) {
+export async function AlterarStatusPedido (pedido, id) {
     const comando = `
         UPDATE tb_pedido
         SET
-            id_status_pedido = ?
+            ds_status= ?
         WHERE id_pedido = ?
        
     `;
 
-    const [ resp ] = await conexao.query(comando, [status.IdStatus, id])
+    const [ resp ] = await conexao.query(comando, [
+        pedido.status,
+        id
+    ])
     return resp.affectedRows
 }   
 
@@ -177,31 +180,14 @@ export async function inserirPedidoItem(idPedido, idProduto, qtd, preco){
 }
 
 
-export async  function consultarTodosPedidos(idCliente) {
-    let comando = `
-    SELECT  tb_pedido.id_pedido,
-            tb_pedido.id_cliente,
-            tb_pedido.id_cliente_endereco,
-            tb_pedido.dt_pedido,
-            tb_pedido.cod_nota_fiscal,
-            tb_pedido.tp_frete,
-            tb_pedido.vl_frete,
-            tb_pedido.ds_status,
-            tb_pedido.tp_pagamento,
-            tb_pedido_item.id_pedido_item,
-            tb_pedido_item.id_produto,
-            tb_pedido_item.qtd_itens,
-            tb_pedido_item.vl_produto
-        FROM
-            tb_pedido
-        INNER JOIN
-            tb_pedido_item ON tb_pedido.id_pedido = tb_pedido_item.id_pedido
-        WHERE id_cliente = ?
-
+export async  function consultarTodosPedidos() {
+    let comando = `select * from tb_pedido 
+    inner join tb_cliente
+    on tb_pedido.id_cliente = tb_cliente.id_cliente
 
     `
   
-    const [dados] = await conexao.query(comando, [idCliente]);
+    const [dados] = await conexao.query(comando);
     return dados;
   }
 

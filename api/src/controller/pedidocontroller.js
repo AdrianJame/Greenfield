@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AdicionarPedido, AlterarStatusPedido, MostrarPedidoUsuario, MostrarPedidosPorIdUsuario, MostrarPedidosUsuarios, inserirPagamento, inserirPedido, inserirPedidoItem } from "../repository/pedidorepository.js";
+import { AdicionarPedido, AlterarStatusPedido, MostrarPedidoUsuario, MostrarPedidosPorIdUsuario, MostrarPedidosUsuarios, consultarTodosPedidos, inserirPagamento, inserirPedido, inserirPedidoItem } from "../repository/pedidorepository.js";
 import { criarNovoPedido } from "../service/novoPedidoService.js";
 import { Listarporid } from "../repository/produtosrepository.js";
 
@@ -82,7 +82,11 @@ endpoints.get('/pedidos/usuario/:id', async (req, resp) => {
 
 
 
+endpoints.get('/consultarpedidos', async(req, resp) =>{
 
+    let r= await consultarTodosPedidos()
+    resp.send(r)
+})
 
 endpoints.post('/api/pedido/:idCliente', async (req, resp) => {
     try {

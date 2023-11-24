@@ -127,6 +127,8 @@ async function Deletar(id){
                     <p>Categoria</p>
                     <p>estoque</p>
                     <p>preço</p>
+
+                    
                 </div>
 
                 {listar.map(item => 
@@ -141,6 +143,7 @@ async function Deletar(id){
 
                         <a onClick={() => navigate('/altpro/' + item.id_produto)}  className='editarexcluir'>Editar <img src='/assets/images/editar.svg'/></a>
                         <p onClick={() => Deletarfavopro(item.id_produto)} className='editarexcluir'>Excluir <img src='/assets/images/excluir.svg'/></p>
+                        
                     </div> 
                 )}
             </section>
