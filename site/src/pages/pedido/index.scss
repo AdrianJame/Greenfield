@@ -1,8 +1,6 @@
-.pagina-pedido {
+.page-pedido {
     background-color: #f7f7f7;
     min-height: 100vh;
-    padding: 2em;
-
     .pedido-box {
         display: flex;
         justify-content: space-between;
@@ -10,14 +8,23 @@
 
         margin-bottom: 20px;
         h1 {
-            margin: unset
+            margin: 40px
         }
     }
+
+    .pedido{
+        h1{
+            margin: 40px;
+        }
+    }
+
+
     .finalizar {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         color: #4e4e4e;
+        margin: 40px;
 
         div {
             font-size: 18px;
@@ -30,13 +37,53 @@
 
         button {
             margin: 10px;
+            display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 10%;
+                height: 30px;
+                border-radius: 35px;
+
+                background-color: #009020;
+
+                color: #fff;
+
+                font-weight: 300;
+                font-size: 14px;
+
+                cursor: pointer;
+                border: none;
+                outline: 0;
         }
     }
-    
+
+    .botaolegal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 10%;
+        height: 30px;
+        border-radius: 35px;
+
+        background-color: #009020;
+
+        color: #fff;
+
+        font-weight: 300;
+        font-size: 14px;
+
+        cursor: pointer;
+        border: none;
+        outline: 0;
+    }
+
     .info {
         display: flex;
         background-color: #fff;
         padding: 1.5em;
+        margin: 40px;
         box-shadow: 0px 0px 10px 2px #e0e0e0;
         border: 1px solid #e7e7e7;
     }
@@ -69,16 +116,32 @@
 
 
 
-    .pagamento-box {
+    .pagamento {
         display: flex;
         flex-direction: column;
 
         color: #5e5e5e;
+        padding: 20px;
+        border-radius: 10px;
+
     }
 
-    .pagamento-box input {
-        border-color: #a3a3a3;
+    .inputlegal{
+        border: 1px solid #767676;
+        outline: 0;
+        border-radius: 5px;
     }
+
+    .selectlegal{
+        border-radius: 5px;
+        border: 1px solid #767676;
+    }
+
+    .agrup{
+        margin-bottom: 10px;
+    }
+
+    
 
     table {
         width: 100%;
@@ -132,15 +195,23 @@
     .info-extra {
         display: flex;
         max-width: 500px;
+
+        h2{
+            margin-top: 20px;
+        }
     }
     .info-extra .form > div label {
         min-width: 4em;
     }
 
+    
+
 
 
     .form > div label {
         min-width: 7em;
+
+        flex-direction: column;
     }
     
 

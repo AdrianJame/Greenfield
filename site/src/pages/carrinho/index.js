@@ -90,22 +90,6 @@ export default function Carrinho () {
 
             <h1>Carrinho</h1>
 
-            <div className='status-pedido'>
-
-                <div className='circle'>
-                    <img src='./assets/images/carrinho-status.svg'/>
-                </div>
-                <div className='linha'></div>
-
-                <div className='circle-s'>
-                    <img src='./assets/images/ping-status.svg'/>
-                </div>
-                <div className='linha'></div>
-
-                <div className='circle-s'>
-                    <img src='./assets/images/pagamento-status.svg'/>
-                </div>
-            </div>
 
             <div className='faixa-02'>
                 <section className='carrinho'>
