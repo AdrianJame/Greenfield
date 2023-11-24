@@ -67,48 +67,48 @@ const checkCep = (e) => {
                     <h1> Novo Endereço </h1>
 
                     <div className='form'>
-                        <div>
-                            <label> Referência: </label>
-                            <input type='text' value={referencia} onChange={e => setReferencia(e.target.value)} />
+                        <div className='agrup'>
+                            <p> Referência: </p>
+                            <input className='inputlegal' type='text' value={referencia} onChange={e => setReferencia(e.target.value)} />
                         </div>
                         <div>
-                            <label> &nbsp; </label>
+                            <p> &nbsp; </p>
+                        </div>
+                        <div className='agrup'>
+                            <p> CEP: </p>
+                            <input  className='inputlegal' type='text' onBlur={checkCep}   />
+                        </div>
+                        <div className='agrup'>
+                            <p> Logradouro: </p>
+                            <input  className='inputlegal' type='text' value={logradouro}  onChange={e => setLogradouro(e.target.value)}  />
+                        </div>
+                        <div className='agrup'>
+                            <p> Número: </p>
+                            <input  className='inputlegal' type='text' value={numero}  onChange={e => setNumero(e.target.value)}  />
+                        </div>
+                        <div className='agrup'>
+                            <p> Complemento: </p>
+                            <input className='inputlegal' type='text' value={complemento}  onChange={e => setComplemento(e.target.value)}  />
                         </div>
                         <div>
-                            <label> CEP: </label>
-                            <input type='text' onBlur={checkCep}   />
+                            <p> &nbsp; </p>
                         </div>
-                        <div>
-                            <label> Logradouro: </label>
-                            <input type='text' value={logradouro}  onChange={e => setLogradouro(e.target.value)}  />
+                        <div className='agrup'>
+                            <p> Bairro: </p>
+                            <input  className='inputlegal' type='text' value={bairro}  onChange={e => setBairro(e.target.value)}  />
                         </div>
-                        <div>
-                            <label> Número: </label>
-                            <input type='text' value={numero}  onChange={e => setNumero(e.target.value)}  />
-                        </div>
-                        <div>
-                            <label> Complemento: </label>
-                            <input type='text' value={complemento}  onChange={e => setComplemento(e.target.value)}  />
-                        </div>
-                        <div>
-                            <label> &nbsp; </label>
-                        </div>
-                        <div>
-                            <label> Bairro: </label>
-                            <input type='text' value={bairro}  onChange={e => setBairro(e.target.value)}  />
-                        </div>
-                        <div>
-                            <label> Cidade: </label>
+                        <div className='agrup'>
+                            <p> Cidade: </p>
                             <input type='text' value={cidade}  onChange={e => setCidade(e.target.value)}  />
                         </div>
-                        <div>
-                            <label> Estado: </label>
-                            <input type='text' value={estado}  onChange={e => setEstado(e.target.value)}  />
+                        <div className='agrup'>
+                            <p> Estado: </p>
+                            <input  className='inputlegal' type='text' value={estado}  onChange={e => setEstado(e.target.value)}  />
                         </div>
                         <div>
-                            <label></label>
+                            <p></p>
                             <div className='btn'>
-                                <button onClick={salvarEndereco}> Salvar </button>
+                                <button className='botaolegal' onClick={salvarEndereco}> Salvar </button>
                             </div>
                         </div>
                     </div>

@@ -30,7 +30,7 @@ export default function Meuspedidos(){
             <div className='faixa1'>
                 <h1>MEUS PEDIDOS</h1>
                 
-                {pedidos.map(item =>
+                
                                 
                             
                                 
@@ -39,26 +39,27 @@ export default function Meuspedidos(){
                     <h3><span>MINHA CONTA</span> - MEUS PEDIDOS </h3>
                     <h3 className='titulo-pedido'>Meu Pedido</h3>
 
-                    
+                    {pedidos.map(item =>
+
+                        <div> 
                             <div className='pedido-info'>
                                  <div className='esquerda'>
                                 <img src='./assets/images/image 180.svg' />
                                 <h4>Pedido N°: {item.id_pedido} </h4>
                                 
                                     </div>
-    
+
+                                    <p> Data do pedido: {item.dt_pedido}</p>    
                            
-                        </div>
+                             </div>
                         
                         <div className='dt-pedido'>
                             <p>Status do Pedido: {item.ds_status}</p>
+                            <p>Frete: R${item.vl_frete}</p>
                         </div>
                         
     
-                        <div className='detalhe-pedido'>
-                            
-                            
-                        </div>
+                       
     
     
                         <div className='forma-pagamento'>
@@ -67,9 +68,11 @@ export default function Meuspedidos(){
                             <div className='linha'>
                                 <div className='pagamento'>
 
+                                <p>Cartão</p>
+
                                 <img src='./assets/images/image-cartao-credito.svg' />
 
-                                <p> tet{item.tb_pagamento}</p>
+                                
                                 
                                 
 
@@ -78,12 +81,16 @@ export default function Meuspedidos(){
     
                               
                             </div>
-                    </div>
-                        
+                        </div>
+
+                        <div className='risco'> </div>
+
+                        </div>
+                    )}
                 
 
                 </div>
-                )}
+                
                
                 
 
