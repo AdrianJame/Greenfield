@@ -22,6 +22,7 @@ server.use(pedidocontroller);
 server.use(enderecocontroller);
 
 
+
 server.use('/storage/fotosProdutos', express.static('storage/fotosProdutos'))
 
 server.listen(process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))

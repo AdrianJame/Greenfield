@@ -11,6 +11,7 @@ import { API_URL } from '../../constants.js'
 import { salvarNovoPedido } from '../../api/pedidoAPI.js'
 import { toast } from 'react-toastify'
 import axios from 'axios';
+import { BuscarImagem } from '../../api/prod.js';
 
 
 
@@ -100,8 +101,9 @@ export default function Pedido() {
                     numero: numero,
                     vencimento: vencimento,
                     codSeguranca: cvv,
-                    formaPagamento: tipo,
-                    parcelas: parcela
+                    parcelas: parcela,
+                    formaPagamento: tipo
+                    
                 },
                 produtos: produtos
             }
@@ -113,7 +115,7 @@ export default function Pedido() {
 
         }
         catch (err) {
-            toast.error(err.response.data.erro);
+            toast.error(err.message);
         }
 
     }
@@ -204,7 +206,7 @@ export default function Pedido() {
                             <div className='form'>
                                 <div>
                                     <label>Código:</label>
-                                    <input type='text' value={cupom} onChange={e => setCupom(e.target.value)} />
+                                    
                                 </div>
                                 <div />
                             </div>
@@ -244,10 +246,10 @@ export default function Pedido() {
                             <tr>
                                 <td>
                                     <div className='celula-item'>
-                                        {/* <img src={exibirImagem(item)} /> */}
+                                        <img src={BuscarImagem(item.produto.ds_img1)} />
                                         <div>
-                                            <h3> {item.produto.produto} </h3>
-                                            <h4> {item.produto.nomeDepartamento} </h4>
+                                            <h3> {item.produto.nm_produto} </h3>
+                                            
                                         </div>
                                     </div>
                                 </td>
@@ -255,10 +257,10 @@ export default function Pedido() {
                                     {item.qtd}
                                 </td>
                                 <td>
-                                    R$ {item.produto.preco}
+                                    R$ {item.produto.vl_preco}
                                 </td>
                                 <td>
-                                    R$ {item.qtd * item.produto.preco}
+                                    R$ {item.qtd * item.produto.vl_preco}
                                 </td>
                             </tr>
                         )}

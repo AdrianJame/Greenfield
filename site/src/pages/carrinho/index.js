@@ -153,7 +153,7 @@ export default function Carrinho () {
                         <div><p className='p-desc'>R${Desconto()}</p> <p>Com desconto à vista no boleto</p></div>
                     </section>
 
-                    <a onClick={() => navigate('/endereço')}>Continuar</a>
+                    <a onClick={() => navigate('/pedido')}>Continuar</a>
                 </div>
 
             </div>

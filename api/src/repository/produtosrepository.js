@@ -11,22 +11,6 @@ export async function Listartodos(){
     return resp
 }
 
-export async function ListarProdutosPorId(id) {
-    const comando = `
-         select id_produto                      as id,
-                nm_produto                      as produto,
-                vl_preco                        as preco,
-                bt_destaque                     as destaque,
-                tb_produto.id_categoria         as categoria,
-                nm_categoria                 as nomeCategoria
-        from tb_produto 
-        inner join tb_categoria on tb_categoria.id_categoria = tb_produto.id_categoria
-       where id_produto = ?
-        `
-
-    const [registros] = await conexao.query(comando, [id]);
-    return registros[0];
-}
 
 export async function Listarfavo(id){
     let sql = `select * from tb_produto 

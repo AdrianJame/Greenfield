@@ -14,14 +14,14 @@ export function lerValorFrete(frete) {
 }
 
 
-export function criarNovoPedido(idUsuario, info) {
+export function criarNovoPedido(idCliente, info) {
     
     let agora = new Date();
     let valorFrete = lerValorFrete(info.frete);
     let notaFiscal = criarNotaFiscal();
 
     return {
-        idUsuario: idUsuario,
+        idCliente: idCliente,
         idEndereco: info.idEndereco,
         data: agora,
         notaFiscal: notaFiscal,

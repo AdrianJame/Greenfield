@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { AdicionarPedido, AlterarStatusPedido, MostrarPedidoUsuario, MostrarPedidosPorIdUsuario, MostrarPedidosUsuarios } from "../repository/pedidorepository.js";
+import { AdicionarPedido, AlterarStatusPedido, MostrarPedidoUsuario, MostrarPedidosPorIdUsuario, MostrarPedidosUsuarios, inserirPagamento, inserirPedido, inserirPedidoItem } from "../repository/pedidorepository.js";
+import { criarNovoPedido } from "../service/novoPedidoService.js";
+import { Listarporid } from "../repository/produtosrepository.js";
+
 
 
 const endpoints = Router();
@@ -89,13 +92,17 @@ endpoints.post('/api/pedido/:idCliente', async (req, resp) => {
 
         
         const novoPedido = criarNovoPedido(idCliente, info);
+        
 
         const idPedidoCriado = await inserirPedido(novoPedido);
-        await inserirPagamento(idPedidoCriado, info.cartao);
+        const idPagCriado = await inserirPagamento(idPedidoCriado, info.cartao);
+        
+
 
         for (let item of info.produtos) {
-            const prod = await buscarProdutoPorId(item.id);
-            await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
+            const prod = await Listarporid(item.id);
+            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
+            
         }
 
         resp.status(204).send();
