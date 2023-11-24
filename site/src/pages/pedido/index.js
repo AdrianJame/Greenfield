@@ -111,7 +111,7 @@ export default function Pedido() {
             const r = await salvarNovoPedido(id, pedido);
             toast.dark('Pedido foi inserido com sucesso');
          localStorage('carrinho', []);
-            navigate('/');
+            navigate('/meuspedidos');
 
         }
         catch (err) {
