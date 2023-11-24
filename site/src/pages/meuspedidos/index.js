@@ -49,7 +49,7 @@ export default function Meuspedidos(){
                                 
                                     </div>
 
-                                    <p> Data do pedido: {item.dt_pedido}</p>    
+                                    <p> Data do pedido: {item.dt_pedido.substr(0, 10)}</p>    
                            
                              </div>
                         
