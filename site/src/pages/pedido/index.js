@@ -2,7 +2,8 @@ import './index.scss'
 import { useEffect, useState } from 'react'
 import ModalEndereco from '../../components/modalEndereco'
 import localStorage from 'local-storage';
-
+import Cabecalhocomlogin from '../../components/cabcomlogin'
+import RodapeGreenfield from '../../components/rodape'
 import { useNavigate } from 'react-router-dom'
 import { listar } from '../../api/enderecoAPI.js'
 import CardEndereco from '../../components/cardEndereco';
@@ -12,6 +13,7 @@ import { salvarNovoPedido } from '../../api/pedidoAPI.js'
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { BuscarImagem } from '../../api/prod.js';
+
 
 
 
@@ -135,11 +137,13 @@ export default function Pedido() {
 
 
     return (
-        <div className='pagina-pedido'>
+        <div className='page-pedido'>
+                <Cabecalhocomlogin/>
+            
             <ModalEndereco exibir={exibirEndereco} fechar={fecharNovoEndereco} />
 
 
-            <div className='pedido-box'>
+            <div className='pedido'>
                 <h1> Pedido </h1>
                 <div className='finalizar'>
                     <div>Total: <span> R$ {calcularTotal()}</span></div>
@@ -159,41 +163,41 @@ export default function Pedido() {
                         )}
                     </div>
 
-                    <button onClick={exibirNovoEndereco}> Novo </button>
+                    <button className='botaolegal' onClick={exibirNovoEndereco}> Novo </button>
 
                 </div>
 
-                <div className='pagamento-box'>
+                <div className='pagamento'>
                     <h2>Pagamento</h2>
 
                     <div className='form'>
-                        <div>
-                            <label>Nome:</label>
-                            <input type='text' value={nome} onChange={e => setNome(e.target.value)} />
+                        <div className='agrup'>
+                            <p>Nome do Titular do Cartão</p>
+                            <input className='inputlegal' type='text' value={nome} onChange={e => setNome(e.target.value)} />
                         </div>
-                        <div>
-                            <label>Número:</label>
-                            <input type='text' value={numero} onChange={e => setNumero(e.target.value)} />
+                        <div className='agrup'>
+                            <p>Número</p>
+                            <input className='inputlegal'  type='text' value={numero} onChange={e => setNumero(e.target.value)} />
                         </div>
-                        <div>
-                            <label>Validade:</label>
-                            <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)} />
+                        <div  className='agrup'>
+                            <p>Validade</p>
+                            <input className='inputlegal'  type='text' value={vencimento} onChange={e => setVencimento(e.target.value)} />
                         </div>
-                        <div>
-                            <label>CVV:</label>
-                            <input type='text' value={cvv} onChange={e => setCvv(e.target.value)} />
+                        <div className='agrup'>
+                            <p>CVV:</p>
+                            <input className='inputlegal'  type='text' value={cvv} onChange={e => setCvv(e.target.value)} />
                         </div>
-                        <div>
-                            <label>Tipo de Pagamento:</label>
-                            <select value={tipo} onChange={e => setTipo(e.target.value)}   >
+                        <div className='agrup'>
+                            <p>Tipo de Pagamento:</p>
+                            <select className='selectlegal' value={tipo} onChange={e => setTipo(e.target.value)}   >
                                 <option disabled hidden selected>Selecione</option>
                                 <option>Crédito</option>
                                 <option>Débito</option>
                             </select>
                         </div>
-                        <div>
-                            <label>Parcelas:</label>
-                            <select value={parcela} onChange={e => setParcela(e.target.value)}  >
+                        <div className='agrup'>
+                            <p>Parcelas:</p>
+                            <select className='selectlegal' value={parcela} onChange={e => setParcela(e.target.value)}  >
                                 <option disabled hidden selected>Selecione</option>
                                 <option value={1}>01x à Vista</option>
                                 <option value={1}>01x sem Juros</option>
@@ -205,22 +209,13 @@ export default function Pedido() {
                     </div>
 
                     <div className='info-extra'>
-                        <div>
-                            <h2> Cupom </h2>
-                            <div className='form'>
-                                <div>
-                                    <label>Código:</label>
-                                    
-                                </div>
-                                <div />
-                            </div>
-                        </div>
+                        
                         <div>
                             <h2> Frete </h2>
                             <div className='form'>
                                 <div>
                                     <label>Tipo:</label>
-                                    <select value={frete} onChange={e => setFrete(e.target.value)}  >
+                                    <select className='selectlegal' value={frete} onChange={e => setFrete(e.target.value)}  >
                                         <option disabled hidden selected>Selecione</option>
                                         <option value={'Normal'}>Normal - R$ 10,00</option>
                                         <option value={'Sedex'}>Sedex - R$ 25,00</option>
@@ -272,6 +267,8 @@ export default function Pedido() {
                     </tbody>
                 </table>
             </div>
+
+            <RodapeGreenfield/>
 
         </div>
     )

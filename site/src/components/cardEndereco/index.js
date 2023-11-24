@@ -8,7 +8,7 @@ export default function CardEndereco({ item: { id, referencia, logradouro, cep, 
     return (
         <div className='comp-card-endereco'
              onClick={() => selecionar(id)}
-            style={{ borderColor: selecionado ? '#b512da' : '#a3a3a3' }}
+            style={{ borderColor: selecionado ? '#009020' : '#a3a3a3' }}
         >
             <div className='tipo'>{referencia}</div>
             <div>
