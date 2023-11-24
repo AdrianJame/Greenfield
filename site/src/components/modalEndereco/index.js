@@ -40,6 +40,25 @@ export default function ModalEndereco({ exibir, fechar }) {
 
 }, [])
 
+const checkCep = (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    console.log(cep)
+    if(cep != ''){
+        fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
+            console.log(data)
+            setLogradouro(data.logradouro)
+            setBairro(data.bairro)
+            setCidade(data.localidade)
+            setEstado(data.uf)
+        });
+    }
+
+    else{
+
+    }
+
+}
+
 
     return (
         <div className='comp-modal-endereco'>
@@ -57,7 +76,7 @@ export default function ModalEndereco({ exibir, fechar }) {
                         </div>
                         <div>
                             <label> CEP: </label>
-                            <input type='text' value={cep}  onChange={e => setCEP(e.target.value)}  />
+                            <input type='text' onBlur={checkCep}   />
                         </div>
                         <div>
                             <label> Logradouro: </label>

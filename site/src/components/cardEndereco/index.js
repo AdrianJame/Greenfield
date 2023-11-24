@@ -2,6 +2,9 @@ import './index.scss'
 
 export default function CardEndereco({ item: { id, referencia, logradouro, cep, bairro, cidade, estado, numero, complemento }, selecionar, selecionado }) {
 
+
+    
+
     return (
         <div className='comp-card-endereco'
              onClick={() => selecionar(id)}
