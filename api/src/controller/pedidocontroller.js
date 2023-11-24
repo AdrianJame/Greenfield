@@ -104,8 +104,8 @@ endpoints.post('/api/pedido/:idCliente', async (req, resp) => {
 
 
         for (let item of info.produtos) {
-            const prod = await Listarporid(item.info.id);
-            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.info.id, item.info.qtd, prod.info.preco);
+            const prod = await Listarporid(item.id);
+            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id, item.qtd, prod.preco);
             
         }
 
