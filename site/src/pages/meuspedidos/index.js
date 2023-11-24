@@ -46,7 +46,8 @@ export default function Meuspedidos(){
                                 <h4>Pedido N°: {item.id_pedido} </h4>
                                 
                                     </div>
-    
+
+                                    <p> Data do pedido: {item.dt_pedido}</p>    
                            
                         </div>
                         
@@ -67,9 +68,11 @@ export default function Meuspedidos(){
                             <div className='linha'>
                                 <div className='pagamento'>
 
+                                <p>Cartão</p>
+
                                 <img src='./assets/images/image-cartao-credito.svg' />
 
-                                <p> tet{item.tb_pagamento}</p>
+                                
                                 
                                 
 
